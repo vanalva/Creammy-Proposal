@@ -1,0 +1,484 @@
+# Cita con Juan Carlos
+
+  Meeting started: 11/5/2025, 8:34:42 PM
+  Duration: 61 minutes
+  Participants: Guillermo Pernia, Juan Carlos Vannini
+
+  [View original transcript](https://app.tactiq.io/api/2/u/m/r/pVrnQbBCAi6ndOxgqdF2?o=txt)
+
+    
+
+  
+
+  
+
+  ## Transcript
+
+  00:00 Guillermo Pernia: mi primo marico, porque siempre se se pierde y y Bueno ahorita que estuve en Madrid fue que me contó todo y justamente hace tres semanas, yo había contratado a alguien por fiver pues
+00:11 Juan Carlos Vannini: Qué wordpress es un desastre Por ejemplo, yo estoy trabajando. Yo hay un cliente que siempre trabajo con wordpress porque ellos son ellos tienen una una marca global de yoga. Entonces tiene mucha sucursales muchas franquicias y
+00:24 Guillermo Pernia: Okay.
+00:24 Juan Carlos Vannini: siempre como que usa la misma plantilla Entonces se quedan con wordpress. Yo he tratado de sacarlos, son como un monstruo burocrático y no lo hacen y por
+00:32 Guillermo Pernia: ya
+00:32 Juan Carlos Vannini: ejemplo, estoy trabajando en una de las de los proyectos de en una, acaba de abrir ti Milán que es una de las sucursales. Estoy trabajando el proyecto toda la página montada se desapareció así de la NASA porque sí de la nada le dio
+00:44 Juan Carlos Vannini: Hi, I’m transcribing this call with my Tactiq AI Extension: https://tactiq.io/r/transcribing Hi, I’m transcribing this call with my Tactiq AI Extension: https://tactiq.io/r/transcribing
+00:45 Guillermo Pernia: the wordpress
+00:47 Juan Carlos Vannini: le entró un Bot tengo otro. Tengo otro de esas sucursales que los tipos los hackearon y ahora sí Busca yo estoy comparando mi pantalla, no?
+00:54 Guillermo Pernia: sí
+00:54 Juan Carlos Vannini: entonces aquí mira si lo buscas por Lo buscas por Google y mira la vaina lo que pone aquí que es. Entonces le das aquí y la vaina te lleva y que y que una tienda de macys vendiéndote que uno tácticas Google
+01:15 Guillermo Pernia: Como uno, como uno prevé esa vaina, huevón.
+01:16 Juan Carlos Vannini: Ah Bueno ahí me está abriendo pero la vaina porque yo el otro día se lo limpié pero Google sigue diciendo Macy es que Me escuchas? Te hackean es que el problema de wordpress es que wordpress es acuérdate que es, no, eh? Perdón y claro es gratis porque cualquiera puede simplemente te
+01:33 Guillermo Pernia: Okay.
+01:39 Juan Carlos Vannini: instalas wordpress en un Hosting y tú instalas tu propia página te consigues
+01:41 Guillermo Pernia: Ya claro
+01:43 Juan Carlos Vannini: una plantilla. Te consigues Una vaina, pero pero claro, tú en verdad no estás pagando un servicio centralizado. Entiendes? No wordpress es una empresa que simplemente de tecnología que da su herramienta gratis no es algo como webflow, que es lo que yo hago, pero Incluso como webflow es la web es la versión profesional de algo tipo, lo que hace la gente que se esfuerce Y si esa vaina que son a base de plantillas, entonces claro, esas empresas Por más que sea,
+02:10 Guillermo Pernia: ya
+02:13 Juan Carlos Vannini: por ejemplo, a mí no me gusta el esfuerzo ni nada de eso, porque las páginas se ven todas súper blandas tipo plantilla, pero lo chévere, que tienen es que están centralizadas una empresa que tienen la atención al cliente tienen. van con con capas de seguridad espectaculares, o sea, como que nunca te va a pasar nada welflow wordpress, perdón, si un día dejas de de actualizar tus plugins, por ejemplo o hay un plugin que por ejemplo el proveedor de ese plugin
+02:36 Guillermo Pernia: Tengo un pequeño idea una pequeña idea porque tengo una que es la arquitectura
+02:37 Juan Carlos Vannini: porque no sé si sabes cómo funcionan los plugins en
+02:43 Guillermo Pernia: y arquitecto y marico. Yo edito vaina y siempre me sale notificaciones ahí
+02:47 Juan Carlos Vannini: Word digo una ladilla Y entonces si por ejemplo tú Imagínate que tú tienes un
+02:47 Guillermo Pernia: entonces.
+02:52 Juan Carlos Vannini: plugin para la política de cookies, no y el tipo el proveedor de esa vaina
+02:55 Guillermo Pernia: Okay.
+02:57 Juan Carlos Vannini: vende el plugin a una empresa o lo cierra o lo que sea y deja de lanzar nuevas optimización actualizaciones. Bueno resulta que ese plugin se convierte en
+03:04 Guillermo Pernia: actualización
+03:08 Juan Carlos Vannini: vulnerable, no tiene ya una capa de seguridad que se maneja un servidor de ese tipo y entonces vienen los hackers y te meten malware a través del plugin que
+03:13 Guillermo Pernia: claro
+03:18 Juan Carlos Vannini: no está actualizado entiende Entonces es como Sí es muy escalable el 80% de la
+03:19 Guillermo Pernia: sí
+03:23 Juan Carlos Vannini: web algo así es wordpress una vaina loca, pero sí sí una locura Pero la
+03:26 Guillermo Pernia: A mí me preocupa el tema de editar porque o sea, cuando tú montas una página
+03:28 Juan Carlos Vannini: realidad es que wordpress requiere demasiado atención.
+03:36 Guillermo Pernia: con una plataforma tuya también para uno como usuario fácil editar vainas o no.
+03:41 Juan Carlos Vannini: espectacular pero si quieres yo ahora te muestro todo Y cuéntame tú un poquito de de qué es lo que quieres hacer yo te muestro que mira tengo todas estas páginas abiertas aquí para que las veas Y
+03:49 Guillermo Pernia: Okay, Bueno marico, te explico varios cositas, Yo estoy montando Necesito hacer dos páginas en verdad, okay. Yo tengo una empresa de vidrios, somos una procesadora de vidrio que se llama glass viro flotado viro flotado el viro que ves en todas las fachadas que son virus planos Ok entonces lo que nosotros hacemos Bueno yo hago aquí en Panamá que es algo Bastante innovador en el mercado, es que yo tengo un horno que se llama un horno de laminación que es un horno de Tres metros treinta por dos metros cuarenta que es grande donde se meten dos vidrios, uno encima de otro y en el medio se pone un plástico que se llama Eva eso, eso es lo que se llama un viro laminado es un virus de seguridad, si se parte el vidrio, no se cae, no sé si en España donde tú ves una estación de tren con una con una vaina de
+04:38 Juan Carlos Vannini: como los
+04:42 Guillermo Pernia: elevadores afuera, si tú ves el borde del Vidrio probablemente tiene dos virus va a ver que tiene una capital al medio. Eso es lo que nosotros hacemos.
+04:46 Juan Carlos Vannini: Nunca me imagino que tú eres como yo que te digo mi esposo, oíste Ese loco, No sé que más le estoy seguro por la calle que mira ese vidrio doble.
+04:51 Guillermo Pernia: claro Obviamente porque uno Eso es lo que uno hace Pero bueno, es un procedimiento bastante básico para ir a seguridad pero Entonces qué hacemos nosotros agarramos las dos capas de vidrio con dos plásticos y en el medio le ponemos insertos, le ponemos telas metálicas. Le ponemos colores. Le ponemos entonces hacemos virus decorativos. Entonces un virus con un Lino por dentro, por ejemplo o un vidrio con una malla metálica por dentro o si hago cosas chéveres, ya lo verás entonces, claro, hay muchos tipos de vidrio. Hay vidrios grises. Bronces, claros azules, hay texturizados y como yo utilizo dos. Yo combino los vidrios,
+05:27 Juan Carlos Vannini: Mira, y lo tuyo es más que todo la innovación de la estética o también,
+05:32 Guillermo Pernia: puedo agarrar un virus un color un virus de otro color y le meto con el medio es un vidrio súper diferente, me explico entonces. sí
+05:42 Juan Carlos Vannini: okay.
+05:43 Guillermo Pernia: Sí, la estética y el material que va por dentro no, pero y esto se puede utilizar para tanto puertas de ducha como bueno hecho estoy en casa. Estoy en casa mi mamá ahorita porque estoy almorzando aquí que es feriado.
+05:53 Juan Carlos Vannini: a ver
+05:55 Guillermo Pernia: Te voy a mostrar una cosita aquí.
+05:57 Juan Carlos Vannini: Puedo abrir tu pantalla?
+05:59 Guillermo Pernia: Hasta una puerta amarilla Ok una puerta amarilla te va a mostrar esta puerta que es de dos tonos es transparente arriba. Sonríe el desastre del baño, pero bueno.
+06:13 Juan Carlos Vannini: No, no se ve nada, tranquilo a ver. claro
+06:17 Guillermo Pernia: ya tiene azul y transparente arriba, esto es un
+06:22 Juan Carlos Vannini: Y el borde le queda como que el espejo también.
+06:25 Guillermo Pernia: Sí pues también lo hago en espejo esto uno unos lentes y vainas, sabes?
+06:28 Juan Carlos Vannini: hasta brutal
+06:29 Guillermo Pernia: Sí entonces tiene dos tonos y tiene colores y van Entonces eso es lo que sí
+06:32 Juan Carlos Vannini: Hace unos lentes.
+06:35 Guillermo Pernia: unos Entonces eso es lo que eso es lo que hago con con las combinaciones de virus que yo utilizo no, entonces por eso se llama el glass porque es como un es como un laboratorio de vidrios, donde hacemos combinaciones distintas de De tanto de vidrios de tipo de virus como con insertos entonces ahí nace todo
+06:54 Juan Carlos Vannini: súper
+06:55 Guillermo Pernia: entonces ahí te mandé una una el concepto viene de que es una tabla periódica y que cada uno de los elementos un tipo de vidrio distinto Entonces yo lo que quiero es que cuando tú abras mi user es Class lb, porque Obviamente el lap no lo puede agarrar y bueno puse punto com, si tú me sugieres cambiarlo Eso no cuesta mucho cambiarlo porque cuesta que 20 dólares cambiar no sé comprar otro, pero bueno, esa Esa es la Ese es el el nombre que tengo y el usuario que utilizaría que tengo también en Instagram y lo que yo quiera cuando tú te metas en el punto. Com Lo primero que salga sea la tabla periódica, pues entonces, pues tú puedas literalmente como que pasar el mouse por encima de todos los cuadritos y se vayan como que haciendo un relieve de como que popping y se pueda voltear y ver el tipo de viro que es si le das clic me explico y si vuelves a darle clic, pues entonces entras en la hoja de ese tipo de vidrio Cuáles son las medidas que puedo hacerlo las dimensiones de alto y de ancho de espesores, Cuánto puede costar por metro cuadrado y todas las especificaciones técnicas del virus, Pues con una gráfica y una vaina.
+08:01 Juan Carlos Vannini: Te gustaría que sea un paper Así que solamente muestras esa tabla o si te gustaría que sea una página también completa.
+08:06 Guillermo Pernia: Bueno, evidentemente, quizás eso lo inicial y a lo mejor tener arriba un tap para diferentes cosas. Que se tiene que colocar no, el lavado y proyectos y vainas o que puedas scroll down y ver la vaina Entonces mi primo marico, me dijo que que tú le estás haciendo en la página web como un Game Boy para que esté hecho y digo bueno marico, porque no como que mitad la periódica también sea como un sabes ese que parte de los cuadritos.
+08:31 Juan Carlos Vannini: Poder ver también claro.
+08:33 Guillermo Pernia: Pero ya eso lo va a complicar mucho. Eso es algo soñando y tampoco.
+08:37 Juan Carlos Vannini: No, vale, ahora ahora hablamos de todo eso. Ahora te explico más o menos Cuál es mi metodología y Qué hago yo, pero te quería hacer un par de preguntas eso
+08:40 Guillermo Pernia: Ya entonces?
+08:43 Juan Carlos Vannini: Entonces uno te evitas también claro, pero es un poco permanente bueno 100% permanente, si por ejemplo, pero es más bonito que un vinilo, por ejemplo, me imagino que un negocio por montaría tus vidrios y se ve mucho mejor que que meterle un vinilo por atrás, pues evidentemente no.
+09:01 Guillermo Pernia: Que también las cosas que se pegan por detrás, siempre suelen despegarse con el tiempo el virus laminado es un virus que perdura por veinte treinta años
+09:07 Juan Carlos Vannini: Claro claro
+09:11 Guillermo Pernia: laminado y no sabes la mina y el efecto siempre es el mismo, no?
+09:15 Juan Carlos Vannini: Y la tabla periódica, tú tienes como que diferentes vidrios, que ya están creados o también los haces también los haces a la medida.
+09:23 Guillermo Pernia: también puedo hacer la medida Pero la idea, es que los que estén en la tabla periódica son los virus estándar, que siempre se van a manejar y que ya
+09:27 Juan Carlos Vannini: Okay okay.
+09:29 Guillermo Pernia: manejamos ya como una como un como un estándar pues
+09:33 Juan Carlos Vannini: Entonces qué son cuántos yo me salté química
+09:36 Guillermo Pernia: Yo también no te preocupes, o sea, yo yo sé que una tabla periódica porque ahorita me puse a hacer una para mi vaina, pero creo que son no sé.
+09:42 Juan Carlos Vannini: Bueno vamos a ver
+09:45 Guillermo Pernia: 50 y pico elementos cincuenta y cuatro marico, no sé.
+09:48 Juan Carlos Vannini: Y tú tienes ya un vidrio para cada uno, por ejemplo.
+09:51 Guillermo Pernia: Sí o sea todo eso ya está codificado para cada uno de los vidrios. Yo tengo
+09:52 Juan Carlos Vannini: Ya lo que es.
+09:55 Guillermo Pernia: mitad y evidentemente a lo mejor voy a ir cambiando porque hay cosas que se han adaptando cosas que se cambian en el mercado y virus que no se ven y otros que sí Entonces los meto y lo saco y Bueno sigo después.
+10:06 Juan Carlos Vannini: Y son los nombres serían esos los nombres de cada que le darías al producto.
+10:10 Guillermo Pernia: Esa es una nomenclatura que yo me inventé y que yo entiendo porque es mi lenguaje interno de la de la empresa que quizás un poco confuso para la gente, pero bueno, si puedes. clickear y ver el tipo de brillo
+10:19 Juan Carlos Vannini: Ah Esto no es la tabla periódica en verdad
+10:21 Guillermo Pernia: no, no
+10:22 Juan Carlos Vannini: Ya okay, okay, No perfecto, mejor verdad confundas a la gente?
+10:26 Guillermo Pernia: Sí, sí. Claro, la periódica con mi hija con mis elementos.
+10:29 Juan Carlos Vannini: No, yo creo que más bien así los confundes menos porque si Imagínate que fuese de verdad cada tabla periódico entonces Viene un tipo Y dice Bueno oro, debe ser que es amarillo, entonces, sabes no?
+10:37 Guillermo Pernia: Sí, no, no, esto es mi nomenclatura Y si te fijas hay un costado, creo que hay esa Ah no eso no lo dice Ah no Sí ahí está en un costado. Dice a que si
+10:47 Juan Carlos Vannini: reflectivos Claro si las categorías
+10:48 Guillermo Pernia: reflectivo es translúcido Sí y este el de la izquierda es monolítico, pero no le he puesto.
+10:53 Juan Carlos Vannini: No hay mejor todavía porque entonces después puedes agregar cuando quieras, pues te amarras tampoco la tabla periódica mi pregunta era porque pensé que era como que cada elemento Era uno de ellos.
+11:02 Guillermo Pernia: Claro, Sí bueno, si es cada uno un virus distinto, pero son de mis productos Sí y si te fijas en otra ficha que te mandé ahí se ve bueno lo que que dice
+11:09 Juan Carlos Vannini: Sí sí, perfecto brutal bueno.
+11:15 Guillermo Pernia: yo le di las ideas al pan este para que me lo hiciera él me lo ejecutó y bueno es un el el el el el no sé cómo se llama eso el icono cuadradito pequeño.
+11:24 Juan Carlos Vannini: Él hizo logo.
+11:25 Guillermo Pernia: Eso lo hago es como si fuese el cuadrado de nomenclatura y es la g y la L y bueno la g, tiene esos destellos como de vidrio glass, ya tengo su desarrollado La verdad. Estoy conforme y me gusta, pero
+11:39 Juan Carlos Vannini: Pero capaz, te te convenzo de hacerlo otra vez.
+11:43 Guillermo Pernia: Bueno espero que no, porque ya tengo todo brandeado así Pero quizás.
+11:46 Juan Carlos Vannini: Ya tienes todo ya, ya sacaste todo ya ya? imprimiste
+11:51 Guillermo Pernia: Sí o sea, sí, tengo bueno logo de la de la empresa en la fachada tengo las tarjetas. Tengo todos los campos que que entregados son de con logo de la vaina
+11:58 Juan Carlos Vannini: Hacemos un río Grande y poco a poco vas progresivamente.
+12:04 Guillermo Pernia: saben. c***, pasa que luego tiene un año yo digo que como en cinco le puedo cambiar.
+12:13 Juan Carlos Vannini: Es más que todo porque yo a ver a mí no me gusta hablar mal del trabajo de la gente evidentemente, pero pero c***, a mí me gustó partir de la base. Y si algo Yo siento que tiene problemas después eso todo se tiene que Traducir de alguna forma a la web, porque evidentemente tiene que estar conectados no y y hay cositas, no solamente funcionales sino estéticas, por ejemplo esta esta.
+12:40 Juan Carlos Vannini: G ese ese ese reflejo que tú le das Se podría lograr de una otra manera en la cual no tienes tanta separación de elementos, o sea, aquí tú estás construyendo una dos tres cuatro, Si ves los lados positivos de la G este es
+12:50 Guillermo Pernia: ya
+12:55 Juan Carlos Vannini: cuatro cinco piezas distintas que vistas de muy lejos se empiezan a perder ya.
+12:59 Guillermo Pernia: sí
+13:00 Juan Carlos Vannini: Entonces no escalable sobre todo cuando tienes que imprimir en en Me imagino que en la tarjeta de presentación no se distingue demasiado bien Al menos, que luego esté muy grande.
+13:08 Guillermo Pernia: Ya no, no me fijaba la verdad no le paró tanta bola.
+13:12 Juan Carlos Vannini: O sea obvio que lo vas a ver y además que esto también es como un un detalle bastante que estamos bastante acostumbrados a ver que es como que ese corte de Espejo pero las cosas Yo no soy de de meterle tanto detalle pequeño a otro tipo, eso la parte funcional y en la parte estética no me gusta futura que es tu tipología, pero está guiado Y ya y que las cosas se sientan un poco
+13:36 Guillermo Pernia: Sí bueno Honestamente el el fondo no lo escogí yo, pero me gustó Pues sí.
+13:38 Juan Carlos Vannini: genérica a los arquitectos les encanta futura porque es muy biométrica entonces. Porque Claro porque está basada en figuras geométricas entonces, pero a mi futura Me parece que está demasiado extremadamente trillada Pero bueno y el azul brother, pues es azul Por qué no se siente demasiado corporativo.
+14:03 Guillermo Pernia: No me encanta y el azul es un tema eso sí no, no lo uso estoy usando el blanco y el negro y el azul.
+14:08 Juan Carlos Vannini: Estás vendiendo estética. Y siento que uno que esté eso te limita Yo soy de partidario de que las marcas no deberían amarrarse 100% un color de cuando sobre todo cuando vendes un producto que tiene tanta capacidad de expresar color entiendes Por ejemplo las
+14:28 Guillermo Pernia: ya
+14:28 Juan Carlos Vannini: marcas de ropa, a mí no me gusta que sea más que se que se amarren directamente, o sea, un restaurante cool la la presunta entropía de de Carlos bien, porque es una academia, No pasa nada, entiendes? Pues puedes hacer uso del color Después que yo normalmente trabajo o con muchos colores o con colores muy reducidos Entonces por ejemplo algo que vende vidrios como tú. c*** Que tú ya le puedes dar demasiado color a esa página le puedes dar color
+14:54 Guillermo Pernia: sí
+14:55 Juan Carlos Vannini: a tu Instagram sin necesidad de que la marca también como que se encapsule dentro un color entiendo, puedes trabajar monocromático blanco y negro como dices tú y después entonces todas las fotos son lo que le traen color a la a la a la marca, por ejemplo.
+15:08 Guillermo Pernia: Sí yo no estoy usando mucho el azul Pero bueno de Cómo es el azul es el color del Vidrio y gente generalmente se utiliza así, pues bueno, nos fuimos por la por lo clásico, pero no, no lo uso mucho, la verdad.
+15:21 Juan Carlos Vannini: Ojo Yo igual te hago una propuesta tú estudias quiero que mostrarte un poquito
+15:23 Guillermo Pernia: sí
+15:25 Juan Carlos Vannini: todo mi trabajo y qué es lo que yo hago e igual como yo te o sea con la página igual pasamos por un proceso de diseño porque yo primero diseño todo en
+15:35 Guillermo Pernia: Eso te iba a preguntar la parte gráfica Cómo la maneja O sea puede como te
+15:36 Juan Carlos Vannini: físico.
+15:39 Guillermo Pernia: digo este dicho me me ayudó con el logo y todos los demás gráficas y vainas las voy haciendo yo y marico, no es lo mío pues entonces.
+15:47 Juan Carlos Vannini: Yo te hago todo.
+15:47 Guillermo Pernia: Ya ya con eso.
+15:50 Juan Carlos Vannini: No, no, tranquilo lo que te digo yo.
+15:53 Guillermo Pernia: Y estoy buscando que alguien me haga todo América porque y que sepa Pues porque yo no tengo tiempo pasaba en ahorita.
+15:58 Juan Carlos Vannini: Ya te voy a contar todo Perdón yo te yo yo suelo, yo hago branding más que todo lo que pasa es que como soy diseñador y también hago audiovisuales, entonces cuando cuando yo ejecuto una marca normalmente la ejecuto completa de Punto por ejemplo, lo que le estoy haciendo a a Carlos completo, le estoy haciendo el naming, le dice todo el branding logotipo recursos, le estoy haciendo también todo el tema de redes sociales, le hice un pack de camba para
+16:21 Guillermo Pernia: sí
+16:24 Juan Carlos Vannini: que tenga un montón de plantillas para que pueda él también a través del tiempo como que gestionar su sus publicaciones también sin necesidad de amarrarse un diseñador como te está pasando a otros a otros clientes les hago presentaciones para que tengan plantillas de presentaciones para que no tenga que estamos llamando. Estoy todos tus Etcétera le hice también audiovisuales, estoy haciendo un video de marca, le hice fotografías, le hago también, por ejemplo un brandbook fotográfico de cómo deberías tomar las fotos, cómo deberías editarla, Qué tipo de herramientas utilizar, o sea, todo De punta a punta más la página web y una pequeña plataforma que le estoy haciendo de gestión.
+16:58 Guillermo Pernia: Ya ya.
+16:58 Juan Carlos Vannini: Entonces yo normalmente abarco todo lo que lo que lo que requiere una marca para poder salir a mercado Ok de que de verdad empieces a dar la cara ya tú tienes una parte del proceso hecha. Yo te voy a ofrecer igual Obviamente el branding para que te lo vea si te interesa pero igual nosotros vamos a pasar por un proceso de diseño con la web. Quizás temas de color podemos plantearnos entiende Yo lo que no puedo es que si por ejemplo te hago, te hago la página web obviamente no te voy a tocar nada de la marca.
+17:36 Juan Carlos Vannini: Que no, que no O sea el color lo podemos tocar porque Bueno como tú dices que no estás amarrado a iniciar, lo estás usando y la página web igual necesita estudiar el tema de color. Yo no tengo ningún problema en meter la paleta de colores pero Pero después todo lo que es los recursos gráficos todo lo que es iconografía y todo eso va a tener que partir de aquí entiendo ya, eso te digo de que me limita si yo quiero hacer algo súper cool súper creativo Como me gusta hacerlo. Yo voy a tener que que partir de lo que ya tienes, entiendes Entonces es probable que tengamos que usar futura Es probable que tengamos que utilizar alguna variante o algo. Bueno, como es tan tipográfico, la verdad y el único que tiene es esto es literalmente futura con con el reflejo es como que ningún
+18:23 Guillermo Pernia: Sí, sí.
+18:25 Juan Carlos Vannini: isologo, No tienes ninguna. Ninguna forma entonces quizás tampoco nos vamos a tener que limitar tanto, vamos a ver. Pero bueno que yo igual te hago tu propio estilo y lo vemos entonces, qué? Cuál Qué es lo innovador de lo que yo hago? el innovador es que Yo trabajo con algo que se llama webflow Entonces qué pasa la mayoría de las personas trabaja con wordpress o si trabajas con un programador, por ejemplo normalmente haces la página desde cero una codificas desde cero normalmente los
+18:55 Guillermo Pernia: ok
+18:56 Juan Carlos Vannini: diseñadores nos alejamos un poco de codificar desde cero porque claro no tienes tanta libertad Tienes toda la libertad del mundo Pero en cuanto a diseño terminas limitándote porque para hacer cosas complejas es sumamente difícil haciendo el código desde cero entiende entonces la mayoría de los diseñadores parten desde sabes plataformas eso como wordpress donde puedes instalar plugins en donde puedes más o menos ir metiéndole tú también. Un poquito el código para que la página se vea como tú quieres hasta que empezaron a salir herramientas como wordpress es webflow o por ejemplo, no sé si lo has escuchado freimer.
+19:30 Guillermo Pernia: ya
+19:30 Juan Carlos Vannini: No, y hay otras por ahí que que son Pues básicamente páginas en las que tú. Son plataformas en las que tú diseñas.
+19:42 Guillermo Pernia: no
+19:43 Juan Carlos Vannini: Mientras codificas, cómo funciona es como si estuvieses haciendo html css Y javascript, mientras tienes un una previsualización de lo que estás haciendo casi como si estuviesen illustrator.
+19:58 Guillermo Pernia: ok
+19:58 Juan Carlos Vannini: Entiende entonces obviamente no tiene nada que ver, pero digo yo tengo panel,
+20:01 Guillermo Pernia: Sí sí, pero entiendo la forma de trabajar pues
+20:03 Juan Carlos Vannini: verdad? Yo tengo este panel y yo voy, simplemente de manera con leyes literal ves? Yo voy creando todas las secciones de la página, pero cada uno de estos layers son html, o sea, un DIF que vendría siendo esto que tú ves aquí es un dip de html un texto un texto html una columna un grid todo es html, qué es lo de eso que
+20:20 Guillermo Pernia: sí
+20:29 Juan Carlos Vannini: tienes toda la libertad de poder codificar la página con todas las funcionalidades que tú quieras y tienes toda la libertad gráfica de poder hacer que la página se vea tal cual como tú quieras, no como, por ejemplo wordpress que instalas una plantilla, entonces resulta, que es que la flechita del botón no le puedes cambiar el color o no puedes poner hacia la derecha o hacia la izquierda yo aquí puedo poner.
+20:49 Guillermo Pernia: claro
+20:51 Juan Carlos Vannini: El vector que yo quiera, o sea todo está tal como yo lo hago entonces. webflow Lo único malo que tiene es que es una plataforma que tú tienes que pagar mensualmente el plan que tú necesitarías creo que es alrededor de 24 euros mensuales para que te dé capacidades cms, que es el counter management System que es lo que te va a permitir a ti manejar la página montar nuevos productos, quitar productos viejos modificar títulos modificar fotos con un simple esto que está aquí arriba que ves aquí arriba este botón que se llama me dice si no lees que dice SMS tú tienes aquí cms, por ejemplo estos clientes ellos ellos tienen ahora te lo muestro ellos son una constructora Okay entonces
+21:35 Guillermo Pernia: ok
+21:35 Juan Carlos Vannini: que podemos dar sus proyectos y ellos tienen yo les hice este contamination System que es son diferentes Campos que tú rellenas y cuando lo publicas se crea la página del producto con ciertos parámetros que ya están establecidos entiendes Entonces tú tú tienes toda la
+21:51 Guillermo Pernia: Pues yo también ofrecerías de ese servicio, tú también ofrecerías servicio
+21:53 Juan Carlos Vannini: Sí yo también, eh? Carlos lo primero que preguntó también fue eso porque no
+21:55 Guillermo Pernia: post o
+22:00 Juan Carlos Vannini: solamente noté el tiempo, sino que le daba también miedo ojo Tú lo ves al principio y se ve complicado, pero por ejemplo con Carlos que ya ha tenido dos tres reuniones sobre la utilización, pero sobre la utilización de esto ya yo le digo enseñando cosas. Él se dio cuenta que es una paja, no tú tendrías un usuario de editor en donde vas a poder. Por ejemplo en el caso de que por x razón, dejar de trabajar conmigo, ponte necesitas cambiar esta foto, tú vas a poder venir aquí y Simplemente te voy a enseñar como Navegar las las los layers te vienes?
+22:35 Guillermo Pernia: Digo yo editado en wordpress imagino que es parecido.
+22:37 Juan Carlos Vannini: Al no es bastante diferente Pero pero has utilizado programas de diseño.
+22:40 Guillermo Pernia: ok
+22:43 Juan Carlos Vannini: O sea, arquitecto.
+22:43 Guillermo Pernia: o sea, yo uso illustrator in design y
+22:47 Juan Carlos Vannini: Este medio parece illustrator, o sea, literalmente tienes un panel a la derecha, ves con todos los parámetros que son de espaciado y todo eso que tú no vas a tocar casi nunca no vas a tocar nunca de hecho. Tú vas a tener un tú vas a tener los dos usuarios Pero tú vas a entrar siempre con el usuario de editor para que no puedas romper nada el programa el usuario de editor lo que te
+23:04 Guillermo Pernia: Okay okay.
+23:07 Juan Carlos Vannini: permite es que tú simplemente no cambiar, por ejemplo la imagen.
+23:07 Guillermo Pernia: Es no cagarla. ya
+23:11 Juan Carlos Vannini: Entiendes, ves tú te vienes aquí cambias la imagen y ya o cambiar un título. Por ejemplo Entonces tienes Este título y yo dejo Campos aquí afuera que le deja Erick Ridge text y puedes cambiarlo Qué pasa todo el código de este elemento, si tú le das doble clic aquí, si tú abres aquí todo el código de este elemento está dentro de un componente, ves que dice. Todos no destructivos como decir Smart up kits de Photoshop entonces lo que tú lo que tú vas a cambiar es el contenido que está aquí afuera, entonces yo te dejo toda la página seteada de modo que tú puedes cambiar textos Puedes cambiar imágenes incluso Puedes cambiar hasta colores. Okay, sin necesidad de romper nada Incluso Puedes cambiar el orden de las cosas porque literalmente tú vas a poder hasta cambiar pones Ah no que esta sección la quiero aquí arriba Entonces la cambio Si la pones arriba.
+24:05 Juan Carlos Vannini: Como que demasiado todo lo que de verdad podría romper lo que es todo lo que es custom code, por ejemplo, este código que está aquí. Este código que está aquí, que lo que hace es que esta foto esta este botón se ponga en vertical, eso está escondido detrás de un usuario que si vas a
+24:20 Guillermo Pernia: ya
+24:23 Juan Carlos Vannini: poder entrar, pero tú en el usuario estándar que vas a usar, no vas a poder romperlo nunca entiendes que eso es cool también porque wordpress normalmente
+24:29 Guillermo Pernia: ok
+24:32 Juan Carlos Vannini: no tienes esa versatilidad o eres editor o eres administrador completo y Y el editor no puede cambiar a nada de diseño Aquí sí puedes cambiar muchas cosas de diseño. sin romper nada, entonces Bueno no sé si te fijas aquí directamente algo como lo que tú quieres hacer jamás, lo podrías hacer un huevo con con wordpress, o
+24:53 Guillermo Pernia: Okay. ya
+24:54 Juan Carlos Vannini: sea el el
+24:55 Guillermo Pernia: Ojo también quiero quiero explicarte algo, o sea, eso es lo que a mí me gustaría, pero yo no sé si lo que a mí me gustaría es una realidad. O sea si lo que yo quiero se puede hacer es fácilmente o es muy complejo,
+25:04 Juan Carlos Vannini: Cómo así
+25:09 Guillermo Pernia: sabes?
+25:09 Juan Carlos Vannini: No, no, no, no, no, es que eso es lo que te digo con algo como puedes hacer lo que te dé la gana.
+25:13 Guillermo Pernia: Ya okay, Okay perfecto y los temas de posicionamiento en la página en Google
+25:13 Juan Carlos Vannini: mientras no
+25:18 Guillermo Pernia: tú sabes también.
+25:19 Juan Carlos Vannini: Sea todo eso espectacular porque webflow tiene que wordpress, por ejemplo es muy complicado para hacerlo en webflow, tienes este panel que está aquí, que es de cada página Okay en donde tú tienes. Todo lo que es el ceo, Okay las páginas de webflow normalmente de salida apenas ya sales y las publicas te dan un 100% de cero por qué? Porque toda la organización del contenido un webflow es muy semántico y hoy en día la forma de tu posicionarte en Google Okay es con es con hay algo que se llaman robotex, que son es Google ahora utiliza incluso Inteligencia artificial para investigar las páginas entonces literalmente la Inteligencia artificial Abre tu página la chequea la entiende y te posiciona si no la entiendes.
+26:06 Juan Carlos Vannini: Si no la entiende literalmente te pone mal rating y te manda para abajo, entonces qué pasa? Hay mucho? Se hizo como súper famoso. Se puso como de moda que todo el mundo era experto en ceo, Yo tengo un pana, por
+26:16 Guillermo Pernia: así
+26:18 Juan Carlos Vannini: ejemplo que es súper pirata que el tipo de un bicho que estudió conmigo en la universidad y todo el tiempo me anda llamando. Pregúntame el c***** de ampara, no sabe nada de ceo y le anda comprando porque el ceo en teoría simplemente organizar el contenido de tu página de una manera en la que estos robots lo entiendan lo analicen y lo y lo y lo procesan.
+26:40 Guillermo Pernia: ya
+26:41 Juan Carlos Vannini: Entonces un montón de gente lo que ve rode. Es que se No yo soy experto deseo, Déjame buscar en Panamá Cuáles son los trends de búsqueda de Google Y entonces bueno en Google en los últimos seis meses muchas personas que han buscado vidrio también han buscado la palabra transparencia, entonces agarran y te dicen no, no, tranquilo, yo te lo tengo solucionado. Te monto un blog en ese blog. Pongo la palabra transparencias 450 veces OK Y entonces Google cada vez que alguien escriba transparencia Pablo le va a mostrar tu página web.
+27:13 Guillermo Pernia: claro
+27:14 Juan Carlos Vannini: Entonces eso es invasivo, Qué pasa Google penaliza, por eso entiende entonces Estos tipos te es como la forma es como el para tratar de conseguir buen buen ceo Entonces ahora Google lo está penalizando una barbería y ahora con la
+27:25 Guillermo Pernia: ya
+27:29 Juan Carlos Vannini: Inteligencia artificial más todavía porque ahora leía es se da cuenta rapidito si tú tienes cero invasivo.
+27:34 Guillermo Pernia: Sí hay inteligencia como tal.
+27:36 Juan Carlos Vannini: Entra y dice, no, no, esto Esto es invasivo pan, te pone mala calificación, te mandan para abajo. Entonces qué pasa Yo no soy experto de seo Pero mis páginas web todas están posicionadas bien en cero, Porque webflow. Te permite poner la meta descripción correcta que lo literalmente lo que tú tienes que hacer para que Google Flow te te posicione es explica bien, qué c*** es tu página todas las páginas web tienen que tener un h1, que es el heading one que eso en html es como que el heading que tiene prioridad en frente de todo el contenido está hecho etcétera.
+28:12 Guillermo Pernia: eso es la página la puedes hacer en español inglés o solamente en
+28:15 Juan Carlos Vannini: También se puede hacer en español en inglés ya te voy a explicar eso Y
+28:17 Guillermo Pernia: uno
+28:18 Juan Carlos Vannini: entonces Google encuentra lechón y ya entonces ese primer título tiene que ser descriptivo que es la página entiendes Entonces si tú por ejemplo, tienes mi primer título no es. What we do entiendes mi primer en este todavía no lo hemos hecho, pero mi primer título quizás va a ser en altura Wear to Partner Una vaina Una vaina que sea contextual de que en altura nosotros hacemos tal Y tal cosa normalmente lo que la gente hace que la lechuga lo pone de primerito arriba como para que Google lo encuentre la gente se busca como todo el tiempo entonces.
+28:53 Guillermo Pernia: No sabía esta información.
+28:56 Juan Carlos Vannini: Y todo el mundo No yo todavía no sé o sea, marketeros brother, no confío en los marketeros. Yo te voy a agencia de marketing. Eso es una estafa todo el el los tipos los tipos, lo que hacen es tratar como que eso de forzar el ser y ahora Google lo penaliza Entonces lo lo chévere de estos que bueno Tú lo que te digo yo no hago marketing digital. Entiendes? Eso lo puedes hacer con una agencia y lo primero que van a querer hacer, te lo digo para que si trabajas conmigo, yo te voy a ir entrenando esas cosas, es que si llegas a trabajar con una agencia el tipo te va a tratar de meter un blog, no me meto un blog y mete la palabra vidrio Diez mil veces penalizado todo Deja que la página sea orgánica y en lo que tú puedes invertir para que de verdad se te posicione bien Es que es que hagas un buen copyright. Eso es yo lo ofrezco copyright, pero por ejemplo, si después Más adelante, quieres contratar un copyrider de enfocado en publicidad, por ejemplo que te haga un espectacular trabajo, es mucho mejor dinero invertido que un experto entiende.
+29:54 Guillermo Pernia: Para qué se utilizaría?
+29:57 Juan Carlos Vannini: un copyright es una persona que escribe muy bien, entonces publicitarios
+30:01 Guillermo Pernia: ya
+30:02 Juan Carlos Vannini: Entonces ellos, por ejemplo, yo hago copy, yo escribo, pero pero bueno, no te voy a decir que soy experto escritor porque no soy experto escritor, pero por ejemplo yo todos los párrafos de todas mis páginas y de los grandes los escribo yo, pero después hay copyright, es publicitarios Pero quizás el tipo te te Organizar el párrafo y redactartelo de una manera en el que o sea se entiende mejor Por ende, el el lo entiende mejor es más directo al punto sabes? Llama más la atención. Entonces lo que te digo, ojo que ofrezco también ese servicio para lo que te digo si más adelante c***, quieres de verdad salir el número uno lo más rápido posible y tal es mucho mejor inversión tratar de uno la página yo te la voy a dar 100% de cero.
+30:48 Juan Carlos Vannini: Decir que va a estar organizada perfectamente y si Más adelante quieres
+30:50 Guillermo Pernia: ok
+30:52 Juan Carlos Vannini: contratar un copyright incluso Yo te puedo ayudar a buscar a buscar uno porque tengo un par de escribirme.
+30:58 Guillermo Pernia: yo soy me soy creativo marico y hago cosas chéveres Y tal Pero yo no le he metido mucha cabeza al tema digital y el tema de marketing y el tema página web Y eso yo creo que es una gran falla que te negocio y
+31:12 Juan Carlos Vannini: Vale. Vale, porque claro, uno se enfoca tanto en tener un buen producto que después claro, y cómo lo muestro el mundo no?
+31:19 Guillermo Pernia: Ese fue mi enfoque estos dos años y ahorita ya estoy. En este tercer año buscando Entonces ya tiene una presencia digital un poco más fuerte y y aprender más sobre ese tema porque no, no lo manejo.
+31:30 Juan Carlos Vannini: Tranquilo, que como como ves yo hablo hasta por los codos Entonces siempre yo controlo de toda esta vaina y llevo demasiados años ya metido en esta vaina y y siempre yo te puedo asesorar sin ningún problema y lo que yo.
+31:43 Guillermo Pernia: Igual de la segunda página también para que entiendas porque son dos Entonces el pego y no sé cuánto me va a salir el coñazo Pero bueno, vamos a vamos a ver qué es lo que métete un momentico Pues tienes Google ahí, no?
+31:54 Juan Carlos Vannini: Dime.
+31:59 Guillermo Pernia: Okay Métete una pena se llama luali l u a ldi.
+32:06 Juan Carlos Vannini: punto com puertas
+32:10 Guillermo Pernia: Okay esa es Gracias a mi negocio de video decorativos me puse a hacer puertas de Estos tipos corrediza Ok entonces hago puertas con mallas por dentro con aluminio delgado que son tipo italianas estas puertas y te cuestan 40.000 euros, Yo las hago por cinco mil tres mil. entonces, c*** te sale una que dice como
+32:32 Juan Carlos Vannini: y Estos son líderes de Mercado
+32:35 Guillermo Pernia: Sí ellos son muy muy muy grandes, igual que uno que se llaman rimadesio y una que se llama adl son los más grandes.
+32:40 Juan Carlos Vannini: playing producto
+32:42 Guillermo Pernia: Es la indoor si a ver si sale esa corrediza.
+32:44 Juan Carlos Vannini: hasta en español puertas
+32:48 Guillermo Pernia: Ajá Entonces yo hago puertas como esas que están ahí como la L7 la claro, Entonces quiero hacer, Qué pasa Yo lancé mi Mi marquita de puerta se llama pernia glass, Ok Qué pasa luego no me gusta mucho, pero ya hice unas cajas hice 400 cajas en China que me llegan en un mes para los sapos ya tienen el logo por todos lados, me explico Pero entonces c***,
+33:13 Juan Carlos Vannini: ya
+33:14 Guillermo Pernia: Esa es la otra página tengo que hacer que se llama glass y voy a tener los tipos de puertas que hago con y las lapas, el que el me produzca mis virus para mis puertas. Entonces comienza la segunda página que necesito es literalmente como la que estás viendo ahí. Después te mando otra página para que la
+33:29 Juan Carlos Vannini: Bueno de una que esta página no está fea, pero te puedo hacer una página mucho mejor que esta.
+33:33 Guillermo Pernia: Vean, Ajá bueno, obvio, eso es lo que esa página que se llama adl rapidito.
+33:37 Juan Carlos Vannini: No, pero por lo menos a mí es bonita en el sentido de que por ejemplo, a mí me gusta mucho más una página. Que que sea limpia entonces a que esté a que parezca una plantilla típica de
+33:44 Guillermo Pernia: Ahí sí.
+33:48 Juan Carlos Vannini: página web, cómo se llama?
+33:49 Guillermo Pernia: Sí eso está bien básica se llama adl, Italia adl, Italia
+33:58 Juan Carlos Vannini: esto
+34:01 Guillermo Pernia: A dls pegado dos, Italia la mejor.
+34:03 Juan Carlos Vannini: Estas más plantilla que la otra.
+34:10 Guillermo Pernia: Está un poquito más elaborada. Yo creo la página como tal No sé, pero es una Esta es una de las marcas más importantes de puertas corredizas de vidrio. Ah bueno imagínate, pero sí es básicamente algo que se vea muy parecida a esto, Qué pasa Yo tengo muchas puertas fotografiadas pero He hecho un par de renders para mostrar otro tipo de puertas que he diseñado porque por ejemplo esa imagen que tú ves ahí Eso es un render seguro, acabas de bajar.
+34:40 Guillermo Pernia: Un poquito más arriba Un poquito más arriba Un poquito más arriba esa
+34:42 Juan Carlos Vannini: Sí claro.
+34:43 Guillermo Pernia: Entonces cuando ya la moda trabaja con renta obviamente yo no creo es render pero
+34:47 Juan Carlos Vannini: No yo no hago render Pero ahora con ella y hago render todo el tiempo. claro, yo yo y de hecho sí hago renderizas básicos Pues porque yo hago tres,
+34:52 Guillermo Pernia: yo te puedo
+34:58 Juan Carlos Vannini: pero pero obviamente no te puedo hacer un levantamiento de infográfico de tipo esto pero
+35:02 Guillermo Pernia: No no, eso ya yo lo hago y yo lo he hecho y te los mando y no son lo más
+35:04 Juan Carlos Vannini: No pero lo que te digo por ejemplo ahora con ella hay uno de lo estoy haciendo
+35:06 Guillermo Pernia: profesional, pero se ven bien.
+35:09 Juan Carlos Vannini: unas locuras que y me mandas un render y lo convierto en una foto entonces si le
+35:10 Guillermo Pernia: Me imagino.
+35:14 Juan Carlos Vannini: quita toda la estética de render, sabes?
+35:15 Guillermo Pernia: Ah Bueno entonces te voy a mandar mi render para que le para que por problemas.
+35:18 Juan Carlos Vannini: No vale idea brother de las cosas que se están haciendo con ella.
+35:22 Guillermo Pernia: Es bastante bien lo que causa.
+35:25 Juan Carlos Vannini: Bueno, con tal de que hagas un render bien. Tú me lo das y te convierto una foto literal que parece dentro de una foto del apartamento.
+35:32 Guillermo Pernia: Bueno te voy a mandar uno porque más o menos veas Norte ahorita pero
+35:42 Juan Carlos Vannini: Por WhatsApp y tratamos hacer una prueba.
+35:43 Guillermo Pernia: sí por WhatsApp por WhatsApp
+35:47 Juan Carlos Vannini: Yo pago todas las herramientas, yo pago brother, literalmente te puedo decir que son entre 550 y 600 euros al mes en herramientas de ella y entonces te yo cubro
+35:56 Guillermo Pernia: de pana
+35:57 Juan Carlos Vannini: todo lo que necesitas todo lo que necesitas, yo lo cubro, o sea, todo lo que es contenido de hecho, por ejemplo, el video de marca que le estoy haciendo a Carlos va a ser todo con ella, el primero introductorio después vamos a grabar,
+36:07 Guillermo Pernia: de
+36:07 Juan Carlos Vannini: vamos a grabar unos en físico. Okay, Y ahí va a salir contenido ya real, pero como él todavía no tiene la La Academia inaugurada, le va a hacer unos videos
+36:17 Guillermo Pernia: claro
+36:18 Juan Carlos Vannini: con ella y que la vaina Ya les hice el primer Draft y el se quedó loco.
+36:24 Guillermo Pernia: que
+36:24 Juan Carlos Vannini: O sea, yo te podría hacer videos también.
+36:26 Guillermo Pernia: Ahí te mandé las fotos Sabes que el bicho nunca me haya hecho el nombre de su academia, se te salió.
+36:33 Juan Carlos Vannini: Ah no lo quería decir.
+36:34 Guillermo Pernia: No lo quería decir.
+36:38 Juan Carlos Vannini: Le pelearon demasiado al nombre yo me puse muy poético y en verdad Bueno tiene todas las toda la lógica del mundo, el nombre y está súper bien fundamentada Pero su familia entendido que no le gusta.
+36:50 Guillermo Pernia: bueno Es un render por ejemplo en la puerta.
+36:53 Juan Carlos Vannini: Claro, Esto bueno, está render. Lo hiciste tú está bastante bien.
+36:57 Guillermo Pernia: Sí, lo hice yo, pero de pinga.
+37:01 Juan Carlos Vannini: está brutal por sobre todo porque la luz te la lanzaste súper bien, que siempre es el problema de los renders la luz pues
+37:10 Guillermo Pernia: Tengo años en este pedo, pues no, no soy el mejor, pero puedo hacer un render bastante.
+37:14 Juan Carlos Vannini: No, vale, está súper súper bien la iluminación. Está ahorita lo único medio raro es el
+37:20 Guillermo Pernia: Qué se pone un hdr?
+37:23 Juan Carlos Vannini: Exterior es lo único medio raro, pero porque está creo que no tiene perspectiva ser como plano. Claro pero está brutal, luego está súper bien Me encanta y no le has metido a
+37:32 Guillermo Pernia: HD Rey se llama se monta como un
+37:43 Juan Carlos Vannini: Cómo es que se llama c*** este el
+37:48 Guillermo Pernia: Para renderizado.
+37:49 Juan Carlos Vannini: Una locura huevón. Es de juegos, pero los arquitectos hasta hacen locuras con eso porque tiene un sistema de de renderizado que te cagas y el realismo que da es una vaina loca. Después te lo Investiga está brutal. Bueno, Esto Ajá Y este detalle de como que morado esto es parte de la puerta pues
+38:12 Guillermo Pernia: Y o sea, es que somos es un color anodizado azul.
+38:19 Juan Carlos Vannini: Claro porque tú tú con todo lo que aprendiste de los vidrios Entonces ahora lo
+38:19 Guillermo Pernia: Minion
+38:22 Juan Carlos Vannini: puedes llevar a todo lo que lleva un vidrio.
+38:24 Guillermo Pernia: Pues claro, claro que es el mismo principio lo que yo estaba haciendo con lo que hacen estos trabajos italianos y venden esas puertas por unos precios absurdos.
+38:33 Juan Carlos Vannini: Y ya va y esto por ejemplo tiene cuando tú vas caminando va cambiando el color
+38:33 Guillermo Pernia: Pues varía un poco según la luz que le pega el aluminio, no, pero eso.
+38:40 Juan Carlos Vannini: o sea, dependiendo lo que le pega.
+38:50 Guillermo Pernia: no es una cualidad como tal de
+38:52 Juan Carlos Vannini: Y hay vidrios que tienes que son así, no? Que de repente la perspectiva y el
+38:55 Guillermo Pernia: Sí hay una hay uno que se llama dicroico que dependiendo del del ángulo en que veas el vidrio se se ve de un color distinto no se estudia en Madrid
+39:06 Juan Carlos Vannini: sí
+39:07 Guillermo Pernia: y un corte inglés, que está cerca mi primo del O hay una vaina que se llama gourmet corte inglés, algo así.
+39:19 Juan Carlos Vannini: Abajo dentro del corte inglés.
+39:21 Guillermo Pernia: Sótano, ahí pusieron como unas escaleras con unos vidrios de colores.
+39:23 Juan Carlos Vannini: sí
+39:26 Guillermo Pernia: Hicieron pegando el sticker Pero eso se puede hacer también por dentro como yo lo hago y es un virus iridiscente, o sea, depende es como una un bobo, pues depende donde lo veas se vea azul o se ve moradillo Sí ya tengo diferentes colores que le puedo meter los vidrios. Hago Después te mando más cosas cuando estamos trabajando.
+39:43 Juan Carlos Vannini: Sí, Tranquilo tranquilo brother.
+39:47 Guillermo Pernia: No, que si me entendiste lo que es las lápiz, lo que es la son dos.
+39:48 Juan Carlos Vannini: Me estás diciendo? Sí sí perfectamente.
+39:57 Guillermo Pernia: Okay perfecto
+39:58 Juan Carlos Vannini: Me encanta el proyecto porque siento que una de las arquitecto Entonces vas a ser creativo, que eso es importante, no vas a estar.
+40:05 Guillermo Pernia: Está riquísimo, me encanta.
+40:05 Juan Carlos Vannini: No vas a Y además que estás vendiendo algo Bastante creativo un producto creativo que me gusta y creo que tienes mucho potencial para hacer algo bien interactivo bien cool lo que lo que te iba a decir. Era era eso, o sea, Mira esta página web que acabo de hacer para una esta gente son una ellos son una casa de cambio, se llama insular de toda la vida de Venezuela que ahora están rehaciendo su imagen obviamente es una casa de cambio, o sea, aquí la creatividad tiene que ser un poquito más en algunos elementos, no, en el no hay producto como tal entonces Claro tú tienes que pensar que la interacción yo me la busco trato de buscarmela a otros lados, pero fíjate, por ejemplo este efecto.
+40:45 Juan Carlos Vannini: y tiene un poquito granulado, va cambiando dependiendo de de qué tanto el movimiento le hagas y cuando sales se simplifica para que no pese y se empieza a
+40:52 Guillermo Pernia: Muy bonito.
+40:56 Juan Carlos Vannini: mover solo Okay entonces, claro, todo siempre movimiento hago este tipo de transición bien, Por ejemplo, fíjate como paso aquí esto se supone que todo es como que no Entonces ellos parte de su de esto Les hice todo branding color todas las fotografías todo está hecho por la página ellos una de las cosas que que hablan que que elaboramos con el branding era acortando distancias entonces para este pana está como todo pixelado y a través de la remesa como que se juntan entonces si te ves se te va a poner un poquito lento porque porque
+41:29 Guillermo Pernia: ok
+41:32 Juan Carlos Vannini: el efecto es un poquito Pesado
+41:34 Guillermo Pernia: no
+41:35 Juan Carlos Vannini: Pero bueno porque todavía estoy trabajando mucho esta sección y cuando y cuando terminas de hacer el scroll. Se puso lentísimo, ya, ya se fue para abajo y todo.
+41:46 Guillermo Pernia: he visto unas páginas huevón, que es como la de Apple que mientras tú vas troleando sean como
+41:50 Juan Carlos Vannini: sí, es justamente este efecto lo que pasa es que como Estoy compartiendo la
+41:52 Guillermo Pernia: a brutal
+41:54 Juan Carlos Vannini: pantalla se quedó como pegado y cuando termina de de revelarlo entonces empieza un video Y si después te vas otra vez otra vez lo mismo entonces ese tipo de
+42:02 Guillermo Pernia: A mí me encanta esa vaina.
+42:06 Juan Carlos Vannini: De Bueno me dirá por ejemplo, esta página que Este es otro nivel. Esto es una bebida energética. Bueno, no genere, verdad es la base de hongos de sabes lo que es el
+42:18 Guillermo Pernia: no
+42:18 Juan Carlos Vannini: León es un es un engagement motion son hongos que te tomas de verdad para la concentración brutal le va a ver cuando estaba haciendo la página web, me dejan demasiado el producto porque cada vez que iba al sitio me llevaba cajas y me hice además adicto la vaina grave.
+42:32 Guillermo Pernia: En serio?
+42:33 Juan Carlos Vannini: Sí, no tiene azúcar, no tiene nada, no tiene cafeína no tiene taurina. Es puro la melena de León que no lleva la gente Lleva años tomándolo para la atención y eso lo venden. Lo venden sintetizado, no de suplemento Y entonces lo lo convirtieron una bebida Y entonces Fíjate lo que te digo de las las interacciones, por ejemplo tipo las de Apple que que dices tú.
+42:58 Guillermo Pernia: Okay.
+43:00 Juan Carlos Vannini: Ya que tiene que cargar la página porque no debería estar así.
+43:03 Guillermo Pernia: la verdad
+43:11 Juan Carlos Vannini: Siempre cuando uno quiere Mostrar las vainas algo pasa.
+43:17 Guillermo Pernia: Y créeme que yo sé.
+43:18 Juan Carlos Vannini: Pero en verdad está raro, no entiendo nada. Entonces a medida que vas bajando da rota la cabeza.
+43:30 Guillermo Pernia: Y soy es para la concentración.
+43:30 Juan Carlos Vannini: Pero también es un traje entonces, pues también interactuar con ella. entiendes Entonces Sí para la concentración
+43:38 Guillermo Pernia: Y funciona.
+43:39 Juan Carlos Vannini: Sí sí, funciona Yo sí, yo tengo déficit de atención y te digo que te cae.
+43:44 Guillermo Pernia: Te pones un drama, bey se tomas una vaina de esas y le das hasta las tres de la
+43:46 Juan Carlos Vannini: Ya está lo malo. Es que sí es adictivo.
+43:48 Guillermo Pernia: mañana. ya
+43:51 Juan Carlos Vannini: Sí porque el cerebro se acostumbra algo que le hace trabajar mejor entiende Entonces es como la adicción la marihuana que no es. Que no es tipo la cocaína porque en verdad no, no le estás metiendo o tipo la cafeína incluso nos estimulante, pero es dependiente Entonces paso un poquito Igual tú como que tu cerebro le gusta estar en ese estado y la verdad yo me estaba tomando y ya Yo decía miradito, pero como no tiene ningún.
+44:21 Juan Carlos Vannini: Literalmente no tienen nada pura melena de León y ya ves entonces yo soy de trabajar con todo interactivo Oh muy bien, mi página web, por ejemplo, la mía Que obviamente es de diseño. Pero es todo está en movimiento. Todo tiene esas interacción Mira este elemento, por ejemplo, te montas aquí y sale esta locura Y después entonces te sales y se vuelve a quitar entonces tú abres y es un formulario.
+44:47 Juan Carlos Vannini: Y Los formularios gigantes, entonces escribe aquí Juan y te dice Hola Juan Cómo estás, sabes todo interactivo todo movimiento Todo diferente, sabes un menú así de grande, por ejemplo como la que estoy haciendo aquí donde tienes el logo gigante aquí todo las tarjetas tienen movimiento todo.
+45:05 Guillermo Pernia: Eso eso me gusta mucho Mario porque son páginas como que con fútbol personalidad porque no sabes.
+45:11 Juan Carlos Vannini: Con mucha personalidad muy bien diseñada Igual son funcionales. Y son funcionales, son rápidas esto de verdad, te estoy diciendo, Fíjate que está como pegado es algo, pasó ahí? A ver, porque este es el la de staging y después Mira por ejemplo, mira esto. Esta interacción que le estoy haciendo de ellos. Es esta casa. Cuando bajas aquí Aquí, mira.
+45:46 Guillermo Pernia: día noche y
+45:52 Juan Carlos Vannini: Pan, qué es esto que todavía está cargando, No tienes mi internet, está rarísimo.
+45:56 Guillermo Pernia: La foto dieron ellos.
+45:57 Juan Carlos Vannini: Creo que puede ser, no todo se las hice yo ellos me dieron una foto una.
+46:02 Guillermo Pernia: m*****
+46:03 Juan Carlos Vannini: Que era una foto que no sé cuál es que está como cargando todavía, déjame cambiarme, déjame cambiarlo. porque en verdad
+46:11 Guillermo Pernia: en verdad
+46:14 Juan Carlos Vannini: Sí sí, yo trabajando todas Pero bueno Esta es la del banco, por ejemplo, esto
+46:22 Guillermo Pernia: c*** pero esas páginas son Life Me las puedes mandar Yo las pongo amarilla después brutal
+46:30 Juan Carlos Vannini: es un banco que estoy haciendo va a ser el primer banco digital de Venezuela y
+46:33 Guillermo Pernia: Ah!
+46:35 Juan Carlos Vannini: es también aquí ves, no va a cargar. Ah, no, sí, está cargando. Es esto, por ejemplo es un elemento 3D también todo todo también interactivo.
+46:41 Guillermo Pernia: mira Y ya también al teléfono, huevón.
+46:47 Juan Carlos Vannini: Sí, no, bueno, el tres, por ejemplo se puede poner en teléfono pero tarda mucho en cargar entonces?
+46:51 Guillermo Pernia: No yo no puedo entrar, pero tú puedes adaptarla para que sea para el teléfono una versión más simplificada.
+46:55 Juan Carlos Vannini: Sí yo simplemente lo que hago es que en el teléfono bueno, si te fijas todas mis páginas son responsibles.
+47:03 Guillermo Pernia: Ah mira ya está bien, perfecto.
+47:03 Juan Carlos Vannini: Se pone una imagen. Entiendes, pero que bueno, que también también. Se puede poner interacciones Lo importante es ser inteligente donde lo pones, por ejemplo la página web lo que más tarda en cargar es el header la parte de arriba, la fotografía carga todo es decir, le metes un traje de la parte de arriba. La página web se va a quedar pensando lo que
+47:25 Guillermo Pernia: no, no me interesa que en el teléfono se vean esas cosas solamente que Que obviamente, se puede ver en el teléfono bien sin pedo pues
+47:29 Juan Carlos Vannini: No, lo que hacen es que bajas y la interacción es más abajo ya. Déjame ver que esto creo que ya cargó. fotos como que no están cargando No entiendo nada que rápido Pero te lo prometo no es la página es como mira ahora sí, mira, ahí está
+47:45 Guillermo Pernia: No vale.
+47:48 Juan Carlos Vannini: Ajá ellos. Me dieron una de estas, no me recuerdo que la una de las que está como medio oscurita creo que es una por aquí y yo las agarré todas con ella ahí y fui claro, después tengo que pasar las Photoshop tengo que montarles una encima a la otra que Tengo que asegurarme, por ejemplo, le hay hay una de estas, a ver si tú te das cuenta que tiene algo que las otras fotos no tienen.
+48:04 Juan Carlos Vannini: bueno
+48:06 Guillermo Pernia: No, no lo vi.
+48:08 Juan Carlos Vannini: Mira está pasando de día anoche tal Pero si te vienes para acá. Ahí viene una puerta aquí que no está, ves la puerta la puerta la casa, en
+48:15 Guillermo Pernia: dónde está
+48:16 Juan Carlos Vannini: verdad no tiene puerta, ves aquí aquí no importa, pero es que aquí Ale hay, por ejemplo Entonces todos después requiere esas limpiar tengo que tengo que
+48:21 Guillermo Pernia: sí
+48:27 Juan Carlos Vannini: quitar las extra chimeneas, que me ponga ponerla justamente uno encima la otra,
+48:29 Guillermo Pernia: claro
+48:31 Juan Carlos Vannini: pero por ejemplo este efecto que a mí me gusta burda que primera vez que lo hago para una página.
+48:37 Guillermo Pernia: Está riquísimo.
+48:37 Juan Carlos Vannini: porque yo había hecho como que otro tipo de cosas esto lo estaba pensando con contigo Y es que ya se podría hacer algo Sabes
+48:44 Guillermo Pernia: Sí yo he hecho mucho render que si los perfiles de los diferentes colores que tengo así como alineados en círculos Tengo varias ideas Aunque sé que tú las vas a poder materializar.
+48:55 Juan Carlos Vannini: Por eso Imagínate pasar el Mouse y que cambie el el por ejemplo que cambie el material Eso se podría.
+49:02 Guillermo Pernia: Sí por ejemplo son abatibles que son puertas normales abrir y cerrar, pero de colores, entonces estaba en una imagen que hace tiempo Adidas sacó unos zapatos que eran de colores y eran como círculos de todos los zapatos así en color.
+49:14 Juan Carlos Vannini: Bueno yo uso yo uso esta plataforma Ok que se llama spline que bueno es una
+49:16 Guillermo Pernia: Y c*** No sé hacer algo gráfico Así que se mueva el círculo, no sé eso.
+49:27 Juan Carlos Vannini: plataforma 3D que es sobre porque tienen un acuerdo en
+49:27 Guillermo Pernia: muy empapado de todas las venas que hay por eso que las vainas son tan tan distintas pues
+49:40 Juan Carlos Vannini: Sí es que es que es que wordpress es por así decirte. El la parte básica de la web Pero mira esto a ti que tú tienes vidrio, te va a
+49:45 Guillermo Pernia: ya
+49:48 Juan Carlos Vannini: gustar. Esto es ves como tienes los elementos así con el fog con el con el tipo de glass y tiene miles de material, o sea, obviamente nunca como trimax no esto es mucho más simplificado pero
+50:02 Guillermo Pernia: no
+50:04 Juan Carlos Vannini: Tenemos una cantidad de materiales para jugar con que aquí con Y fíjate, por ejemplo, el como Boquilla y todo. Esto es interactivo y web friendly Entonces lo importante es lo que te digo ser como inteligente donde lo pones para que no te
+50:14 Guillermo Pernia: sí
+50:16 Juan Carlos Vannini: joda con con el performance de la web entiende Pero lo puedes poner donde tú
+50:19 Guillermo Pernia: claro
+50:20 Juan Carlos Vannini: quieras donde tú quieras. Y y lo puedes hacer interactivo como puedes no hacerlo interactivo, mira y lo chévere esta gente, por ejemplo es que lo que sea que hagamos uno. Imagínate tú que además como tú usas tres, me puedes mandar render si yo los meto aquí literalmente como un stl y simplemente le lo lo mapeo con un material, que yo quiera, pero también hay una librería muy grande de colaboradores, la gente hace sus propias cosas y los pone libre para que tú puedas hacer remix Y entonces ya tienes cosas que están creadas podemos Buscar tipos de glass effects y deben haber miles de haber miles y yo estos elementos me los puedo copiar y pegar en mi en mi proyecto y como yo pago el Premium Yo después lo meto en mi página web como yo quiera entonces lo que no.
+51:04 Juan Carlos Vannini: Tenga lo que sea muy complejo incluso podríamos ver hasta si lo podemos buscar para no tener que recrearlo entiendes.
+51:10 Guillermo Pernia: Claro claro
+51:12 Juan Carlos Vannini: Mira este tipo de vidrio, por ejemplo que se hizo para que con estos tubos y como refleja o sea
+51:18 Guillermo Pernia: Sí sí, yo tengo un virus muy parecido a ese que en verdad existe sea más fluret.
+51:23 Juan Carlos Vannini: Bueno entonces Imagínate tú buscamos aquí en la librería Search Community ponemos clase. no, y deben haber 700.000 tipos de miraculous y todos los tipos de reflejo que te puedas imaginar y todos los tipos de vidrio de vidrio y lo que tú dices tipo
+51:40 Guillermo Pernia: muy
+51:44 Juan Carlos Vannini: Apple
+51:44 Guillermo Pernia: cool c***, justamente es justamente Estoy buscando Esa no es así, porque con la campaña de integridad que estoy haciendo sádico Entonces no como una Bueno un
+51:52 Juan Carlos Vannini: mira
+51:56 Guillermo Pernia: pan ahí, que me está ayudando más sacar una foto y va a ser una campaña intriga como para lanzar la marca de perla, porque va a ser como un videíto de la caja de los sapos que estoy haciendo y quiero que en el video haya de estos destellos Cuando ponen un producto nuevo de la Apple que de repente ves con una vaina Así que se dobla y se ve el destellito en la pantalla sin internet para
+52:16 Juan Carlos Vannini: Eso lo podemos generar también porque yo yo o hacemos el diseño inicial en
+52:17 Guillermo Pernia: ver si lo podía sacar y utilizarlo pero bueno.
+52:25 Juan Carlos Vannini: Photoshop o lo hacemos inicialmente en 3D o lo que sea y después yo lo animo con con ella, eh? Y ni siquiera ya, yo tengo que estar animando, o sea, yo hago mucho graphics OK cuando quiero que sea muy preciso y muy perfecto, por ejemplo, si quiero arrimar un logo un logo un icono Yo eso lo hago a mano, pero si por ejemplo queremos una animación de algo tipo, eso que tú dices que es muy Limpio el vector que te das cuenta si es ella hay entiendes Pero o tipo flairs
+52:54 Guillermo Pernia: ya
+52:56 Juan Carlos Vannini: texturas Close de cosas quedan arrechísimas en ella arrechísima y se puede hacerlo, pero bueno.
+53:04 Guillermo Pernia: Una pregunta marico, referente a las páginas, tú me diste que costaba más o menos veintipico al mes y luego no tienes que tener un Hosting Y qué más Cuánto se pagan cómo funciona.
+53:14 Juan Carlos Vannini: Tiene buen Flow te aloja la página, o sea, está alojada lo que tú tienes que tener tu dominio ya que lo pagas aparte y listo.
+53:22 Guillermo Pernia: Cuánto me puede costar la página al año?
+53:24 Juan Carlos Vannini: La página al año te puede salir Mira Mínimo yo creo que vas a tener que pagar 24, pero después todas las cosas adicionales que pagas que webflow no es barato son cosas como por ejemplo, si quieres instalar la herramienta de analice, que
+53:33 Guillermo Pernia: Okay.
+53:38 Juan Carlos Vannini: es como un Google analytics, sabes para que te dé Data de quienes visitan, sabes todo el tema de marketing. Eso te lo cobran nueve euros adicionales y después hay otras mensual, claro, te van sumando Sí pero Google analítica, es
+53:48 Guillermo Pernia: mensual
+53:52 Juan Carlos Vannini: gratis Entonces es cuestión de Instalar Google analytics, está en los taxis y
+53:53 Guillermo Pernia: Ya que me cuesta 600 dólares anuales.
+53:58 Juan Carlos Vannini: ya. Qué cosa la página vale 24 por 12 Cuánto es eso.
+54:01 Guillermo Pernia: sí cuatro no 24 por 12 no son
+54:10 Juan Carlos Vannini: ochenta y ocho
+54:11 Guillermo Pernia: Pero digo si metes extras y mierdas 500.
+54:13 Juan Carlos Vannini: Sí pero por ejemplo ahorraría, pero tú me dijiste que quieres poner dos idiomas Entonces es pocos Así es un coñazo Porque si las cobran que si aquí
+54:21 Guillermo Pernia: sí
+54:22 Juan Carlos Vannini: en los planes ves que está Una vaina que se llama local Pero porque tú puedes poner siempre código que te traduzca la página automáticamente con por ejemplo con con el Api de De Google Translate entonces que la página web dependiendo le das un botón y se traduce con Google Translate pero es chimbo porque no O sea ella Entonces no lo traduce perfecto.
+54:44 Guillermo Pernia: Claro claro, claro, claro.
+54:46 Juan Carlos Vannini: Ah este tipo este tipo de vainas, por ejemplo, aquí tuve Yo por ejemplo estoy en el plan desde 24 que es el que tú necesitas.
+54:54 Guillermo Pernia: sí
+54:57 Juan Carlos Vannini: Si c*** No me sale aquí ya dónde es que es que nos envíling. Es el plan de la página el plan de la página, déjame verlo aquí en el mío. Tú le das aquí y le das a Plants y aquí tienes los addons Sí entonces tiene Alice ves que son si no me equivoco eran nueve por dos mil visitas mensuales. 836 si quieres más visitas mensuales 5000 Entonces ya va subiendo, por ejemplo el banco. Ahora estamos pagando Messi 10.000, porque la gente 10.000 no O sea Diez mil visitas eran tres nueve euros adicionales, porque claro, la gente se volvió loca con el banco digital, entonces empezó de recibir un coñazo de tráfico y que no pasa nada Lo que pasa es que después de Diez mil ellos dejan de analizarte la Data entiende.
+55:59 Juan Carlos Vannini: Pero bueno yo analice no lo haría sobre todo para salir. Yo lo haría con Google Google y después pero si tienen este localization que es por cada Ah mira Son 12 12 dólares mensuales. Y te incluye tres idiomas adicionales.
+56:17 Guillermo Pernia: Okay está bueno.
+56:17 Juan Carlos Vannini: Lo cool de que es por loca la shml, si alguien entra a Estados Unidos directamente se lo pone inglés, si alguien entra desde España directamente se lo pone en español y el idioma adicional.
+56:29 Guillermo Pernia: escuchar Okay.
+56:31 Juan Carlos Vannini: Pero pero por ejemplo, lo que es los tres d, la herramienta yo ya la incluyo mis servicios. Yo hago los tres ejes y te los doy.
+56:42 Guillermo Pernia: OK OK
+56:45 Juan Carlos Vannini: Yo yo no, yo, o sea, lo no vas a tener que pagar nada adicional ya es como que una funcionalidad específica que tengamos que contratar un servicio con un Api o algo, o sea, pero en teoría es pagar web y tu dominio anual.
+56:56 Guillermo Pernia: No, no creo que haga falta, okay. Okay, Y tú cuánto te demora hacer una página?
+57:04 Juan Carlos Vannini: Ajá eso es importante dependiendo de la página.
+57:08 Guillermo Pernia: Okay.
+57:09 Juan Carlos Vannini: Pero mínimo, por ejemplo, con con tu primo nos hemos tardado burda, pero ha sido porque esas pasamos por branding. Él no se decidía con el nombre, Eh Yo también me he tardado un pelín en la parte.
+57:21 Guillermo Pernia: Claro, ojo, yo no estoy, no estoy apurado solamente que quiero entender los tiempos más o menos para ver de qué estamos hablando.
+57:25 Juan Carlos Vannini: Sí sí, sí, con él nos hemos tardado como seis meses un gay, pero se ha
+57:29 Guillermo Pernia: Okay.
+57:29 Juan Carlos Vannini: extendido una página realísticamente, o sea, siendo realista en verdad, por lo
+57:32 Guillermo Pernia: sí
+57:35 Juan Carlos Vannini: menos tres meses para que esté perfecto entienda. las páginas web la gente siempre quiere no quiere, pero jugando puedo salir con un soft landing quiero salir con landing page se puede hacer entiendes lanzar un landing condicional a la gente que ya viene y tal, pero mínimo para que de verdad las cosas estén bien y poder lanzar un landing page necesitamos por lo menos mes y medio o sea Pero lo que te digo para que quede perfecta y sobre todo si queremos hacer algo cool, sabes que queremos hacer algo bien, yo te digo que mínimo eso sabes? Mira, mira este efecto que Va pasando si esto ellos son unos panas ellos son de paneles eléctricos de mantenimiento especialmente.
+58:25 Guillermo Pernia: Está riquísimo.
+58:25 Juan Carlos Vannini: Si queremos hacer interacción sabes que la página sea animada que queremos hacer cosas necesitamos tiempo Pues todo y precio yo te lo mando para que lo
+58:33 Guillermo Pernia: claro
+58:37 Juan Carlos Vannini: veas.
+58:38 Guillermo Pernia: Eso te iba a preguntar y eso tú después me mandas una vena, quiere una avena
+58:42 Juan Carlos Vannini: yo no ojo yo no cobro barato, pero cobro barato para el tipo de servicios que
+58:44 Guillermo Pernia: Que bueno, lo pueda pagar entonces hay que verlo pues. ya
+58:51 Juan Carlos Vannini: hago, o sea la gente que
+58:52 Guillermo Pernia: No yo no, yo no estoy esperando que me cobres barato y nada por el estilo Pero
+58:54 Juan Carlos Vannini: Hace no, no, Yo sé pero para que te digas la inversión, te lo hago, te hablo con toda sinceridad O sea al final de para mi reputación es mi Es mi es mi único es casi mi producto la gente la yo no hago publicidad yo todo mi trabajo
+59:06 Guillermo Pernia: Sí, sí.
+59:10 Juan Carlos Vannini: se refería una persona me refiero. Y todo el mundo ha quedado satisfecho obviamente de vez en cuando han pasado a cagadas, sabes? Pero sobre todo hace más tiempo que no tenía tanta experiencia, pero el tipo de servicio que yo hago. Te soy 100% sincero La gente lo cobra por lo menos el triple de lo que yo puedo, porque el problema
+59:31 Guillermo Pernia: Pero yo pasé por ahí, precisamente no estoy buscando eso me explico.
+59:33 Juan Carlos Vannini: El problema principal de mis precios Es que yo me muevo mucho con venezolano, entiendes Entonces claro, la gente está acostumbrada, No yo tengo un primo, le pago doscientos euros en Venezuela y me hace la entiendes lo que te digo. Sí y luego al rato sale caro y
+59:48 Guillermo Pernia: Sí, Yo tengo bastantes personas que le puedo pagar una página, pero es que me hacen una página de m***** que no estoy buscando.
+59:53 Juan Carlos Vannini: Y no, no, no, no, ellos yo te voy a hacer algo con mucho nivel. Y te voy a asesorar mucho y voy a hablar hasta por los codos y vamos a sacar algo bien cool y lo que estoy en mucho con lo que te puedo ayudar, No solo con la web Entonces al final siempre terminas una una relación a largo plazo Por eso es que yo ni hago publicidad, o sea, yo sigo trabajando con mis clientes de siempre me siguen refiriendo y saliendo nuevas Así que yo.
+01:00:17 Guillermo Pernia: El papá de él, huevón, que es una fiera.
+01:00:25 Juan Carlos Vannini: Carlos lo único pregúntale cómo, cómo cómo aprendió a negociar? Porque es tremendo negociante eso sí. El cine negoció pero pero bien, pues porque al final llegamos a un punto medio en el que tenemos que estar y y punto y así que no, No tengas miedo tú tampoco en en que yo negocio con cosas realistas es decir, que si yo voy a sacrificar menos tiempo o menos esfuerzo yo todo negociar entiende Entonces por ejemplo, yo
+01:00:52 Guillermo Pernia: che
+01:00:55 Juan Carlos Vannini: mando un paquete completo de qué es lo que va y vamos viendo brother, c***, sabes qué? Si quiero esto, pero c*** quizás toda la parte de esto que yo sé que nos ha llevado demasiado tiempo con Yo qué te pasa Qué te parece si la quitamos y ajustamos entiende. Seguro seguro cuando te mando Te mando una propuesta Eso sí, Dame chance.
+01:01:08 Guillermo Pernia: si no, ahí lo vemos Igual yo tengo mi correo por aquí y me lo mandamos hablando, Yo me tengo que ir ya, pero pero no, no, tranquilo, no, pues no te agradezco que el tiempo que tomaste para explicarme todo porque me siento más confiado y más tranquilo, pues así que
+01:01:30 Juan Carlos Vannini: Yo creo que te las es que querías hoy es miércoles. Si no te la mando el viernes más tarde a la luna ok.
+01:01:35 Guillermo Pernia: Sí está bien, no te preocupes por eso.
+01:01:37 Juan Carlos Vannini: Montándola bien, porque las propuestas también las hago bien para que para que de entrada ya entiendan.
+01:01:42 Guillermo Pernia: perfecto, dale a ver buen trabajo, tienes cosas muy chéveres y me entusiasmaste
+01:01:44 Juan Carlos Vannini: Seguro, vamos a hacer algo.
+01:01:47 Guillermo Pernia: así que Dale a ver un gusto, Dale pues bye.
+01:01:50 Juan Carlos Vannini: un abrazo Bye
+  

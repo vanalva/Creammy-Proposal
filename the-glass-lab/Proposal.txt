@@ -1,0 +1,728 @@
+
+The Glass Lab - Pernia
+Milky Branding + Web Dev + RRSS + Otros. 
+
+
+No.P-003
+
+,-----------------------------------------------------------------
+Project
+Proyecto
+Projekt
+Progetto
+プロジェクト
+
+
+1) Introducción
+Hay materiales que simplemente existen, y otros que cuentan historias.
+ El vidrio pertenece a los segundos.
+Su valor no radica únicamente en su resistencia o en su transparencia, sino en la manera en que transforma la luz, el espacio y la percepción.
+ The Glass Lab nace desde esa premisa: no como una fábrica, sino como un laboratorio de posibilidades. Un espacio donde la materia deja de ser estática y se convierte en lenguaje.
+Cada lámina, cada textura, cada reflejo es un experimento en precisión y estética.
+ Y detrás de esa búsqueda está la visión de una marca que no solo produce vidrio, sino que interpreta lo que puede llegar a ser.
+Esta propuesta busca capturar justamente eso: la esencia experimental de The Glass Lab y la elegancia funcional de Pernia Glass, traduciéndolas en una presencia digital que las proyecte con la misma sofisticación con que trabajan el material.
+ Diseñar una identidad que hable con el mismo lenguaje del vidrio: clara, precisa y luminosa.
+
+2) Contexto y propósito
+Guillermo Pernía lidera dos proyectos complementarios:
+The Glass Lab → un espacio de innovación y experimentación visual con vidrio arquitectónico, donde la creatividad se materializa en combinaciones, tratamientos y técnicas únicas.
+
+
+Pernia Glass → una línea más estructurada y comercial enfocada en sistemas de puertas corredizas y soluciones arquitectónicas de alta gama, inspiradas en referentes italianos como Rimadesio, ADL y Lualdi.
+
+
+Ambas marcas comparten un mismo origen, pero comunican desde polos distintos: una desde la exploración, la otra desde la precisión.
+ El objetivo es definir una identidad digital dual, coherente entre sí, que permita proyectar el mismo nivel de diseño, calidad y control que caracteriza el trabajo de Guillermo.
+Más que diseñar sitios web, se trata de construir experiencias visuales: espacios que transmitan textura, profundidad, luz y materialidad. Que no solo muestren productos, sino que despierten curiosidad.
+
+3) Brief creativo
+El vidrio, por naturaleza, es un medio entre lo visible y lo invisible.
+ Nuestro desafío será crear un lenguaje visual que juegue con esa dualidad: claridad y misterio, estructura y fluidez, ciencia y arte.
+The Glass Lab
+Un portal inmersivo, casi museográfico, donde cada tipo de vidrio se presenta como un elemento en una tabla periódica ,una composición de muestras que pueden explorarse y descubrirse con detalle.
+ Cada pieza mostrará sus propiedades: color, textura, composición, transparencia, aplicaciones.
+ La experiencia digital debe sentirse táctil y física, como si el usuario pudiera deslizar los dedos sobre el material.
+El resultado será una web interactiva, minimalista y atmosférica, con animaciones sutiles, reflejos controlados y una narrativa visual limpia y técnica.
+Pernia Glass
+Una marca más arquitectónica, con una estética precisa, moderna y funcional.
+ Su sitio se enfocará en mostrar productos: puertas, sistemas de aluminio, correderas y detalles constructivos con un enfoque visual aspiracional y editorial.
+ Cada fotografía o render transmitirá control, orden y lujo silencioso.
+ Se destacarán las características técnicas, la durabilidad y la perfección del ensamblaje.
+Ambas webs compartirán la misma base de coherencia visual, pero con personalidades propias:
+The Glass Lab: emocional, artística, experimental.
+
+
+Pernia Glass: racional, técnica, arquitectónica.
+
+
+
+4) Propuesta de valor
+El objetivo es construir una presencia digital de alto nivel, con un equilibrio entre estética y funcionalidad.
+Dirección visual unificada
+ Un sistema visual que conecte ambas marcas mediante colorimetría neutra, tipografía precisa y un uso refinado de la luz y las sombras.
+ El reto no es llenar de efectos, sino controlar el brillo, el reflejo y la atmósfera, para que el diseño comunique sin exagerar.
+
+
+Diseño web inmersivo en Webflow
+ Desarrollo completo en Webflow, con animaciones fluidas y estructura CMS para la gestión autónoma de catálogos de vidrios y productos.
+ Experiencia responsive, optimización SEO y rendimiento técnico de alto nivel.
+
+
+Interactividad y materialidad digital
+ Incorporación de microinteracciones que simulen la sensación de vidrio ,reflejos, deslizamientos, transparencias, difuminados, manteniendo el sitio liviano y rápido.
+ Cada clic debe sentirse como un pequeño acto de descubrimiento.
+
+
+Retoque y visualización avanzada
+ Postproducción y retoque de renders o fotografías mediante IA y edición profesional, para lograr una estética homogénea y premium en todo el contenido visual.
+
+
+Autonomía y escalabilidad
+ Panel de gestión para agregar nuevos tipos de vidrio, proyectos o colecciones sin depender de terceros.
+ Entrenamiento y guía en uso del CMS y gestión de contenidos.
+
+
+
+3) Mi Propuesta: 
+Milky Branding
+¿Por qué Milky Branding es lo que necesitas?
+Tu marca es mucho más que un logotipo o una tipografía elegante; es el reflejo material de tu visión.
+ Milky Branding está diseñado para ayudarte a construir una identidad que se sienta tan precisa y sofisticada como el vidrio que trabajas: limpia, versátil y con luz propia. El objetivo es crear una presencia que inspire confianza, destaque en el mercado arquitectónico y permanezca en la memoria.
+ Esto es lo que mi servicio de branding puede ofrecerte:
+
+Implementación Técnica
+Para abordar los desafíos técnicos que presenta una marca ligada a la arquitectura y al diseño industrial, como la escala, legibilidad y adaptabilidad, aplicaré un enfoque de diseño que asegure que el logotipo y sus variaciones mantengan su integridad en cualquier formato o superficie.
+ Desde una placa grabada en acero o vidrio hasta un favicon en una web minimalista, el símbolo debe conservar su impacto y precisión.
+ La clave estará en la simplicidad estructural, el control de proporciones y la capacidad del sistema visual de adaptarse sin perder carácter.
+ Cada decisión ,tipografía, espaciado, color, estará pensada para funcionar como un sistema visual arquitectónico, sólido y atemporal.
+
+Una Identidad Única
+Me involucraré personalmente en cada etapa del proceso de creación de la identidad de The Glass Lab y Pernia Glass.
+ Desde la paleta cromática (inspirada en materiales como vidrio, aluminio y piedra) hasta la tipografía que mejor hable de su precisión técnica, cada detalle será seleccionado para capturar la esencia experimental de una y la funcionalidad de la otra.
+ El resultado será una identidad que no imita, sino que interpreta: científica, elegante y tangible.
+
+Imágenes Memorables
+Diseñaré un logotipo y un sistema visual que no solo atraiga la mirada, sino que permanezca en la mente.
+ Quiero que, al ver la marca, los arquitectos, diseñadores e interioristas sientan lo mismo que al ver una pieza bien fabricada: orden, exactitud y belleza controlada.
+ Cada aplicación ,desde una caja de muestra hasta la interfaz web, debe transmitir la misma sensación de cuidado y perfección que existe en cada uno de sus productos.
+
+Mensajes Persuasivos
+Toda marca necesita un lenguaje.
+ Redactaré textos que no solo informen sobre sus productos, sino que comuniquen su filosofía de trabajo: precisión, innovación y respeto por la materia.
+ La narrativa de The Glass Lab se construirá desde el descubrimiento y la experimentación, mientras que la de Pernia Glass desde la arquitectura y la confianza técnica.
+ El tono será claro, refinado y con un carácter visual propio, como el reflejo de la luz sobre una superficie pulida.
+
+Recursos Gráficos
+Para enriquecer la identidad visual, desarrollaré un conjunto de recursos complementarios que reforzarán la coherencia entre ambas marcas.
+ Esto incluirá patrones inspirados en tramas de vidrio, ilustraciones técnicas, iconografía de materiales, gradientes y texturas que evoquen transparencia y estructura.
+ Cada recurso será diseñado para mantener una continuidad visual entre el laboratorio artístico (The Glass Lab) y la marca arquitectónica (Pernia Glass).
+
+Consistencia de Marca
+La coherencia visual será uno de los pilares centrales.
+ Aseguraré que todos los elementos ,desde el sitio web hasta las etiquetas, catálogos o presentaciones, compartan una misma voz visual y conceptual.
+ El Brandbook incluirá pautas de aplicación, tono fotográfico, márgenes, sistema tipográfico y normas de uso para garantizar que la marca pueda reproducirse con precisión en cualquier medio.
+ Esto les permitirá mantener control sobre su imagen sin depender de terceros.
+
+Ventaja Competitiva
+En un sector donde la mayoría de marcas se definen por su maquinaria, The Glass Lab y Pernia Glass pueden diferenciarse por su visión.
+ Milky Branding no busca crear un logo bonito, sino una experiencia visual y conceptual que traduzca el valor del vidrio en emoción, rigor y confianza.
+ Cuando la identidad está bien construida, no necesita explicaciones: la calidad se percibe antes de que se lea.
+
+
+Incluye:
+Logotipo y variaciones (adaptativo a todos los formatos y tamaños), optimizado para aplicaciones físicas como grabados, placas, impresiones sobre vidrio y señalética arquitectónica.
+
+
+Naming Creativo (en caso de subcategorías o colecciones dentro de The Glass Lab), explorando terminologías inspiradas en la ciencia del vidrio, la luz y los materiales.
+
+
+Eslogan corto y preciso que condense la filosofía de cada marca: innovación técnica y estética depurada.
+
+
+Paleta de colores personalizada, inspirada en materiales reales ,vidrio, aluminio, cemento, niebla y luz,, con un sistema cromático coherente entre The Glass Lab y Pernia Glass.
+
+
+Selección tipográfica que refleje la personalidad técnica, moderna y arquitectónica de ambas marcas, con variantes adaptadas a entorno web e impreso.
+
+
+Copywriting Creativo, que construya una narrativa sólida y coherente con su identidad visual, transmitiendo el carácter experimental de The Glass Lab y la precisión técnica de Pernia Glass.
+
+
+Recursos complementarios (patrones, iconografía técnica, texturas translúcidas, gradientes y composiciones visuales inspiradas en el material y sus procesos).
+
+
+Acompañamiento estratégico durante la fase de implementación, garantizando coherencia entre marca, entorno digital y presentación comercial.
+
+
+Maquetas de aplicaciones (mockups de catálogos, packaging de muestras, señalización, renders de página web, y piezas editoriales), para visualizar la marca en diferentes contextos físicos y digitales.
+
+
+Brandbook (documento detallado sobre los lineamientos visuales, valores, voz, tono comunicacional y usos del sistema gráfico en todos los formatos).
+
+Recibirás:
+Brandbook completo y detallado.
+Tu Google Drive personal con todos los elementos y recursos de tu nueva marca en todos los formatos y dimensiones necesarios para su implementación tanto en formatos digitales como físicos.
+Hasta 3 revisiones y cambios durante el proceso creativo.
+
+Un sitio web no es solo una vitrina digital; es una extensión tangible de la marca, el espacio donde forma y función se encuentran.
+ Para The Glass Lab y Pernia Glass, el desafío no es simplemente mostrar productos, sino transmitir sensaciones: luz, textura, precisión.
+ La creación de su sitio web en Webflow está pensada para capturar esa esencia ,la del vidrio como lenguaje arquitectónico, y transformarla en una experiencia digital inmersiva, elegante y eficiente.
+
+Una presencia digital que refleje su materialidad
+En el entorno actual, una web debe ser más que un catálogo: debe expresar una forma de pensar.
+ Webflow permite construir un espacio digital que interpreta la estética del vidrio, el rigor técnico y la sofisticación que definen a ambas marcas.
+ Cada transición, sombra y reflejo puede ser diseñado con precisión, creando una sensación de profundidad y claridad que conecte con arquitectos, diseñadores y clientes.
+ Nada en The Glass Lab ni en Pernia Glass es improvisado; su sitio web tampoco debería serlo.
+
+Interactividad que genera presencia
+La diferencia entre una web común y una experiencia inmersiva está en el movimiento.
+ Webflow ofrece un control total sobre interacciones, animaciones y microtransiciones que pueden recrear digitalmente la sensación de luz sobre una superficie de vidrio: reflejos suaves, efectos de transparencia, desplazamientos que simulan capas de material.
+ Cada página se sentirá viva, como si el usuario estuviera recorriendo un espacio físico diseñado con el mismo nivel de detalle que una obra arquitectónica.
+
+Gestión de contenido intuitiva
+La innovación no debería depender de la complejidad técnica.
+ El CMS integrado de Webflow permite que el propio equipo gestione fácilmente nuevas piezas de vidrio, proyectos, productos o colecciones, sin conocimientos de programación.
+ Cada categoría podrá actualizarse de forma dinámica, manteniendo la estructura visual y la coherencia estética.
+ Esto garantiza autonomía total y un flujo de trabajo ágil, para que la marca evolucione con la misma flexibilidad con la que experimenta en su laboratorio.
+
+Optimización y rendimiento
+Un sitio de esta naturaleza requiere equilibrio entre belleza y velocidad.
+ Webflow garantiza una experiencia fluida, con carga rápida, rendimiento optimizado y diseño responsivo, asegurando que la interacción con el sitio sea tan limpia y precisa como las superficies que representan.
+ El sistema integra estándares avanzados de SEO y accesibilidad, mejorando la visibilidad y el posicionamiento sin sacrificar el diseño.
+
+Seguridad y soporte de nivel profesional
+Con Webflow, el hospedaje está integrado en una infraestructura segura, moderna y global.
+ Cada sitio cuenta con cifrado SSL, respaldo automático y mantenimiento continuo sin necesidad de plugins externos.
+ Esto significa menos tiempo resolviendo problemas técnicos y más tiempo perfeccionando la experiencia visual.
+
+Conclusión
+Elegir Webflow para desarrollar las webs de The Glass Lab y Pernia Glass es optar por una herramienta que combina la libertad creativa del diseño con la precisión de la ingeniería.
+ Una plataforma que no solo aloja contenido, sino que traduce el lenguaje del vidrio al espacio digital: limpia, controlada y llena de luz.
+ Es el entorno ideal para una marca que no solo quiere mostrar lo que hace, sino cómo lo hace sentir.
+
+
+02//Shakefront Webflow Full Package (CMS)
+
+Milky Branding
+ Silky Edits (Retoque fotográfico y postproducción profesional)
+
+Diseño UI/UX Responsive
+Creación de wireframes y estructura visual para vistas de escritorio, tablet, móvil y horizontal.
+
+
+Diseño de un prototipo interactivo que permita explorar la navegación y las animaciones, simulando la experiencia de luz y movimiento sobre el vidrio.
+
+
+Enfoque visual basado en arquitectura, materialidad y equilibrio entre forma y función.
+
+
+
+Desarrollo en Webflow
+Diseño, desarrollo e implementación de más de 10 páginas personalizadas en Webflow, utilizando diseño “pixel perfect” y sistemas visuales dinámicos.
+
+
+Programación personalizada para lograr una interactividad inspirada en la materialidad del vidrio , transparencias, reflejos, profundidad y microanimaciones.
+
+
+Estructura escalable para mantener consistencia entre The Glass Lab (laboratorio creativo) y Pernia Glass (línea arquitectónica).
+
+
+
+Sitemap
+Desarrollo de un sitemap claro y jerárquico que organice las categorías de vidrios, puertas, proyectos y colecciones.
+
+
+Creación de una página de Styleguide para mantener consistencia visual y facilitar modificaciones globales.
+
+
+Implementación de un sistema de color, tipografía y componentes que refleje la coherencia visual y técnica del vidrio arquitectónico.
+
+
+
+Elementos Interactivos y Llamados a la Acción (CTA)
+Diseño de CTAs con enfoque sensorial, donde el movimiento y la luz guían al usuario intuitivamente.
+
+
+Implementación de pop-ups y pestañas dinámicas para avisos de cookies, catálogos o contacto técnico.
+
+
+Inclusión de efectos de desplazamiento, hover y transparencia para reforzar la sensación de profundidad.
+
+
+
+Funcionalidades Específicas para The Glass Lab / Pernia Glass
+CMS personalizado: para la gestión de fichas de vidrio, colecciones y proyectos arquitectónicos.
+
+
+Galerías interactivas con filtros por tipo de vidrio, color, espesor o técnica.
+
+
+Visualizador de muestras: sistema que permite mostrar la textura, transparencia y aplicaciones en contextos arquitectónicos.
+
+
+Videografía integrada: implementación de clips y loops que muestren procesos de fabricación, detalles de luz y montaje.
+
+
+Mapa interactivo: ubicación de obras o proyectos ejecutados en diferentes regiones.
+
+
+Sección profesional: espacio dedicado a arquitectos, diseñadores e interioristas, con fichas técnicas descargables y especificaciones por tipo de vidrio.
+
+
+
+Diseño de Elementos Adicionales
+Creación de pantallas modales, páginas de políticas, términos y condiciones.
+
+
+Thumbnails, encabezados y recursos visuales para una navegación limpia y precisa.
+
+
+Integración de iconografía técnica e ilustraciones minimalistas inspiradas en geometrías de vidrio y aluminio.
+
+
+
+Animaciones y Microinteracciones
+Implementación de animaciones sutiles que simulen la refracción de la luz y el movimiento del material.
+
+
+Efectos sobre el logotipo, botones y transiciones de página que refuercen la sensación de continuidad entre ambas marcas.
+
+
+Secuencias controladas para reflejos, transparencias y aparición progresiva de contenido.
+
+
+
+Optimización para Motores de Búsqueda (SEO)
+Estructura semántica optimizada para buscadores.
+
+
+Configuración de metaetiquetas, alt text y descripciones adaptadas al sector del vidrio arquitectónico.
+
+
+URLs limpias, carga optimizada y contenido ajustado a palabras clave estratégicas (arquitectura, interiorismo, vidrio laminado, etc.).
+
+
+
+Diseño Adaptativo Total
+Garantía de un diseño 100% responsive con comportamiento fluido en todos los dispositivos y resoluciones.
+
+
+Ajustes específicos para pantallas de alta densidad y experiencias táctiles.
+
+
+
+Configuración de Formularios de Contacto
+Creación de formularios elegantes y funcionales para contacto directo, solicitudes de muestras o fichas técnicas.
+
+
+Envío de formularios configurado a correos corporativos bajo el dominio de la marca.
+
+
+
+Pruebas y Optimización
+Pruebas de compatibilidad y rendimiento antes de publicación.
+
+
+Ajustes finales basados en métricas de carga, accesibilidad y experiencia del usuario.
+
+
+Validación visual y técnica para mantener el rendimiento sin sacrificar el diseño.
+
+
+
+Configuración de Hosting y Dominio
+Sitio alojado directamente en Webflow, con infraestructura segura y mantenimiento automático.
+
+
+Configuración de dominio principal y certificados SSL.
+
+
+Vinculación de subdominios para separar The Glass Lab y Pernia Glass bajo una misma estructura corporativa.
+
+
+
+Correos Electrónicos Empresariales
+Configuración de registros DNS para correos personalizados bajo el dominio oficial (ej. contacto@theglasslab.com / info@perniaglass.com).
+
+
+
+Accesibilidad
+Cumplimiento con las normativas WCAG, garantizando navegación inclusiva y lectura clara de texto e imágenes.
+
+
+Contrastes, jerarquías visuales y navegación por teclado ajustadas para todos los usuarios.
+
+
+
+Protección de Datos y Cumplimiento Legal
+Política de Privacidad y Cookies redactadas específicamente para Panamá y usuarios internacionales.
+
+
+Avisos de consentimiento claros, configurables y compatibles con RGPD.
+
+
+Páginas legales integradas y actualizadas, con opción de descarga en PDF.
+
+
+
+Herramientas de Marketing Integradas
+Conexión con Google Analytics, Meta Pixel y Google Search Console.
+
+
+Integración con herramientas de seguimiento de comportamiento (calor, clics, sesiones) para medir interacción.
+
+
+Preparación para futuras campañas publicitarias y remarketing.
+
+
+
+Soporte Post-Lanzamiento y Mantenimiento
+Plan opcional de mantenimiento con actualizaciones de seguridad, backups automáticos y asistencia técnica mensual.
+
+
+Monitoreo de rendimiento y optimización continua de carga y SEO.
+
+
+
+Funcionalidad Multilingüe Dinámica
+Implementación de una versión bilingüe (español / inglés), con cambio automático según idioma del navegador o selección manual.
+
+
+Capacidad de expansión a nuevos idiomas sin modificar la estructura del sitio.
+Comparativa Paquetes Web:
+02.1//Shakefront Webflow Lite vs Full Package
+
+Incluye:
+
+Ver la siguiente tabla comparativa pata entender la diferencia entre los paquetes:
+
+Características
+Shakefront Full
+Shakefront Lite
+Incluye Milky Branding
+✅ Sí
+❌ No
+Número de páginas
+10+
+One-pager
+CMS integrado
+✅ Sí 
+❌ No 
+Wireframe UI/UX completo (desktop, tablet, móvil, horizontal)
+✅ Sí
+✅ Sí
+Prototipo interactivo
+✅ Sí
+❌ No
+Páginas Funcionales (Políticas, 404, Términos y Cookies)
+✅ Sí
+✅ Sí
+Iconografía personalizada
+✅ Sí
+✅ Sí
+Videografía integrada
+✅ Sí
+✅ Sí 
+SEO avanzado
+✅ Sí
+✅ Sí
+Diseño 100% adaptativo
+✅ Sí
+✅ Sí
+Formularios de contacto
+✅ Sí
+✅ Sí
+Pruebas y optimización
+✅ Sí
+✅ Sí
+Cumplimiento legal (RGPD, CCPA, cookies)
+✅ Sí
+✅ Sí
+Accesibilidad (WCAG)
+✅ Sí
+✅ Sí
+Hosting & dominio
+✅ Sí
+✅ Sí
+Correos corporativos
+✅ Sí
+✅ Sí
+Soporte post-lanzamiento
+✅ Sí
+✅ Sí
+Mapa interactivo
+✅ Sí
+❌ No
+Animaciones y microinteracciones
+✅ Sí
+❌ No
+Elementos adicionales (pop-ups, modals, etc)
+✅ Sí
+❌ No
+Integración con APIs terceras
+✅ Sí
+❌ No
+Herramientas de marketing (Email marketing, remarketing, blog)
+✅ Sí
+❌ No
+Funcionalidad multilingüe
+✅ Sí
+✅ Sí
+
+
+
+
+
+
+
+
+
+
+4) Precios:
+
+01//Milky Branding
+€4.500,00
+02//Shakefront Webflow Full Package (CMS) 
+FULL SITE: 15+ páginas únicas, (No más de 15) Subida inicial de todos su portafolio de proyectos como entradas CMS.
+€13.475,00
+€8.975,00
+* Milky Branding incluido
+02.1//Shakefront Webflow Lite Package (CMS) 
+LITE SITE: Home Page multi sección con portafolio  CMS integrado y otras secciones de interés.
+€10.800,00
+03//Barista (Mantenimiento Web)
+Actualización de contenido, modificaciones, optimización y mantenimiento
+€450,00
+Cuotas mensuales
+EXTRA// Hosting, Dominio, Emails Corporativos
+€320,00
+Optativo
+EXTRA// Funcionalidad de Multilingüe Dinámica
+€450,00
+Optativo
+Total (Milky Branding + Full Package + Extras)
+€9.745,00
+* Por página
+Total (Lite Package + Extras)
+€7.070,00
+* Por página
+Total (Milky Branding + Full Package + Extras) X2
+€19.490,00
+€14.617,5
+* Descuento del 25% por contratación de ambos sitios
+Total (Milky Branding + Full Package + Extras) X2
+€14.140
+€12.019
+* Descuento del 15% por contratación de ambos sitios
+
+
+
+
+
+Aviso importante: 
+* Es importante destacar que todo el contenido multimedia, incluyendo fotos, videos y texto, deben ser suministrados por el equipo de (The Glass Lab) antes de iniciar el proceso de diseño. Cualquier contenido de imágenes textual que no esté estructurado previamente será remplazado por texto generado por AI de tipo plantilla para poder conocer los espacios disponibles y diagramar la página de manera más efectiva.
+
+5) Tiempos:
+01// Milky Branding 2-3 Semanas 
+02// Shake Front Mínimo de 12 semanas 
+Resto por definir
+6) Contrato:
+Información:
+Cliente / Organización / Representante:
+Nombre: [{{Nombre (Responsable/Representante)}}] *
+Apellido: [{{Apellido}}] *
+Razón Social: [{{Razón Social}}] *
+
+Nombre del Proyecto:
+[The Glass Lab - Productos Varios X Van Alva]​
+​Fecha: 
+
+​Nombre del diseñador responsable:
+[Juan Carlos Vannini Alvarez]​
+​Este contrato se formalizará el día de firma​ entre el Cliente y el Diseñador indicados anteriormente. 
+
+Confidencialidad:
+El Diseñador, por la presente, confirma que puede conocer o disponer de información que se refiere al cliente a nivel personal, incluyendo información relacionada con nombres de cliente pasados, futuros, presentes, planes de marketing, información de proyectos y documentos financieros del cliente.
+El Diseñador acepta proteger toda la información anterior y conservar la confidencialidad de cualquier información obtenida.
+Sin embargo, se permitirá que el Diseñador muestre el trabajo final en su sitio web, redes sociales, portafolio y en materiales promocionales. 
+Aprobación del Cliente:
+Se notificarán al Cliente todos y cada uno de los materiales, que deberá aprobar antes de la finalización y entrega del proyecto
+Además, el Cliente tendrá permiso para aceptar el trabajo y solicitar cualquier revisión si fuera necesaria. 
+
+* El cliente tendrá derecho a solicitar la intervención parcial del proveedor en la implementación de la página web, incluyendo cualquier rediseño necesario, siempre y cuando estos cambios sean necesarios debido a limitaciones de la herramienta o para optimizar imágenes y contenido. El proveedor se compromete a realizar estos cambios en un plazo razonable y sin cobrar tarifas adicionales. Cualquier trabajo adicional que requiera un esfuerzo significativo por parte del proveedor será considerado como un trabajo adicional y se facturará por separado.
+
+Rescisión:
+- Cláusula de Rescisión para Servicios de Branding
+Rescisión por el Cliente: 
+Cancelación Temprana (Dentro de las Primeras Dos Semanas): Si el Cliente decide cancelar el proyecto dentro de las dos primeras semanas y antes de la primera entrega de diseños, será responsable de pagar el 25% del costo total del proyecto. Dado que el Cliente ya ha pagado el 50% inicialmente, el Diseñador reembolsará el 25% restante al Cliente.
+Cancelación Después de la Primera Entrega: Si la cancelación ocurre después de la primera entrega de diseños pero antes de las tres revisiones estándar, no habrá reembolsos adicionales ni pagos requeridos por parte del Cliente, ya que se considerará que el 50% inicial cubre el trabajo realizado hasta ese momento.
+Cancelación Después de Tres Revisiones: En caso de cancelación después de tres revisiones y antes de la aprobación del diseño final, el Cliente deberá abonar el 75% del costo total del proyecto.
+Entrega de Editables y Manual de Marca: Una vez que el diseño final esté aprobado, el Cliente deberá pagar el saldo restante antes de que el Diseñador entregue los archivos editables y el manual de marca.
+
+- Cláusula de Rescisión para el Diseño y Desarrollo Web
+Rescisión por el Cliente:
+Cancelación Temprana (Dentro de las Primeras Dos Semanas): En caso de cancelación dentro de las dos primeras semanas y antes de la entrega del diseño del sitio web, el Cliente será responsable de pagar el 25% del costo total del proyecto. El Diseñador reembolsará el 25% restante del pago inicial del 50%.
+Cancelación Después de la Entrega del Diseño: Si el Cliente cancela el proyecto después de la entrega del diseño del sitio web pero antes de comenzar el desarrollo, será responsable de pagar el 75% del costo total del proyecto.
+Cancelación Después de Comenzar el Desarrollo: En el caso de que el Cliente cancele el proyecto después de haber aprobado el diseño final y cuando el desarrollo haya comenzado o esté por comenzar, será responsable de pagar el 100% del costo total del proyecto.
+
+Rescisión por el Diseñador:
+Cancelación por Emergencia Justificada: El Diseñador solo puede cancelar el contrato bajo circunstancias de emergencia extremadamente justificadas, como graves problemas de salud, desastres naturales o situaciones de fuerza mayor.
+Cancelación sin Justificación Adecuada: Si el Diseñador cancela el proyecto por motivos frívolos o no justificados, el Cliente recibirá un reembolso completo del importe ya pagado más un cupón por un 15% de descuento en un futuro trabajo.
+Notificación y Justificación: El Diseñador deberá proporcionar una notificación por escrito al Cliente explicando las razones de la cancelación.
+Compensación al Cliente en Caso de Emergencia Justificada: Si la cancelación se debe a una emergencia justificada, el Cliente recibirá el monto pagado menos un 25% del costo total del proyecto, que cubre los gastos iniciales y el tiempo invertido hasta el momento de la cancelación.
+Asistencia Post-Cancelación: El Diseñador proporcionará asistencia para la transición del proyecto a otro profesional si es solicitado por el Cliente.
+
+Desarrollo Web en Webflow
+Alcance del Proyecto: El Diseñador se compromete a desarrollar el sitio web de acuerdo con las especificaciones acordadas previamente entre el Cliente y el Diseñador. Estas especificaciones incluyen, pero no se limitan a, número de páginas, funcionalidades, integraciones y cualquier otro detalle relevante.
+Plataforma y Herramientas: El Diseñador usará la plataforma Webflow para el desarrollo del sitio web. Es responsabilidad del Cliente proporcionar, o cubrir los costos asociados con, cualquier licencia, plantilla premium, o integración específica que no esté incluida en la suscripción estándar de Webflow.
+Responsividad: El sitio web será diseñado para ser responsivo, asegurando una óptima visualización y funcionalidad en diversos dispositivos y tamaños de pantalla, incluyendo ordenadores de escritorio, tablets y smartphones.
+Integraciones de Terceros: Cualquier integración con herramientas o plataformas de terceros solicitadas por el Cliente (ejemplo: sistemas de reservas, pasarelas de pago, entre otros) puede incurrir en costos adicionales y requerir tiempo adicional para la implementación.
+Mantenimiento y Actualizaciones: Una vez que el sitio web esté completo y entregado, cualquier actualización o modificación posterior requerirá un nuevo acuerdo y posiblemente costos adicionales, a menos que se acuerde lo contrario.
+Formación: El Diseñador proporcionará una sesión básica de formación para el Cliente sobre cómo administrar y hacer actualizaciones menores al sitio en Webflow. Sesiones adicionales pueden incurrir en costos extra.
+Traspaso: Al finalizar el proyecto, el Diseñador puede traspasar la licencia de uso y control total del sitio web al Cliente si así lo requiere, previo acuerdo. Esto puede requerir que el Cliente tenga su propia cuenta en Webflow.
+Limitaciones de Webflow: El Cliente reconoce que la plataforma Webflow tiene sus propias limitaciones. Aunque es una plataforma versátil y poderosa, puede haber ciertas funcionalidades o integraciones que no sean posibles o que requieran soluciones alternas.
+Backups: Se realizarán copias de seguridad (backups) regularmente durante el desarrollo. Sin embargo, una vez entregado el proyecto, es responsabilidad del Cliente mantener y gestionar las copias de seguridad, a menos que se acuerde un servicio de mantenimiento.
+Confidencialidad en Accesos: El Diseñador garantiza que mantendrá la confidencialidad de los accesos y credenciales proporcionadas por el Cliente y solo las usará con el propósito de desarrollar el sitio web.
+Limitación de Responsabilidad: El Diseñador no será responsable de cualquier problema o fallo técnico en el sitio web causado por actualizaciones en la plataforma Webflow, integraciones de terceros, o cualquier otro factor externo post-entrega.
+
+Dominio Web:
+Propiedad: Si el Cliente ya posee un dominio, es responsabilidad del Cliente proporcionar los accesos necesarios para vincular dicho dominio con el sitio Webflow. Si se necesita registrar un nuevo dominio, los costos asociados con la compra y renovación del dominio correrán por cuenta del Cliente, a menos que se acuerde lo contrario.
+Vinculación: El Diseñador asistirá al Cliente en la vinculación del dominio al sitio Webflow. No obstante, es responsabilidad del Cliente garantizar que el dominio se mantenga renovado y activo.
+Transferencias: Si en algún punto el Cliente desea transferir su dominio a otro proveedor o registrador, es responsabilidad del Cliente gestionar dicha transferencia. El Diseñador puede proporcionar asistencia o asesoramiento, pero puede incurrir en costos adicionales.
+Protección de Datos: Si el servicio incluye la compra de un dominio en nombre del Cliente, el Diseñador se compromete a proteger la información personal del Cliente y a no usar el dominio de manera inapropiada o sin el consentimiento del Cliente.
+
+Propiedad Intelectual, Uso del Código y Condiciones de Publicación:
+
+- Cláusula de Reconocimiento Profesional y Uso del Diseño
+Créditos en el Sitio Web:
+El Cliente se compromete a incluir en el footer del sitio web una mención al Diseñador (ej. “Diseñado por Van Alva”) con un enlace al portafolio o sitio web profesional del Diseñador.
+Esta mención será obligatoria en cualquier sitio derivado del diseño original, salvo acuerdo expreso y por escrito.
+
+Condiciones de Uso Público:
+El Cliente no podrá publicar, migrar o distribuir públicamente el sitio web (en parte o en su totalidad) en ninguna plataforma hasta que el pago total del proyecto haya sido realizado.
+El uso no autorizado de los materiales será considerado una violación directa de los derechos de autor y del presente contrato.
+
+- Cláusula de Propiedad Intelectual, licencia de uso, entregas y Migraciones
+Derechos sobre el Diseño:
+El Diseñador conserva todos los derechos de propiedad intelectual sobre el diseño original, wireframes, layouts y archivos fuente entregados.
+Una vez realizado el pago total, el Cliente adquiere una licencia de uso no exclusiva, válida para el proyecto acordado.
+Esta licencia no permite que el Cliente modifique sustancialmente el diseño, lo redistribuya o lo utilice en otro contexto sin autorización del Diseñador.
+En caso de que la migración implique la reutilización sustancial del diseño, estructura o código desarrollado por el Diseñador con fines de reventa, redistribución o implementación externa (como parte de otro producto, plantilla, franquicia, o versión adaptada del mismo proyecto), el Cliente deberá notificar al Diseñador y solicitar autorización previa por escrito.
+La utilización del diseño o del código en un nuevo contexto externo sin dicha autorización será considerado un uso indebido, y el Diseñador se reserva el derecho de ejercer acciones para proteger su autoría y propiedad intelectual.
+
+Migración o Uso en Otras Plataformas:
+En caso de que el Cliente decida utilizar el diseño en otra plataforma distinta a la acordada (ej. de Webflow a Shopify), deberá notificar previamente al Diseñador y se generará un nuevo acuerdo para adaptar dicho diseño.
+- Entrega de Archivos Fuente y Transferencia Final
+Propiedad y Entrega de Archivos: Los archivos editables, fuentes originales, librerías, y accesos definitivos serán entregados únicamente cuando el pago final esté completado.
+Cualquier entrega parcial o avance no implica cesión de derechos ni transferencia de uso. El Diseñador podrá, a su discreción, enviar versiones de vista previa o pruebas internas antes del cierre total del proyecto.
+La transferencia de control de sitios (Webflow, dominio, etc.) también estará sujeta al cumplimiento del pago completo.
+
+- Exclusividad del Diseño
+A menos que se acuerde lo contrario por escrito, el Diseñador no garantiza exclusividad territorial o temática.
+Sin embargo, se compromete a no replicar de forma literal ni reutilizar partes sustanciales del diseño para proyectos de competencia directa.
+
+- Uso No Autorizado del Trabajo (Cláusula de Protección Antiplagio)
+En caso de que el Cliente utilice, copie, adapte o modifique de forma parcial o total el diseño, estructura de código o cualquier contenido entregado por el Diseñador sin haber completado el pago o sin la debida autorización por escrito, se considerará una infracción grave a los derechos de autor.
+En dicho caso, el Diseñador podrá exigir la eliminación inmediata del contenido, la compensación económica correspondiente y se reserva el derecho de tomar medidas legales.
+
+- Cláusula de Comunicación, Pausas y Finalización Automática
+Falta de Respuesta:
+Si el Cliente no responde a solicitudes críticas del Diseñador durante un periodo de 10 días hábiles, el proyecto podrá considerarse “en pausa” sin penalización para el Diseñador.
+
+Si la falta de respuesta se extiende a 30 días corridos, el proyecto se considerará finalizado y se emitirá la factura por el monto restante del proyecto, equivalente al trabajo ya realizado.
+- Cláusula de Soporte y Mantenimiento Post-Entrega
+Finalización de la Relación Profesional:
+Una vez entregado el proyecto, cualquier soporte, ajuste técnico, o modificación será considerado trabajo adicional y deberá presupuestarse por separado.
+El Diseñador no está obligado a realizar mantenimiento posterior ni intervenciones gratuitas una vez entregado el sitio, salvo que se haya contratado un plan de soporte específico.
+
+Cláusulas de Revisiones, Expectativas y Conducta Contractual
+Solicitudes de Cambios y Revisión:
+Todo cambio o ajuste solicitado por el Cliente deberá realizarse por escrito (email, documento compartido o mensaje formal por canal acordado).
+
+
+El Diseñador no aceptará como válidas indicaciones vagas, verbales o contradictorias a lo previamente aprobado.
+
+
+El proyecto incluye un máximo de tres rondas de revisión, dentro de las cuales se espera alcanzar el resultado deseado.
+
+
+Cambios Fuera de Alcance:
+Cualquier modificación adicional no contemplada en las tres rondas iniciales no implicará necesariamente cargos extra, pero podrá ser valorada como trabajo adicional si:
+
+
+El proceso de revisión se extiende innecesariamente.
+
+
+Las modificaciones responden a percepciones subjetivas, indecisiones personales o cambios constantes de dirección sin base objetiva.
+
+
+Limitación de Revisión de Objetivos Iniciales
+Si el Cliente decide cambiar completamente el enfoque, tono, estrategia o look & feel original aprobado, se considerará una nueva dirección creativa y no una revisión. En este caso, el trabajo adicional deberá presupuestarse aparte.
+
+Buena Voluntad y Límite Ético:
+El Diseñador se compromete a realizar el mejor trabajo posible y tiene la disposición de apoyar al Cliente más allá de lo estipulado, siempre que esto se mantenga dentro de un marco de respeto, buena comunicación y voluntad mutua.
+
+
+No obstante, ninguna acción o ajuste adicional será exigible por fuera de los parámetros acordados o en base a expectativas no documentadas.
+
+
+Responsabilidad del Cliente:
+El Cliente reconoce que el Diseñador, por su experiencia y criterio profesional, es capaz de interpretar las necesidades del proyecto y tomar decisiones acertadas sin necesidad de instrucciones constantes.
+
+
+Se entiende que el Diseñador no puede asumir responsabilidades por información no expresada de forma clara y específica.
+
+
+El Diseñador no lee mentes. Toda solicitud, visión o expectativa debe ser debidamente comunicada para ser considerada.
+
+
+
+
+Reembolsos:
+El Diseñador no ofrece reembolsos, salvo en casos de faltas graves demostrables como:
+
+
+Violación de cláusulas de confidencialidad.
+
+
+Divulgación de datos sensibles sin consentimiento.
+
+
+Incumplimiento contractual intencional.
+
+
+Comportamiento antiético o negligente por parte del Diseñador.
+
+
+Resolución de Conflictos:
+En caso de malentendidos, rupturas contractuales o desacuerdos, solo se tomarán en cuenta las comunicaciones, acuerdos y entregables documentados.
+
+
+El Diseñador no se hará responsable por expectativas no conversadas, suposiciones o acuerdos implícitos no registrados por escrito.
+
+7) Pago:
+El Proyecto se realizará y entregará tras el pago de las cantidades indicadas bajo “Total Inversión” dependiendo del paquete seleccionado, distribuido de la siguiente forma:
+​Todos los cargos se facturarán tras el envío de los entregables al Cliente y vencerán según los términos de pago:
+​El cliente realizará un depósito de:
+70% al comenzar el trabajo, 20% Al finalizar el proceso de Branding 10% Al finalizar el proyecto.
+
+Si el alcance del trabajo cambia durante la realización del proyecto, pueden producirse costes adicionales.
+El Diseñador enviará cualquier cambio en los precios al Cliente antes de comenzar tales tareas.
+España: BBVA ES61 0182 2254 4402 0158 7969 (2254 MADRID-GRAN VIA DE HORTALEZA) 
+BIC/SWIFT: BBVAESMM a nombre de Maria Almudena Martinez Pineda  
+Resto: Consultar métodos de pago con nosotros antes de realizar el primer abono.
+8) Firma:
+Firmando abajo, las Partes aceptan que han leído, entendido y que cumplirán con los términos indicados en este contrato de diseño gráfico de profesional autónomo.
+
+* Firma Cliente:
+
+
+
+
+* Fecha de firma: ___/___/___
+Fecha: 11/11/2025
+
+
+\Gracias!
+
+

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta The Glass Lab - Van Alva</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 60px 20px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 16px;
+    }
+
+    .h1-heading {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .subheading {
+      font-size: 1.25rem;
+      opacity: 0.8;
+      font-weight: 400;
+    }
+
+    /* Tabs */
+    .tabs-container {
+      margin-bottom: 60px;
+    }
+
+    .tab-menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+    }
+
+    .tab-link {
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+      text-decoration: none;
+    }
+
+    .tab-link:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .tab-link.active {
+      color: #ffffff;
+      border-bottom-color: #FFD700;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .rich-text {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .rich-text h3 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      margin-top: 40px;
+    }
+
+    .rich-text h3:first-child {
+      margin-top: 0;
+    }
+
+    .rich-text h4 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      margin-top: 32px;
+      color: #FFD700;
+    }
+
+    .rich-text h5 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      margin-top: 24px;
+      opacity: 0.9;
+    }
+
+    .rich-text p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      opacity: 0.85;
+    }
+
+    .rich-text ul {
+      margin: 16px 0 24px 24px;
+      list-style: none;
+    }
+
+    .rich-text ul li {
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+      opacity: 0.85;
+    }
+
+    .rich-text ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #FFD700;
+      font-weight: 700;
+    }
+
+    .spacer-small {
+      height: 16px;
+    }
+
+    .spacer-medium {
+      height: 32px;
+    }
+
+    .spacer-large {
+      height: 64px;
+    }
+
+    /* Pricing Cards */
+    .grid-layout {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .desktop-3-column {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .desktop-2-column {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .secondary-card {
+      background: rgba(255, 215, 0, 0.08);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+
+    .card-body {
+      padding: 32px;
+    }
+
+    .h2-heading {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .h3-heading {
+      font-size: 1.75rem;
+      margin-bottom: 12px;
+    }
+
+    .h4-heading {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .paragraph-lg {
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    .paragraph-sm {
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .utility-text-align-center {
+      text-align: center;
+    }
+
+    .utility-margin-bottom-1rem {
+      margin-bottom: 1rem;
+    }
+
+    .utility-margin-bottom-2rem {
+      margin-bottom: 2rem;
+    }
+
+    .utility-margin-bottom-3rem {
+      margin-bottom: 3rem;
+    }
+
+    .utility-margin-bottom-4rem {
+      margin-bottom: 4rem;
+    }
+
+    /* Button */
+    .button {
+      display: inline-block;
+      padding: 16px 32px;
+      background: #FFD700;
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .button:hover {
+      background: #FFC700;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+    }
+
+    .big {
+      padding: 20px 40px;
+      font-size: 1.125rem;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+    }
+
+    table thead {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    table th,
+    table td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    table th {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+    }
+
+    table td {
+      opacity: 0.85;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .desktop-3-column {
+        grid-template-columns: 1fr;
+      }
+
+      .desktop-2-column {
+        grid-template-columns: 1fr;
+      }
+
+      .h1-heading {
+        font-size: 2.5rem;
+      }
+
+      .h2-heading {
+        font-size: 2rem;
+      }
+
+      .rich-text {
+        padding: 24px;
+      }
+
+      .tab-menu {
+        gap: 0.5rem;
+      }
+
+      .tab-link {
+        padding: 10px 16px;
+        font-size: 0.875rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .h1-heading {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 20px 16px;
+      }
+
+      .header {
+        padding: 40px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="eyebrow">NO.P-003</div>
+      <h1 class="h1-heading">Propuesta Completa</h1>
+      <p class="subheading">The Glass Lab / Pernia Glass — Mi propuesta con amor para ti, Guillermo</p>
+    </div>
+
+    <div class="tabs-container">
+      <!-- Tab Navigation -->
+      <div class="tab-menu">
+        <button class="tab-link active" onclick="openTab(event, 'tab1')">Introducción</button>
+        <button class="tab-link" onclick="openTab(event, 'tab2')">Contexto</button>
+        <button class="tab-link" onclick="openTab(event, 'tab3')">Brief Creativo</button>
+        <button class="tab-link" onclick="openTab(event, 'tab4')">Servicios</button>
+        <button class="tab-link" onclick="openTab(event, 'tab5')">Precios</button>
+        <button class="tab-link" onclick="openTab(event, 'tab6')">Términos</button>
+      </div>
+
+      <!-- Tab 1: Introducción -->
+      <div id="tab1" class="tab-content active">
+        <div class="rich-text">
+          <h3>Introducción</h3>
+          <p>El vidrio, desde su invención, ha sido uno de los materiales más fascinantes que el ser humano ha logrado dominar. No solo por su versatilidad técnica, sino por su capacidad única de ser, al mismo tiempo, visible e invisible, tangible e intangible, estructura y atmósfera.</p>
+
+          <p>Trabajar con vidrio es, en esencia, trabajar con la luz. Es entender cómo un material puede transformar un espacio, cómo puede controlar la intimidad sin renunciar a la transparencia, cómo puede ser funcional sin dejar de ser poético.</p>
+
+          <p>The Glass Lab y Pernia Glass no son solo marcas de vidrio: son una propuesta sobre cómo experimentar con la materia, cómo innovar en procesos y cómo traducir esa innovación en productos que puedan integrarse en proyectos arquitectónicos con una sensibilidad única.</p>
+
+          <p>Mi trabajo como diseñador no será simplemente "hacer una web bonita". Será crear una experiencia digital que refleje esa filosofía: limpia, estructurada, técnica, pero también emocional, interactiva y profundamente conectada con la materialidad del vidrio.</p>
+        </div>
+      </div>
+
+      <!-- Tab 2: Contexto -->
+      <div id="tab2" class="tab-content">
+        <div class="rich-text">
+          <h3>Contexto del Proyecto</h3>
+
+          <h4>The Glass Lab</h4>
+          <p>Un espacio de experimentación donde el vidrio deja de ser solo un material constructivo para convertirse en un medio de expresión. Aquí el enfoque es artístico, técnico y conceptual.</p>
+
+          <p>The Glass Lab trabaja con vidrio laminado, un proceso en el que dos capas de vidrio se unen mediante un material intermedio (EVA), permitiendo la inserción de texturas, mallas metálicas, colores, telas e incluso elementos orgánicos.</p>
+
+          <p>El resultado: piezas únicas, personalizables, que funcionan tanto en arquitectura como en diseño de interiores. Desde puertas de ducha hasta fachadas completas, pasando por divisiones, mobiliario y paneles decorativos.</p>
+
+          <h4>Pernia Glass</h4>
+          <p>La línea arquitectónica. Más funcional, más estructurada, más orientada al mercado de puertas corredizas de aluminio y vidrio de alta gama.</p>
+
+          <p>Mientras marcas como Rimadesio, Lualdi o ADL venden puertas a €40,000, Pernia Glass ofrece una alternativa de calidad equivalente, con diseños personalizables y precios más accesibles (€3,000 - €5,000).</p>
+
+          <p>Su diferenciador: la personalización a través del vidrio laminado de The Glass Lab. Puedes elegir colores, texturas, insertos metálicos, acabados mate o brillante… todo dentro de un sistema técnico profesional.</p>
+
+          <h4>El desafío</h4>
+          <p>Estas dos marcas deben coexistir visualmente. Compartir una misma coherencia estética, pero con personalidades distintas:</p>
+          <ul>
+            <li><strong>The Glass Lab:</strong> experimental, artística, sensorial, museográfica</li>
+            <li><strong>Pernia Glass:</strong> técnica, arquitectónica, precisa, aspiracional</li>
+          </ul>
+
+          <p>El objetivo es construir dos sitios web que puedan funcionar de manera independiente, pero que visualmente se sientan como parte de un mismo universo de marca.</p>
+        </div>
+      </div>
+
+      <!-- Tab 3: Brief Creativo -->
+      <div id="tab3" class="tab-content">
+        <div class="rich-text">
+          <h3>Brief Creativo</h3>
+          <p>El vidrio, por naturaleza, es un medio entre lo visible y lo invisible. Nuestro desafío será crear un lenguaje visual que juegue con esa dualidad: claridad y misterio, estructura y fluidez, ciencia y arte.</p>
+
+          <h4>The Glass Lab</h4>
+          <p>Un portal inmersivo, casi museográfico, donde cada tipo de vidrio se presenta como un elemento en una <strong>tabla periódica</strong>, una composición de muestras que pueden explorarse y descubrirse con detalle.</p>
+
+          <p>Cada pieza mostrará sus propiedades: color, textura, composición, transparencia, aplicaciones. La experiencia digital debe sentirse táctil y física, como si el usuario pudiera deslizar los dedos sobre el material.</p>
+
+          <h4>Propuesta de Valor</h4>
+
+          <h5>Dirección visual unificada</h5>
+          <p>Un sistema visual que conecte ambas marcas mediante colorimetría neutra, tipografía precisa y un uso refinado de la luz y las sombras.</p>
+
+          <h5>Diseño web inmersivo en Webflow</h5>
+          <p>Desarrollo completo en Webflow, con animaciones fluidas y estructura CMS para la gestión autónoma de catálogos de vidrios y productos.</p>
+
+          <h5>Interactividad y materialidad digital</h5>
+          <p>Incorporación de microinteracciones que simulen la sensación de vidrio – reflejos, deslizamientos, transparencias, difuminados.</p>
+        </div>
+      </div>
+
+      <!-- Tab 4: Servicios -->
+      <div id="tab4" class="tab-content">
+        <div class="rich-text">
+          <h3>Servicios</h3>
+
+          <h4>01// Milky Branding</h4>
+          <p>Tu marca es mucho más que un logotipo: es el reflejo material de tu visión. Milky Branding está diseñado para construir una identidad que se sienta tan precisa y sofisticada como el vidrio que trabajas.</p>
+
+          <p><strong>Incluye:</strong></p>
+          <ul>
+            <li>Logotipo y variaciones adaptativas</li>
+            <li>Paleta cromática personalizada</li>
+            <li>Tipografía arquitectónica</li>
+            <li>Brandbook completo</li>
+            <li>Recursos gráficos complementarios</li>
+            <li>3 revisiones incluidas</li>
+          </ul>
+
+          <div class="spacer-medium"></div>
+
+          <h4>02// Shakefront Webflow Full Package</h4>
+          <p>Un sitio web no es solo una vitrina digital; es una extensión tangible de la marca, el espacio donde forma y función se encuentran.</p>
+
+          <p><strong>Incluye:</strong></p>
+          <ul>
+            <li>Milky Branding completo incluido</li>
+            <li>Diseño UI/UX responsive (Desktop, Tablet, Móvil)</li>
+            <li>Desarrollo en Webflow (15+ páginas personalizadas)</li>
+            <li>CMS personalizado para gestión de vidrios</li>
+            <li>Tabla periódica interactiva</li>
+            <li>Animaciones y microinteracciones avanzadas</li>
+            <li>SEO avanzado + Multilingüe (ES/EN)</li>
+            <li>Hosting + Dominio + Emails corporativos</li>
+          </ul>
+
+          <div class="spacer-medium"></div>
+
+          <h4>03// Servicios Adicionales</h4>
+          <ul>
+            <li><strong>Barista (Mantenimiento Web)</strong> - €450/mes</li>
+            <li><strong>Hosting + Dominio + Emails</strong> - €320 (one-time)</li>
+            <li><strong>Funcionalidad Multilingüe Dinámica</strong> - €450 (si no incluido)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tab 5: Precios -->
+      <div id="tab5" class="tab-content">
+        <div class="rich-text">
+          <h3 class="utility-text-align-center utility-margin-bottom-1rem">Inversión</h3>
+          <p class="paragraph-lg utility-text-align-center utility-margin-bottom-4rem" style="opacity: 0.8;">Opciones claras y transparentes para tu proyecto</p>
+
+          <!-- Main Pricing Cards -->
+          <div class="grid-layout desktop-3-column utility-margin-bottom-4rem">
+            <div class="card">
+              <div class="card-body">
+                <div class="eyebrow">01// Servicio de Branding</div>
+                <h3 class="h3-heading utility-margin-bottom-1rem">Milky Branding</h3>
+                <div class="spacer-small"></div>
+                <div class="h2-heading utility-margin-bottom-1rem">€4,500</div>
+                <p class="paragraph-sm utility-margin-bottom-2rem">Identidad de marca completa</p>
+              </div>
+            </div>
+
+            <div class="card secondary-card">
+              <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <div class="eyebrow">02// Sitio Web Completo</div>
+                  <div style="background: #FFD700; color: #000; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">MEJOR VALOR</div>
+                </div>
+                <h3 class="h3-heading utility-margin-bottom-0">Shakefront Full</h3>
+                <p class="paragraph-sm utility-margin-bottom-1rem" style="opacity: 0.7;">15+ páginas únicas (máx. 15)</p>
+                <div style="text-align: center; margin-bottom: 1rem;">
+                  <div class="paragraph-sm" style="text-decoration: line-through; opacity: 0.5; margin-bottom: 0.25rem;">€13,475</div>
+                  <div class="h2-heading" style="color: #FFD700; margin-bottom: 0.5rem;">€8,975</div>
+                  <div class="paragraph-sm" style="background: rgba(255, 215, 0, 0.2); padding: 0.5rem; border-radius: 4px;">
+                    <strong>✨ Milky Branding incluido</strong><br>
+                    <span style="opacity: 0.8;">(ahorro de €4,500)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="eyebrow">02.1// Sitio Web One-Page</div>
+                <h3 class="h3-heading utility-margin-bottom-1rem">Shakefront Lite</h3>
+                <div class="spacer-small"></div>
+                <div class="h2-heading utility-margin-bottom-1rem">€10,800</div>
+                <p class="paragraph-sm utility-margin-bottom-2rem">Home page multi-sección con portafolio CMS</p>
+                <div class="spacer-small"></div>
+                <p class="paragraph-sm" style="color: #ff6b6b; font-weight: 600;">❌ NO incluye Milky Branding</p>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="h3-heading utility-margin-bottom-2rem utility-text-align-center">Paquetes para Ambos Sitios</h4>
+          <p class="paragraph-lg utility-margin-bottom-3rem utility-text-align-center" style="opacity: 0.8;">The Glass Lab + Pernia Glass</p>
+
+          <div class="grid-layout desktop-2-column utility-margin-bottom-4rem">
+            <div class="card secondary-card">
+              <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <div class="eyebrow">Paquete Completo X2</div>
+                  <div style="background: #FFD700; color: #000; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">-25%</div>
+                </div>
+                <h3 class="h3-heading utility-margin-bottom-0.5rem" style="font-size: 1.25rem; line-height: 1.3;">Total (Milky Branding + Full Package + Extras) X2</h3>
+                <p class="paragraph-sm utility-margin-bottom-1rem" style="opacity: 0.7;">Descuento del 25% por contratación de ambos sitios</p>
+                <div style="text-align: center; margin-bottom: 1rem;">
+                  <div class="paragraph-sm" style="text-decoration: line-through; opacity: 0.5; margin-bottom: 0.25rem;">€19,490</div>
+                  <div class="h2-heading" style="color: #FFD700;">€14,617.50</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <div class="eyebrow">Paquete Lite X2</div>
+                  <div style="background: rgba(255, 255, 255, 0.2); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">-15%</div>
+                </div>
+                <h3 class="h3-heading utility-margin-bottom-0.5rem" style="font-size: 1.25rem; line-height: 1.3;">Total (Lite Package + Extras) X2</h3>
+                <p class="paragraph-sm utility-margin-bottom-1rem" style="opacity: 0.7;">Descuento del 15% por contratación de ambos sitios</p>
+                <div style="text-align: center; margin-bottom: 1rem;">
+                  <div class="paragraph-sm" style="text-decoration: line-through; opacity: 0.5; margin-bottom: 0.25rem;">€14,140</div>
+                  <div class="h2-heading">€12,019</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 6: Términos -->
+      <div id="tab6" class="tab-content">
+        <div class="rich-text">
+          <h3>Tiempos de Entrega</h3>
+          <ul>
+            <li><strong>Milky Branding:</strong> 2-3 Semanas</li>
+            <li><strong>Shakefront Full Package:</strong> Mínimo 12 semanas</li>
+          </ul>
+
+          <h3>Forma de Pago</h3>
+          <p>El proyecto se realizará bajo el siguiente esquema de pagos:</p>
+          <ul>
+            <li><strong>70%</strong> al comenzar el trabajo</li>
+            <li><strong>20%</strong> al finalizar el proceso de Branding</li>
+            <li><strong>10%</strong> al entregar la web finalizada</li>
+          </ul>
+
+          <h3>Aviso Importante</h3>
+          <p>Todo el contenido multimedia (fotos, videos, texto) debe ser suministrado por el equipo de The Glass Lab antes de iniciar el diseño. Cualquier contenido no estructurado será reemplazado por texto generado por AI tipo plantilla.</p>
+
+          <div class="spacer-large"></div>
+          <div class="utility-text-align-center">
+            <a href="https://docs.google.com/document/d/1e2GZ51T0R5kJWcbZBh3sSdbjd_EDZGmOH5_wgB2fL9Q/edit?usp=sharing" target="_blank" class="button big">Descargar Contrato Completo (PDF)</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      // Hide all tab contents
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Remove active class from all tab links
+      const tabLinks = document.querySelectorAll('.tab-link');
+      tabLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Show the selected tab and mark the button as active
+      document.getElementById(tabName).classList.add('active');
+      evt.currentTarget.classList.add('active');
+
+      // Smooth scroll to top of tabs
+      document.querySelector('.tabs-container').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  </script>
+
+</body>
+</html>

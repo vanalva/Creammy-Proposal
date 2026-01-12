@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(dir:*)",
+      "Bash(mkdir:*)",
+      "Bash(move creamy-proposal-complete.html creamy-proposal-embed.html periodic-table-prototype.html Proposal.txt Transript.txt the-glass-lab)",
+      "Bash(mv:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta The Glass Lab - Van Alva</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Futura', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 16px;
+    }
+
+    .h1-heading {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .subheading {
+      font-size: 1.25rem;
+      opacity: 0.8;
+      margin-bottom: 60px;
+    }
+
+    /* Periodic Table Section */
+    .periodic-section {
+      max-width: 1600px;
+      margin: 0 auto 100px;
+      padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #00d4ff 0%, #0084ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-bottom: 40px;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .periodic-table {
+      display: grid;
+      grid-template-columns: repeat(18, 1fr);
+      gap: 8px;
+      perspective: 2000px;
+      margin-bottom: 30px;
+    }
+
+    .element {
+      aspect-ratio: 1;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .element:hover {
+      transform: translateY(-10px) scale(1.05);
+      z-index: 10;
+    }
+
+    .element.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .element-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .element:hover .element-face {
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
+    }
+
+    .element-front {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      backdrop-filter: blur(10px);
+    }
+
+    .element-back {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 132, 255, 0.1));
+      backdrop-filter: blur(10px);
+      transform: rotateY(180deg);
+    }
+
+    .reflective .element-front {
+      background: linear-gradient(135deg, rgba(0, 132, 255, 0.15), rgba(0, 84, 212, 0.05));
+    }
+
+    .translucent .element-front {
+      background: linear-gradient(135deg, rgba(0, 212, 212, 0.15), rgba(0, 168, 168, 0.05));
+    }
+
+    .monolithic .element-front {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.05));
+    }
+
+    .element-symbol {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .element-number {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    .element-name {
+      font-size: 0.65rem;
+      opacity: 0.8;
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .element-description {
+      font-size: 0.7rem;
+      line-height: 1.4;
+      opacity: 0.9;
+    }
+
+    .element-specs {
+      font-size: 0.6rem;
+      opacity: 0.7;
+      margin-top: 8px;
+    }
+
+    /* Grid positions - simplified for demo */
+    .pos-1-1 { grid-column: 1; grid-row: 1; }
+    .pos-1-2 { grid-column: 1; grid-row: 2; }
+    .pos-2-2 { grid-column: 2; grid-row: 2; }
+    .pos-1-3 { grid-column: 1; grid-row: 3; }
+    .pos-2-3 { grid-column: 2; grid-row: 3; }
+    .pos-17-1 { grid-column: 17; grid-row: 1; }
+    .pos-13-2 { grid-column: 13; grid-row: 2; }
+    .pos-14-2 { grid-column: 14; grid-row: 2; }
+    .pos-15-2 { grid-column: 15; grid-row: 2; }
+    .pos-4-4 { grid-column: 4; grid-row: 4; }
+    .pos-5-4 { grid-column: 5; grid-row: 4; }
+    .pos-6-4 { grid-column: 6; grid-row: 4; }
+    .pos-7-4 { grid-column: 7; grid-row: 4; }
+
+    .info-note {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-top: 40px;
+    }
+
+    /* Tabs Section */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .tab-menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+    }
+
+    .tab-link {
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab-link:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .tab-link.active {
+      color: #ffffff;
+      border-bottom-color: #FFD700;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .rich-text {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .rich-text h3 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      margin-top: 40px;
+    }
+
+    .rich-text h3:first-child {
+      margin-top: 0;
+    }
+
+    .rich-text h4 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      margin-top: 32px;
+      color: #FFD700;
+    }
+
+    .rich-text p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+      opacity: 0.85;
+    }
+
+    .rich-text ul {
+      margin: 16px 0 24px 24px;
+      list-style: none;
+    }
+
+    .rich-text ul li {
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+      opacity: 0.85;
+    }
+
+    .rich-text ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #FFD700;
+      font-weight: 700;
+    }
+
+    .grid-layout {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .desktop-3-column {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .desktop-2-column {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .secondary-card {
+      background: rgba(255, 215, 0, 0.08);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+
+    .card-body {
+      padding: 32px;
+    }
+
+    .h2-heading {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .h3-heading {
+      font-size: 1.75rem;
+      margin-bottom: 12px;
+    }
+
+    .paragraph-lg {
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    .paragraph-sm {
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 32px;
+      background: #FFD700;
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: #FFC700;
+      transform: translateY(-2px);
+    }
+
+    .big {
+      padding: 20px 40px;
+      font-size: 1.125rem;
+    }
+
+    .utility-text-align-center {
+      text-align: center;
+    }
+
+    .utility-margin-bottom-4rem {
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 1200px) {
+      .periodic-table {
+        grid-template-columns: repeat(12, 1fr);
+      }
+    }
+
+    @media (max-width: 968px) {
+      .desktop-3-column,
+      .desktop-2-column {
+        grid-template-columns: 1fr;
+      }
+
+      .h1-heading {
+        font-size: 2.5rem;
+      }
+
+      .periodic-table {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .h1-heading {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">NO.P-003</div>
+    <h1 class="h1-heading">Propuesta Completa</h1>
+    <p class="subheading">The Glass Lab / Pernia Glass — Mi propuesta con amor para ti, Guillermo</p>
+  </div>
+
+  <!-- PERIODIC TABLE SECTION -->
+  <section class="periodic-section">
+    <h2 class="section-title">Tabla Periódica de Vidrios</h2>
+    <p class="section-subtitle">Prototipo Interactivo - Haz clic en cada elemento para ver especificaciones</p>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color" style="background: rgba(34, 197, 94, 0.4); border-color: rgba(34, 197, 94, 0.6);"></div>
+        <span>Monolíticos</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: rgba(0, 212, 212, 0.4); border-color: rgba(0, 212, 212, 0.6);"></div>
+        <span>Translúcidos</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: rgba(0, 132, 255, 0.4); border-color: rgba(0, 132, 255, 0.6);"></div>
+        <span>Reflectivos</span>
+      </div>
+    </div>
+
+    <div class="periodic-table">
+      <!-- Monolithic elements -->
+      <div class="element monolithic pos-1-1" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">01</div>
+            <div class="element-symbol">Ve</div>
+          </div>
+          <div class="element-name">Verde</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Vidrio laminado verde oscuro, ideal para privacidad</div>
+          <div class="element-specs">8-12mm • €85/m²</div>
+        </div>
+      </div>
+
+      <div class="element monolithic pos-1-2" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">02</div>
+            <div class="element-symbol">Vu</div>
+          </div>
+          <div class="element-name">Verde Ultra</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Tono verde intenso mate</div>
+          <div class="element-specs">10mm • €92/m²</div>
+        </div>
+      </div>
+
+      <div class="element monolithic pos-2-2" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">03</div>
+            <div class="element-symbol">Vm</div>
+          </div>
+          <div class="element-name">Verde Medio</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Verde translúcido medio brillo</div>
+          <div class="element-specs">8-10mm • €78/m²</div>
+        </div>
+      </div>
+
+      <div class="element monolithic pos-1-3" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">04</div>
+            <div class="element-symbol">Vi</div>
+          </div>
+          <div class="element-name">Incoloro</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Cristal ultra claro sin tinte</div>
+          <div class="element-specs">6-12mm • €95/m²</div>
+        </div>
+      </div>
+
+      <div class="element monolithic pos-2-3" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">05</div>
+            <div class="element-symbol">Vv</div>
+          </div>
+          <div class="element-name">Verde Vivo</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Verde brillante satinado</div>
+          <div class="element-specs">8mm • €88/m²</div>
+        </div>
+      </div>
+
+      <!-- Translucent elements -->
+      <div class="element translucent pos-4-4" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">09</div>
+            <div class="element-symbol">Qp</div>
+          </div>
+          <div class="element-name">Quadro</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Textura cuadrada suave</div>
+          <div class="element-specs">8mm • €96/m²</div>
+        </div>
+      </div>
+
+      <div class="element translucent pos-5-4" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">10</div>
+            <div class="element-symbol">Qm</div>
+          </div>
+          <div class="element-name">Quadro M</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Patrón cuadros medios</div>
+          <div class="element-specs">10mm • €98/m²</div>
+        </div>
+      </div>
+
+      <div class="element translucent pos-6-4" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">11</div>
+            <div class="element-symbol">Es</div>
+          </div>
+          <div class="element-name">Esmerilado</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Satinado esmerilado suave</div>
+          <div class="element-specs">10mm • €102/m²</div>
+        </div>
+      </div>
+
+      <div class="element translucent pos-7-4" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">12</div>
+            <div class="element-symbol">Eo</div>
+          </div>
+          <div class="element-name">Esmeril Opaco</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Esmerilado opaco total</div>
+          <div class="element-specs">8-10mm • €98/m²</div>
+        </div>
+      </div>
+
+      <!-- Reflective elements -->
+      <div class="element reflective pos-17-1" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">18</div>
+            <div class="element-symbol">Gr</div>
+          </div>
+          <div class="element-name">Gris Reflectivo</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Espejo gris alta reflexión</div>
+          <div class="element-specs">6-10mm • €120/m²</div>
+        </div>
+      </div>
+
+      <div class="element reflective pos-13-2" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">19</div>
+            <div class="element-symbol">Dm</div>
+          </div>
+          <div class="element-name">Dicroico</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Efecto dicroico cambiante</div>
+          <div class="element-specs">8mm • €145/m²</div>
+        </div>
+      </div>
+
+      <div class="element reflective pos-14-2" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">20</div>
+            <div class="element-symbol">Dn</div>
+          </div>
+          <div class="element-name">Dicroico Natural</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Iridiscente según ángulo</div>
+          <div class="element-specs">10mm • €150/m²</div>
+        </div>
+      </div>
+
+      <div class="element reflective pos-15-2" onclick="flipCard(this)">
+        <div class="element-face element-front">
+          <div>
+            <div class="element-number">21</div>
+            <div class="element-symbol">Wc</div>
+          </div>
+          <div class="element-name">Chrome</div>
+        </div>
+        <div class="element-face element-back">
+          <div class="element-description">Cromado espejo blanco</div>
+          <div class="element-specs">6mm • €135/m²</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-note">
+      Esta es una muestra del prototipo interactivo. La versión final incluirá los ~54 elementos completos con fotos, PDFs descargables y filtros por categoría.
+    </div>
+  </section>
+
+  <!-- TABS SECTION -->
+  <div class="container">
+    <div class="tab-menu">
+      <button class="tab-link active" onclick="openTab(event, 'tab1')">Introducción</button>
+      <button class="tab-link" onclick="openTab(event, 'tab2')">Contexto</button>
+      <button class="tab-link" onclick="openTab(event, 'tab3')">Brief Creativo</button>
+      <button class="tab-link" onclick="openTab(event, 'tab4')">Servicios</button>
+      <button class="tab-link" onclick="openTab(event, 'tab5')">Precios</button>
+      <button class="tab-link" onclick="openTab(event, 'tab6')">Términos</button>
+    </div>
+
+    <!-- Tab Contents (abbreviated for length) -->
+    <div id="tab1" class="tab-content active">
+      <div class="rich-text">
+        <h3>Introducción</h3>
+        <p>El vidrio, desde su invención, ha sido uno de los materiales más fascinantes que el ser humano ha logrado dominar...</p>
+      </div>
+    </div>
+
+    <div id="tab2" class="tab-content">
+      <div class="rich-text">
+        <h3>Contexto del Proyecto</h3>
+        <h4>The Glass Lab</h4>
+        <p>Un espacio de experimentación donde el vidrio deja de ser solo un material constructivo...</p>
+      </div>
+    </div>
+
+    <div id="tab3" class="tab-content">
+      <div class="rich-text">
+        <h3>Brief Creativo</h3>
+        <p>El vidrio, por naturaleza, es un medio entre lo visible y lo invisible...</p>
+      </div>
+    </div>
+
+    <div id="tab4" class="tab-content">
+      <div class="rich-text">
+        <h3>Servicios</h3>
+        <h4>01// Milky Branding - €4,500</h4>
+        <h4>02// Shakefront Full Package - €8,975</h4>
+      </div>
+    </div>
+
+    <div id="tab5" class="tab-content">
+      <div class="rich-text">
+        <h3 class="utility-text-align-center">Inversión</h3>
+        <div class="grid-layout desktop-3-column utility-margin-bottom-4rem">
+          <div class="card">
+            <div class="card-body">
+              <div class="eyebrow">01// Branding</div>
+              <h3 class="h3-heading">Milky Branding</h3>
+              <div class="h2-heading">€4,500</div>
+            </div>
+          </div>
+          <div class="card secondary-card">
+            <div class="card-body">
+              <div class="eyebrow">02// Web Completa</div>
+              <h3 class="h3-heading">Shakefront Full</h3>
+              <div class="h2-heading" style="color: #FFD700;">€8,975</div>
+              <p class="paragraph-sm">Milky Branding incluido</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="eyebrow">02.1// Web Lite</div>
+              <h3 class="h3-heading">Shakefront Lite</h3>
+              <div class="h2-heading">€10,800</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab6" class="tab-content">
+      <div class="rich-text">
+        <h3>Términos</h3>
+        <p><strong>Tiempos:</strong> Milky Branding 2-3 semanas, Shakefront 12 semanas mínimo</p>
+        <p><strong>Pago:</strong> 70% inicio, 20% post-branding, 10% final</p>
+        <div class="spacer-medium"></div>
+        <div class="utility-text-align-center">
+          <a href="https://docs.google.com/document/d/1e2GZ51T0R5kJWcbZBh3sSdbjd_EDZGmOH5_wgB2fL9Q/edit?usp=sharing" target="_blank" class="button big">Descargar Contrato Completo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function flipCard(element) {
+      element.classList.toggle('flipped');
+      element.style.transform = element.classList.contains('flipped')
+        ? 'rotateY(180deg) scale(1.02)'
+        : 'scale(1.02)';
+      setTimeout(() => {
+        element.style.transform = '';
+      }, 100);
+    }
+
+    function openTab(evt, tabName) {
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      const tabLinks = document.querySelectorAll('.tab-link');
+      tabLinks.forEach(link => link.classList.remove('active'));
+
+      document.getElementById(tabName).classList.add('active');
+      evt.currentTarget.classList.add('active');
+
+      window.scrollTo({ top: document.querySelector('.container').offsetTop - 20, behavior: 'smooth' });
+    }
+
+    // Entrance animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.element');
+      elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, index * 30);
+      });
+    });
+  </script>
+
+</body>
+</html>
