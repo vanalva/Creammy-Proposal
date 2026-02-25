@@ -8,7 +8,14 @@
       "Bash(move creamy-proposal-complete.html creamy-proposal-embed.html periodic-table-prototype.html Proposal.txt Transript.txt the-glass-lab)",
       "Bash(mv:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:ajax.googleapis.com)",
+      "Read(//g/**)",
+      "WebFetch(domain:d3e54v103j8qbb.cloudfront.net)",
+      "Bash(cp:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:fonts.googleapis.com)"
     ],
     "deny": [],
     "ask": []
