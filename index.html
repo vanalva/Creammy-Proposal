@@ -7785,6 +7785,11 @@ a:hover {
   position: sticky;
 }
 
+@keyframes portfolio-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .dropdwon-entry {
   color: #0c0c16;
   text-align: center;
@@ -12373,15 +12378,16 @@ a:hover {
     .sticky-price-inner {
       max-width: 600px;
       margin: 0 auto;
-      background: #f0ff3d;
-      color: #000;
+      background: #000;
+      color: #f0ff3d;
+      border: 1px solid #f0ff3d;
+      border-bottom: none;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0.65rem 1.5rem;
       border-radius: 10px 10px 0 0;
       font-family: "Cascadia Code", monospace;
-      box-shadow: 0 -4px 20px rgba(240, 255, 61, 0.2);
     }
     .sticky-price-label {
       font-size: 0.75rem;
@@ -13028,7 +13034,7 @@ a:hover {
       <div class="home-nav w-container">
         <a href="https://www.vanalva.io/" class="brand w-nav-brand">
           <div class="main-logo-div">
-            <div id="logo-vanalva" data-w-id="0ef8604e-e03a-8ad3-f84a-9b182e118012" data-is-ix2-target="1" class="logo-vanalva" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/6273b2ec51c1e312622a097d/6373e4cb86d5993399f031fb_logo-vanalva.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="1.0033446864190618" data-duration="0"></div>
+            <div id="logo-vanalva" class="logo-vanalva"></div>
           </div>
         </a>
         <div data-w-id="0ef8604e-e03a-8ad3-f84a-9b182e118013" class="main-menu-toggle-out"></div>
@@ -13036,7 +13042,7 @@ a:hover {
       </div>
       <div id="view-portfolio" class="view-portfolio">
         <a href="https://www.vanalva.io/portfolio" class="w-inline-block">
-          <div data-w-id="0ef8604e-e03a-8ad3-f84a-9b182e118020" data-is-ix2-target="1" class="view-portfolio-anim" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/6273b2ec51c1e312622a097d/638d87a02c86b76882e8886a_view-portfolio.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="2.0401341957187586" data-duration="0"></div>
+          <div id="portfolio-lottie" class="view-portfolio-anim"></div>
         </a>
       </div>
     </div>
@@ -15313,70 +15319,114 @@ WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,
 
   // Lottie animations for logo and portfolio button (using lottie-web directly)
   (function() {
-    var logoElement = document.querySelector('#logo-vanalva');
-    var portfolioElement = document.querySelector('.view-portfolio-anim');
-
-    // Load logo Lottie
-    var logoAnimation = null;
-    if (logoElement) {
-      logoAnimation = lottie.loadAnimation({
-        container: logoElement,
-        renderer: logoElement.getAttribute('data-renderer') || 'svg',
+    // Logo Lottie — clean build
+    var logoEl = document.getElementById('logo-vanalva');
+    var logoAnim = null;
+    var logoIsForward = true;
+    if (logoEl) {
+      var LOGO_SRC = 'https://uploads-ssl.webflow.com/6273b2ec51c1e312622a097d/6373e4cb86d5993399f031fb_logo-vanalva.json';
+      logoAnim = lottie.loadAnimation({
+        container: logoEl,
+        renderer: 'svg',
         loop: false,
         autoplay: false,
-        path: logoElement.getAttribute('data-src')
+        path: LOGO_SRC
       });
-    }
 
-    // Load portfolio Lottie — continuous spin
-    var portfolioAnimation = null;
-    if (portfolioElement) {
-      portfolioAnimation = lottie.loadAnimation({
-        container: portfolioElement,
-        renderer: portfolioElement.getAttribute('data-renderer') || 'svg',
-        loop: true,
-        autoplay: true,
-        path: portfolioElement.getAttribute('data-src')
-      });
-    }
+      // Safe frames (first/last may be empty in some lotties)
+      var FIRST_FRAME = 1;
+      var LAST_FRAME;
 
-    // Portfolio button hover — speed up on hover
-    if (portfolioElement && portfolioAnimation) {
-      var portfolioContainer = portfolioElement.closest('.view-portfolio');
-      portfolioContainer.addEventListener('mouseenter', function() {
-        portfolioAnimation.setSpeed(2);
+      // On page load: play reverse to frame 0, then clamp to safe first frame
+      logoAnim.addEventListener('DOMLoaded', function() {
+        LAST_FRAME = logoAnim.totalFrames - 2;
+        logoAnim.goToAndStop(LAST_FRAME, true);
+        logoAnim.setDirection(-1);
+        logoIsForward = false;
+        logoAnim.play();
       });
-      portfolioContainer.addEventListener('mouseleave', function() {
-        portfolioAnimation.setSpeed(1);
+      logoAnim.addEventListener('complete', function() {
+        // Clamp to safe frame so it never lands on an empty frame
+        if (logoIsForward) {
+          logoAnim.goToAndStop(LAST_FRAME, true);
+        } else {
+          logoAnim.goToAndStop(FIRST_FRAME, true);
+        }
       });
-    }
 
-    // Logo hover animation
-    if (logoElement && logoAnimation) {
-      var logoContainer = logoElement.closest('.brand');
+      // Scroll: forward when scrolled down, reverse when back to top
+      var logoAtTop = true;
+      window.addEventListener('scroll', function() {
+        if (logoAtTop && window.scrollY > 10) {
+          logoAtTop = false;
+          logoAnim.setDirection(1);
+          logoIsForward = true;
+          logoAnim.goToAndPlay(FIRST_FRAME, true);
+        } else if (!logoAtTop && window.scrollY <= 10) {
+          logoAtTop = true;
+          logoAnim.setDirection(-1);
+          logoIsForward = false;
+          logoAnim.play();
+        }
+      }, { passive: true });
+
+      // Hover in: play forward (→ last), hover out: play reverse (→ first)
+      var logoContainer = logoEl.closest('.brand');
       if (logoContainer) {
         logoContainer.addEventListener('mouseenter', function() {
-          logoAnimation.goToAndPlay(0, true);
+          logoAnim.setDirection(1);
+          logoIsForward = true;
+          logoAnim.play();
         });
         logoContainer.addEventListener('mouseleave', function() {
-          logoAnimation.goToAndStop(0, true);
+          logoAnim.setDirection(-1);
+          logoIsForward = false;
+          logoAnim.play();
         });
       }
     }
 
-    // Logo scroll-based animation (first 300px)
-    if (logoElement && logoAnimation) {
-      logoAnimation.addEventListener('DOMLoaded', function() {
-        window.addEventListener('scroll', function() {
-          var scrollY = window.scrollY;
-          if (scrollY <= 300) {
-            var progress = scrollY / 300;
-            var frame = progress * logoAnimation.totalFrames;
-            logoAnimation.goToAndStop(frame, true);
-          }
-        }, { passive: true });
+    // Portfolio Lottie — clean build
+    var portfolioEl = document.getElementById('portfolio-lottie');
+    var portfolioAnim = null;
+    var portfolioSpinning = false;
+    if (portfolioEl) {
+      var PORTFOLIO_SRC = 'https://uploads-ssl.webflow.com/6273b2ec51c1e312622a097d/638d87a02c86b76882e8886a_view-portfolio.json';
+      portfolioAnim = lottie.loadAnimation({
+        container: portfolioEl,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: PORTFOLIO_SRC
       });
+
+      // On page load: play intro once, then start continuous CSS spin
+      portfolioAnim.addEventListener('complete', function onFirstComplete() {
+        portfolioAnim.removeEventListener('complete', onFirstComplete);
+        portfolioSpinning = true;
+        portfolioEl.style.animation = 'portfolio-spin 8s linear infinite';
+      });
+      portfolioAnim.play();
+
+      // Hover: reanimate lottie (play intro again faster), pause CSS spin
+      var portfolioContainer = portfolioEl.closest('.view-portfolio');
+      if (portfolioContainer) {
+        portfolioContainer.addEventListener('mouseenter', function() {
+          portfolioEl.style.animation = 'none';
+          portfolioAnim.setSpeed(2);
+          portfolioAnim.goToAndPlay(0, true);
+        });
+        portfolioContainer.addEventListener('mouseleave', function() {
+          portfolioAnim.setSpeed(1);
+          // When hover anim completes, resume CSS spin
+          portfolioAnim.addEventListener('complete', function onHoverEnd() {
+            portfolioAnim.removeEventListener('complete', onHoverEnd);
+            portfolioEl.style.animation = 'portfolio-spin 8s linear infinite';
+          });
+        });
+      }
     }
+
   })();
 
   </script>
