@@ -12355,6 +12355,52 @@ a:hover {
       .pricing-summary-box .summary-total .total-price { font-size: 1.2rem; }
     }
 
+    /* Sticky Price Preview Bar */
+    .sticky-price-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9000;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+    .sticky-price-bar.visible {
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .sticky-price-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #f0ff3d;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1.5rem;
+      border-radius: 10px 10px 0 0;
+      font-family: "Cascadia Code", monospace;
+      box-shadow: 0 -4px 20px rgba(240, 255, 61, 0.2);
+    }
+    .sticky-price-label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+    .sticky-price-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .sticky-price-count {
+      font-size: 0.7rem;
+      opacity: 0.5;
+    }
+    @media (max-width: 767px) {
+      .sticky-price-inner { padding: 0.5rem 1rem; border-radius: 8px 8px 0 0; }
+      .sticky-price-value { font-size: 0.95rem; }
+    }
+
     /* Service Info Modal */
     .service-modal-overlay {
       position: fixed;
@@ -15609,6 +15655,60 @@ WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,
         combinedText = formatPrice(totalMonthly) + '/mes';
       }
       document.getElementById('total-combined').textContent = combinedText;
+
+      // Update sticky price bar
+      var stickyVal = document.getElementById('sticky-price-value');
+      var stickyCount = document.getElementById('sticky-price-count');
+      if (stickyVal) stickyVal.textContent = combinedText;
+      var serviceCount = state.core.length + state.addons.length + (state.retainer ? 1 : 0);
+      if (stickyCount) stickyCount.textContent = serviceCount + (serviceCount === 1 ? ' servicio' : ' servicios');
+      updateStickyVisibility();
+    }
+
+    // Sticky price bar visibility
+    var pricingSectionInView = false;
+    var summaryBoxInView = false;
+    var hasSelectedServices = false;
+
+    function updateStickyVisibility() {
+      var bar = document.getElementById('sticky-price-bar');
+      if (!bar) return;
+      hasSelectedServices = (state.core.length + state.addons.length + (state.retainer ? 1 : 0)) > 0;
+      if (pricingSectionInView && !summaryBoxInView && hasSelectedServices) {
+        bar.classList.add('visible');
+      } else {
+        bar.classList.remove('visible');
+      }
+    }
+
+    // Set up Intersection Observers after DOM ready
+    function initStickyObservers() {
+      var pricingCart = document.getElementById('pricing-cart');
+      var pricingSummary = document.getElementById('pricing-summary');
+      if (!pricingCart || !pricingSummary) return;
+
+      var sectionObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          pricingSectionInView = entry.isIntersecting;
+          updateStickyVisibility();
+        });
+      }, { threshold: 0 });
+
+      var summaryObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          summaryBoxInView = entry.isIntersecting;
+          updateStickyVisibility();
+        });
+      }, { threshold: 0.3 });
+
+      sectionObserver.observe(pricingCart);
+      summaryObserver.observe(pricingSummary);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initStickyObservers);
+    } else {
+      initStickyObservers();
     }
 
     var LOGO_DATA_URI = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsSAAALEgHS3X78AAACNElEQVRYhWPk4RFzYGBg2M8wQIBpoCyGgQF3AAs1DZOTlWLITosGs8tru+nnAFsrE4boCH+G6DBfMP/I8bNE66XIAdHhfgwxEf4MNpbGZJtBsgP4+XkZfDwcGapKMxnkZCTJtpgsB1SVZDBkp8Uw8PHx4FX38eNnos0kqRz4/OICTrlHT54zbNm+j2Hpyk0Ml67cJNoBFKUBci1FBhSVAwJ8vAz8/Hzg7EcuoFoUfPr0hWHzjv3gENmynfiSnZmNjVuBgYEhgRjFnz59ZlBTVWLg5+PFkGNnZ2PQ01ZnCAnwYNDX0WBYs2EHUQ4gKQqmzlrKoG3iyZCRX4e3sAFlVWIBSQ6YMakZXPiAEp1nYDKDV1AKw9YdB0gxAgOQ5ABQUTtjYhPD1TPbwWX+pas3GSISChi0Tb0Ylq7aDE4HpAKKEiHIwqmzljAsWbmJ4dHjZ+Cgz06FVEZtPTOIcgrVcgEoBKbNWkJyeUBSFOALYlD0HN2zkmH7+rng2pFYQFI2nLtoNcOtOw8YGBkZGdRUFLCqARVK8nLS4IRKDCApBECVDMhgUMKTUbdlqKjrZrh89RYpRmAAsotikGMePn4GzgnkpH4YILky8vF0ZPDxdGLw9XAkWC1T3QGg/E+oEQKqIUFZkyYOwGc5qGhesmIj0YmPLAdgA6D8v3TFRobDx86QpZ8sB8Cq3rbu6eASkBJAkgNAwXz46GmGqbOXktTuwwdG+4YD7gBQFAgwMDAYDIjtDAwMAOjsyv03v5C5AAAAAElFTkSuQmCC';
@@ -15761,9 +15861,9 @@ WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,
 
       recalculate();
 
-      // Scroll to summary
-      var summary = document.getElementById('pricing-summary');
-      if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Scroll to summary (disabled)
+      // var summary = document.getElementById('pricing-summary');
+      // if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     return { toggle: toggle, downloadPDF: downloadPDF, selectPackage: selectPackage };
@@ -16365,5 +16465,13 @@ WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,
     return { switch: switchTab };
   })();
   </script>
+
+  <div id="sticky-price-bar" class="sticky-price-bar">
+    <div class="sticky-price-inner">
+      <span class="sticky-price-label">Tu inversión</span>
+      <span class="sticky-price-value" id="sticky-price-value">€0</span>
+      <span class="sticky-price-count" id="sticky-price-count">0 servicios</span>
+    </div>
+  </div>
 </body>
 </html>
