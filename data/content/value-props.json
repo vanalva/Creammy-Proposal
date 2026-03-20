@@ -1,0 +1,77 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "note": "These are the 'Why X' article sections used in deep-dive service pages. Each has short/medium/long variants. Long variants reference section IDs for multi-part articles.",
+  "props": {
+    "whyMilkyBranding": {
+      "title": "Por que Milky Branding es lo que necesitas?",
+      "sections": [
+        {
+          "id": "implementacion-tecnica",
+          "title": "Implementacion Tecnica",
+          "text": "Para abordar los desafios tecnicos como la escalabilidad, legibilidad y adaptabilidad del logotipo, emplearemos tecnicas avanzadas de diseno grafico que aseguren su eficacia en una amplia variedad de aplicaciones. La escalabilidad permite que el logotipo mantenga su impacto visual desde vallas publicitarias hasta favicons. La legibilidad se asegura mediante tipografias claras y espacios adecuados. La adaptabilidad implica disenar de modo que se vea optimo en diversos fondos y contextos."
+        },
+        {
+          "id": "identidad-unica",
+          "title": "Una Identidad Unica",
+          "text": "Nos involucramos personalmente en cada paso del proceso de creacion de su marca. Desde seleccionar la paleta de colores hasta definir la tipografia, cada detalle sera escogido para capturar la esencia de su vision y los valores que representa."
+        },
+        {
+          "id": "imagenes-memorables",
+          "title": "Imagenes Memorables",
+          "text": "Disenaremos un logotipo y materiales de marca que no solo capten la atencion de tu publico, sino que se queden en su memoria. Queremos que al ver su marca, tus clientes sientan la calidad y el caracter unico de tus productos."
+        },
+        {
+          "id": "mensajes-persuasivos",
+          "title": "Mensajes Persuasivos",
+          "text": "Redactaremos textos que no solo informen, sino que emocionen y motiven. La narrativa de tu marca girara alrededor de historias cautivadoras que resalten la autenticidad y la tradicion con una voz unica."
+        },
+        {
+          "id": "recursos-graficos",
+          "title": "Recursos Graficos",
+          "text": "Desarrollaremos ilustraciones, iconos, texturas y patrones que se podran utilizar en el sitio web y materiales impresos. Estos elementos complementaran el logotipo y proporcionaran herramientas versatiles para campanas de marketing impactantes."
+        },
+        {
+          "id": "consistencia-marca",
+          "title": "Consistencia de Marca",
+          "text": "La coherencia es clave para establecer confianza y reconocimiento. Aseguraremos que cada elemento de tu branding refleje una imagen unificada y profesional. El Brandbook sera una guia completa, permitiendote gestionar tu identidad de marca con total independencia."
+        },
+        {
+          "id": "ventaja-competitiva",
+          "title": "Ventaja Competitiva",
+          "text": "En un mercado saturado, una marca solida y bien posicionada es crucial. No solo construiremos una marca; crearemos una experiencia que resuene con tus clientes y los haga volver una y otra vez."
+        }
+      ]
+    },
+    "whyShakefront": {
+      "title": "Por que la creacion de tu sitio web con Webflow es lo que necesitas?",
+      "sections": [
+        {
+          "id": "presencia-autentica",
+          "title": "Una presencia online que realmente representa tu marca",
+          "text": "En el mundo digital de hoy, tener un sitio web que autenticamente refleje los valores y la estetica de tu marca es crucial. Webflow permite ir mas alla de las plantillas genericas y crear una experiencia unica."
+        },
+        {
+          "id": "interactividad",
+          "title": "Interactividad que cautiva",
+          "text": "No se trata solo de como se ve tu sitio, sino de como se siente interactuar con el. Webflow ofrece capacidades avanzadas de interaccion y animacion que hacen que tu sitio cobre vida."
+        },
+        {
+          "id": "gestion-contenido",
+          "title": "Gestion de contenido simplificada",
+          "text": "Actualizar tu sitio web no deberia ser complicado. Con el CMS integrado de Webflow, gestionar tu contenido es intuitivo y poderoso."
+        },
+        {
+          "id": "optimizacion",
+          "title": "Optimizacion y rendimiento",
+          "text": "Un sitio web debe ser tan agil como hermoso. Webflow asegura que tu sitio cargue rapidamente y funcione sin problemas en cualquier dispositivo."
+        },
+        {
+          "id": "soporte-seguridad",
+          "title": "Soporte y seguridad de primera",
+          "text": "Con Webflow, te beneficias de una plataforma segura con hospedaje de primera y soporte continuo."
+        }
+      ]
+    }
+  }
+}

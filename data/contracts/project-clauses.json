@@ -1,0 +1,153 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "language": "es",
+  "contractType": "project",
+  "clauses": {
+    "header": {
+      "required": true,
+      "condition": "always",
+      "template": "Este contrato se formalizara el dia de firma entre el Cliente y el Disenador indicados anteriormente.",
+      "fields": ["clientName", "clientLastName", "clientOrg", "projectName", "designerName", "date"]
+    },
+    "serviceChecklist": {
+      "required": true,
+      "condition": "always",
+      "template": "Este contrato incluye (1) o mas de los siguientes productos a seleccionar:",
+      "note": "Dynamically generated from selected services"
+    },
+    "confidentiality": {
+      "required": true,
+      "condition": "always",
+      "variants": {
+        "standard": "El Disenador, por la presente, confirma que puede conocer o disponer de informacion que se refiere al cliente a nivel personal, incluyendo informacion relacionada con nombres de cliente pasados, futuros, presentes, planes de marketing, informacion de proyectos y documentos financieros del cliente. El Disenador acepta proteger toda la informacion anterior y conservar la confidencialidad de cualquier informacion obtenida. Sin embargo, se permitira que el Disenador muestre el trabajo final en su sitio web, redes sociales, portafolio y en materiales promocionales.",
+        "broadcast": "El Disenador, por la presente, confirma que puede conocer o disponer de informacion que se refiere al cliente a nivel personal, incluyendo informacion relacionada con nombres de cliente pasados, futuros, presentes, planes de marketing, informacion de proyectos y documentos financieros del cliente. El Disenador acepta proteger toda la informacion anterior y conservar la confidencialidad de cualquier informacion obtenida. Sin embargo, se permitira que el Disenador muestre el trabajo final en su sitio web, redes sociales, portafolio y en materiales promocionales, siempre y cuando el contenido no haya sido restringido por acuerdos de emision previos."
+      }
+    },
+    "clientApproval": {
+      "required": true,
+      "condition": "always",
+      "text": "Se notificaran al Cliente todos y cada uno de los materiales, que debera aprobar antes de la finalizacion y entrega del proyecto. Ademas, el Cliente tendra permiso para aceptar el trabajo y solicitar cualquier revision si fuera necesaria."
+    },
+    "revisions": {
+      "required": true,
+      "condition": "always",
+      "text": "El proceso incluye hasta tres (3) rondas de revision. Cada ronda permite ajustes dentro del alcance original del proyecto. Cambios que alteren la direccion creativa, el concepto, la estructura o el alcance acordado se consideran fuera de revision y podran generar costes adicionales. El Disenador notificara al Cliente antes de incurrir en costes extra. Ajustes menores de buena fe (color, tipografia, alineacion) se realizan sin coste adicional. Es responsabilidad del Cliente proporcionar feedback claro, consolidado y por escrito."
+    },
+    "terminationBranding": {
+      "required": false,
+      "condition": "services.includes('milky-branding') AND NOT services.includes('shakefront-full')",
+      "title": "Clausula de Rescision para Servicios de Branding",
+      "sections": {
+        "clientEarly": "Cancelacion Temprana (Dentro de las Primeras Dos Semanas): Si el Cliente decide cancelar el proyecto dentro de las dos primeras semanas y antes de la primera entrega de disenos, sera responsable de pagar el 25% del costo total del proyecto. Dado que el Cliente ya ha pagado el 50% inicialmente, el Disenador reembolsara el 25% restante al Cliente.",
+        "clientAfterFirstDelivery": "Cancelacion Despues de la Primera Entrega: Si la cancelacion ocurre despues de la primera entrega de disenos pero antes de las tres revisiones estandar, no habra reembolsos adicionales ni pagos requeridos por parte del Cliente, ya que se considerara que el 50% inicial cubre el trabajo realizado hasta ese momento.",
+        "clientAfter3Revisions": "Cancelacion Despues de Tres Revisiones: En caso de cancelacion despues de tres revisiones y antes de la aprobacion del diseno final, el Cliente debera abonar el 75% del costo total del proyecto.",
+        "clientFinalApproval": "Entrega de Editables y Manual de Marca: Una vez que el diseno final este aprobado, el Cliente debera pagar el saldo restante antes de que el Disenador entregue los archivos editables y el manual de marca."
+      }
+    },
+    "terminationWebDev": {
+      "required": false,
+      "condition": "services.includes('shakefront-full') OR services.includes('shakefront-lite')",
+      "title": "Clausula de Rescision para el Diseno y Desarrollo Web",
+      "sections": {
+        "clientEarly": "Cancelacion Temprana (Dentro de las Primeras Dos Semanas): En caso de cancelacion dentro de las dos primeras semanas y antes de la entrega del diseno del sitio web, el Cliente sera responsable de pagar el 25% del costo total del proyecto. El Disenador reembolsara el 25% restante del pago inicial del 50%.",
+        "clientAfterDesign": "Cancelacion Despues de la Entrega del Diseno: Si el Cliente cancela el proyecto despues de la entrega del diseno del sitio web pero antes de comenzar el desarrollo, sera responsable de pagar el 75% del costo total del proyecto.",
+        "clientAfterDev": "Cancelacion Despues de Comenzar el Desarrollo: En el caso de que el Cliente cancele el proyecto despues de haber aprobado el diseno final y cuando el desarrollo haya comenzado o este por comenzar, sera responsable de pagar el 100% del costo total del proyecto."
+      }
+    },
+    "terminationDesigner": {
+      "required": true,
+      "condition": "always",
+      "title": "Rescision por el Disenador",
+      "sections": {
+        "justified": "El Disenador solo puede cancelar el contrato bajo circunstancias de emergencia extremadamente justificadas, como graves problemas de salud, desastres naturales o situaciones de fuerza mayor.",
+        "unjustified": "Si el Disenador cancela el proyecto por motivos frivolos o no justificados, el Cliente recibira un reembolso completo del importe ya pagado mas un cupon por un 25% de descuento en un futuro trabajo.",
+        "notification": "El Disenador debera proporcionar una notificacion por escrito al Cliente explicando las razones de la cancelacion.",
+        "compensation": "Si la cancelacion se debe a una emergencia justificada, el Cliente recibira el monto pagado menos un 15% del costo total del proyecto, que cubre los gastos iniciales y el tiempo invertido hasta el momento de la cancelacion.",
+        "transition": "El Disenador proporcionara asistencia para la transicion del proyecto a otro profesional si es solicitado por el Cliente."
+      }
+    },
+    "webflowTerms": {
+      "required": false,
+      "condition": "services.includes('shakefront-full') OR services.includes('shakefront-lite')",
+      "title": "Desarrollo Web en Webflow",
+      "sections": {
+        "scope": "El Disenador se compromete a desarrollar el sitio web de acuerdo con las especificaciones acordadas previamente entre el Cliente y el Disenador.",
+        "platform": "El Disenador usara la plataforma Webflow para el desarrollo del sitio web. Es responsabilidad del Cliente proporcionar, o cubrir los costos asociados con, cualquier licencia, plantilla premium, o integracion especifica que no este incluida en la suscripcion estandar de Webflow.",
+        "responsive": "El sitio web sera disenado para ser responsivo, asegurando una optima visualizacion y funcionalidad en diversos dispositivos y tamanos de pantalla.",
+        "thirdParty": "Cualquier integracion con herramientas o plataformas de terceros solicitadas por el Cliente puede incurrir en costos adicionales y requerir tiempo adicional para la implementacion.",
+        "maintenance": "Una vez que el sitio web este completo y entregado, cualquier actualizacion o modificacion posterior requerira un nuevo acuerdo y posiblemente costos adicionales, a menos que se acuerde lo contrario.",
+        "training": "El Disenador proporcionara una sesion basica de formacion para el Cliente sobre como administrar y hacer actualizaciones menores al sitio en Webflow. Sesiones adicionales pueden incurrir en costos extra.",
+        "transfer": "Al finalizar el proyecto, el Disenador puede traspasar la propiedad y control total del sitio web al Cliente si asi lo requiere, previo acuerdo. Esto puede requerir que el Cliente tenga su propia cuenta en Webflow.",
+        "limitations": "El Cliente reconoce que la plataforma Webflow tiene sus propias limitaciones. Aunque es una plataforma versatil y poderosa, puede haber ciertas funcionalidades o integraciones que no sean posibles o que requieran soluciones alternas.",
+        "backups": "Se realizaran copias de seguridad (backups) regularmente durante el desarrollo. Sin embargo, una vez entregado el proyecto, es responsabilidad del Cliente mantener y gestionar las copias de seguridad.",
+        "accessConfidentiality": "El Disenador garantiza que mantendra la confidencialidad de los accesos y credenciales proporcionadas por el Cliente y solo las usara con el proposito de desarrollar el sitio web.",
+        "liability": "El Disenador no sera responsable de cualquier problema o fallo tecnico en el sitio web causado por actualizaciones en la plataforma Webflow, integraciones de terceros, o cualquier otro factor externo post-entrega."
+      }
+    },
+    "domainTerms": {
+      "required": false,
+      "condition": "services.includes('the-grinder') OR services.includes('shakefront-full')",
+      "title": "Dominio Web",
+      "sections": {
+        "ownership": "Si el Cliente ya posee un dominio, es responsabilidad del Cliente proporcionar los accesos necesarios para vincular dicho dominio con el sitio Webflow. Si se necesita registrar un nuevo dominio, los costos asociados con la compra y renovacion del dominio correran por cuenta del Cliente, a menos que se acuerde lo contrario.",
+        "linking": "El Disenador asistira al Cliente en la vinculacion del dominio al sitio Webflow. No obstante, es responsabilidad del Cliente garantizar que el dominio se mantenga renovado y activo.",
+        "transfers": "Si en algun punto el Cliente desea transferir su dominio a otro proveedor o registrador, es responsabilidad del Cliente gestionar dicha transferencia. El Disenador puede proporcionar asistencia o asesoramiento, pero puede incurrir en costos adicionales.",
+        "dataProtection": "Si el servicio incluye la compra de un dominio en nombre del Cliente, el Disenador se compromete a proteger la informacion personal del Cliente y a no usar el dominio de manera inapropiada o sin el consentimiento del Cliente."
+      }
+    },
+    "communicationPause": {
+      "required": true,
+      "condition": "always",
+      "text": "Si el Cliente no responde a comunicaciones en un plazo de 10 dias habiles, el proyecto se considerara en pausa. Si la falta de comunicacion se extiende a 30 dias habiles, el proyecto se considerara terminado y se emitira la factura correspondiente por el trabajo realizado hasta la fecha."
+    },
+    "intellectualProperty": {
+      "required": true,
+      "condition": "always",
+      "sections": {
+        "credits": "El Disenador podra incluir un credito discreto ('Disenado por Van Alva') en el pie de pagina del sitio web con enlace a su portafolio, salvo acuerdo contrario.",
+        "publicUse": "El Disenador podra mostrar el trabajo final en su sitio web, redes sociales, portafolio y materiales promocionales.",
+        "designRights": "Todos los derechos de propiedad intelectual del diseno pertenecen al Disenador hasta que se complete el pago total. Una vez completado, el Cliente recibe una licencia no exclusiva para el uso aprobado del proyecto.",
+        "exclusivity": "No se garantiza exclusividad territorial ni tematica. El Disenador puede trabajar con competidores del Cliente, salvo acuerdo especifico por escrito.",
+        "antiPlagiarism": "El Disenador garantiza originalidad en su trabajo. Cualquier elemento de terceros (stock, tipografias, plugins) se utilizara bajo licencia apropiada."
+      }
+    },
+    "fileDelivery": {
+      "required": true,
+      "condition": "always",
+      "text": "Una vez completado el 100% del pago, el Disenador entregara: archivos editables, archivos fuente, librerias y control total del proyecto. Antes del pago completo, solo se entregan previsualizaciones y versiones de baja resolucion."
+    },
+    "postDelivery": {
+      "required": true,
+      "condition": "always",
+      "text": "Cualquier soporte, modificacion o actualizacion posterior a la entrega del proyecto se considera trabajo adicional y se facturara por separado. No se incluye mantenimiento gratuito a menos que se contrate el servicio Barista."
+    },
+    "refunds": {
+      "required": true,
+      "condition": "always",
+      "text": "No se realizan reembolsos salvo negligencia grave por parte del Disenador: violacion de confidencialidad, exposicion de datos sensibles, incumplimiento deliberado del contrato, o comportamiento poco etico."
+    },
+    "contentNotice": {
+      "required": false,
+      "condition": "services.includes('shakefront-*') OR services.includes('cold-brew') OR services.includes('hot-press')",
+      "text": "Es importante destacar que todo el contenido multimedia, incluyendo fotos, videos y texto, deben ser suministrados por el equipo del Cliente antes de iniciar el proceso de diseno. Cualquier contenido textual no estructurado sera reemplazado por texto generado por AI de tipo plantilla para diagramar la pagina. El Disenador no lee mentes: todas las solicitudes deben constar por escrito."
+    },
+    "clientIntervention": {
+      "required": true,
+      "condition": "always",
+      "text": "El Cliente tendra derecho a solicitar la intervencion parcial del proveedor en la implementacion, incluyendo cualquier rediseno necesario, siempre y cuando estos cambios sean necesarios debido a limitaciones de la herramienta o para optimizar imagenes y contenido. Cambios dentro de lo razonable sin tarifas adicionales. Trabajo adicional significativo se facturara por separado."
+    },
+    "payment": {
+      "required": true,
+      "condition": "always",
+      "template": "El Proyecto se realizara y entregara tras el pago de las cantidades indicadas bajo 'Total Inversion' dependiendo del paquete seleccionado. Si el alcance del trabajo cambia durante la realizacion del proyecto, pueden producirse costes adicionales. El Disenador enviara cualquier cambio en los precios al Cliente antes de comenzar tales tareas.",
+      "fields": ["paymentStructure", "totalAmount", "bankInfo"]
+    },
+    "signature": {
+      "required": true,
+      "condition": "always",
+      "text": "Firmando abajo, las Partes aceptan que han leido, entendido y que cumpliran con los terminos indicados en este contrato de diseno grafico de profesional autonomo.",
+      "fields": ["clientSignature", "signDate"]
+    }
+  }
+}

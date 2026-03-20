@@ -1,0 +1,97 @@
+<!-- BLOCK: Bottom navigation bar + contextual sub-nav -->
+  <div id="bottom-nav" class="bottom-nav">
+    <div class="bottom-nav-inner">
+      <!-- Main nav links -->
+      <div class="bottom-nav-main" id="bottom-nav-main">
+        <a href="#" class="bnav-link" data-scroll="top">Inicio</a>
+        <a href="#" class="bnav-link" data-scroll="detalle-y-contrato">Propuesta</a>
+        <a href="#" class="bnav-link" data-scroll="pricing-cart">Inversión</a>
+        <a href="#" class="bnav-link bnav-accent" id="bnav-price" data-scroll="pricing-summary">
+          <span id="bnav-price-value"></span>
+        </a>
+      </div>
+      <!-- Sub-nav for proposal detail (hidden by default) -->
+      <div class="bottom-nav-sub" id="bottom-nav-sub">
+        <div class="bnav-sub-tabs" id="bnav-sub-tabs"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var nav = document.getElementById('bottom-nav');
+    var sub = document.getElementById('bottom-nav-sub');
+    var subTabs = document.getElementById('bnav-sub-tabs');
+    var priceEl = document.getElementById('bnav-price-value');
+    if (!nav) return;
+
+    // Smooth scroll for all nav links
+    nav.querySelectorAll('[data-scroll]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = this.getAttribute('data-scroll');
+        if (target === 'top') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          var el = document.getElementById(target);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Build sub-tabs from proposal detail tabs
+    var detailSection = document.getElementById('detalle-y-contrato');
+    if (detailSection) {
+      var tabs = detailSection.querySelectorAll('.w-tab-link');
+      tabs.forEach(function(tab) {
+        var label = tab.textContent.trim().replace(/\s*(LOAD|AIM|SHOOT|RELOAD)\s*/gi, '');
+        var btn = document.createElement('button');
+        btn.className = 'bnav-sub-btn';
+        btn.textContent = label;
+        btn.onclick = function() {
+          tab.click();
+          detailSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+        subTabs.appendChild(btn);
+      });
+    }
+
+    // Observe if proposal-detail section is in view
+    if (detailSection) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          sub.classList.toggle('visible', entry.isIntersecting);
+        });
+      }, { threshold: 0.05 });
+      obs.observe(detailSection);
+    }
+
+    // Show nav after scrolling past the fold
+    var showNav = false;
+    window.addEventListener('scroll', function() {
+      var scrolled = window.scrollY > window.innerHeight * 0.5;
+      if (scrolled !== showNav) {
+        showNav = scrolled;
+        nav.classList.toggle('visible', showNav);
+      }
+    });
+
+    // Update price display from pricing cart
+    var totalEl = document.getElementById('total-combined');
+    var bp = document.getElementById('bnav-price');
+    if (bp) bp.style.display = 'none';
+
+    if (totalEl) {
+      var priceObs = new MutationObserver(function() {
+        var text = totalEl.textContent;
+        if (text && text !== '€0' && priceEl) {
+          priceEl.textContent = text;
+          bp.style.display = '';
+        } else if (bp) {
+          bp.style.display = 'none';
+        }
+      });
+      priceObs.observe(totalEl, { childList: true, characterData: true, subtree: true });
+    }
+  })();
+  </script>

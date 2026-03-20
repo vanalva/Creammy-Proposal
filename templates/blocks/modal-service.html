@@ -1,0 +1,21 @@
+<!-- BLOCK: Service info modal overlay -->
+  <div class="service-modal-overlay" id="service-modal-overlay" onclick="ServiceModal.close()">
+    <div class="service-modal" onclick="event.stopPropagation()">
+      <button class="service-modal-close" onclick="ServiceModal.close()">&times;</button>
+      <div class="modal-eyebrow" id="modal-eyebrow"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-price" id="modal-price"></div>
+      <div class="modal-desc" id="modal-desc"></div>
+      <div id="modal-includes">
+        <div class="modal-section-title">Incluye</div>
+        <ul class="modal-list" id="modal-list"></ul>
+      </div>
+      <div id="modal-deliverables-section" style="display:none;">
+        <div class="modal-section-title">Recibirás</div>
+        <ul class="modal-list" id="modal-deliverables"></ul>
+      </div>
+      <button class="modal-cta" id="modal-cta" onclick="ServiceModal.selectAndClose()">Añadir al presupuesto</button>
+    </div>
+  </div>
+
+  <!-- Retainer Full Page Overlay -->

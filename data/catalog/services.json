@@ -1,0 +1,1039 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "currency": "EUR",
+  "taxNote": "+ IVA where applicable",
+  "services": {
+    "milky-branding": {
+      "id": "milky-branding",
+      "name": "Milky Branding",
+      "category": "branding",
+      "eyebrow": "Branding",
+      "subtitle": "Identidad de marca completa",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 3500,
+        "monthly": false,
+        "priceRange": { "min": 750, "max": 3500 },
+        "priceVariants": {
+          "basic": 750,
+          "tcc-retainer": 1200,
+          "standard": 1500,
+          "full": 3500
+        }
+      },
+      "timeline": { "min": 2, "max": 4, "unit": "weeks" },
+      "description": {
+        "short": "Sistema visual completo, capaz de crecer junto al negocio y adaptarse a distintos formatos.",
+        "medium": "Identidad de marca completa. Sistema visual solido, capaz de crecer junto al negocio y adaptarse a distintos formatos, contextos y etapas. Cada decision de diseno respondera a una estrategia clara de posicionamiento y diferenciacion.",
+        "long": "whyMilkyBranding"
+      },
+      "includes": [
+        "Logotipo y sistema de identidad visual adaptable (todos los formatos y escalas)",
+        "Naming Creativo para concepto principal o subdivisiones",
+        "Eslogan corto y concreto que transmita la voz de la marca",
+        "Paleta cromatica funcional y expresiva",
+        "Seleccion tipografica principal y secundaria optimizada",
+        "Copywriting creativo",
+        "Sistema grafico complementario: patrones, tramas e ilustraciones",
+        "Acompanamiento, asesoria y estrategia de desarrollo de la marca",
+        "Aplicacion del sistema de marca sobre el producto (packaging)",
+        "Mockups realistas de producto (consumo, delivery, RRSS)",
+        "Lineamientos de uso del sistema visual",
+        "Brandbook detallado con logica, reglas y criterios",
+        "Hasta 2 variantes graficas de packaging o etiqueta",
+        "Hasta 2 variantes graficas de carta (Menu)",
+        "Papeleria basica: tarjetas de presentacion y firma electronica"
+      ],
+      "deliverables": [
+        "Brandbook completo y detallado",
+        "Repositorio digital organizado (Google Drive)",
+        "Archivos maestros del logotipo y sistema visual",
+        "Mockups y visuales de producto para presentaciones",
+        "Assets listos para imprenta",
+        "Hasta 3 rondas de revision durante el proceso creativo"
+      ],
+      "tags": ["branding", "naming", "brandbook", "logo", "identidad"],
+      "bundleRules": {
+        "includedWith": ["shakefront-full"],
+        "freeWith": []
+      }
+    },
+
+    "shakefront-full": {
+      "id": "shakefront-full",
+      "name": "Shakefront Full",
+      "category": "web",
+      "eyebrow": "Web Full - CMS",
+      "subtitle": "Sitio web completo en Webflow con CMS integrado",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 13500,
+        "monthly": false,
+        "priceRange": { "min": 5550, "max": 15265 },
+        "priceVariants": {
+          "standard-10pages": 5550,
+          "with-booking": 7750,
+          "full-cms-15pages": 13500,
+          "ecommerce": 15265
+        }
+      },
+      "timeline": { "min": 6, "max": 12, "unit": "weeks" },
+      "description": {
+        "short": "Sitio web completo en Webflow con CMS, 15+ paginas, animaciones y SEO avanzado.",
+        "medium": "Sitio web completo en Webflow con CMS integrado. Incluye Milky Branding y Silky Edits. Mas de 15 paginas unicas, diseno pixel-perfect, animaciones, SEO avanzado y soporte post-lanzamiento.",
+        "long": "whyShakefront"
+      },
+      "includes": [
+        "Milky Branding incluido (identidad de marca completa)",
+        "Silky Edits incluido (retoque fotografico profesional)",
+        "Diseno UI/UX responsive (desktop, tablet, movil, horizontal)",
+        "Prototipo interactivo de navegacion",
+        "Desarrollo en Webflow: 15+ paginas con diseno pixel-perfect",
+        "CMS personalizado para gestion de contenidos",
+        "Sitemap jerarquico + Styleguide digital",
+        "Sistema de componentes reutilizables",
+        "CTAs claros, pop-ups, modals y pestanas dinamicas",
+        "Animaciones y microinteracciones sutiles",
+        "SEO avanzado: estructura semantica, metaetiquetas, URLs limpias",
+        "Diseno 100% adaptativo (responsive total)",
+        "Formularios de contacto con envio a correos corporativos",
+        "Hosting, dominio, SSL y correos corporativos",
+        "Cumplimiento legal: RGPD, CCPA, cookies",
+        "Accesibilidad (WCAG)",
+        "Mapa interactivo",
+        "Integracion con APIs de terceros",
+        "Herramientas de marketing (email, remarketing, blog)",
+        "Funcionalidad multilinguee dinamica",
+        "Pruebas de compatibilidad y optimizacion",
+        "Soporte post-lanzamiento"
+      ],
+      "deliverables": [
+        "Wireframe 99% funcional",
+        "Activos de marca optimizados y exportados",
+        "Sitio web funcional y listo para lanzamiento",
+        "Introduccion al portal de usuarios y modificacion del contenido"
+      ],
+      "tags": ["web", "webflow", "cms", "fullsite", "responsive", "seo"],
+      "bundleRules": {
+        "includedWith": [],
+        "includes": ["milky-branding", "silky-edits"],
+        "freeWith": []
+      },
+      "mutuallyExclusiveWith": ["shakefront-lite"]
+    },
+
+    "shakefront-lite": {
+      "id": "shakefront-lite",
+      "name": "Shakefront Lite",
+      "category": "web",
+      "eyebrow": "Web Lite",
+      "subtitle": "One-pager elegante y funcional en Webflow",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 10500,
+        "monthly": false,
+        "priceRange": { "min": 2100, "max": 10500 },
+        "priceVariants": {
+          "basic-onepager": 2100,
+          "standard-10sections": 3750,
+          "full-lite": 10500
+        }
+      },
+      "timeline": { "min": 4, "max": 8, "unit": "weeks" },
+      "description": {
+        "short": "One-pager elegante y funcional en Webflow. Sin CMS.",
+        "medium": "One-pager elegante y funcional en Webflow. No incluye branding ni CMS. Ideal para una presencia web directa, rapida y con impacto visual.",
+        "long": "whyShakefrontLite"
+      },
+      "includes": [
+        "Diseno UI/UX responsive (desktop, tablet, movil, horizontal)",
+        "Desarrollo en Webflow: one-pager multi-seccion",
+        "SEO avanzado",
+        "Hosting, dominio, SSL y correos corporativos",
+        "Formularios de contacto",
+        "Funcionalidad multilinguee",
+        "Diseno 100% adaptativo",
+        "Paginas funcionales (politicas, 404, terminos, cookies)",
+        "Iconografia personalizada",
+        "Videografia integrada",
+        "Pruebas y optimizacion",
+        "Cumplimiento legal y accesibilidad (WCAG)",
+        "Soporte post-lanzamiento"
+      ],
+      "deliverables": null,
+      "tags": ["web", "webflow", "onepager", "responsive", "lite"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      },
+      "mutuallyExclusiveWith": ["shakefront-full"]
+    },
+
+    "flashy-socials": {
+      "id": "flashy-socials",
+      "name": "Flashy Socials",
+      "category": "social",
+      "eyebrow": "Redes - Pack Social",
+      "subtitle": "Pack completo de contenido para redes sociales",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 1200,
+        "monthly": false,
+        "priceRange": { "min": 780, "max": 1200 },
+        "priceVariants": {
+          "lite": 780,
+          "standard": 1200,
+          "discounted-with-full": 870
+        }
+      },
+      "timeline": { "min": 2, "max": 3, "unit": "weeks" },
+      "description": {
+        "short": "Configuracion de redes, plantillas, contenido inicial y brandbook social.",
+        "medium": "Pack completo de contenido para redes sociales. Configuracion de perfiles, plantillas editables, y las primeras publicaciones con la nueva estetica de marca.",
+        "long": "whyFlashySocials"
+      },
+      "includes": [
+        "Firmas digitales para correo electronico",
+        "Configuracion de Google Workspace para correos empresariales",
+        "Tono, voz y valores de la marca y su comportamiento digital",
+        "Copywriting y asesoramiento creativo para biografias en distintas plataformas",
+        "Diseno de las primeras 12 publicaciones de la grilla de Instagram",
+        "Creacion de 1 TikTok con sound original para campana de lanzamiento",
+        "Creacion de plantillas en Adobe Express",
+        "Gestor de Marca en Adobe Express: acceso a recursos vectoriales, tipografias, paletas",
+        "Programacion semanal del contenido en Adobe Express",
+        "Fotos de perfil y banners para distintas plataformas de social media",
+        "Social BrandBook: manual de tonalidad e implementacion grafica para RRSS"
+      ],
+      "deliverables": null,
+      "tags": ["social", "instagram", "tiktok", "contenido", "plantillas"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": [],
+        "discountedWith": { "shakefront-full": 870 }
+      }
+    },
+
+    "buttery-1day": {
+      "id": "buttery-1day",
+      "name": "Buttery Frames (1 dia)",
+      "category": "production",
+      "eyebrow": "Produccion - Foto",
+      "subtitle": "Sesion fotografica profesional de 1 dia",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 1200,
+        "monthly": false,
+        "priceRange": { "min": 350, "max": 1800 },
+        "priceVariants": {
+          "staff-only": 350,
+          "standard": 1200,
+          "premium": 1800
+        }
+      },
+      "timeline": { "min": 1, "max": 1, "unit": "days" },
+      "description": {
+        "short": "Sesion fotografica profesional de 4 a 6 horas con entrega de 50+ fotos.",
+        "medium": "Registro fotografico y produccion profesional para personal y productos. Una sesion completa con planificacion previa y material de video incluido.",
+        "long": "whyButteryFrames"
+      },
+      "includes": [
+        "Sesion de 4 a 6 horas",
+        "Sin limite de capturas",
+        "Entrega de al menos 50+ fotos",
+        "Planificacion previa y asesoria",
+        "Transporte y equipamiento",
+        "Estilo y enfoque personalizables segun necesidades de marca",
+        "Entrega en formato digital de alta resolucion 4K Horizontal 16:9 Log 4/2/2 10 Bit",
+        "Material de video suficiente para realizar 4 capsulas de 1 minuto"
+      ],
+      "deliverables": [
+        "Fotos exportadas en JPG",
+        "Fotos en bruto (RAW) para futura utilizacion",
+        "Google Drive personal con todos los recursos"
+      ],
+      "tags": ["foto", "produccion", "sesion", "4k", "video"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "buttery-3days": {
+      "id": "buttery-3days",
+      "name": "Buttery Frames (3 dias)",
+      "category": "production",
+      "eyebrow": "Produccion - Foto",
+      "subtitle": "Produccion fotografica extendida: 3 dias, 3 localizaciones",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 2180,
+        "monthly": false,
+        "priceRange": { "min": 2180, "max": 2550 }
+      },
+      "timeline": { "min": 3, "max": 3, "unit": "days" },
+      "description": {
+        "short": "Produccion fotografica extendida: 3 sesiones en 3 localizaciones distintas.",
+        "medium": "Produccion fotografica extendida: 3 sesiones en 3 localizaciones distintas. Material abundante para marca, RRSS y web.",
+        "long": "whyButteryFrames3Days"
+      },
+      "includes": [
+        "Sesion de 4 a 6 horas diarias (3 dias)",
+        "Sin limite de capturas",
+        "Dentro y fuera de las instalaciones y alrededores",
+        "Entrega de al menos 300+ fotos",
+        "Planificacion previa y asesoria",
+        "Transporte y equipamiento",
+        "Estilo y enfoque personalizables segun necesidades de marca",
+        "Entrega en formato digital 4K Horizontal 16:9 Log 4/2/2 10 Bit",
+        "Material de video para distintas capsulas y propositos"
+      ],
+      "deliverables": null,
+      "tags": ["foto", "produccion", "sesion", "4k", "video", "extendido"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "cold-brew": {
+      "id": "cold-brew",
+      "name": "Cold Brew",
+      "category": "video",
+      "eyebrow": "Brand Video - AI + Motion",
+      "subtitle": "Brand video aspiracional con AI y motion graphics",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 1200,
+        "monthly": false,
+        "priceRange": { "min": 1200, "max": 1200 }
+      },
+      "timeline": { "min": 2, "max": 4, "unit": "weeks" },
+      "description": {
+        "short": "Brand video con AI generativa, motion graphics y stock footage.",
+        "medium": "Brand video aspiracional creado con AI, motion graphics y stock footage. Disenado para definir visualmente la marca y presentarla a inversores, patrocinadores y audiencia.",
+        "long": "whyColdBrew"
+      },
+      "includes": [
+        "Brand video con AI generativa + motion graphics + stock footage",
+        "Direccion creativa y storyboard conceptual",
+        "Diseno visual alineado con la identidad de marca",
+        "Correccion de color y post-produccion",
+        "Seleccion musical y SFX (ArtList)",
+        "Adaptaciones para web header, redes sociales e inversores",
+        "Silky Edits Pack (Retoque fotografico de hasta 30+ fotos)"
+      ],
+      "deliverables": [
+        "1 brand video principal (60-90 seg)",
+        "Version corta para redes (15-30 seg)",
+        "Version header web (loop optimizado)",
+        "HD/4K en formatos horizontal, vertical (9:16) y cuadrado (1:1)",
+        "Archivos fuente tras pago final"
+      ],
+      "tags": ["video", "motion", "ai", "brand-video", "produccion"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "glass-cup": {
+      "id": "glass-cup",
+      "name": "The Glass Cup",
+      "category": "print",
+      "eyebrow": "Diseno - Impresos",
+      "subtitle": "Packaging, papeleria y materiales impresos",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 750,
+        "monthly": false,
+        "priceRange": { "min": 450, "max": 750 }
+      },
+      "timeline": { "min": 1, "max": 3, "unit": "weeks" },
+      "description": {
+        "short": "Packaging, papeleria y materiales impresos para tu marca.",
+        "medium": "Packaging, papeleria y materiales impresos. Todo lo tangible que necesita tu marca para dejar huella fuera de lo digital.",
+        "long": "whyGlassCup"
+      },
+      "includes": [
+        "Diseno de presentacion, pitch deck o sales book",
+        "Diseno de Packaging",
+        "Dossier publicitario",
+        "Folleto/Flyer comercial (diptico-triptico)",
+        "Carpeta de producto",
+        "Tarjetas de visita: hasta 3 modelos diferentes",
+        "Sellos, sello al seco, etiquetas o pegatinas",
+        "Otros elementos que puedan reemplazar productos listados"
+      ],
+      "deliverables": [
+        "Archivos listos para imprimir",
+        "Archivos editables con lineas de corte, doblez, registros y todos los formatos de color"
+      ],
+      "tags": ["print", "packaging", "papeleria", "tarjetas", "flyers"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": ["shakefront-full"]
+      }
+    },
+
+    "silky-edits": {
+      "id": "silky-edits",
+      "name": "Silky Edits",
+      "category": "production",
+      "eyebrow": "Diseno - Retoque",
+      "subtitle": "Retoque fotografico profesional con AI",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 350,
+        "monthly": false,
+        "priceRange": { "min": 200, "max": 680 }
+      },
+      "timeline": { "min": 1, "max": 2, "unit": "weeks" },
+      "description": {
+        "short": "Retoque fotografico profesional para cohesion y consistencia visual.",
+        "medium": "Retoque fotografico profesional para la cohesion y consistencia visual de tu marca. Cada imagen tratada para reflejar tu identidad.",
+        "long": "whySilkyEdits"
+      },
+      "includes": [
+        "Recreacion de fotografias profesionales con IA para la web",
+        "Retoque fotografico de hasta 30+ fotos seleccionadas",
+        "Maquillaje digital",
+        "Correccion de color y exposicion",
+        "Eliminacion de imperfecciones",
+        "Enfoque y nitidez",
+        "Recorte y redimensionamiento",
+        "Ajustes de perspectiva",
+        "Fondo de reemplazo",
+        "AI enhancement"
+      ],
+      "deliverables": [
+        "Fotos exportadas en JPG",
+        "Fotos en bruto (RAW) para futura utilizacion",
+        "Google Drive personal con todos los recursos"
+      ],
+      "tags": ["retoque", "foto", "ai", "edicion"],
+      "bundleRules": {
+        "includedWith": ["shakefront-full"],
+        "freeWith": ["shakefront-full", "flashy-socials", "buttery-1day", "buttery-3days"]
+      }
+    },
+
+    "barista": {
+      "id": "barista",
+      "name": "Barista",
+      "category": "web",
+      "eyebrow": "Web - Mantenimiento",
+      "subtitle": "Mantenimiento web continuo mensual",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 450,
+        "monthly": true,
+        "priceRange": { "min": 450, "max": 450 }
+      },
+      "timeline": { "min": 0, "max": 0, "unit": "ongoing" },
+      "description": {
+        "short": "Mantenimiento web, actualizacion de contenido y soporte tecnico mensual.",
+        "medium": "Mantenimiento web continuo. Actualizacion de contenido, modificaciones, optimizacion y soporte tecnico para que tu web este siempre al dia.",
+        "long": "whyBarista"
+      },
+      "includes": [
+        "Actualizacion de contenido (textos, imagenes, secciones)",
+        "Modificaciones de estructura y diseno",
+        "Optimizacion de rendimiento y velocidad",
+        "Actualizaciones de seguridad",
+        "Soporte tecnico continuo",
+        "Monitoreo de uptime y funcionamiento"
+      ],
+      "deliverables": null,
+      "tags": ["web", "mantenimiento", "soporte", "mensual"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "the-grinder": {
+      "id": "the-grinder",
+      "name": "The Grinder",
+      "category": "web",
+      "eyebrow": "Web - Infraestructura",
+      "subtitle": "Hosting, dominio y correos corporativos",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 320,
+        "monthly": false,
+        "priceRange": { "min": 320, "max": 320 }
+      },
+      "timeline": { "min": 1, "max": 2, "unit": "days" },
+      "description": {
+        "short": "Hosting profesional, dominio personalizado y correos corporativos.",
+        "medium": "Configuracion completa de la infraestructura digital: hosting profesional, dominio personalizado y correos corporativos bajo tu dominio.",
+        "long": "whyTheGrinder"
+      },
+      "includes": [
+        "Configuracion de hosting profesional (Webflow)",
+        "Registro y configuracion de dominio",
+        "Certificado SSL incluido",
+        "Configuracion de correos electronicos corporativos",
+        "DNS y configuracion tecnica",
+        "Respaldo y seguridad integrada"
+      ],
+      "deliverables": null,
+      "tags": ["hosting", "dominio", "email", "ssl", "infraestructura"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "rosetta": {
+      "id": "rosetta",
+      "name": "Rosetta",
+      "category": "web",
+      "eyebrow": "Web - Funcionalidad",
+      "subtitle": "Implementacion multilinguee dinamica",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 450,
+        "monthly": false,
+        "priceRange": { "min": 450, "max": 450 }
+      },
+      "timeline": { "min": 1, "max": 2, "unit": "weeks" },
+      "description": {
+        "short": "Version bilinguee del sitio con deteccion automatica de idioma.",
+        "medium": "Implementacion de version bilinguee del sitio web con deteccion automatica de idioma y arquitectura preparada para futuros idiomas.",
+        "long": "whyRosetta"
+      },
+      "includes": [
+        "Version bilinguee del sitio (espanol / ingles)",
+        "Deteccion automatica del idioma del navegador",
+        "Seleccion manual de idioma",
+        "Sistema multilinguee integrado desde la estructura base",
+        "Coherencia visual y tipografica en ambos idiomas",
+        "Arquitectura preparada para anadir nuevos idiomas sin comprometer diseno"
+      ],
+      "deliverables": null,
+      "tags": ["multilinguee", "idiomas", "internacionalizacion", "i18n"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "hot-press": {
+      "id": "hot-press",
+      "name": "Hot Press",
+      "category": "broadcast",
+      "eyebrow": "TV - Emision",
+      "subtitle": "Activos graficos animados para emision televisiva",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 3200,
+        "monthly": false,
+        "priceRange": { "min": 3200, "max": 3200 }
+      },
+      "timeline": { "min": 3, "max": 6, "unit": "weeks" },
+      "description": {
+        "short": "Paquete completo de graficos animados para emision televisiva.",
+        "medium": "Paquete completo de activos graficos animados para la emision televisiva. Disenados para mantener coherencia visual con la identidad de marca en pantalla.",
+        "long": "whyHotPress"
+      },
+      "includes": [
+        "Lower thirds animados (nombre, cargo, ubicacion)",
+        "Bumpers y cortinillas de entrada/salida",
+        "Transiciones animadas entre segmentos",
+        "Mosca / Bug del programa",
+        "Intro y outro animados del programa",
+        "Placas informativas y de datos",
+        "Graficos para encuestas y resultados en pantalla",
+        "Adaptaciones para diferentes segmentos del programa",
+        "Archivos exportados para broadcast (resolucion TV)"
+      ],
+      "deliverables": [
+        "Archivos de animacion (After Effects / exportados)",
+        "Versiones con y sin canal alpha",
+        "Guia de uso para el equipo de produccion",
+        "Archivos fuente editables tras pago final"
+      ],
+      "tags": ["broadcast", "tv", "animacion", "graficos", "emision"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": [],
+        "discountedWith": { "shakefront-full": 1600 }
+      }
+    },
+
+    "foam-art": {
+      "id": "foam-art",
+      "name": "Foam Art",
+      "category": "design",
+      "eyebrow": "Diseno - 3D",
+      "subtitle": "Campana creativa con diseno 3D",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 1800,
+        "monthly": false,
+        "priceRange": { "min": 1800, "max": 1800 }
+      },
+      "timeline": { "min": 2, "max": 3, "unit": "weeks" },
+      "description": {
+        "short": "Diseno 3D de logo y creatividades para campanas visuales de alto impacto.",
+        "medium": "Campana creativa con diseno 3D. Logo 3D, creatividades estaticas en multiples formatos, enfoque mixed-media con elementos 3D y copywriting estrategico.",
+        "long": "whyFoamArt"
+      },
+      "includes": [
+        "Logo 3D con variaciones (todos los formatos/tamanos)",
+        "7 creatividades estaticas (formatos 4:4, 4:5, 9:16)",
+        "Enfoque mixed-media con elementos 3D",
+        "Copywriting y estrategia",
+        "Posible fase de animacion posterior",
+        "Documentacion en brandbook",
+        "Hasta 3 revisiones"
+      ],
+      "deliverables": null,
+      "tags": ["3d", "diseno", "campana", "creatividades", "mixed-media"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "latte-art": {
+      "id": "latte-art",
+      "name": "Latte Art",
+      "category": "design",
+      "eyebrow": "Diseno - Ilustracion",
+      "subtitle": "Pack de ilustraciones personalizadas",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 620,
+        "monthly": false,
+        "priceRange": { "min": 480, "max": 620 },
+        "priceVariants": {
+          "single": 480,
+          "full-pack": 620
+        }
+      },
+      "timeline": { "min": 1, "max": 2, "unit": "weeks" },
+      "description": {
+        "short": "Pack de hasta 3 ilustraciones personalizadas con identidad visual.",
+        "medium": "Pack de ilustraciones personalizadas. Identidad visual del proyecto, naming creativo, lettering a mano y preparacion para impresion.",
+        "long": "whyLatteArt"
+      },
+      "includes": [
+        "Identidad visual del proyecto de ilustracion",
+        "Hasta 3 ilustraciones con proposito especifico",
+        "Naming creativo y backstory para personajes",
+        "Lettering a mano si es necesario",
+        "Preparacion para impresion",
+        "Hasta 3 revisiones",
+        "Google Drive personal con recursos"
+      ],
+      "deliverables": null,
+      "tags": ["ilustracion", "personajes", "lettering", "arte"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": ["milky-branding"]
+      }
+    },
+
+    "punch-card": {
+      "id": "punch-card",
+      "name": "Punch Card",
+      "category": "specialized",
+      "eyebrow": "Fidelizacion",
+      "subtitle": "Diseno de programa de fidelizacion",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 1800,
+        "monthly": false,
+        "priceRange": { "min": 1500, "max": 2500 },
+        "priceVariants": {
+          "plan-a": 1800,
+          "plan-b-stickers": 2500
+        }
+      },
+      "timeline": { "min": 6, "max": 8, "unit": "weeks" },
+      "description": {
+        "short": "Diseno integral de programa de fidelizacion con identidad visual y mecanicas.",
+        "medium": "Conceptualizacion y diseno completo de programa de lealtad. Rangos, tiers, personajes, tarjetas, copywriting motivacional y manual de uso.",
+        "long": "whyPunchCard"
+      },
+      "includes": [
+        "Conceptualizacion de programa de fidelizacion (Rangos/Tiers)",
+        "Sesion de discovery creativo",
+        "Naming creativo y eslogan",
+        "Identidad visual de campana",
+        "Diseno de personajes e iconos",
+        "Paleta cromatica y tipografia",
+        "Diseno de tarjeta de fidelidad",
+        "Copywriting para implementacion digital",
+        "Mensajes de bienvenida, logro de tier, recompensas",
+        "Manual de uso",
+        "Google Drive con todos los recursos"
+      ],
+      "deliverables": null,
+      "tags": ["loyalty", "fidelizacion", "gamification", "tiers"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "pour-over": {
+      "id": "pour-over",
+      "name": "Pour Over",
+      "category": "animation",
+      "eyebrow": "Animacion - Motion",
+      "subtitle": "Motion graphics e infografias animadas",
+      "pricing": {
+        "type": "custom",
+        "basePrice": null,
+        "monthly": false,
+        "priceRange": { "min": 350, "max": 12649 },
+        "priceVariants": {
+          "single-animation": 350,
+          "campaign-8-animations": 12649
+        }
+      },
+      "timeline": { "min": 2, "max": 8, "unit": "weeks" },
+      "description": {
+        "short": "Motion graphics, infografias animadas y animaciones Lottie para campanas.",
+        "medium": "Motion graphics de alto impacto. Desde animaciones Lottie para web hasta campanas completas de infografias animadas en 4K para difusion multicanal.",
+        "long": "whyPourOver"
+      },
+      "includes": [
+        "Investigacion y conceptualizacion",
+        "Storyboard para cada animacion",
+        "Diseno personalizado alineado con marca",
+        "Animacion de alta calidad (sujetos, entornos, texturas)",
+        "Sincronizacion con voiceover si aplica",
+        "Renderizado final (4K 16:9)",
+        "Colaboracion y comunicacion continua",
+        "Revisiones y ajustes"
+      ],
+      "deliverables": [
+        "Animaciones H264 / .mov / equivalente 4K UHD",
+        "Google Drive personal con todos los activos"
+      ],
+      "tags": ["motion", "animacion", "lottie", "infografia", "4k"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "sprinkles": {
+      "id": "sprinkles",
+      "name": "Sprinkles",
+      "category": "social",
+      "eyebrow": "Social - AR",
+      "subtitle": "Filtros de realidad aumentada para Instagram y TikTok",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 500,
+        "monthly": false,
+        "priceRange": { "min": 500, "max": 500 }
+      },
+      "timeline": { "min": 1, "max": 2, "unit": "weeks" },
+      "description": {
+        "short": "Filtro AR personalizado para Instagram Stories y TikTok.",
+        "medium": "Filtro de realidad aumentada personalizado para Instagram Stories y TikTok. Engagement interactivo con la marca a traves de camaras sociales.",
+        "long": "whySprinkles"
+      },
+      "includes": [
+        "Diseno de filtro AR personalizado",
+        "Publicacion en Instagram Stories y/o TikTok",
+        "Pruebas en multiples dispositivos"
+      ],
+      "deliverables": null,
+      "tags": ["ar", "filtro", "instagram", "tiktok", "interactivo"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "espresso-shot": {
+      "id": "espresso-shot",
+      "name": "Espresso Shot",
+      "category": "web",
+      "eyebrow": "Web - Landing",
+      "subtitle": "Landing page rapida y funcional",
+      "pricing": {
+        "type": "fixed",
+        "basePrice": 550,
+        "monthly": false,
+        "priceRange": { "min": 550, "max": 1200 },
+        "priceVariants": {
+          "flodesk": 550,
+          "webflow-landing": 1200
+        }
+      },
+      "timeline": { "min": 1, "max": 2, "unit": "weeks" },
+      "description": {
+        "short": "Landing page rapida y directa para captacion o lanzamientos.",
+        "medium": "Landing page concentrada y potente. Ideal para lanzamientos, captacion de leads o campanas especificas. Rapida de implementar, alta conversion.",
+        "long": "whyEspressoShot"
+      },
+      "includes": [
+        "Diseno UI/UX responsive",
+        "Desarrollo en Flodesk o Webflow",
+        "Formulario de captacion / lead capture",
+        "Integracion Mailchimp",
+        "SEO basico",
+        "SSL incluido",
+        "Paginas adicionales: +150 EUR cada una"
+      ],
+      "deliverables": null,
+      "tags": ["landing", "captacion", "leads", "campana"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "the-counter": {
+      "id": "the-counter",
+      "name": "The Counter",
+      "category": "web",
+      "eyebrow": "Web - Reservas",
+      "subtitle": "Sistema de reservas y agenda integrado",
+      "pricing": {
+        "type": "custom",
+        "basePrice": null,
+        "monthly": false,
+        "priceRange": { "min": 500, "max": 2000 },
+        "note": "Price depends on platform integration complexity"
+      },
+      "timeline": { "min": 1, "max": 3, "unit": "weeks" },
+      "description": {
+        "short": "Integracion de sistema de reservas y agenda en tu sitio web.",
+        "medium": "Sistema de reservas online integrado en tu web. Gestion de citas, disponibilidad de espacios y flujo de inscripcion para clases o eventos.",
+        "long": "whyTheCounter"
+      },
+      "includes": [
+        "Booking y agenda dinamica integrada",
+        "Gestion de disponibilidad",
+        "Formulario de inscripcion",
+        "Confirmaciones automaticas",
+        "Integracion con pasarelas de pago si aplica"
+      ],
+      "deliverables": null,
+      "tags": ["booking", "reservas", "agenda", "citas"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "the-percolator": {
+      "id": "the-percolator",
+      "name": "The Percolator",
+      "category": "tech",
+      "eyebrow": "Tech - Automatizacion",
+      "subtitle": "Automatizacion de flujos con n8n, Zapier, OpenClaw y bots",
+      "pricing": {
+        "type": "custom",
+        "basePrice": null,
+        "monthly": false,
+        "priceRange": { "min": 500, "max": 5000 },
+        "note": "Quoted per project based on workflow complexity"
+      },
+      "timeline": { "min": 1, "max": 6, "unit": "weeks" },
+      "description": {
+        "short": "Automatizacion de procesos con n8n, Zapier, OpenClaw y Telegram bots.",
+        "medium": "Flujos de trabajo automatizados para tu negocio. Desde integraciones simples con Zapier hasta orquestacion compleja con n8n, OpenClaw y bots de Telegram. Elimina tareas repetitivas y conecta tus herramientas.",
+        "long": "whyThePercolator"
+      },
+      "includes": [
+        "Auditoria de procesos actuales y oportunidades de automatizacion",
+        "Diseno de flujos de trabajo (workflow mapping)",
+        "Implementacion en n8n / Zapier segun necesidad",
+        "Integracion OpenClaw para orquestacion de agentes",
+        "Desarrollo de bots de Telegram personalizados",
+        "Pipelines de webhooks personalizados",
+        "Integraciones API entre servicios",
+        "Tareas automatizadas programadas (cron jobs)",
+        "Documentacion y entrenamiento basico"
+      ],
+      "deliverables": [
+        "Flujos de trabajo configurados y activos",
+        "Documentacion tecnica de cada automatizacion",
+        "Acceso y credenciales al cliente",
+        "Sesion de entrenamiento"
+      ],
+      "tags": ["automatizacion", "n8n", "zapier", "openclaw", "telegram", "bots", "api"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "robo-barista": {
+      "id": "robo-barista",
+      "name": "Robo Barista",
+      "category": "tech",
+      "eyebrow": "Tech - AI",
+      "subtitle": "Creacion de agentes de inteligencia artificial",
+      "pricing": {
+        "type": "custom",
+        "basePrice": null,
+        "monthly": false,
+        "priceRange": { "min": 1000, "max": 10000 },
+        "note": "Quoted per project based on agent complexity"
+      },
+      "timeline": { "min": 2, "max": 8, "unit": "weeks" },
+      "description": {
+        "short": "Agentes AI personalizados que trabajan para tu negocio 24/7.",
+        "medium": "Agentes de inteligencia artificial personalizados. Chatbots, asistentes de ventas, automatizadores de contenido, agentes de soporte y mas. Disenados para trabajar para tu negocio 24/7.",
+        "long": "whyRoboBarista"
+      },
+      "includes": [
+        "Analisis de necesidades y casos de uso",
+        "Diseno de la arquitectura del agente",
+        "Desarrollo e implementacion del agente AI",
+        "Integracion con herramientas existentes (CRM, email, RRSS)",
+        "Entrenamiento con datos/contexto del negocio",
+        "Testing y refinamiento",
+        "Documentacion y entrenamiento para el equipo"
+      ],
+      "deliverables": [
+        "Agente AI funcional y desplegado",
+        "Documentacion tecnica",
+        "Acceso y credenciales",
+        "Sesion de entrenamiento"
+      ],
+      "tags": ["ai", "agente", "chatbot", "asistente", "automatizacion"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "the-brewery": {
+      "id": "the-brewery",
+      "name": "The Brewery",
+      "category": "tech",
+      "eyebrow": "Tech - Software",
+      "subtitle": "Desarrollo de software a medida con Next.js y Vercel",
+      "pricing": {
+        "type": "custom",
+        "basePrice": null,
+        "monthly": false,
+        "priceRange": { "min": 3000, "max": 25000 },
+        "note": "Quoted per project based on scope"
+      },
+      "timeline": { "min": 4, "max": 16, "unit": "weeks" },
+      "description": {
+        "short": "Desarrollo de software y aplicaciones web con Next.js y Vercel.",
+        "medium": "Desarrollo de software a medida. Aplicaciones web, plataformas SaaS, dashboards y herramientas internas construidas con Next.js, Vercel y tecnologias modernas.",
+        "long": "whyTheBrewery"
+      },
+      "includes": [
+        "Analisis de requerimientos y arquitectura",
+        "Diseno UI/UX de la aplicacion",
+        "Desarrollo frontend (Next.js / React)",
+        "Desarrollo backend y API",
+        "Base de datos y almacenamiento",
+        "Despliegue en Vercel / infraestructura cloud",
+        "Autenticacion y seguridad",
+        "Testing y QA",
+        "Documentacion tecnica"
+      ],
+      "deliverables": [
+        "Aplicacion funcional desplegada",
+        "Codigo fuente en repositorio",
+        "Documentacion tecnica",
+        "Sesion de entrenamiento"
+      ],
+      "tags": ["software", "nextjs", "vercel", "react", "fullstack", "saas"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "coffee-lab": {
+      "id": "coffee-lab",
+      "name": "Coffee Lab",
+      "category": "tech",
+      "eyebrow": "Tech - Herramientas",
+      "subtitle": "Herramientas web experimentales y a medida",
+      "pricing": {
+        "type": "custom",
+        "basePrice": null,
+        "monthly": false,
+        "priceRange": { "min": 1000, "max": 8000 },
+        "note": "Quoted per tool based on complexity"
+      },
+      "timeline": { "min": 2, "max": 8, "unit": "weeks" },
+      "description": {
+        "short": "Herramientas web a medida: calculadoras, generadores, dashboards internos.",
+        "medium": "Herramientas web experimentales y a medida. Calculadoras, generadores, configuradores de producto, dashboards internos y cualquier herramienta digital que tu negocio necesite.",
+        "long": "whyCoffeeLab"
+      },
+      "includes": [
+        "Analisis de necesidades y flujo de uso",
+        "Diseno UI/UX de la herramienta",
+        "Desarrollo frontend y backend",
+        "Integracion con APIs y servicios existentes",
+        "Testing y optimizacion",
+        "Despliegue y hosting"
+      ],
+      "deliverables": [
+        "Herramienta funcional y desplegada",
+        "Codigo fuente",
+        "Documentacion de uso"
+      ],
+      "tags": ["tools", "herramientas", "web-app", "dashboard", "calculadora"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    },
+
+    "the-full-pot": {
+      "id": "the-full-pot",
+      "name": "The Full Pot",
+      "category": "tech",
+      "eyebrow": "Tech - End to End",
+      "subtitle": "Solucion integral de principio a fin",
+      "pricing": {
+        "type": "custom",
+        "basePrice": null,
+        "monthly": false,
+        "priceRange": { "min": 5000, "max": 50000 },
+        "note": "Quoted per project — combines multiple services"
+      },
+      "timeline": { "min": 8, "max": 24, "unit": "weeks" },
+      "description": {
+        "short": "Solucion completa: branding + web + automatizacion + AI + soporte continuo.",
+        "medium": "Solucion integral de principio a fin. Combina branding, desarrollo web, automatizacion, agentes AI y soporte continuo en un solo paquete. Para negocios que quieren hacerlo todo bien desde el dia uno.",
+        "long": "whyTheFullPot"
+      },
+      "includes": [
+        "Auditoria completa del negocio digital",
+        "Estrategia de marca y posicionamiento",
+        "Diseno y desarrollo web",
+        "Automatizacion de procesos clave",
+        "Implementacion de agentes AI",
+        "Produccion de contenido (foto/video)",
+        "Setup de redes sociales",
+        "Soporte post-lanzamiento incluido",
+        "Iteracion y mejora continua"
+      ],
+      "deliverables": [
+        "Todo lo incluido en los servicios individuales seleccionados",
+        "Roadmap estrategico personalizado",
+        "Documentacion integral del proyecto"
+      ],
+      "tags": ["integral", "end-to-end", "paquete-completo", "todo"],
+      "bundleRules": {
+        "includedWith": [],
+        "freeWith": []
+      }
+    }
+  }
+}

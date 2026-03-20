@@ -1,0 +1,70 @@
+{
+  "$comment": "This is an example manifest for the ADN Venezuela proposal. Claude fills one of these per client.",
+  "proposal": {
+    "id": "P-ADN-001",
+    "language": "es",
+    "date": "2026-03-19",
+
+    "client": {
+      "name": "ADN Venezuela",
+      "contactName": "Carlos Fernandez",
+      "contactLastName": "",
+      "organization": "ACTIO 360",
+      "industry": "television",
+      "location": "Venezuela"
+    },
+
+    "brand": {
+      "tagline": "identidad visual, estructura y futuro",
+      "accentColor": "#f0ff3d"
+    },
+
+    "sections": [
+      "navbar",
+      "cover",
+      "intro-card",
+      "brief-tabs-desktop",
+      "brief-tabs-mobile",
+      "service-cards",
+      "service-hero-branding",
+      "service-why-branding",
+      "service-features-branding",
+      "service-hero-broadcast",
+      "service-why-broadcast",
+      "service-article-broadcast",
+      "service-hero-web",
+      "service-why-web",
+      "service-article-web",
+      "methodology",
+      "methodology-tabs",
+      "complementary",
+      "proposal-detail",
+      "footer"
+    ],
+
+    "modals": [
+      "modal-service",
+      "modal-retainer",
+      "sticky-price-bar"
+    ],
+
+    "services": {
+      "core": ["milky-branding", "shakefront-full", "hot-press"],
+      "addons": ["flashy-socials", "buttery-1day", "buttery-3days", "cold-brew", "glass-cup", "silky-edits", "barista", "the-grinder", "rosetta"],
+      "retainer": null
+    },
+
+    "pricing": {
+      "overrides": {},
+      "paymentStructure": "branding-web-70-20-10",
+      "specialDiscount": null
+    },
+
+    "brief": {
+      "intro": "ADN Venezuela es un programa de television sobre vision, estructura y el futuro prospero de Venezuela...",
+      "creativeBrief": "El objetivo es crear una identidad visual que transmita seriedad y aspiracion...",
+      "needs": "Identidad de marca completa, activos graficos para emision televisiva, sitio web...",
+      "keyPoints": "Dos presentadores: Carlos Fernandez (rigor analitico) + Gizel Mobayed (aspiracional)..."
+    }
+  }
+}

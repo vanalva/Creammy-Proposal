@@ -1,0 +1,15 @@
+# Backups
+_backup/
+
+# Source client documents (transcripts, briefs, PDFs — sensitive)
+source/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Old proposal-detail block (replaced by dynamic generation)
+templates/blocks/proposal-detail-pakei.html

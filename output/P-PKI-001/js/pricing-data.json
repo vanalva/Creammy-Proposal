@@ -1,0 +1,95 @@
+{
+  "services": {
+    "milky-branding": {
+      "name": "Milky Branding",
+      "price": 0,
+      "original": 3500,
+      "status": "included",
+      "label": "INCLUIDO",
+      "monthly": false
+    },
+    "shakefront-full": {
+      "name": "Shakefront Full",
+      "price": 13500,
+      "original": 13500,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    },
+    "the-brewery": {
+      "name": "The Brewery",
+      "price": 8500,
+      "original": 0,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    },
+    "the-percolator": {
+      "name": "The Percolator",
+      "price": 2200,
+      "original": 0,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    },
+    "robo-barista": {
+      "name": "Robo Barista",
+      "price": 3000,
+      "original": 0,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    },
+    "flashy-socials": {
+      "name": "Flashy Socials",
+      "price": 870,
+      "original": 1200,
+      "status": "discount",
+      "label": "",
+      "monthly": false
+    },
+    "cold-brew": {
+      "name": "Cold Brew",
+      "price": 1200,
+      "original": 1200,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    },
+    "glass-cup": {
+      "name": "The Glass Cup",
+      "price": 0,
+      "original": 750,
+      "status": "free",
+      "label": "GRATIS",
+      "monthly": false
+    },
+    "silky-edits": {
+      "name": "Silky Edits",
+      "price": 0,
+      "original": 350,
+      "status": "free",
+      "label": "GRATIS",
+      "monthly": false
+    },
+    "barista": {
+      "name": "Barista",
+      "price": 450,
+      "original": 450,
+      "status": "normal",
+      "label": "",
+      "monthly": true
+    },
+    "the-grinder": {
+      "name": "The Grinder",
+      "price": 320,
+      "original": 320,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    }
+  },
+  "totalOneTime": 29590,
+  "totalMonthly": 450,
+  "totalSavings": 5280
+}

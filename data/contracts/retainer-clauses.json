@@ -1,0 +1,82 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "language": "es",
+  "contractType": "retainer",
+  "clauses": {
+    "header": {
+      "required": true,
+      "condition": "always",
+      "note": "Same as project contract header"
+    },
+    "confidentiality": {
+      "required": true,
+      "condition": "always",
+      "note": "Same as project contract confidentiality (standard variant)"
+    },
+    "minimumCommitment": {
+      "required": true,
+      "condition": "always",
+      "text": "El compromiso minimo para cualquier paquete mensual es de tres (3) meses. Transcurrido el periodo inicial, el servicio continua mes a mes con posibilidad de cancelacion con aviso previo."
+    },
+    "taskExecution": {
+      "required": true,
+      "condition": "always",
+      "text": "Las tareas se ejecutan de forma secuencial. No se procesan 2 o mas tareas simultaneas, salvo que sean dependientes entre si. La complejidad se evalua por solicitud. Cada solicitud individual se procesa una a la vez."
+    },
+    "billingScope": {
+      "required": true,
+      "condition": "always",
+      "text": "Los items no incluidos en el paquete se facturan por separado. Los items no utilizados en un mes no se acumulan ni se transfieren al mes siguiente."
+    },
+    "contentPlanning": {
+      "required": true,
+      "condition": "always",
+      "text": "El Cliente debe enviar un documento de planificacion mensual con al menos 1 semana de antelacion para tareas no planificadas. Las grillas de contenido deben disenarse, planificarse y presentarse 3 semanas antes de la fecha de publicacion. El Cliente tiene 1 semana para revisar y aprobar las grillas propuestas. Cambios significativos despues de la aprobacion final pueden generar costes adicionales."
+    },
+    "urgentRequests": {
+      "required": true,
+      "condition": "always",
+      "text": "Solicitudes con menos de 7 dias de antelacion tendran un recargo de 25 EUR por solicitud urgente."
+    },
+    "videoRequirements": {
+      "required": false,
+      "condition": "tier.level < 4",
+      "text": "Si la tarea incluye edicion de video, el Cliente debe proporcionar la musica y/o stock de video premium necesarios. Esta restriccion no aplica a los paquetes $5 Milkshake (Nivel 4) o A por todo (Nivel 5)."
+    },
+    "aPorTodoTerms": {
+      "required": false,
+      "condition": "tier.id === 'a-por-todo'",
+      "text": "Aunque los servicios son tecnicamente ilimitados en el paquete A por todo, el tiempo y el esfuerzo se consideran para cada tarea. El Disenador priorizara las tareas y trabajara de forma colaborativa con el Cliente. Las tareas de alta complejidad pueden requerir discusion previa sobre plazos."
+    },
+    "tccDefinitions": {
+      "required": true,
+      "condition": "always",
+      "title": "Tareas Creativas Complejas (TCC)",
+      "text": "Las TCC son proyectos de mayor envergadura que se pueden contratar adicionalmente al paquete mensual. Incluyen branding, diseno web, animaciones, produccion de video, y desarrollo. Cada TCC se evalua y presupuesta individualmente. Los descuentos por volumen aplican en ventanas de 2 meses."
+    },
+    "tcaDefinitions": {
+      "required": true,
+      "condition": "always",
+      "title": "Tareas Creativas Adicionales (TCA)",
+      "text": "Las TCA son tareas mas pequenas y puntuales: thumbnails, banners, newsletters, ilustraciones, copywriting, plantillas, etc. Cada paquete incluye un numero determinado de TCAs por mes. Las TCAs adicionales se facturan segun la tabla de precios."
+    },
+    "volumeDiscounts": {
+      "required": true,
+      "condition": "always",
+      "title": "Descuentos por Volumen (TCC)",
+      "text": "1a TCC en ventana de 2 meses: -5%. 2a TCC en ventana de 2 meses: -10%. 3a o mas TCC en ventana de 2 meses: -20%. El descuento se aplica al precio de la TCC, no al paquete mensual."
+    },
+    "payment": {
+      "required": true,
+      "condition": "always",
+      "text": "La cuota mensual se factura al inicio de cada periodo. Los servicios adicionales (TCC, TCA extra) se facturan por separado al completar la tarea.",
+      "note": "Same bank info as project contract"
+    },
+    "signature": {
+      "required": true,
+      "condition": "always",
+      "note": "Same as project contract signature"
+    }
+  }
+}

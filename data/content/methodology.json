@@ -1,0 +1,109 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "methodology": {
+    "name": "Load, Aim, Shoot, Reload",
+    "phases": {
+      "load": {
+        "name": "Load",
+        "subtitle": "Investigacion y Estrategia",
+        "icon": "01",
+        "description": "Inmersion profunda en tu marca, tu mercado y tu audiencia. Investigamos, analizamos la competencia y definimos la estrategia creativa que guiara todo el proyecto.",
+        "steps": [
+          "Discovery session con el cliente",
+          "Analisis de mercado y competencia",
+          "Definicion de audiencia objetivo",
+          "Estrategia de posicionamiento",
+          "Moodboard y direccion visual",
+          "Brief creativo consolidado"
+        ]
+      },
+      "aim": {
+        "name": "Aim",
+        "subtitle": "Diseno y Creacion",
+        "icon": "02",
+        "description": "Con la estrategia clara, disenamos. Desde la identidad visual hasta el prototipo interactivo, cada decision de diseno esta respaldada por la investigacion previa.",
+        "steps": [
+          "Diseno de identidad visual",
+          "Wireframes y prototipos interactivos",
+          "Sistema de componentes",
+          "Contenido y copywriting",
+          "Revision y refinamiento (hasta 3 rondas)",
+          "Aprobacion del cliente"
+        ]
+      },
+      "shoot": {
+        "name": "Shoot",
+        "subtitle": "Produccion y Lanzamiento",
+        "icon": "03",
+        "description": "Ejecutamos. Desarrollo, produccion, testing y lanzamiento. Entregamos un producto final pulido, funcional y listo para impactar.",
+        "steps": [
+          "Desarrollo en Webflow / plataforma elegida",
+          "Produccion de contenido (foto/video)",
+          "Testing y QA multiplataforma",
+          "Optimizacion SEO y performance",
+          "Lanzamiento y despliegue",
+          "Entrega de archivos y handoff"
+        ]
+      },
+      "reload": {
+        "name": "Reload",
+        "subtitle": "Refinamiento y Crecimiento",
+        "icon": "04",
+        "description": "El proyecto no termina en el lanzamiento. Refinamos, extendemos y mantenemos. Desde ajustes post-lanzamiento hasta retainers mensuales, nuevas funcionalidades y expansiones — tu marca y tu plataforma evolucionan contigo.",
+        "steps": [
+          "Ajustes post-lanzamiento basados en datos reales",
+          "Mantenimiento web continuo (Barista)",
+          "Nuevas funcionalidades y secciones",
+          "Extension de marca a nuevos formatos",
+          "Retainer de servicios creativos mensuales",
+          "Optimizacion continua de SEO y rendimiento"
+        ]
+      }
+    },
+    "detailedTabs": {
+      "investigacion": {
+        "name": "Investigación",
+        "phase": "Load",
+        "icon": "01",
+        "content": "Nos sumergimos en tu mundo. Investigamos tu mercado, tu competencia, tus clientes y tu visión. Esta fase es la base sobre la que se construye todo lo demás.",
+        "applicableTo": ["branding", "web", "social", "production", "broadcast", "tech", "design"]
+      },
+      "diseno": {
+        "name": "Diseño",
+        "phase": "Aim",
+        "icon": "02",
+        "content": "Traducimos la investigación en diseño. Wireframes, prototipos, identidad visual y sistema de componentes. Cada píxel tiene un propósito.",
+        "applicableTo": ["branding", "web", "social", "broadcast", "design"]
+      },
+      "desarrollo": {
+        "name": "Desarrollo",
+        "phase": "Aim",
+        "icon": "03",
+        "content": "Del diseño al código. Desarrollo web, programación, automatizaciones y testing riguroso. Nada sale sin pasar por control de calidad.",
+        "applicableTo": ["web", "tech"]
+      },
+      "produccion": {
+        "name": "Producción",
+        "phase": "Shoot",
+        "icon": "04",
+        "content": "Producción de contenido: fotografía, video, animación, motion graphics. Cada pieza producida con calidad profesional y alineada con la identidad de marca.",
+        "applicableTo": ["production", "broadcast", "social"]
+      },
+      "lanzamiento": {
+        "name": "Lanzamiento",
+        "phase": "Shoot",
+        "icon": "05",
+        "content": "Despliegue, configuración de hosting y dominio, SEO final, exportación de archivos, entrega de impresiones y accesos al cliente. Tu proyecto está listo para el mundo.",
+        "applicableTo": ["branding", "web", "social", "production", "broadcast", "tech", "design"]
+      },
+      "mantenimiento": {
+        "name": "Mantenimiento",
+        "phase": "Reload",
+        "icon": "06",
+        "content": "El lanzamiento no es el final — es el principio de la siguiente fase. Refinamos basándonos en datos reales, extendemos funcionalidades, mantenemos la web actualizada y ofrecemos soporte creativo continuo a través de retainers mensuales.",
+        "applicableTo": ["web", "social", "tech"]
+      }
+    }
+  }
+}

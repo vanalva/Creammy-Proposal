@@ -1,0 +1,125 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "bundleDiscounts": [
+    {
+      "id": "full-includes-branding",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "milky-branding",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Shakefront Full incluye Milky Branding"
+    },
+    {
+      "id": "full-includes-silky",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "silky-edits",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Shakefront Full incluye Silky Edits"
+    },
+    {
+      "id": "full-free-glass-cup",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "glass-cup",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "The Glass Cup gratis con Shakefront Full"
+    },
+    {
+      "id": "full-discount-flashy",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "flashy-socials",
+      "effect": { "type": "discount", "price": 870, "original": 1200 },
+      "description": "Flashy Socials de 1200 a 870 con Shakefront Full"
+    },
+    {
+      "id": "full-discount-hot-press",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "hot-press",
+      "effect": { "type": "discount", "price": 1600, "original": 3200 },
+      "description": "Hot Press (broadcast) a mitad de precio con Shakefront Full (ya incluye branding)"
+    },
+    {
+      "id": "silky-free-with-flashy",
+      "trigger": { "selected": "flashy-socials" },
+      "target": "silky-edits",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Silky Edits gratis con Flashy Socials"
+    },
+    {
+      "id": "silky-free-with-buttery-1day",
+      "trigger": { "selected": "buttery-1day" },
+      "target": "silky-edits",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Silky Edits gratis con Buttery Frames (1 dia)"
+    },
+    {
+      "id": "silky-free-with-buttery-3days",
+      "trigger": { "selected": "buttery-3days" },
+      "target": "silky-edits",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Silky Edits gratis con Buttery Frames (3 dias)"
+    },
+    {
+      "id": "latte-art-free-with-branding",
+      "trigger": { "selected": "milky-branding" },
+      "target": "latte-art",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Latte Art (ilustraciones) gratis con Milky Branding"
+    }
+  ],
+  "retainerDiscount": {
+    "id": "retainer-core-discount",
+    "percentage": 15,
+    "appliesTo": ["milky-branding", "shakefront-full", "shakefront-lite"],
+    "condition": "Any retainer tier active (min 3 months commitment)",
+    "description": "15% de descuento en proyectos core cuando el retainer esta activo"
+  },
+  "volumeDiscounts": {
+    "description": "Descuentos por volumen en Tareas Creativas Complejas (TCC)",
+    "window": "2 months rolling",
+    "tiers": [
+      { "nth": 1, "discount": 5, "label": "1a TCC en ventana de 2 meses: -5%" },
+      { "nth": 2, "discount": 10, "label": "2a TCC en ventana de 2 meses: -10%" },
+      { "nth": 3, "discount": 20, "label": "3a+ TCC en ventana de 2 meses: -20%" }
+    ]
+  },
+  "specialDiscounts": {
+    "family-friends": {
+      "id": "family-friends",
+      "percentage": 35,
+      "description": "Descuento Family & Friends",
+      "note": "Applied to Mr Dumpling. At designer discretion for close personal relationships.",
+      "appliesTo": "all-services"
+    },
+    "launch-promo": {
+      "id": "launch-promo",
+      "percentage": 30,
+      "description": "Promocion de lanzamiento: 30% primer mes de retainer",
+      "appliesTo": "first-month-retainer",
+      "oneTime": true,
+      "includesBonus": true
+    },
+    "referral": {
+      "id": "referral",
+      "type": "fixed-amount",
+      "range": { "min": 200, "max": 700 },
+      "description": "Descuento por referido antes de completar el proyecto",
+      "note": "Amount varies by project size. Bohemia Group structure: 200-700 EUR depending on package."
+    }
+  },
+  "packageDiscounts": {
+    "description": "Descuento exclusivo por seleccionar un paquete completo. Se pierde si se modifica la selección manualmente.",
+    "tiers": [
+      { "minServices": 3, "discount": 5, "label": "5% descuento de paquete" },
+      { "minServices": 5, "discount": 8, "label": "8% descuento de paquete" },
+      { "minServices": 8, "discount": 10, "label": "10% descuento de paquete" }
+    ],
+    "appliesTo": "non-discounted-services",
+    "note": "Only applies to services at full price (not already INCLUDED/FREE/discounted). Incentivizes committing to a package rather than cherry-picking. The skill can also set a fixed packageDiscount per package in the manifest to override tiers."
+  },
+  "mutualExclusions": [
+    {
+      "services": ["shakefront-full", "shakefront-lite"],
+      "description": "No se pueden seleccionar ambos Shakefront Full y Lite"
+    }
+  ]
+}

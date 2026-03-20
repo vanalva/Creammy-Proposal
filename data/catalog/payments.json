@@ -1,0 +1,97 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "bankInfo": {
+    "spain": {
+      "bank": "BBVA",
+      "iban": "ES61 0182 2254 4402 0158 7969",
+      "bic": "BBVAESMM",
+      "branch": "2254 MADRID-GRAN VIA DE HORTALEZA",
+      "holder": "Maria Almudena Martinez Pineda"
+    },
+    "other": {
+      "note": "Consultar metodos de pago con nosotros antes de realizar el primer abono."
+    }
+  },
+  "structures": {
+    "simple-50-50": {
+      "id": "simple-50-50",
+      "name": "50/50",
+      "splits": [
+        { "percentage": 50, "trigger": "project-start", "label": "Al comenzar el proyecto (anticipo)" },
+        { "percentage": 50, "trigger": "final-delivery", "label": "Al finalizar y entregar el proyecto" }
+      ],
+      "applicableTo": "Simple projects, production-only, photography",
+      "suggestedWhen": { "totalUnder": 2000 }
+    },
+    "simple-60-40": {
+      "id": "simple-60-40",
+      "name": "60/40",
+      "splits": [
+        { "percentage": 60, "trigger": "project-start", "label": "Al comenzar el trabajo (anticipo)" },
+        { "percentage": 40, "trigger": "final-delivery", "label": "Al finalizar y entregar el proyecto" }
+      ],
+      "applicableTo": "Small projects, staff photography",
+      "note": "Used in Cotorrita photoshoot"
+    },
+    "standard-70-30": {
+      "id": "standard-70-30",
+      "name": "70/30",
+      "splits": [
+        { "percentage": 70, "trigger": "project-start", "label": "Al comenzar el trabajo (anticipo)" },
+        { "percentage": 30, "trigger": "final-delivery", "label": "Al finalizar y entregar el proyecto" }
+      ],
+      "applicableTo": "Medium projects, branding-only, social-only",
+      "suggestedWhen": { "totalUnder": 5000 }
+    },
+    "branding-web-50-30-20": {
+      "id": "branding-web-50-30-20",
+      "name": "50/30/20",
+      "splits": [
+        { "percentage": 50, "trigger": "project-start", "label": "Al comenzar el proyecto (anticipo)" },
+        { "percentage": 30, "trigger": "branding-delivery", "label": "Al finalizar el proceso de Branding" },
+        { "percentage": 20, "trigger": "final-delivery", "label": "Al finalizar y entregar el proyecto completo" }
+      ],
+      "applicableTo": "Branding + web combo",
+      "note": "Used in JS17, Que Chicken, DrMush"
+    },
+    "branding-web-70-20-10": {
+      "id": "branding-web-70-20-10",
+      "name": "70/20/10",
+      "splits": [
+        { "percentage": 70, "trigger": "project-start", "label": "Al comenzar el trabajo (anticipo para inicio de branding y produccion)" },
+        { "percentage": 20, "trigger": "branding-delivery", "label": "Al finalizar el proceso de Branding y entregar activos graficos principales" },
+        { "percentage": 10, "trigger": "final-delivery", "label": "Al finalizar y entregar el proyecto completo (web, archivos fuente, etc.)" }
+      ],
+      "applicableTo": "Branding + web combo (latest structure)",
+      "note": "Used in ADN Venezuela, Trifasico. Preferred for large projects."
+    },
+    "custom-installments": {
+      "id": "custom-installments",
+      "name": "Cuotas Personalizadas",
+      "splits": "dynamic",
+      "note": "For very large projects. Example: Mr Dumpling had 4 fixed-amount payments (2500+2500+2275+2000).",
+      "applicableTo": "Large projects over 8000 EUR"
+    },
+    "monthly-retainer": {
+      "id": "monthly-retainer",
+      "name": "Cuota Mensual",
+      "splits": [
+        { "percentage": 100, "trigger": "monthly", "label": "Cuota mensual al inicio de cada periodo" }
+      ],
+      "minimumCommitment": { "months": 3 },
+      "applicableTo": "Retainer packages"
+    }
+  },
+  "selectionLogic": {
+    "rules": [
+      { "condition": "retainer", "structure": "monthly-retainer" },
+      { "condition": "totalUnder2000", "structure": "simple-50-50" },
+      { "condition": "productionOnly", "structure": "simple-50-50" },
+      { "condition": "totalUnder5000 AND noBranding", "structure": "standard-70-30" },
+      { "condition": "hasBranding AND hasWeb", "structure": "branding-web-70-20-10" },
+      { "condition": "totalOver8000", "structure": "custom-installments" },
+      { "condition": "default", "structure": "standard-70-30" }
+    ]
+  }
+}

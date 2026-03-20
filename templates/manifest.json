@@ -1,0 +1,289 @@
+{
+  "$comment": "Azorica Voyages — Expedition experiences in the Azores. Paula Afonso. Branding + Web + Booking.",
+  "proposal": {
+    "id": "P-AZV-001",
+    "language": "es",
+    "date": "2026-03-20",
+
+    "client": {
+      "name": "Azorica Voyages",
+      "contactName": "Paula",
+      "contactLastName": "Afonso",
+      "organization": "Azorica Voyages",
+      "industry": "travel-tourism",
+      "location": "Azores, Portugal"
+    },
+
+    "brand": {
+      "tagline": "expediciones auténticas en el corazón del Atlántico",
+      "accentColor": "#0e9aa7"
+    },
+
+    "sections": [
+      "navbar",
+      "cover",
+      "service-cards",
+      "service-hero-branding",
+      "service-why-branding",
+      "service-features-branding",
+      "service-hero-web",
+      "service-why-web",
+      "service-article-web",
+      "methodology",
+      "methodology-tabs",
+      "complementary",
+      "proposal-detail",
+      "package-comparison",
+      "cta-final",
+      "footer"
+    ],
+
+    "modals": [
+      "modal-service",
+      "modal-retainer",
+      "sticky-price-bar"
+    ],
+
+    "services": {
+      "core": ["milky-branding", "shakefront-full"],
+      "addons": ["shakefront-lite", "flashy-socials", "cold-brew", "buttery-1day", "glass-cup", "silky-edits", "the-grinder", "barista"],
+      "retainer": null
+    },
+
+    "pricing": {
+      "overrides": {
+        "shakefront-full": 7750,
+        "shakefront-lite": 3750,
+        "milky-branding": 1500
+      },
+      "packages": [
+        {
+          "id": "esencial",
+          "name": "Azorica Esencial",
+          "subtitle": "Marca + Web Directa",
+          "description": "Branding completo + One-pager en Webflow sin CMS — presencia profesional inmediata",
+          "badge": null,
+          "services": ["milky-branding", "shakefront-lite", "silky-edits", "the-grinder"],
+          "totalOneTime": 5920,
+          "savings": null,
+          "paymentStructure": "standard-70-30",
+          "packageDiscount": 5
+        },
+        {
+          "id": "voyager",
+          "name": "Azorica Voyager",
+          "subtitle": "Marca + Web CMS + Booking",
+          "description": "Branding incluido + Sitio web completo con CMS para expediciones y sistema de booking",
+          "badge": "Recomendado",
+          "services": ["shakefront-full", "milky-branding", "silky-edits", "glass-cup", "the-grinder"],
+          "totalOneTime": 8070,
+          "savings": 2600,
+          "paymentStructure": "branding-web-70-20-10",
+          "packageDiscount": 8
+        },
+        {
+          "id": "explorer",
+          "name": "Azorica Explorer",
+          "subtitle": "Marca + Web + Contenido + Producción",
+          "description": "Todo en Voyager + contenido social, brand video, sesión fotográfica y mantenimiento",
+          "badge": null,
+          "services": ["shakefront-full", "milky-branding", "silky-edits", "glass-cup", "the-grinder", "flashy-socials", "cold-brew", "buttery-1day", "barista"],
+          "totalOneTime": 11340,
+          "totalMonthly": 450,
+          "savings": 2930,
+          "promos": ["Barista: primer mes gratis"],
+          "paymentStructure": "branding-web-70-20-10",
+          "packageDiscount": 10
+        }
+      ],
+      "paymentStructure": "branding-web-70-20-10",
+      "specialDiscount": null
+    },
+
+    "activePromotions": ["launch-2026"],
+
+    "brief": {
+      "intro": "Azorica Voyages es un proyecto de expediciones en las Azores que combina buceo, trekking y cultura local. Creado por Paula Afonso, una venezolana-portuguesa que lleva seis años viviendo en el archipiélago y quiere compartir con el mundo la magia de estas islas atlánticas. Azorica necesita una identidad de marca sólida y un sitio web profesional para gestionar y vender sus expediciones grupales.",
+      "creativeBrief": "Crear una marca que transmita aventura, autenticidad y la belleza salvaje de las Azores — sin caer en lo genérico de las agencias de viaje convencionales. La identidad visual debe evocar el océano Atlántico, la naturaleza volcánica y la cultura local. El sitio web debe ser una experiencia inmersiva donde las imágenes hablen tanto como el texto.",
+      "needs": "Identidad de marca completa (logo definitivo, paleta cromática, tipografía, brandbook), sitio web profesional en Webflow con CMS para expediciones grupales, sistema de booking integrado, diseño responsivo, integración con herramientas de email marketing (Mailchimp/Klaviyo), formulario de contacto, hosting y dominio configurado.",
+      "keyPoints": "9 islas en el archipiélago — empieza con la isla principal. Trabaja a través de una agencia de viajes portuguesa (cuestiones legales/licencias). Las expediciones grupales son el producto principal; las familiares son personalizadas. Referencia visual: blacktomato.com (minimalista, basado en imágenes). Paula tiene formación en informática y diseño web — puede gestionar el CMS. Logo actual tiene cola de ballena como elemento. Migración de WordPress/Elementor a Webflow. Posible integración API con agencia partner para booking directo."
+    },
+
+    "content": {
+      "coverHeadline": "Azorica Voyages — expediciones auténticas en el corazón del Atlántico",
+      "coverSubheading": "Propuesta personalizada para Azorica Voyages",
+      "introGreeting": "Hola... Paula",
+
+      "serviceCards": [
+        {
+          "eyebrow": "Milky Branding / Identidad de Marca",
+          "heading": "Una marca que capture la esencia de las Azores",
+          "description": "Diseñaré una identidad visual que transmita aventura, autenticidad y la belleza volcánica del archipiélago. Desde el logo definitivo hasta el brandbook completo — colores, tipografía, sistema gráfico — todo pensado para que Azorica Voyages se distinga de las agencias convencionales y conecte emocionalmente con viajeros que buscan experiencias reales."
+        },
+        {
+          "eyebrow": "Shakefront Lite / Web Directa",
+          "heading": "Presencia web inmediata y funcional",
+          "description": "Un one-pager elegante en Webflow con todas las secciones clave: quién eres, qué ofreces, cómo contactarte. Diseño responsivo, SEO optimizado y preparado para impactar desde el primer día. Ideal para arrancar rápido mientras el negocio crece."
+        },
+        {
+          "eyebrow": "Shakefront Full / Web CMS + Booking",
+          "heading": "Tu web, tu escaparate al Atlántico",
+          "description": "Sitio web inmersivo en Webflow con CMS integrado para gestionar tus expediciones de forma autónoma y sistema de booking para que tus clientes reserven directamente. Creas una nueva experiencia, rellenas los campos y se publica sola con el diseño perfecto. Responsive, rápido, con SEO avanzado y preparado para crecer a las nueve islas."
+        }
+      ],
+
+      "complementaryCards": [
+        {
+          "eyebrow": "Flashy Socials / Contenido Digital",
+          "heading": "Tu presencia digital, con personalidad",
+          "description": "Configuraré tus perfiles de redes sociales con la nueva identidad de marca. Plantillas editables en Adobe Express, las primeras 12 publicaciones de Instagram y un Social BrandBook para que mantengas la coherencia visual cuando publiques por tu cuenta. Todo alineado con la estética de Azorica."
+        },
+        {
+          "eyebrow": "Cold Brew / Brand Video",
+          "heading": "Un vídeo que te lleve a las Azores sin salir de casa",
+          "description": "Crearé un brand video aspiracional con AI, motion graphics y stock footage de las Azores: el océano, los cráteres, el buceo, los senderos. Pensado para la cabecera de tu web, redes sociales y cualquier presentación donde necesites transmitir la escala de la experiencia que ofreces."
+        },
+        {
+          "eyebrow": "Buttery Frames / Producción Fotográfica",
+          "heading": "Imágenes que cuenten la historia",
+          "description": "Una sesión fotográfica profesional de un día en las Azores: las rutas, el buceo, los paisajes, los detalles locales. Material de alta calidad para la web, redes sociales y materiales impresos. Más de 50 fotos + material de vídeo para cápsulas de contenido."
+        },
+        {
+          "eyebrow": "The Glass Cup / Materiales Impresos",
+          "heading": "Tangible y memorable",
+          "description": "Tarjetas de presentación, folletos para ferias de turismo y material impreso con la identidad de Azorica Voyages. Todo lo que necesitas para dejar huella cuando el contacto es cara a cara."
+        },
+        {
+          "eyebrow": "Silky Edits / Retoque Profesional",
+          "heading": "Cada imagen, impecable",
+          "description": "Retoque fotográfico profesional de tus imágenes de las Azores: corrección de color, optimización para web, fondos consistentes. Para que cada foto refleje la calidad de la experiencia que ofreces."
+        },
+        {
+          "eyebrow": "Barista / Mantenimiento Web",
+          "heading": "Tu web siempre al día",
+          "description": "Servicio mensual de mantenimiento web: actualización de contenido, nuevas secciones, optimización de rendimiento y soporte técnico. Para que te concentres en crear experiencias mientras yo mantengo tu plataforma digital impecable."
+        }
+      ],
+
+      "methodologyCards": [
+        {
+          "eyebrow": "Planificación Previa",
+          "heading": "Load",
+          "description": "Nos sumergiremos en el universo de Azorica: las expediciones, el público objetivo, las referencias visuales, la competencia en turismo experiencial. Definiremos la dirección de marca y la arquitectura web que mejor conecte con viajeros que buscan aventura real en las Azores."
+        },
+        {
+          "eyebrow": "Diseño y Estructura",
+          "heading": "Aim",
+          "description": "Diseñaremos la identidad visual completa — logo, paleta, tipografía, sistema gráfico — y la arquitectura del sitio web: wireframes, prototipo interactivo, estructura del CMS para expediciones. Cada elemento visual alineado con la esencia del archipiélago."
+        },
+        {
+          "eyebrow": "Desarrollo e Implementación",
+          "heading": "Shoot",
+          "description": "La fase final: desarrollo del sitio en Webflow, configuración del CMS y booking, migración del dominio, integración con email marketing. Entrega con formación para que Paula gestione sus expediciones de forma autónoma desde el primer día."
+        }
+      ],
+
+      "methodologyTabs": [
+        {
+          "title": "Investigación",
+          "phase": "Load",
+          "heading": "Planificación y Estrategia",
+          "body": "<p>Antes de diseñar un solo píxel, necesitamos entender el ecosistema completo de Azorica Voyages: qué hace única esta propuesta, quién es el cliente ideal y cómo se posiciona frente al turismo convencional en las Azores.</p><p><strong>Pasos específicos para Azorica:</strong></p><ul role=\"list\"><li><strong>Análisis de Mercado:</strong> Estudiaremos plataformas de turismo experiencial y de aventura como referencia visual y funcional. Black Tomato como punto de partida, pero también operadores de buceo y trekking premium.</li><li><strong>Perfil de Cliente:</strong> Definiremos el viajero ideal de Azorica: qué busca, dónde investiga, qué le genera confianza. Esto guiará tanto el diseño visual como la estructura web.</li><li><strong>Auditoría de Marca:</strong> Revisaremos el logo actual con la cola de ballena, los colores explorados y las fuentes. Definiremos qué funciona, qué evoluciona y qué se crea desde cero.</li><li><strong>Arquitectura Web:</strong> Mapearemos la estructura de páginas, el flujo del usuario desde que llega a Home hasta que reserva, y los campos del CMS para las expediciones.</li></ul>"
+        },
+        {
+          "title": "Diseño",
+          "phase": "Aim",
+          "heading": "Identidad Visual y Experiencia Web",
+          "body": "<p>Convertiremos la investigación en identidad visual y diseño web. Cada decisión estará alineada con el objetivo de transmitir aventura auténtica y la belleza natural de las Azores.</p><p><strong>Pasos específicos para Azorica:</strong></p><ul role=\"list\"><li><strong>Logo Definitivo:</strong> Evolución del concepto con la cola de ballena. Exploración de variantes, refinamiento profesional y definición final con aplicaciones para todos los formatos.</li><li><strong>Sistema Visual:</strong> Paleta cromática inspirada en el Atlántico y la naturaleza volcánica, tipografía que equilibre aventura y elegancia, sistema gráfico complementario.</li><li><strong>UI/UX Web:</strong> Wireframes y prototipo interactivo del sitio: Home inmersiva con imágenes protagonistas, página de expediciones con CMS, sistema de booking integrado, formulario de contacto optimizado.</li><li><strong>Brandbook:</strong> Manual de marca completo con pautas de aplicación para web, redes sociales, impresos y cualquier punto de contacto futuro.</li></ul>"
+        },
+        {
+          "title": "Desarrollo",
+          "phase": "Aim",
+          "heading": "Construcción en Webflow",
+          "body": "<p>Fase de construcción: la web cobra vida en Webflow con todo el diseño, las interacciones, el CMS y el sistema de booking configurado.</p><p><strong>Pasos específicos para Azorica:</strong></p><ul role=\"list\"><li><strong>Desarrollo Web:</strong> Construcción completa del sitio en Webflow: Home, Acerca de, Expediciones (CMS), Contacto. Diseño pixel-perfect, animaciones sutiles, responsive total.</li><li><strong>CMS de Expediciones:</strong> Configuración del Content Management System con todos los campos necesarios: nombre, descripción, fechas, precio, fotos, duración, dificultad, incluye/no incluye.</li><li><strong>Sistema de Booking:</strong> Integración de reservas directas en la web — exploración de API con agencia partner o sistema propio de booking con gestión de disponibilidad.</li><li><strong>Integraciones:</strong> Conexión con Klaviyo para newsletter, formularios de contacto, Google Analytics y SEO avanzado.</li></ul>"
+        },
+        {
+          "title": "Lanzamiento",
+          "phase": "Shoot",
+          "heading": "Migración y Puesta en Marcha",
+          "body": "<p>Entrega final: todo funcionando, migrado y con formación para que Paula sea autónoma desde el primer día.</p><p><strong>Pasos específicos para Azorica:</strong></p><ul role=\"list\"><li><strong>Migración de Dominio:</strong> Transferencia de azoricavoyages.com desde Raiola Networks a la infraestructura de Webflow. Configuración de DNS, SSL y correos corporativos.</li><li><strong>Testing:</strong> Pruebas de compatibilidad en todos los dispositivos y navegadores. Verificación de formularios, booking, CMS, velocidad de carga y responsive.</li><li><strong>Formación:</strong> Sesión personalizada con Paula para gestionar el CMS: crear nuevas expediciones, gestionar reservas, modificar contenido. Todo documentado paso a paso.</li><li><strong>Soporte Post-Lanzamiento:</strong> Acompañamiento durante las primeras semanas para resolver cualquier duda y optimizar la plataforma con datos reales de uso.</li></ul>"
+        },
+        {
+          "title": "Mantenimiento",
+          "phase": "Reload",
+          "heading": "Crecimiento y Evolución",
+          "body": "<p>El lanzamiento no es el final — es el principio de la siguiente fase. Azorica Voyages va a crecer: nuevas islas, nuevas expediciones, nuevas temporadas. La web y la marca deben evolucionar con el negocio.</p><p><strong>Pasos específicos para Azorica:</strong></p><ul role=\"list\"><li><strong>Contenido Estacional:</strong> Actualización de expediciones por temporada: avistamiento de ballenas en primavera, buceo en verano, trekking en otoño. El CMS facilita rotación de contenido sin depender de nadie.</li><li><strong>Expansión a Nuevas Islas:</strong> Cuando Azorica crezca a São Miguel, Faial o Flores, la arquitectura web está preparada — nuevas secciones y filtros por isla sin rediseñar nada.</li><li><strong>SEO Continuo:</strong> Monitoreo de posicionamiento, ajustes de metaetiquetas, análisis de Google Analytics para optimizar la conversión de visitantes a contactos.</li><li><strong>Mantenimiento Web (Barista):</strong> Actualizaciones de contenido, nuevas secciones, optimización de rendimiento y soporte técnico continuo para que la plataforma siga impecable.</li></ul>"
+        }
+      ],
+
+      "featureCards": [
+        {
+          "heading": "Inmersión Visual",
+          "description": "Las Azores se venden solas — tu web tiene que dejar que las imágenes hablen. Diseño donde la fotografía es protagonista absoluta, con una navegación que guíe al visitante como si estuviera explorando el archipiélago."
+        },
+        {
+          "heading": "Gestión Autónoma",
+          "description": "Con el CMS de Webflow, podrás crear, modificar y publicar nuevas expediciones sin depender de nadie. Rellenas los campos, subes las fotos y tu nueva experiencia aparece con el diseño perfecto."
+        },
+        {
+          "heading": "Booking Directo",
+          "description": "Tus clientes reservan directamente en tu web — sin formularios que se pierden, sin esperas. Integración con tu agencia partner o sistema propio de reservas para cerrar la venta en caliente."
+        },
+        {
+          "heading": "Marca con Carácter",
+          "description": "No una agencia de viajes genérica — una marca con identidad propia que transmita aventura, autenticidad y la magia del Atlántico. Logo, colores, tipografía y sistema visual completo."
+        },
+        {
+          "heading": "Preparada para Crecer",
+          "description": "Hoy empiezas con la isla principal. Mañana expandirás a dos, tres, nueve islas. La arquitectura web y la identidad de marca están diseñadas para escalar sin perder coherencia."
+        },
+        {
+          "heading": "SEO y Visibilidad",
+          "description": "Estructura semántica, metaetiquetas optimizadas, URLs limpias. Para que cuando alguien busque 'expediciones Azores' o 'diving Azores', te encuentre a ti."
+        }
+      ],
+
+      "serviceContent": {
+        "branding": {
+          "whyText": "<p>Tu marca es la primera impresión que un viajero tiene de Azorica Voyages. Antes de ver una foto del cráter de Sete Cidades, antes de leer sobre el buceo con mantas — primero ven tu marca. Y esa marca tiene que transmitir exactamente lo que eres: aventura auténtica, no turismo de masas.</p><p><strong>Identidad Visual Completa:</strong> Logo definitivo (evolución del concepto con la cola de ballena), paleta cromática que evoque el océano y la naturaleza volcánica, tipografía que equilibre aventura y elegancia, sistema gráfico adaptable a todos los formatos — web, redes, impresos.</p><p><strong>Más que un Logo:</strong> Un brandbook completo con las reglas del juego. Para que cada pieza visual que crees — un post de Instagram, un folleto, un banner — hable el mismo idioma y refuerce la percepción de calidad y profesionalismo.</p><p><strong>Diferenciación:</strong> Las Azores son un destino en auge. La identidad visual de Azorica tiene que distinguirte de las agencias genéricas y posicionarte como la opción para viajeros que buscan experiencias reales, no paquetes turísticos estándar.</p>",
+          "whyTags": ["Branding", "Logo", "Brandbook", "Expediciones"]
+        },
+        "web": {
+          "whyText": "<p>Tu sitio web no es un folleto digital — es tu herramienta principal de venta. Cada visitante que llega debe sentir las Azores antes de leer una sola palabra. Las imágenes, las interacciones, el ritmo de la página — todo diseñado para convertir curiosidad en reserva.</p><p><strong>CMS para Expediciones:</strong> Un sistema de gestión de contenidos donde tú creas nuevas experiencias rellenando campos: nombre, descripción, fechas, precio, fotos. Se publica automáticamente con el diseño perfecto, sin tocar código.</p><p><strong>Booking Integrado:</strong> Sistema de reservas directas en tu web. La persona que entra, le gusta una expedición y reserva — sin esperar a que respondas un formulario, sin perder la venta en caliente. Integración con tu agencia partner o sistema propio.</p><p><strong>Experiencia Inmersiva:</strong> Referencia visual tipo Black Tomato pero con personalidad propia — diseño minimalista donde las imágenes de alta calidad son las protagonistas. Animaciones sutiles, navegación intuitiva, velocidad impecable.</p><p><strong>Migración Inteligente:</strong> Adiós WordPress y Elementor. Tu dominio azoricavoyages.com se migra a Webflow con hosting profesional integrado. Sin depender de plugins, sin actualizaciones que rompen cosas, sin limitaciones de plantilla.</p>",
+          "whyTags": ["Web", "CMS", "Booking", "Webflow"]
+        }
+      },
+
+      "proposalTabs": [
+        {
+          "title": "Introducción",
+          "body": "<h3>Introducción</h3><p>Las Azores son uno de esos lugares que el mundo todavía no ha descubierto del todo. Y eso es precisamente la oportunidad de Azorica Voyages: posicionarse ahora, con una marca sólida y una plataforma digital profesional, antes de que el destino explote.</p><p>Paula, esta propuesta no es solo una web bonita con un logo nuevo. Es el ecosistema digital completo para que Azorica Voyages pueda mostrar al mundo lo que tú ya conoces: la magia de bucear en el Atlántico, caminar por cráteres volcánicos y descubrir una cultura que pocos conocen.</p><p>He preparado tres opciones para que elijas la que mejor se adapte a tu momento actual — desde una presencia web directa hasta el paquete completo con contenido y producción.</p>"
+        },
+        {
+          "title": "Contexto",
+          "body": "<h3>Contexto y Propósito</h3><p>Azorica Voyages nace de una pasión genuina por las Azores y la experiencia directa de vivir seis años en el archipiélago. Paula combina su conocimiento del terreno con formación profesional para ofrecer expediciones que van más allá del turismo convencional: buceo, trekking y cultura local como experiencia integrada.</p><h4>La Situación Actual</h4><p>El proyecto tiene su dominio (azoricavoyages.com), un inicio de web en WordPress/Elementor que no refleja la calidad de la experiencia, y una identidad visual en proceso que necesita definirse profesionalmente. Paula trabaja a través de una agencia de viajes portuguesa para cuestiones legales, lo que define el modelo de reserva por ahora — aunque la posibilidad de integrar booking directo es clave para no perder ventas.</p><h4>El Objetivo</h4><p>Construir una marca que transmita aventura y autenticidad, y una web profesional donde los visitantes puedan descubrir y reservar expediciones de forma directa — empezando por la isla principal, con arquitectura preparada para expandir a las nueve islas del archipiélago.</p>"
+        },
+        {
+          "title": "Brief Creativo",
+          "body": "<h3>Brief Creativo</h3><p>La identidad visual de Azorica Voyages debe comunicar: aventura auténtica, conexión con la naturaleza y la exclusividad de lo local. No es una agencia de viajes — es una invitación a descubrir las Azores como solo alguien que vive allí puede mostrarlas.</p><h4>Dirección Visual</h4><p>Minimalista pero cálida. Las imágenes de las Azores son tan potentes que el diseño debe amplificarlas, no competir con ellas. Paleta inspirada en el océano Atlántico, el verde volcánico y los tonos naturales del archipiélago. Tipografía que equilibre aventura y elegancia — lejos del corporativo frío, cerca de lo experiencial.</p><h4>El Logo</h4><p>Evolución del concepto actual con la cola de ballena — un elemento que conecta con todo el archipiélago (las ballenas se ven en las nueve islas). Refinamiento profesional del símbolo, exploración de variantes y definición definitiva con aplicaciones para todos los formatos y escalas.</p><h4>Referencia</h4><p>Black Tomato como punto de partida conceptual: minimalismo, protagonismo de las imágenes, sensación de exclusividad. Pero con identidad propia — más cálida, más aventurera, más conectada con la naturaleza. Un diseño que no intente parecer una agencia de lujo londinense, sino que respire sal, volcán y autenticidad atlántica.</p>"
+        },
+        {
+          "title": "Servicios",
+          "body": "<h3>Mi Propuesta: Tres Opciones</h3><h4>Azorica Esencial — €5.920</h4><p>Para arrancar con lo fundamental: Milky Branding (identidad completa) + Shakefront Lite (one-pager en Webflow) + retoque fotográfico + hosting y dominio. Una presencia web profesional e inmediata, sin CMS ni booking — las expediciones se gestionan manualmente.</p><h4>Azorica Voyager — €8.070 (Recomendado)</h4><p>El salto de calidad: Shakefront Full con CMS + sistema de booking integrado. Paula crea expediciones desde el panel, se publican solas con diseño perfecto, y los clientes reservan directamente. Branding, retoque, impresos, hosting — todo incluido. Es la opción que realmente transforma el negocio.</p><h4>Azorica Explorer — €11.340 + €450/mes</h4><p>Todo en Voyager + contenido para redes sociales (Flashy Socials), brand video aspiracional (Cold Brew), sesión fotográfica profesional de un día en las Azores (Buttery Frames) y mantenimiento web mensual (Barista). El ecosistema digital completo para lanzar con todo.</p><h4>Servicios Incluidos en Voyager y Explorer</h4><ul><li><strong>Milky Branding</strong> — Identidad de marca completa: logo, paleta, tipografía, brandbook (INCLUIDO con Shakefront Full)</li><li><strong>Shakefront Full</strong> — Web Webflow con CMS para expediciones + sistema de booking</li><li><strong>Silky Edits</strong> — Retoque fotográfico profesional (INCLUIDO con Shakefront Full)</li><li><strong>The Glass Cup</strong> — Tarjetas, folletos, materiales impresos (GRATIS con Shakefront Full)</li><li><strong>The Grinder</strong> — Hosting, dominio, SSL y correos corporativos</li></ul>"
+        }
+      ]
+    },
+
+    "serviceOverrides": {},
+
+    "retainerTemplate": "standard",
+    "retainerPromo": true,
+
+    "cta": {
+      "whatsapp": "+34604987569",
+      "email": "hello@vanalva.io",
+      "calendly": "https://calendly.com/vanalva/discovery",
+      "message": "Hola Juan Carlos, he visto la propuesta de Azorica Voyages y me gustaría hablar."
+    }
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "$comment": "Pakei — International Trading & Supply Chain. Mauro Garrido. Phase 1+2: Brand + Web + Platform + Automation + AI.",
+  "proposal": {
+    "id": "P-PKI-001",
+    "language": "es",
+    "date": "2026-03-19",
+
+    "client": {
+      "name": "Pakei",
+      "contactName": "Mauro",
+      "contactLastName": "Garrido",
+      "organization": "Pakei Global",
+      "industry": "international-trading",
+      "location": "Venezuela / China"
+    },
+
+    "brand": {
+      "tagline": "trading inteligente, supply chain sin fronteras",
+      "accentColor": "#3de0ff"
+    },
+
+    "sections": [
+      "navbar",
+      "cover",
+      "service-cards",
+      "service-hero-branding",
+      "service-why-branding",
+      "service-features-branding",
+      "service-hero-web",
+      "service-why-web",
+      "service-article-web",
+      "service-hero-generic",
+      "service-why-generic",
+      "service-features-generic",
+      "methodology",
+      "methodology-tabs",
+      "complementary",
+      "package-comparison",
+      "proposal-detail",
+      "footer"
+    ],
+
+    "modals": [
+      "modal-service",
+      "modal-retainer",
+      "sticky-price-bar"
+    ],
+
+    "services": {
+      "core": ["milky-branding", "shakefront-full", "the-brewery", "the-percolator", "robo-barista"],
+      "addons": ["flashy-socials", "cold-brew", "glass-cup", "silky-edits", "barista", "the-grinder"],
+      "retainer": null
+    },
+
+    "pricing": {
+      "overrides": {
+        "the-brewery": 8500,
+        "the-percolator": 2200,
+        "robo-barista": 3000
+      },
+      "customLineItems": [
+        {
+          "id": "sub-brands",
+          "name": "Sub-marcas de Producto (×3)",
+          "description": "PakeiHome, PakeiElectrics, PakeiIndustrial — identidades derivadas de la marca madre",
+          "price": 2000,
+          "originalPrice": 2250,
+          "monthly": false
+        }
+      ],
+      "packages": [
+        {
+          "id": "marca",
+          "name": "Pakei Marca",
+          "subtitle": "Brand & Web Foundation",
+          "description": "Branding completo + Sitio web con CMS",
+          "badge": null,
+          "packageDiscount": 5,
+          "services": ["shakefront-full", "milky-branding", "silky-edits", "glass-cup", "the-grinder"],
+          "customItems": ["sub-brands"],
+          "totalOneTime": 15820,
+          "savings": 4600
+        },
+        {
+          "id": "digital",
+          "name": "Pakei Digital",
+          "subtitle": "Brand + Web + Platform",
+          "description": "Todo en Marca + Plataforma de gestión + Social + Video",
+          "badge": null,
+          "packageDiscount": 8,
+          "services": ["shakefront-full", "milky-branding", "silky-edits", "glass-cup", "the-grinder", "flashy-socials", "cold-brew", "the-brewery", "barista"],
+          "customItems": ["sub-brands"],
+          "totalOneTime": 26390,
+          "totalMonthly": 450,
+          "savings": 5830,
+          "promos": ["Barista: 2 primeros meses gratis"]
+        },
+        {
+          "id": "ecosystem",
+          "name": "Pakei Full Ecosystem",
+          "subtitle": "Brand + Web + Platform + Automation + AI",
+          "description": "Todo en Digital + Capa de automatización + Agentes AI",
+          "badge": "Recomendado",
+          "packageDiscount": 10,
+          "services": ["shakefront-full", "milky-branding", "silky-edits", "glass-cup", "the-grinder", "flashy-socials", "cold-brew", "the-brewery", "the-percolator", "robo-barista", "barista"],
+          "customItems": ["sub-brands"],
+          "totalOneTime": 31590,
+          "totalMonthly": 450,
+          "savings": 6530,
+          "promos": ["Barista: 2 primeros meses gratis"]
+        }
+      ],
+      "paymentStructure": "custom-installments",
+      "paymentSplits": [
+        { "percentage": 35, "amount": 11060, "trigger": "Inicio del proyecto (discovery + branding)" },
+        { "percentage": 25, "amount": 7900, "trigger": "Entrega de branding (Pakei + sub-marcas)" },
+        { "percentage": 25, "amount": 7900, "trigger": "Lanzamiento del sitio web" },
+        { "percentage": 15, "amount": 4730, "trigger": "Entrega de plataforma + automatización" }
+      ],
+      "specialDiscount": null
+    },
+
+    "brief": {
+      "intro": "Pakei es una empresa de trading internacional y gestión de supply chain que conecta fabricantes en China con clientes empresariales en Venezuela. Con más de 15 años de experiencia en sourcing, procurement, quality inspection, warehouse consolidation y logística internacional, Pakei se prepara para su próxima fase: una plataforma digital que centralice operaciones, empodere clientes y escale con inteligencia.",
+      "creativeBrief": "Crear un ecosistema de marca que posicione a Pakei como una plataforma de trading moderna y profesional — no solo 'la empresa de Mauro', sino una infraestructura digital con identidad propia, capaz de inspirar confianza en clientes, proveedores e inversores. La marca madre Pakei debe proyectar solidez, modernidad y alcance global, mientras las sub-marcas (PakeiHome, PakeiElectrics, PakeiIndustrial) comunican especialización por vertical.",
+      "needs": "Identidad de marca completa (parent + 3 sub-brands), sitio web profesional con CMS para catálogo de productos, plataforma de gestión operativa (ERP: CRM, portal de clientes, order management, supplier database, warehouse tracking, shipment tracking), capa de automatización (n8n, notificaciones WhatsApp/email, gestión via Telegram), agentes AI (chatbot cliente, generación de cotizaciones, escalamiento inteligente).",
+      "keyPoints": "Bilingüe (español/inglés con terminología de supply chain en inglés). 4 verticales de producto: Home (construcción + hogar), Electrics (materiales eléctricos), Industrial (insumos petroleros). Mercado enfocado en Venezuela. Mauro + Michael como owners. Equipo en China (sourcing) + Venezuela (ventas). Canton Fair en abril. El sistema debe liberar tiempo de los owners y permitir escalar con equipo reducido gracias a automatización."
+    },
+
+    "content": {
+      "coverHeadline": "Pakei — trading inteligente, supply chain sin fronteras",
+      "coverSubheading": "Propuesta personalizada para Pakei",
+      "introGreeting": "Hola... Mauro",
+      "introCardDescription": "Quizás nunca sepamos qué hay dentro de este maletín, pero sí sabemos qué hay dentro de esta irresistible propuesta.",
+
+      "serviceCards": [
+        {
+          "eyebrow": "Van Alva Branding / Identidad de Marca",
+          "heading": "Elevaré tu Marca",
+          "description": "Crearé una identidad de marca que posicione a Pakei como una plataforma de trading profesional y moderna. Desde el logotipo hasta el brandbook, construiremos una marca sólida que inspire confianza en clientes, proveedores e inversores. Incluye la marca madre y las 3 sub-marcas: PakeiHome, PakeiElectrics e PakeiIndustrial."
+        },
+        {
+          "eyebrow": "Milky Branding / Identidad Completa",
+          "heading": "Sistema Visual Integral",
+          "description": "Construiré un sistema visual completo para Pakei que funcione en todos los formatos: web, digital, impresos y presentaciones comerciales. Logotipo, paleta cromática, tipografía, brandbook y sistema de sub-marcas — todo diseñado para proyectar solidez, modernidad y alcance global."
+        },
+        {
+          "eyebrow": "Shakefront / Full Web Development",
+          "heading": "Ecosistema Digital Completo",
+          "description": "Diseñaré y desarrollaré el sitio web de Pakei como una plataforma digital profesional: catálogo de productos con CMS, portal de clientes, integración con la plataforma de gestión operativa. UI/UX bilingüe (español/inglés), optimización SEO y diseño responsivo para conectar con clientes empresariales en Venezuela."
+        },
+        {
+          "eyebrow": "The Brewery / Software Development",
+          "heading": "Plataforma de Gestión Operativa",
+          "description": "Desarrollaré la plataforma ERP a medida para Pakei: CRM, gestión de pedidos, base de datos de proveedores, tracking de almacén y envíos. Una herramienta central que permita al equipo gestionar operaciones desde Venezuela y China con eficiencia y trazabilidad completa."
+        },
+        {
+          "eyebrow": "The Percolator / Automatización",
+          "heading": "Automatización Inteligente",
+          "description": "Implementaré flujos de automatización con n8n para liberar tiempo del equipo: notificaciones automáticas por WhatsApp y email, gestión de pedidos via Telegram, alertas de inventario y sincronización entre plataformas. El objetivo: escalar con equipo reducido."
+        },
+        {
+          "eyebrow": "Robo-Barista / AI Agents",
+          "heading": "Inteligencia Artificial al Servicio del Trading",
+          "description": "Desarrollaré agentes AI para Pakei: chatbot para atención al cliente, generación automática de cotizaciones, escalamiento inteligente de consultas. Herramientas que trabajan 24/7 para que Mauro y Michael se enfoquen en lo estratégico."
+        }
+      ],
+
+      "complementaryCards": [
+        {
+          "eyebrow": "Flashy Socials / Contenido Digital",
+          "heading": "Presencia profesional en redes",
+          "description": "Desarrollaré una estrategia de contenido visual para redes sociales que posicione a Pakei como referente en trading internacional. Plantillas personalizadas, vocabulario visual coherente con la identidad de marca y planificación del primer mes de publicaciones bilingües."
+        },
+        {
+          "eyebrow": "Cold Brew / Brand Video",
+          "heading": "Un video que comunique la escala de Pakei",
+          "description": "Crearé un brand video aspiracional usando AI, motion graphics y stock footage que capture la esencia de Pakei: la conexión entre fábricas en China y clientes en Venezuela. Pensado para la web, presentaciones a inversores y redes sociales."
+        },
+        {
+          "eyebrow": "The Glass Cup / Materiales Impresos",
+          "heading": "Materiales que refuerzan tu presencia comercial",
+          "description": "Diseñaré material impreso profesional para Pakei: catálogos de productos por vertical, tarjetas de presentación bilingües, dossier comercial para la Canton Fair y material POP que comunique solidez y alcance global."
+        },
+        {
+          "eyebrow": "Silky Edits / Retoque Profesional",
+          "heading": "Imágenes de producto impecables",
+          "description": "Optimizaré las fotografías de producto para el catálogo web y materiales impresos. Retoque profesional, fondos consistentes, imágenes de alta calidad que transmitan la seriedad y profesionalismo de Pakei."
+        },
+        {
+          "eyebrow": "Barista / Mantenimiento Digital",
+          "heading": "Tu ecosistema siempre actualizado",
+          "description": "Servicio mensual de mantenimiento para el sitio web y la plataforma: actualizaciones de producto, optimización de rendimiento, nuevas funcionalidades y soporte técnico continuo para que el equipo se concentre en el negocio."
+        }
+      ],
+
+      "methodologyCards": [
+        {
+          "eyebrow": "Planificación Previa",
+          "heading": "Load",
+          "description": "Nos sumergiremos en el universo de Pakei: su modelo de negocio, sus verticales de producto, la dinámica entre China y Venezuela. Investigaremos el mercado, las referencias visuales de trading internacional y definiremos la dirección de marca que posicione a Pakei como plataforma, no solo como empresa."
+        },
+        {
+          "eyebrow": "Diseño y Estructura",
+          "heading": "Aim",
+          "description": "Diseñaremos el sistema visual completo: marca madre Pakei + sub-marcas, arquitectura de la plataforma web, wireframes del ERP y flujos de automatización. Cada componente se diseña como parte de un ecosistema integrado que escala."
+        },
+        {
+          "eyebrow": "Desarrollo e Implementación",
+          "heading": "Shoot",
+          "description": "La fase final: desarrollo del sitio web, implementación de la plataforma ERP, configuración de automatizaciones y despliegue de agentes AI. Cada pieza se entrega funcional y documentada, con accesos y formación para el equipo."
+        },
+        {
+          "eyebrow": "Refinamiento y Crecimiento",
+          "heading": "Reload",
+          "description": "El proyecto no termina en el lanzamiento. Refinamos basándonos en datos reales, extendemos funcionalidades, mantenemos la plataforma actualizada y ofrecemos soporte creativo continuo. Tu ecosistema digital evoluciona con Pakei — nuevos módulos, nuevas verticales, nuevas automatizaciones."
+        }
+      ],
+
+      "methodologyTabs": [
+        {
+          "title": "Investigación",
+          "phase": "Load",
+          "heading": "Planificación y Estrategia",
+          "body": "<p>Antes de diseñar un solo píxel, necesitamos comprender el ecosistema completo de Pakei: el flujo de sourcing desde China, las necesidades de los clientes en Venezuela, las verticales de producto y la visión de crecimiento.</p><p><strong>Pasos específicos para Pakei:</strong></p><ul role=\"list\"><li><strong>Análisis de Mercado:</strong> Estudiaremos plataformas de trading internacional como referencia visual y funcional para posicionar a Pakei como una alternativa moderna y profesional.</li><li><strong>Arquitectura de Marca:</strong> Definiremos la relación visual entre Pakei (marca madre) y las sub-marcas PakeiHome, PakeiElectrics, PakeiIndustrial.</li><li><strong>Mapeo de Flujos Operativos:</strong> Documentaremos los procesos de negocio para diseñar la plataforma ERP y los flujos de automatización con precisión.</li><li><strong>Definición Bilingüe:</strong> Estableceremos la terminología clave en español e inglés para mantener consistencia en toda la comunicación.</li></ul>"
+        },
+        {
+          "title": "Diseño",
+          "phase": "Aim",
+          "heading": "Estructura Visual y Experiencia",
+          "body": "<p>Convertiremos la investigación en identidad visual y diseño de plataforma. Desde el logotipo hasta los wireframes del ERP, cada decisión estará alineada con el objetivo de posicionar a Pakei como una infraestructura de trading profesional.</p><p><strong>Pasos específicos para Pakei:</strong></p><ul role=\"list\"><li><strong>Sistema de Marca:</strong> Diseño del logotipo Pakei + 3 sub-marcas con sus variantes, paleta cromática, tipografía y brandbook completo.</li><li><strong>UI/UX Web:</strong> Wireframes y prototipo interactivo del sitio web con catálogo de productos, portal de clientes y secciones comerciales.</li><li><strong>Diseño de Plataforma:</strong> Wireframes del ERP: dashboard, gestión de pedidos, CRM, tracking de envíos.</li><li><strong>Flujos de Automatización:</strong> Diagramas de los workflows de n8n: notificaciones, sincronización, alertas.</li></ul>"
+        },
+        {
+          "title": "Desarrollo",
+          "phase": "Aim",
+          "heading": "Construcción y Programación",
+          "body": "<p>Fase de construcción: sitio web en producción, plataforma ERP funcional, automatizaciones configuradas y agentes AI desplegados.</p><p><strong>Pasos específicos para Pakei:</strong></p><ul role=\"list\"><li><strong>Sitio Web:</strong> Desarrollo completo del sitio con CMS para catálogo de productos, SEO bilingüe, formularios y integración con la plataforma.</li><li><strong>Plataforma ERP:</strong> Desarrollo con Next.js de los módulos: CRM, pedidos, proveedores, warehouse, shipments. Base de datos y APIs.</li><li><strong>Automatización:</strong> Configuración de workflows en n8n: notificaciones WhatsApp/email, gestión Telegram, alertas de inventario.</li><li><strong>Agentes AI:</strong> Desarrollo del chatbot de atención, generador de cotizaciones y sistema de escalamiento inteligente.</li></ul>"
+        },
+        {
+          "title": "Lanzamiento",
+          "phase": "Shoot",
+          "heading": "Optimización y Puesta en Marcha",
+          "body": "<p>Entrega final: todo funcionando, documentado y con formación para el equipo. Optimización de rendimiento, pruebas con datos reales y soporte durante las primeras semanas.</p><p><strong>Pasos específicos para Pakei:</strong></p><ul role=\"list\"><li><strong>Testing Integral:</strong> Pruebas de flujo completo: desde la consulta de un cliente hasta la generación de cotización automática y tracking de envío.</li><li><strong>Migración de Datos:</strong> Importación de la base de datos existente de clientes, proveedores y productos al nuevo sistema.</li><li><strong>Formación:</strong> Sesiones con Mauro y Michael para gestionar la plataforma, el CMS y entender los flujos de automatización.</li><li><strong>Soporte Post-Lanzamiento:</strong> 4 semanas de soporte técnico incluido para resolver cualquier incidencia y optimizar la plataforma.</li></ul>"
+        }
+      ],
+
+      "featureCards": [
+        {
+          "heading": "Identidad Global",
+          "description": "Cada detalle contará: desde el logotipo hasta los materiales comerciales. Diseñaremos un sistema visual que proyecte solidez, modernidad y alcance internacional. La marca Pakei debe inspirar la misma confianza que transmite 15 años de experiencia en trading."
+        },
+        {
+          "heading": "Arquitectura de Sub-marcas",
+          "description": "PakeiHome, PakeiElectrics, PakeiIndustrial — cada vertical con identidad propia pero visualmente conectada a la marca madre. Un sistema que comunica especialización sin fragmentar la percepción de solidez del grupo."
+        },
+        {
+          "heading": "Plataforma Escalable",
+          "description": "El ERP no es solo una herramienta operativa — es la columna vertebral del negocio. Diseñado para crecer con Pakei: nuevos módulos, nuevas verticales, nuevos mercados. Sin depender de terceros ni de hojas de cálculo."
+        },
+        {
+          "heading": "Automatización Real",
+          "description": "No se trata de añadir tecnología por moda, sino de liberar tiempo real. Cada workflow de automatización está diseñado para eliminar tareas repetitivas y permitir que el equipo se enfoque en decisiones estratégicas."
+        },
+        {
+          "heading": "Bilingüe por Diseño",
+          "description": "Español e inglés no como traducción, sino como parte integral. La terminología de supply chain se mantiene en inglés donde corresponde. El sistema completo funciona en ambos idiomas de forma nativa."
+        },
+        {
+          "heading": "Consistencia Total",
+          "description": "Desde la tarjeta de presentación en la Canton Fair hasta el portal web de clientes — todo habla el mismo idioma visual. El brandbook asegura que cualquier pieza nueva se integre sin perder coherencia."
+        },
+        {
+          "heading": "AI que Trabaja",
+          "description": "Los agentes AI no son un demo: son herramientas funcionales que generan cotizaciones, responden consultas y escalan inteligentemente. Diseñados para el flujo real de Pakei, no para impresionar en una presentación."
+        }
+      ],
+
+      "serviceContent": {
+        "branding": {
+          "whyText": "<p>Tu marca es mucho más que un logotipo: es la primera impresión que un cliente empresarial tiene de Pakei. Milky Branding está diseñado para construir una identidad que comunique profesionalismo, alcance global y especialización por vertical.</p><p><strong>Sistema de Marca Madre + Sub-marcas:</strong> Pakei como marca paraguas que proyecta solidez, con PakeiHome, PakeiElectrics y PakeiIndustrial como verticales especializadas. Cada una con identidad propia pero visualmente conectada al grupo.</p><p><strong>Comunicación Bilingüe:</strong> La marca funciona en español e inglés de forma nativa. La terminología de supply chain se mantiene donde aporta credibilidad. El brandbook documenta las pautas para ambos idiomas.</p><p><strong>Materiales Comerciales:</strong> Desde la carpeta para la Canton Fair hasta los headers del sitio web — cada aplicación de la marca está pensada para inspirar confianza en clientes, proveedores e inversores.</p><p><strong>Brandbook Completo:</strong> Manual de marca detallado con pautas de aplicación, sistema cromático, tipografía, tono comunicacional y normas de uso para garantizar consistencia en todas las plataformas.</p>",
+          "whyTags": ["Branding", "Sub-marcas", "Bilingüe", "Supply Chain"]
+        },
+        "web": {
+          "whyText": "<p>El sitio web de Pakei no es una vitrina — es una herramienta de negocio. Una plataforma que permite a clientes empresariales explorar el catálogo por vertical, solicitar cotizaciones y acceder a su portal de seguimiento.</p><p><strong>Catálogo Dinámico:</strong> CMS personalizado para gestionar productos por vertical (Home, Electrics, Industrial), con fichas técnicas, especificaciones y capacidad de actualización autónoma por el equipo.</p><p><strong>Portal de Clientes:</strong> Área privada donde cada cliente puede ver el estado de sus pedidos, historial de compras y documentación asociada. Integrado con la plataforma ERP.</p><p><strong>Bilingüe Nativo:</strong> El sitio funciona en español e inglés con detección automática de idioma. La terminología técnica de supply chain se mantiene en inglés para credibilidad internacional.</p><p><strong>Optimización Comercial:</strong> SEO estratégico, formularios de contacto inteligentes, integración con Google Analytics y herramientas de seguimiento para maximizar la conversión de visitantes en consultas reales.</p>",
+          "whyTags": ["Web", "CMS", "Portal de Clientes", "Bilingüe"]
+        }
+      },
+
+      "genericService": {
+        "heroTitle": "Plataforma de Gestión Operativa",
+        "heroLine1": "Gestión",
+        "heroLine2": "sin",
+        "heroLine3": "Límites",
+        "heroSubtitle1": "Tu plataforma operativa a medida — CRM, pedidos, proveedores, envíos y portal de clientes en un solo lugar",
+        "heroSubtitle2": "The Brewery / Diseño y desarrollo de plataforma digital para Pakei",
+        "heroImage": null,
+        "whyHeading": "¿Por qué <strong>The Brewery</strong> es lo que necesitas?",
+        "whyText": "<p>Mauro, tú y Michael gestionan operaciones entre China y Venezuela con WhatsApp, email y hojas de cálculo. Funciona — pero no escala. The Brewery es la plataforma que centraliza todo: desde que un cliente hace una consulta hasta que el contenedor llega a puerto.</p><p><strong>CRM Inteligente:</strong> Base de datos de clientes con historial completo de transacciones, screening de nuevos clientes, notas internas y seguimiento de oportunidades. Cada cliente tiene su ficha, cada interacción queda registrada.</p><p><strong>Order Management:</strong> Ciclo completo del pedido: solicitud → cotización → aprobación → orden de compra → producción → inspección → envío → entrega. Cada paso visible, cada cambio notificado automáticamente.</p><p><strong>Supplier Database:</strong> Base de datos categorizada de proveedores en China: por vertical, por producto, con auditorías, certificaciones y historial de calidad. Nunca más buscar en chats antiguos.</p><p><strong>Client Portal:</strong> Tus clientes acceden a su portal y ven: estado de pedidos, tracking de envíos, documentos (facturas, packing lists, inspection reports), historial de compras. Transparencia total sin que tú tengas que enviar actualizaciones manuales.</p><p><strong>Warehouse & Logistics:</strong> Tracking de mercancía en almacén (recepción, inspección, consolidación) y seguimiento de envíos por modalidad (FCL, LCL, aéreo, courier). Integración con carriers para tracking en tiempo real.</p>",
+        "whyTags": ["Next.js", "ERP", "CRM", "Supply Chain", "Portal de Clientes"],
+        "featureCards": [
+          { "heading": "CRM & Client Management", "description": "Gestión completa de clientes: perfiles, historial de transacciones, screening, notas internas. Cada relación comercial documentada y accesible para todo el equipo autorizado." },
+          { "heading": "Order Lifecycle", "description": "De la consulta a la entrega: cada pedido con su timeline, documentos asociados, aprobaciones y notificaciones automáticas. Visibilidad total del pipeline." },
+          { "heading": "Supplier Intelligence", "description": "Base de datos de proveedores categorizada por vertical y producto. Auditorías, certificaciones, historial de calidad y comparativas — todo en un solo lugar." },
+          { "heading": "Client Portal", "description": "Portal self-service donde tus clientes ven pedidos, tracking, documentos e historial sin depender de un email tuyo. Profesionalismo y transparencia 24/7." },
+          { "heading": "Warehouse Operations", "description": "Control de mercancía en almacén: recepción, inspección de calidad, consolidación de cargas. Trazabilidad completa desde fábrica hasta contenedor." },
+          { "heading": "Logistics Tracking", "description": "Seguimiento multi-modal (FCL, LCL, aéreo, courier) con integración de carriers. El cliente ve dónde está su mercancía en tiempo real." },
+          { "heading": "Role-Based Access", "description": "Cada miembro del equipo ve lo que necesita: owners ven todo, sales ve clientes y pedidos, sourcing ve proveedores, logistics ve envíos. Sin información innecesaria, sin riesgos." }
+        ]
+      },
+
+      "proposalTabs": [
+        {
+          "title": "Introducción",
+          "body": "<h3>Introducción</h3><p>Pakei no es solo una empresa de trading — es un puente entre dos mundos. Con 15 años conectando fabricantes en China con clientes empresariales en Venezuela, Pakei ha construido algo que pocos logran: confianza en ambos lados de la cadena.</p><p>Pero la confianza necesita una casa. Un ecosistema digital que refleje la seriedad del negocio, centralice las operaciones y permita escalar sin multiplicar el equipo. Esta propuesta construye exactamente eso: desde la identidad de marca hasta los agentes AI que trabajan mientras el equipo duerme.</p><p>No es una web bonita con un logo nuevo. Es la infraestructura digital completa de Pakei.</p>"
+        },
+        {
+          "title": "Contexto",
+          "body": "<h3>Contexto y Propósito</h3><p>Pakei opera un modelo de trading internacional que conecta fabricantes en China con empresas en Venezuela. El equipo está dividido: sourcing y quality inspection en China, ventas y distribución en Venezuela.</p><p>Los owners — Mauro Garrido y Michael — gestionan operaciones desde ambos lados, pero el crecimiento actual exige herramientas que liberen su tiempo de tareas operativas para enfocarse en estrategia.</p><h4>El Objetivo</h4><p>Construir un ecosistema digital completo: marca profesional, sitio web con catálogo, plataforma de gestión operativa (ERP), automatización de procesos y agentes AI. Todo integrado, bilingüe y diseñado para escalar.</p><h4>Las Verticales</h4><ul><li><strong>PakeiHome</strong> — materiales de construcción y productos para el hogar</li><li><strong>PakeiElectrics</strong> — materiales eléctricos e iluminación</li><li><strong>PakeiIndustrial</strong> — insumos petroleros y suministros industriales</li></ul>"
+        },
+        {
+          "title": "Brief Creativo",
+          "body": "<h3>Brief Creativo</h3><p>La identidad visual de Pakei debe comunicar: profesionalismo, alcance global y especialización vertical. No es una tienda online — es una infraestructura de trading.</p><h4>Dirección Visual</h4><p>Moderna, limpia, corporativa pero no fría. El azul/cyan como color principal transmite confianza y alcance global. Tipografía técnica pero legible. Iconografía funcional que comunique logística, sourcing y calidad.</p><h4>Arquitectura de Marca</h4><p>Pakei como marca madre — solidez y experiencia. Las sub-marcas comunican especialización: Home (calidez, hogar), Electrics (técnico, precisión), Industrial (fuerza, escala). Todas conectadas visualmente pero diferenciadas en tono.</p><h4>Comunicación Bilingüe</h4><p>El sistema completo funciona en español e inglés. La terminología de supply chain (sourcing, procurement, quality inspection, warehouse consolidation) se mantiene en inglés — aporta credibilidad y es el estándar del sector.</p>"
+        },
+        {
+          "title": "Servicios",
+          "body": "<h3>Mi Propuesta: Servicios Incluidos</h3><h4>01// Milky Branding</h4><p>Identidad de marca completa para Pakei + 3 sub-marcas. Logotipo, sistema cromático, tipografía, brandbook, materiales comerciales. Diseñado para funcionar en contexto B2B internacional, ferias comerciales y plataformas digitales.</p><h4>02// Shakefront Full (CMS)</h4><p>Sitio web profesional con catálogo dinámico por vertical, portal de clientes, diseño bilingüe, SEO optimizado y formularios de contacto inteligentes. Integrado con la plataforma ERP.</p><h4>03// The Brewery (Plataforma ERP)</h4><p>Desarrollo a medida con Next.js: CRM, gestión de pedidos, base de datos de proveedores, warehouse tracking, shipment tracking. La columna vertebral operativa de Pakei.</p><h4>04// The Percolator (Automatización)</h4><p>Workflows de n8n: notificaciones automáticas WhatsApp/email, gestión de pedidos via Telegram, alertas de inventario, sincronización entre sistemas. Libera tiempo del equipo para decisiones estratégicas.</p><h4>05// Robo-Barista (AI Agents)</h4><p>Chatbot de atención al cliente, generador automático de cotizaciones, sistema de escalamiento inteligente. Herramientas que trabajan 24/7 en ambos idiomas.</p><h4>06// Servicios Complementarios</h4><ul><li><strong>Flashy Socials</strong> — Estrategia de contenido y plantillas para redes sociales bilingües</li><li><strong>Cold Brew</strong> — Brand video aspiracional para web y presentaciones</li><li><strong>The Glass Cup</strong> — Catálogos impresos por vertical, tarjetas bilingües, material para Canton Fair</li><li><strong>Silky Edits</strong> — Retoque de fotos de producto para catálogo y web</li><li><strong>Barista</strong> — Mantenimiento mensual de web y plataforma</li><li><strong>The Grinder</strong> — Hosting, dominio, emails corporativos</li></ul>"
+        }
+      ]
+    },
+
+    "serviceOverrides": {
+      "milky-branding": {
+        "addIncludes": ["Sistema de sub-marcas: PakeiHome, PakeiElectrics, PakeiIndustrial"]
+      }
+    },
+
+    "retainerTemplate": "standard",
+    "retainerPromo": true
+  }
+}

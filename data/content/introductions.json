@@ -1,0 +1,46 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "templates": {
+    "full-branding-web": {
+      "tone": "enthusiastic-professional",
+      "template": "Hola {{clientFirstName}}, estoy emocionado de embarcarme en este proyecto con {{clientOrg}}. La vision de {{projectVision}} tiene un potencial increible, y estoy aqui para ayudar a hacerlo realidad. Vamos a crear una marca que se destaque y conecte con la gente. Manos a la obra!",
+      "applicableTo": ["milky-branding + shakefront-full"]
+    },
+    "web-only": {
+      "tone": "confident-technical",
+      "template": "Hola {{clientFirstName}}, con ganas de darle forma a la presencia digital de {{clientOrg}}. La combinacion de {{projectStrength}} es perfecta para construir algo que no solo se vea bien, sino que funcione de verdad.",
+      "applicableTo": ["shakefront-full", "shakefront-lite"]
+    },
+    "production-only": {
+      "tone": "creative-energetic",
+      "template": "Hola {{clientFirstName}}, listo para capturar la esencia de {{clientOrg}}. Cada foto y cada video van a contar la historia que tu marca necesita.",
+      "applicableTo": ["buttery-1day", "buttery-3days", "cold-brew"]
+    },
+    "social-focused": {
+      "tone": "strategic-modern",
+      "template": "Hola {{clientFirstName}}, vamos a construir la presencia digital de {{clientOrg}} desde cero. Redes sociales que no solo se vean bien, sino que generen comunidad y conversion.",
+      "applicableTo": ["flashy-socials"]
+    },
+    "retainer": {
+      "tone": "partnership",
+      "template": "Hola {{clientFirstName}}, esta propuesta detalla una suscripcion mensual de servicios creativos para {{clientOrg}}. La idea es simple: un equipo creativo dedicado, disponible cada mes, sin sorpresas.",
+      "applicableTo": ["retainer"]
+    },
+    "tech-automation": {
+      "tone": "innovative-practical",
+      "template": "Hola {{clientFirstName}}, vamos a automatizar y potenciar los procesos de {{clientOrg}} con tecnologia. Menos tareas repetitivas, mas tiempo para lo que importa.",
+      "applicableTo": ["the-percolator", "robo-barista", "the-brewery", "coffee-lab", "the-full-pot"]
+    },
+    "loyalty-program": {
+      "tone": "playful-strategic",
+      "template": "Hola {{clientFirstName}}, vamos a disenar un programa de fidelizacion para {{clientOrg}} que no solo retenga clientes, sino que los convierta en fans. Algo divertido, visual y memorable.",
+      "applicableTo": ["punch-card"]
+    }
+  },
+  "closings": {
+    "standard": "Gracias por llegar hasta aqui, {{clientFirstName}}. Estoy convencido de que juntos podemos crear algo excepcional para {{clientOrg}}. Cualquier duda, aqui estoy.",
+    "retainer": "Gracias por considerar esta propuesta, {{clientFirstName}}. Estoy seguro de que esta colaboracion mensual va a transformar la presencia de {{clientOrg}}.",
+    "simple": "Gracias, {{clientFirstName}}!"
+  }
+}

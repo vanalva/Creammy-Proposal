@@ -1,0 +1,87 @@
+{
+  "services": {
+    "milky-branding": {
+      "name": "Milky Branding",
+      "price": 0,
+      "original": 3500,
+      "status": "included",
+      "label": "INCLUIDO",
+      "monthly": false
+    },
+    "shakefront-full": {
+      "name": "Shakefront Full",
+      "price": 7750,
+      "original": 13500,
+      "status": "discount",
+      "label": "",
+      "monthly": false
+    },
+    "shakefront-lite": {
+      "name": "Shakefront Lite",
+      "price": 3750,
+      "original": 10500,
+      "status": "discount",
+      "label": "",
+      "monthly": false
+    },
+    "flashy-socials": {
+      "name": "Flashy Socials",
+      "price": 870,
+      "original": 1200,
+      "status": "discount",
+      "label": "",
+      "monthly": false
+    },
+    "cold-brew": {
+      "name": "Cold Brew",
+      "price": 1200,
+      "original": 1200,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    },
+    "buttery-1day": {
+      "name": "Buttery Frames (1 dia)",
+      "price": 1200,
+      "original": 1200,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    },
+    "glass-cup": {
+      "name": "The Glass Cup",
+      "price": 0,
+      "original": 750,
+      "status": "free",
+      "label": "GRATIS",
+      "monthly": false
+    },
+    "silky-edits": {
+      "name": "Silky Edits",
+      "price": 0,
+      "original": 350,
+      "status": "free",
+      "label": "GRATIS",
+      "monthly": false
+    },
+    "the-grinder": {
+      "name": "The Grinder",
+      "price": 320,
+      "original": 320,
+      "status": "normal",
+      "label": "",
+      "monthly": false
+    },
+    "barista": {
+      "name": "Barista",
+      "price": 450,
+      "original": 450,
+      "status": "normal",
+      "label": "",
+      "monthly": true
+    }
+  },
+  "totalOneTime": 15090,
+  "totalMonthly": 450,
+  "totalSavings": 5630
+}

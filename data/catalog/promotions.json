@@ -1,0 +1,35 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "activePromotions": [
+    {
+      "id": "launch-2026",
+      "name": "Promoción de Lanzamiento 2026",
+      "type": "percentage",
+      "discount": 30,
+      "appliesTo": "first-month-retainer",
+      "validFrom": "2026-01-01",
+      "validUntil": "2026-12-31",
+      "conditions": {
+        "minCommitment": 3,
+        "newClientsOnly": true
+      },
+      "display": {
+        "badge": "PROMO",
+        "color": "#f0ff3d",
+        "description": "30% de descuento en el primer mes de cualquier paquete mensual"
+      },
+      "bonusServices": [
+        "Sesión de discovery y análisis competitivo",
+        "Revisión de tendencias del sector",
+        "Estrategia de contenido personalizada",
+        "Plan de acción para el lanzamiento"
+      ]
+    }
+  ],
+  "referralProgram": {
+    "active": true,
+    "discountRange": { "min": 200, "max": 700 },
+    "description": "Descuento por referido activo antes de completar el proyecto"
+  }
+}
