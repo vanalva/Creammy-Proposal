@@ -22,11 +22,56 @@
 </head>
 <body>
 
-  <div class="page-wrapper">
+  <!-- Password gate -->
+  <div id="password-gate" style="position:fixed;inset:0;z-index:99999;background:#0c0c16;display:flex;align-items:center;justify-content:center;">
+    <div style="text-align:center;max-width:360px;padding:2rem;">
+      <img src="../images/favicon.png" alt="" style="width:40px;margin-bottom:2rem;opacity:0.4;">
+      <p style="color:rgba(255,255,255,0.4);font-family:Montserrat,sans-serif;font-size:0.8rem;margin-bottom:1.5rem;letter-spacing:0.05em;">Introduce la clave para acceder a esta propuesta</p>
+      <input id="pw-input" type="password" placeholder="Clave de acceso" autocomplete="off"
+        style="width:100%;padding:0.8rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#fff;font-family:'Cascadia Code',monospace;font-size:0.9rem;text-align:center;outline:none;"
+        onkeydown="if(event.key==='Enter')document.getElementById('pw-btn').click()">
+      <button id="pw-btn" onclick="checkPw()"
+        style="width:100%;margin-top:1rem;padding:0.7rem;background:#f0ff3d;color:#000;border:none;border-radius:6px;font-family:Montserrat,sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;">Acceder</button>
+      <p id="pw-error" style="color:#ff4444;font-size:0.75rem;margin-top:1rem;display:none;font-family:Montserrat,sans-serif;">Clave incorrecta</p>
+    </div>
+  </div>
+  <script>
+    function checkPw(){
+      var input = document.getElementById('pw-input').value.trim().toLowerCase();
+      var key = '{{clientName}}'.toLowerCase();
+      if(input === key){
+        document.getElementById('password-gate').style.display='none';
+        sessionStorage.setItem('pw-ok-{{proposalId}}','1');
+      } else {
+        document.getElementById('pw-error').style.display='block';
+        document.getElementById('pw-input').style.borderColor='#ff4444';
+      }
+    }
+    if(sessionStorage.getItem('pw-ok-{{proposalId}}')==='1'){
+      document.getElementById('password-gate').style.display='none';
+    }
+  </script>
+
+  <div class="page-wrapper" style="display:none;" id="proposal-content">
 {{BLOCKS}}
   </div>
 
 {{MODALS}}
+
+  <script>
+    // Show content after password or if already authenticated
+    if(sessionStorage.getItem('pw-ok-{{proposalId}}')==='1'){
+      document.getElementById('proposal-content').style.display='';
+    } else {
+      var obs = new MutationObserver(function(){
+        if(document.getElementById('password-gate').style.display==='none'){
+          document.getElementById('proposal-content').style.display='';
+          obs.disconnect();
+        }
+      });
+      obs.observe(document.getElementById('password-gate'),{attributes:true});
+    }
+  </script>
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
