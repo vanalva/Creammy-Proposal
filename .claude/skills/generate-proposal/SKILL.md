@@ -334,8 +334,8 @@ When a service OTHER than branding/web/broadcast is a major part of the proposal
 "activePromotions": [],            // promotion IDs from promotions.json
 
 "cta": {                           // Direct CTA (always include cta-final block)
-  "whatsapp": "+34XXXXXXXXX",
-  "email": "jc@vanalva.io",
+  "whatsapp": "+34604987569",
+  "email": "hello@vanalva.io",
   "calendly": "https://calendly.com/vanalva/discovery",
   "message": "Hola, he visto la propuesta de ClientName y me gustaría hablar."
 },
