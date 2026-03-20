@@ -65,6 +65,44 @@ function esc(str) {
     .replace(/"/g, '&quot;');
 }
 
+// Format price consistently with es-ES locale (matches pricing.js in browser)
+function fmtPrice(n) {
+  if (n === null || n === undefined) return '0';
+  return Number(n).toLocaleString('es-ES');
+}
+
+// Monkey-patch Number.prototype.toLocaleString to always use es-ES
+// This ensures ALL .toLocaleString() calls in build.js match the browser
+const _origToLocaleString = Number.prototype.toLocaleString;
+Number.prototype.toLocaleString = function(locale, opts) {
+  return _origToLocaleString.call(this, locale || 'es-ES', opts);
+};
+
+// ── Price override resolution ────────────────────────────────────────────────
+// Resolves a pricing override to a numeric price.
+// Supports: number (legacy), { variant: "name" } (resolves from catalog), or null.
+function resolveOverride(override, catalogService) {
+  if (override === undefined || override === null) return null;
+  if (typeof override === 'number') return override;
+  if (typeof override === 'object' && override.variant) {
+    const pv = catalogService?.pricing?.priceVariants;
+    if (!pv) return catalogService?.pricing?.basePrice || null;
+    const variant = pv[override.variant];
+    if (variant === undefined) return catalogService?.pricing?.basePrice || null;
+    return typeof variant === 'object' ? variant.price : variant;
+  }
+  return null;
+}
+
+// Shorthand: get effective price for a service given overrides map
+function getServicePrice(svcId, overrides, allServices) {
+  const svc = allServices[svcId];
+  if (!svc) return 0;
+  const override = overrides?.[svcId];
+  const resolved = resolveOverride(override, svc);
+  return resolved !== null ? resolved : (svc.pricing.basePrice || 0);
+}
+
 // ── Service content merge (3D) ───────────────────────────────────────────────
 // Merges base includes/deliverables from catalog with per-proposal overrides
 
@@ -430,8 +468,9 @@ function calculatePricing(manifest, data) {
     let original = price;
     let label = '';
 
-    if (manifest.pricing.overrides && manifest.pricing.overrides[id]) {
-      price = manifest.pricing.overrides[id];
+    const resolvedOverride = manifest.pricing.overrides ? resolveOverride(manifest.pricing.overrides[id], svc) : null;
+    if (resolvedOverride !== null) {
+      price = resolvedOverride;
       original = svc.pricing.basePrice || 0;
       // Gap #9: Enforce minimum pricing floor
       const minPrice = svc.pricing.minimumPrice || svc.pricing.priceRange?.min || 0;
@@ -900,11 +939,11 @@ ${packages.map(pkg => {
       if (!svc) return '';
       const basePrice = svc.pricing.basePrice || 0;
       const isMonthly = svc.pricing.monthly || false;
-      const override = m.pricing?.overrides?.[svcId];
+      const resolvedOvr = resolveOverride(m.pricing?.overrides?.[svcId], svc);
 
       // Check if this service is included free (bundled)
       const bundleRules = data.discounts?.bundleDiscounts || [];
-      let effectivePrice = override || basePrice;
+      let effectivePrice = resolvedOvr !== null ? resolvedOvr : basePrice;
       let priceLabel = isMonthly ? `€${effectivePrice.toLocaleString()}/mes` : `€${effectivePrice.toLocaleString()}`;
       let priceClass = '';
 
@@ -918,7 +957,11 @@ ${packages.map(pkg => {
           if (rule.effect.type === 'included') { priceLabel = 'INCLUIDO'; priceClass = ' free'; }
           else if (rule.effect.type === 'free') { priceLabel = 'GRATIS'; priceClass = ' free'; }
           else if (rule.effect.type === 'discount') {
-            effectivePrice = rule.effect.price;
+            if (rule.effect.price !== undefined) {
+              effectivePrice = rule.effect.price;
+            } else if (rule.effect.percentage) {
+              effectivePrice = Math.round(effectivePrice * (1 - rule.effect.percentage / 100));
+            }
             priceLabel = `<span class="strikethrough">€${basePrice.toLocaleString()}</span> €${effectivePrice.toLocaleString()}`;
             priceClass = ' discount';
           }
@@ -972,11 +1015,15 @@ ${packages.map(pkg => {
   const selected = [...(m.services?.core || []), ...(m.services?.addons || [])];
 
   function svcCard(id, svc, pricingInfo) {
-    const price = pricingInfo?.price || svc.pricing.basePrice || 0;
+    // Use the variant-resolved price as the base (before bundle effects).
+    // This must match pricing-config.js so clicking doesn't change the price.
+    const ovrResolved = resolveOverride(m.pricing?.overrides?.[id], svc);
+    const baseCardPrice = ovrResolved !== null ? ovrResolved : (svc.pricing.basePrice || 0);
     const isMonthly = svc.pricing.monthly || false;
     const priceDisplay = isMonthly
-      ? `€${price.toLocaleString()}<span style="font-size:0.7rem;opacity:0.6;">/mes</span>`
-      : `€${price.toLocaleString()}`;
+      ? `€${baseCardPrice.toLocaleString()}<span style="font-size:0.7rem;opacity:0.6;">/mes</span>`
+      : `€${baseCardPrice.toLocaleString()}`;
+    const price = baseCardPrice;
     const monthlyAttr = isMonthly ? ' data-monthly="true"' : '';
     const type = (m.services?.core || []).includes(id) ? 'core' : 'addon';
 
@@ -1195,6 +1242,13 @@ ${tabPanesHtml}
           ${serviceSectionsHtml}
           ${customItemsHtml}
           ${retainerHtml}
+
+          <!-- Package Comparison Table (hidden by default, revealed by yellow CTA card) -->
+          <div id="pkg-comparison-section" style="display:none;padding:3rem 0 4rem;">
+            <h3 class="h3-heading utility-text-align-center utility-margin-bottom-1rem">Comparativa de Paquetes</h3>
+            <p class="subheading utility-text-align-center utility-margin-bottom-2rem">Cada paquete incluye una combinación diferente de servicios</p>
+            {{PACKAGE_COMPARISON}}
+          </div>
 
           <h4 class="h4-heading utility-margin-bottom-2rem utility-text-align-center">Tu Presupuesto</h4>
           <div class="pricing-summary-box utility-margin-bottom-4rem" id="pricing-summary">
@@ -1498,8 +1552,8 @@ function generatePackageComparison(manifest, data) {
 
       // Determine effective price/status within this package
       const basePrice = svc.pricing.basePrice || 0;
-      const override = manifest.pricing?.overrides?.[svcId];
-      let price = override || basePrice;
+      const resolvedCmpOvr = resolveOverride(manifest.pricing?.overrides?.[svcId], svc);
+      let price = resolvedCmpOvr !== null ? resolvedCmpOvr : basePrice;
       let label = `€${price.toLocaleString()}`;
       let cssClass = '';
 
@@ -1513,7 +1567,11 @@ function generatePackageComparison(manifest, data) {
           if (rule.effect.type === 'included') { label = 'INCLUIDO'; cssClass = 'cell-free'; }
           else if (rule.effect.type === 'free') { label = 'GRATIS'; cssClass = 'cell-free'; }
           else if (rule.effect.type === 'discount') {
-            label = `€${rule.effect.price.toLocaleString()}`;
+            if (rule.effect.price !== undefined) {
+              label = `€${rule.effect.price.toLocaleString()}`;
+            } else if (rule.effect.percentage) {
+              label = `-${rule.effect.percentage}%`;
+            }
             cssClass = 'cell-free';
           }
         }
@@ -1621,14 +1679,16 @@ function generatePricingConfig(manifest, data, pricing) {
   const retainerIds = retainerTiers.map(t => t.id);
 
   // Build services object for PricingCart
+  // Use the OVERRIDE-RESOLVED price (not bundle-discounted) as the base for runtime calculations.
+  // Bundle discounts (INCLUIDO/GRATIS/discount) are applied at runtime by pricing.js.
   const cartServices = {};
   for (const id of selected) {
     const svc = allSvc[id];
     if (!svc) continue;
-    const override = m.pricing?.overrides?.[id];
+    const cartOvr = resolveOverride(m.pricing?.overrides?.[id], svc);
     cartServices[id] = {
       name: svc.name,
-      price: override || svc.pricing.basePrice || 0,
+      price: cartOvr !== null ? cartOvr : (svc.pricing.basePrice || 0),
       monthly: svc.pricing.monthly || false,
     };
   }
@@ -1665,18 +1725,19 @@ function generatePricingConfig(manifest, data, pricing) {
     };
   }
 
-  // Build service modal data
+  // Build service modal data — use pre-calculated prices to match HTML
   const modalData = {};
   for (const id of selected) {
     const svc = allSvc[id];
     if (!svc) continue;
-    const override = m.pricing?.overrides?.[id];
-    const price = override || svc.pricing.basePrice || 0;
+    // Use override-resolved price (not bundle-discounted) for modal display
+    const modalOvr = resolveOverride(m.pricing?.overrides?.[id], svc);
+    const price = modalOvr !== null ? modalOvr : (svc.pricing.basePrice || 0);
     const monthly = svc.pricing.monthly || false;
     modalData[id] = {
       eyebrow: svc.category || '',
       title: svc.name,
-      price: monthly ? `€${price.toLocaleString()}/mes` : `€${price.toLocaleString()}`,
+      price: monthly ? `€${Number(price).toLocaleString()}/mes` : `€${Number(price).toLocaleString()}`,
       desc: svc.description?.medium || svc.description?.short || '',
       // 3D: Apply service overrides
       includes: mergeServiceContent(svc.includes, m.serviceOverrides?.[id]),

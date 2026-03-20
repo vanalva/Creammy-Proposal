@@ -26,17 +26,15 @@
     },
     "the-percolator": {
       "name": "The Percolator",
-      "price": 2200,
       "original": 0,
-      "status": "normal",
+      "status": "discount",
       "label": "",
       "monthly": false
     },
     "robo-barista": {
       "name": "Robo Barista",
-      "price": 3000,
       "original": 0,
-      "status": "normal",
+      "status": "discount",
       "label": "",
       "monthly": false
     },
@@ -74,22 +72,21 @@
     },
     "barista": {
       "name": "Barista",
-      "price": 450,
       "original": 450,
-      "status": "normal",
-      "label": "",
+      "status": "promo",
+      "label": "2 meses gratis",
       "monthly": true
     },
     "the-grinder": {
       "name": "The Grinder",
-      "price": 320,
+      "price": 0,
       "original": 320,
-      "status": "normal",
-      "label": "",
+      "status": "included",
+      "label": "INCLUIDO",
       "monthly": false
     }
   },
-  "totalOneTime": 29590,
-  "totalMonthly": 450,
-  "totalSavings": 5280
+  "totalOneTime": null,
+  "totalMonthly": null,
+  "totalSavings": 6270
 }

@@ -1,4 +1,4 @@
-{
+const EMBEDDED_SERVICES = {
   "version": "3.0",
   "lastUpdated": "2026-03-20",
   "currency": "EUR",
@@ -12,7 +12,7 @@
       "subtitle": "Identidad de marca completa",
       "pricing": {
         "type": "fixed",
-        "basePrice": 3500,
+        "basePrice": 4500,
         "monthly": false,
         "priceRange": {
           "min": 750,
@@ -1590,4 +1590,682 @@
       }
     }
   }
-}
+};
+const EMBEDDED_RETAINERS = {
+  "version": "2.0",
+  "lastUpdated": "2026-03-19",
+  "currency": "EUR",
+  "taxNote": "+ IVA where applicable",
+  "defaultMinimumCommitment": { "months": 3 },
+  "templates": {
+    "standard": {
+      "id": "standard",
+      "name": "Van Alva Standard Retainer",
+      "source": "Piri Piri (latest, most evolved)",
+      "minimumCommitment": 3,
+      "tiers": {
+        "just-water": {
+          "level": 0,
+          "name": "Just Water",
+          "price": 480,
+          "subtitle": "Paquete Basico",
+          "includes": {
+            "designPieces": 3,
+            "printFilePrep": true,
+            "exports": "JPEG/PNG (no editables)",
+            "vectorDesigns": 3,
+            "vectorAlterations": 3,
+            "aiPrompting": true,
+            "basicPhotoRetouch": true,
+            "posts": 0,
+            "carousels": 0,
+            "storyAdaptations": 0,
+            "reels": 0,
+            "tca": 0,
+            "tcc": 0,
+            "webMaintenance": false,
+            "adobeExpressScheduling": false,
+            "corporatePresentations": 0,
+            "stockLibrary": false
+          }
+        },
+        "sip-starter": {
+          "level": 1,
+          "name": "Sip Starter",
+          "price": 1000,
+          "subtitle": "Paquete Esencial",
+          "includes": {
+            "designPieces": 6,
+            "printFilePrep": true,
+            "exports": "JPEG/PNG (no editables)",
+            "vectorDesigns": 6,
+            "vectorAlterations": 6,
+            "aiPrompting": true,
+            "photoRetouch": "unlimited",
+            "posts": 0,
+            "carousels": 0,
+            "storyAdaptations": 0,
+            "reels": 0,
+            "tca": 1,
+            "tcc": 0,
+            "webMaintenance": true,
+            "webSupport": [
+              "Modificacion de contenido en paginas existentes",
+              "Nuevas secciones promocionales",
+              "Actualizacion de menu/catalogo",
+              "Implementacion de banners",
+              "Modals/popups para promociones",
+              "Cambios menores de layout visual"
+            ],
+            "newsletterDesign": true,
+            "designReview": true,
+            "adobeExpressScheduling": false,
+            "corporatePresentations": 0,
+            "stockLibrary": false
+          }
+        },
+        "double-shot": {
+          "level": 2,
+          "name": "Double Shot",
+          "price": 1500,
+          "subtitle": "Paquete Social",
+          "includes": {
+            "designPieces": 10,
+            "printFilePrep": true,
+            "exports": "JPEG/PNG + MP4 (no editables)",
+            "vectorDesigns": 5,
+            "vectorAlterations": 5,
+            "aiPrompting": true,
+            "photoRetouch": "unlimited",
+            "posts": 10,
+            "carousels": 2,
+            "carouselMaxSlides": 10,
+            "storyAdaptations": 10,
+            "reels": 2,
+            "reelFrequency": "biweekly",
+            "igCovers": 2,
+            "tca": 2,
+            "tcc": 0,
+            "webMaintenance": true,
+            "adobeExpressScheduling": false,
+            "corporatePresentations": 0,
+            "stockLibrary": false
+          }
+        },
+        "nutty-blend": {
+          "level": 3,
+          "name": "Nutty Blend",
+          "price": 2100,
+          "subtitle": "Paquete Avanzado",
+          "includes": {
+            "designPieces": 16,
+            "printFilePrep": true,
+            "exports": "JPEG/PNG + MP4 (no editables)",
+            "vectorDesigns": 10,
+            "vectorAlterations": 10,
+            "aiPrompting": true,
+            "photoRetouch": "unlimited",
+            "posts": 16,
+            "carousels": 5,
+            "carouselMaxSlides": 10,
+            "storyAdaptations": 16,
+            "reels": 4,
+            "reelFrequency": "weekly",
+            "reelFeatures": "SFX, musica, transiciones creativas",
+            "igCovers": 4,
+            "tca": 3,
+            "tcc": 1,
+            "webMaintenance": true,
+            "phase3WebDev": true,
+            "adobeExpressScheduling": true,
+            "corporatePresentations": 2,
+            "editableTemplates": true,
+            "stockLibrary": false
+          }
+        },
+        "milkshake": {
+          "level": 4,
+          "name": "$5 Milkshake",
+          "price": 2900,
+          "subtitle": "Paquete Premium",
+          "includes": {
+            "designPieces": 20,
+            "printFilePrep": true,
+            "exports": "JPEG/PNG + MP4 (no editables)",
+            "vectorDesigns": 10,
+            "vectorAlterations": 10,
+            "aiPrompting": true,
+            "photoRetouch": "unlimited",
+            "posts": 20,
+            "carousels": 8,
+            "carouselMaxSlides": 10,
+            "storyAdaptations": 20,
+            "reels": 8,
+            "reelFrequency": "2x weekly",
+            "igCovers": 6,
+            "tca": 6,
+            "tcc": 2,
+            "webMaintenance": true,
+            "phase3WebDev": true,
+            "adobeExpressScheduling": true,
+            "corporatePresentations": 4,
+            "editableTemplates": true,
+            "stockLibrary": true
+          }
+        },
+        "a-por-todo": {
+          "level": 5,
+          "name": "A por todo",
+          "price": 5500,
+          "subtitle": "Todo Incluido",
+          "includes": {
+            "unlimited": true,
+            "tca": "unlimited",
+            "tcc": "unlimited",
+            "photoRetouch": "unlimited",
+            "printFilePrep": true,
+            "stockLibrary": true,
+            "customHtmlCssJs": true,
+            "adobeExpressTemplates": true,
+            "adobeExpressScheduling": true,
+            "adobeExpressPro": true,
+            "allCreativeServices": true,
+            "note": "Everything included, limited only by time and complexity. Designer prioritizes collaboratively with client."
+          }
+        }
+      }
+    },
+    "insular": {
+      "id": "insular",
+      "name": "Insular Retainer",
+      "source": "Retainer Insular proposal",
+      "minimumCommitment": 3,
+      "note": "4 tiers only, starts at Sip Starter level. Higher base prices than standard.",
+      "tiers": {
+        "sip-starter": {
+          "level": 1,
+          "name": "Sip Starter",
+          "price": 1500,
+          "includes": {
+            "posts": 10,
+            "carousels": 2,
+            "storyAdaptations": 10,
+            "reels": 1,
+            "tca": 2,
+            "tcc": 0,
+            "vectorDesigns": 5,
+            "photoRetouch": "unlimited",
+            "webMaintenance": true,
+            "designReview": true,
+            "aiPrompting": true
+          }
+        },
+        "nutty-blend": {
+          "level": 2,
+          "name": "Nutty Blend",
+          "price": 2100,
+          "includes": {
+            "posts": 16,
+            "carousels": 5,
+            "storyAdaptations": 16,
+            "reels": 4,
+            "tca": 3,
+            "tcc": 1,
+            "vectorDesigns": 10,
+            "photoRetouch": "unlimited",
+            "webMaintenance": true,
+            "phase3WebDev": true,
+            "adobeExpressScheduling": true,
+            "corporatePresentations": 2,
+            "editableTemplates": true,
+            "aiPrompting": true
+          }
+        },
+        "milkshake": {
+          "level": 3,
+          "name": "$5 Milkshake",
+          "price": 2900,
+          "includes": {
+            "posts": 20,
+            "carousels": 8,
+            "storyAdaptations": 20,
+            "reels": 8,
+            "tca": 6,
+            "tcc": 2,
+            "vectorDesigns": 10,
+            "photoRetouch": "unlimited",
+            "webMaintenance": true,
+            "phase3WebDev": true,
+            "adobeExpressScheduling": true,
+            "corporatePresentations": 4,
+            "editableTemplates": true,
+            "stockLibrary": true,
+            "aiPrompting": true
+          }
+        },
+        "a-por-todo": {
+          "level": 4,
+          "name": "A por todo",
+          "price": 5500,
+          "includes": {
+            "unlimited": true,
+            "tca": "unlimited",
+            "tcc": "unlimited",
+            "allCreativeServices": true
+          }
+        }
+      }
+    },
+    "just-pearly-things": {
+      "id": "just-pearly-things",
+      "name": "JPT Premium Retainer",
+      "source": "Just Pearly Things proposal",
+      "minimumCommitment": 3,
+      "note": "Content-creator focused. Very high volume, clip editing, YouTube optimization.",
+      "tiers": {
+        "essential": {
+          "level": 1,
+          "name": "Essential Content & Design",
+          "price": 3800,
+          "includes": {
+            "editedClips": 60,
+            "clipThumbnails": 60,
+            "liveStreamThumbnails": 20,
+            "youtubeShorts": 100,
+            "uploadsPerWeek": 5,
+            "spotifyIntegration": 20,
+            "transcription": true,
+            "posts": 8,
+            "carousels": 2,
+            "websiteBanners": 5,
+            "newsletters": 2,
+            "vectorGraphics": 5,
+            "barista": true
+          }
+        },
+        "advanced": {
+          "level": 2,
+          "name": "Advanced Design",
+          "price": 4580,
+          "includes": {
+            "allEssentialPlus": true,
+            "posts": 12,
+            "carousels": 4,
+            "websiteBanners": 8,
+            "newsletters": 2,
+            "vectorGraphics": 10,
+            "newsletterDesignAndPublish": true
+          }
+        },
+        "premium": {
+          "level": 3,
+          "name": "Premium Design",
+          "price": 6350,
+          "includes": {
+            "allAdvancedPlus": true,
+            "posts": 18,
+            "carousels": 6,
+            "websiteBanners": 12,
+            "newsletters": 4,
+            "vectorGraphics": 15,
+            "googleAnalytics": true,
+            "monthlyAnalyticsReview": true,
+            "emailFormSetup": true,
+            "mailchimpIntegration": true
+          }
+        },
+        "all-in": {
+          "level": 4,
+          "name": "All-In",
+          "price": 15000,
+          "includes": {
+            "unlimited": true,
+            "tca": "unlimited",
+            "tcc": "unlimited",
+            "fullCreativeFreedom": true
+          }
+        }
+      }
+    }
+  },
+  "tccServices": {
+    "description": "Tareas Creativas Complejas (TCC) - Complex Creative Tasks",
+    "items": {
+      "print-small": { "name": "Diseno impreso pequeno formato", "price": 150, "examples": "dossiers, flyers, posters" },
+      "print-large": { "name": "Diseno impreso gran formato", "price": 150, "examples": "banners, roll-ups, photocalls" },
+      "milky-branding-tcc": { "name": "Milky Branding (Logo + Guidelines)", "price": 1200 },
+      "landing-design": { "name": "Diseno Landing Page (UI only)", "price": 550 },
+      "multipage-design": { "name": "Diseno Multi-Pagina 3-5 pags (UI only)", "price": 850 },
+      "landing-dev": { "name": "Desarrollo Landing Page", "price": 950 },
+      "multipage-dev": { "name": "Desarrollo Multi-Pagina 3-5 pags", "price": 1700 },
+      "animation": { "name": "Animacion y Motion Graphics", "price": 350 },
+      "video-production": { "name": "Produccion de Video", "price": 675 },
+      "content-creation": { "name": "Creacion de Contenido", "price": null, "note": "per project" },
+      "video-editing": { "name": "Edicion de Video", "price": null, "note": "per scope" },
+      "sound-design": { "name": "Diseno de Sonido", "price": null, "note": "per scope" },
+      "documentary-research": { "name": "Investigacion Documental para RRSS", "price": null, "note": "per scope" }
+    }
+  },
+  "tcaServices": {
+    "description": "Tareas Creativas Adicionales (TCA) - Additional Creative Tasks",
+    "items": {
+      "design-tasks": { "name": "Thumbnails, banners, newsletters, 5 vectores", "price": 180 },
+      "naming": { "name": "Naming creativo", "price": 180 },
+      "illustration": { "name": "Arte, ilustracion, diseno 3D", "price": 180 },
+      "product-design": { "name": "Diseno de producto", "price": 280 },
+      "stationery": { "name": "Papeleria, POP, merchandising", "price": 80 },
+      "print-prep": { "name": "Preparacion de archivos para imprenta", "price": 60 },
+      "presentations": { "name": "Presentaciones (PPT/Slides/PDF/Keynote, 5-15 slides)", "price": 315 },
+      "copywriting": { "name": "Copywriting y contenido", "price": 180 },
+      "adobe-templates": { "name": "Plantillas Adobe Express", "price": 180 },
+      "content-scheduling": { "name": "Programacion de contenido via Adobe Express", "price": 220 }
+    }
+  },
+  "launchPromotion": {
+    "discount": 30,
+    "discountUnit": "percent",
+    "appliesTo": "first-month",
+    "oneTime": true,
+    "bonusServices": [
+      "Sesion de discovery",
+      "Analisis competitivo",
+      "Revision de tendencias",
+      "Estrategia de contenido personalizada",
+      "Plan de accion para el lanzamiento"
+    ]
+  },
+  "generalTerms": {
+    "minimumCommitment": "3 meses",
+    "noRollover": "Items no utilizados no se acumulan al mes siguiente",
+    "taskExecution": "Ejecucion secuencial (no 2+ tareas simultaneas salvo dependencias)",
+    "contentPlanning": "Documento de planificacion mensual con 1 semana de antelacion",
+    "gridApproval": "Grillas deben disenarse 3 semanas antes de publicacion, 1 semana de aprobacion",
+    "urgentSurcharge": { "amount": 25, "currency": "EUR", "threshold": "menos de 7 dias de aviso" },
+    "videoRequirements": "Cliente debe proveer musica/stock video (excepto Milkshake o A por todo)",
+    "aPorTodoNote": "Aunque los servicios son ilimitados, el tiempo y la complejidad se gestionan colaborativamente"
+  }
+};
+const EMBEDDED_DISCOUNTS = {
+  "version": "3.0",
+  "lastUpdated": "2026-03-20",
+  "bundleDiscounts": [
+    {
+      "id": "full-includes-branding",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "milky-branding",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Shakefront Full incluye Milky Branding"
+    },
+    {
+      "id": "full-includes-silky",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "silky-edits",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Shakefront Full incluye Silky Edits"
+    },
+    {
+      "id": "full-includes-grinder",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "the-grinder",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Shakefront Full incluye hosting, dominio y correos (The Grinder)"
+    },
+    {
+      "id": "full-includes-rosetta",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "rosetta",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Shakefront Full incluye funcionalidad multilingue (Rosetta)"
+    },
+    {
+      "id": "full-free-glass-cup",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "glass-cup",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "The Glass Cup gratis con Shakefront Full"
+    },
+    {
+      "id": "full-discount-flashy",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "flashy-socials",
+      "effect": { "type": "discount", "price": 870, "original": 1200 },
+      "description": "Flashy Socials de 1200 a 870 con Shakefront Full"
+    },
+    {
+      "id": "full-discount-hot-press",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "hot-press",
+      "effect": { "type": "discount", "price": 1600, "original": 3200 },
+      "description": "Hot Press a mitad de precio con Shakefront Full"
+    },
+    {
+      "id": "full-discount-counter",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "the-counter",
+      "effect": { "type": "discount", "percentage": 15 },
+      "description": "The Counter 15% dto con Shakefront Full"
+    },
+    {
+      "id": "silky-free-with-flashy",
+      "trigger": { "selected": "flashy-socials" },
+      "target": "silky-edits",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Silky Edits gratis con Flashy Socials"
+    },
+    {
+      "id": "silky-free-with-buttery-1day",
+      "trigger": { "selected": "buttery-1day" },
+      "target": "silky-edits",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Silky Edits gratis con Buttery Frames (1 dia)"
+    },
+    {
+      "id": "silky-free-with-buttery-3days",
+      "trigger": { "selected": "buttery-3days" },
+      "target": "silky-edits",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Silky Edits gratis con Buttery Frames (3 dias)"
+    },
+    {
+      "id": "latte-art-free-with-branding",
+      "trigger": { "selected": "milky-branding" },
+      "target": "latte-art",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Latte Art gratis con Milky Branding"
+    },
+    {
+      "id": "latte-art-free-with-punch-card",
+      "trigger": { "selected": "punch-card" },
+      "target": "latte-art",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Latte Art incluida en Punch Card"
+    },
+    {
+      "id": "cold-brew-discount-with-buttery-1day",
+      "trigger": { "selected": "buttery-1day" },
+      "target": "cold-brew",
+      "effect": { "type": "discount", "price": 900, "original": 1200 },
+      "description": "Cold Brew de 1200 a 900 con Buttery Frames (produccion compartida)"
+    },
+    {
+      "id": "cold-brew-discount-with-buttery-3days",
+      "trigger": { "selected": "buttery-3days" },
+      "target": "cold-brew",
+      "effect": { "type": "discount", "price": 900, "original": 1200 },
+      "description": "Cold Brew de 1200 a 900 con Buttery Frames 3 dias"
+    },
+    {
+      "id": "cold-brew-includes-silky",
+      "trigger": { "selected": "cold-brew" },
+      "target": "silky-edits",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Cold Brew incluye Silky Edits (retoque fotografico)"
+    },
+    {
+      "id": "sprinkles-discount-with-flashy",
+      "trigger": { "selected": "flashy-socials" },
+      "target": "sprinkles",
+      "effect": { "type": "discount", "price": 350, "original": 500 },
+      "description": "Sprinkles (AR filter) de 500 a 350 con Flashy Socials"
+    },
+    {
+      "id": "foam-art-discount-with-branding",
+      "trigger": { "selected": "milky-branding" },
+      "target": "foam-art",
+      "effect": { "type": "discount", "price": 1400, "original": 1800 },
+      "description": "Foam Art (3D) de 1800 a 1400 con Milky Branding"
+    },
+    {
+      "id": "punch-card-discount-with-branding",
+      "trigger": { "selected": "milky-branding" },
+      "target": "punch-card",
+      "effect": { "type": "discount", "price": 1500, "original": 1800 },
+      "description": "Punch Card de 1800 a 1500 con Milky Branding"
+    },
+    {
+      "id": "pour-over-discount-with-hot-press",
+      "trigger": { "selected": "hot-press" },
+      "target": "pour-over",
+      "effect": { "type": "discount", "percentage": 15 },
+      "description": "Pour Over 15% dto con Hot Press (pipeline de animacion compartida)"
+    },
+    {
+      "id": "pour-over-discount-with-cold-brew",
+      "trigger": { "selected": "cold-brew" },
+      "target": "pour-over",
+      "effect": { "type": "discount", "percentage": 15 },
+      "description": "Pour Over 15% dto con Cold Brew (elementos motion para video)"
+    },
+    {
+      "id": "espresso-includes-grinder",
+      "trigger": { "selected": "espresso-shot" },
+      "target": "the-grinder",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Espresso Shot incluye hosting (The Grinder)"
+    },
+    {
+      "id": "brewery-includes-grinder",
+      "trigger": { "selected": "the-brewery" },
+      "target": "the-grinder",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "The Brewery incluye hosting (The Grinder)"
+    },
+    {
+      "id": "coffee-lab-includes-grinder",
+      "trigger": { "selected": "coffee-lab" },
+      "target": "the-grinder",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Coffee Lab incluye hosting (The Grinder)"
+    },
+    {
+      "id": "percolator-discount-with-brewery",
+      "trigger": { "selected": "the-brewery" },
+      "target": "the-percolator",
+      "effect": { "type": "discount", "percentage": 20 },
+      "description": "The Percolator 20% dto con The Brewery (mismo scope de desarrollo)"
+    },
+    {
+      "id": "percolator-discount-with-robo",
+      "trigger": { "selected": "robo-barista" },
+      "target": "the-percolator",
+      "effect": { "type": "discount", "percentage": 20 },
+      "description": "The Percolator 20% dto con Robo Barista (agentes necesitan automatizacion)"
+    },
+    {
+      "id": "robo-discount-with-brewery",
+      "trigger": { "selected": "the-brewery" },
+      "target": "robo-barista",
+      "effect": { "type": "discount", "percentage": 15 },
+      "description": "Robo Barista 15% dto con The Brewery (codebase compartido)"
+    },
+    {
+      "id": "robo-discount-with-percolator",
+      "trigger": { "selected": "the-percolator" },
+      "target": "robo-barista",
+      "effect": { "type": "discount", "percentage": 20 },
+      "description": "Robo Barista 20% dto con The Percolator"
+    },
+    {
+      "id": "barista-promo-with-full",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "barista",
+      "effect": { "type": "promo", "freeMonths": 2, "label": "2 meses gratis" },
+      "description": "Barista: 2 primeros meses gratis con Shakefront Full"
+    },
+    {
+      "id": "barista-promo-with-lite",
+      "trigger": { "selected": "shakefront-lite" },
+      "target": "barista",
+      "effect": { "type": "promo", "freeMonths": 1, "label": "Primer mes gratis" },
+      "description": "Barista: primer mes gratis con Shakefront Lite"
+    }
+  ],
+  "mutualExclusions": [
+    {
+      "services": ["shakefront-full", "shakefront-lite"],
+      "description": "No se pueden seleccionar ambos Shakefront Full y Lite"
+    },
+    {
+      "services": ["shakefront-full", "espresso-shot"],
+      "description": "Espresso Shot es alternativa a Shakefront Full, no complemento"
+    },
+    {
+      "services": ["shakefront-lite", "espresso-shot"],
+      "description": "Espresso Shot es alternativa a Shakefront Lite, no complemento"
+    },
+    {
+      "services": ["the-brewery", "coffee-lab"],
+      "description": "Coffee Lab es version ligera de The Brewery, no se combinan"
+    }
+  ],
+  "retainerDiscount": {
+    "id": "retainer-core-discount",
+    "percentage": 15,
+    "appliesTo": ["milky-branding", "shakefront-full", "shakefront-lite"],
+    "condition": "Any retainer tier active (min 3 months commitment)",
+    "description": "15% de descuento en proyectos core cuando el retainer esta activo"
+  },
+  "volumeDiscounts": {
+    "description": "Descuentos por volumen en Tareas Creativas Complejas (TCC)",
+    "window": "2 months rolling",
+    "tiers": [
+      { "nth": 1, "discount": 5, "label": "1a TCC en ventana de 2 meses: -5%" },
+      { "nth": 2, "discount": 10, "label": "2a TCC en ventana de 2 meses: -10%" },
+      { "nth": 3, "discount": 20, "label": "3a+ TCC en ventana de 2 meses: -20%" }
+    ]
+  },
+  "specialDiscounts": {
+    "family-friends": {
+      "id": "family-friends",
+      "percentage": 35,
+      "description": "Descuento Family & Friends",
+      "note": "Applied to Mr Dumpling. At designer discretion for close personal relationships.",
+      "appliesTo": "all-services"
+    },
+    "launch-promo": {
+      "id": "launch-promo",
+      "percentage": 30,
+      "description": "Promocion de lanzamiento: 30% primer mes de retainer",
+      "appliesTo": "first-month-retainer",
+      "oneTime": true,
+      "includesBonus": true
+    },
+    "referral": {
+      "id": "referral",
+      "type": "fixed-amount",
+      "range": { "min": 200, "max": 700 },
+      "description": "Descuento por referido antes de completar el proyecto",
+      "note": "Amount varies by project size. Bohemia Group structure: 200-700 EUR depending on package."
+    }
+  },
+  "packageDiscounts": {
+    "description": "Descuento exclusivo por seleccionar un paquete completo. Se pierde si se modifica la seleccion manualmente.",
+    "tiers": [
+      { "minServices": 3, "discount": 5, "label": "5% descuento de paquete" },
+      { "minServices": 5, "discount": 8, "label": "8% descuento de paquete" },
+      { "minServices": 8, "discount": 10, "label": "10% descuento de paquete" }
+    ],
+    "appliesTo": "non-discounted-services",
+    "note": "Only applies to services at full price (not already INCLUDED/FREE/discounted). Incentivizes committing to a package rather than cherry-picking."
+  }
+};

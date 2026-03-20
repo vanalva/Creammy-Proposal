@@ -33,7 +33,6 @@
       "methodology-tabs",
       "complementary",
       "proposal-detail",
-      "package-comparison",
       "cta-final",
       "footer"
     ],
@@ -52,9 +51,9 @@
 
     "pricing": {
       "overrides": {
-        "shakefront-full": 7750,
-        "shakefront-lite": 3750,
-        "milky-branding": 1500
+        "shakefront-full": { "variant": "with-booking" },
+        "shakefront-lite": { "variant": "standard-10sections" },
+        "milky-branding": { "variant": "standard" }
       },
       "packages": [
         {

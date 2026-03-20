@@ -34,9 +34,9 @@
     },
     "cold-brew": {
       "name": "Cold Brew",
-      "price": 1200,
+      "price": 900,
       "original": 1200,
-      "status": "normal",
+      "status": "discount",
       "label": "",
       "monthly": false
     },
@@ -66,22 +66,21 @@
     },
     "the-grinder": {
       "name": "The Grinder",
-      "price": 320,
+      "price": 0,
       "original": 320,
-      "status": "normal",
-      "label": "",
+      "status": "included",
+      "label": "INCLUIDO",
       "monthly": false
     },
     "barista": {
       "name": "Barista",
-      "price": 450,
       "original": 450,
-      "status": "normal",
-      "label": "",
+      "status": "promo",
+      "label": "Primer mes gratis",
       "monthly": true
     }
   },
-  "totalOneTime": 15090,
-  "totalMonthly": 450,
-  "totalSavings": 5630
+  "totalOneTime": 14470,
+  "totalMonthly": null,
+  "totalSavings": 6600
 }

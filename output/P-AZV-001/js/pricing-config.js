@@ -126,7 +126,7 @@ window.ProposalConfig = {
   "milky-branding": {
     "eyebrow": "branding",
     "title": "Milky Branding",
-    "price": "€1,500",
+    "price": "€1500",
     "desc": "Identidad de marca completa. Sistema visual solido, capaz de crecer junto al negocio y adaptarse a distintos formatos, contextos y etapas. Cada decision de diseno respondera a una estrategia clara de posicionamiento y diferenciacion.",
     "includes": [
       "Logotipo y sistema de identidad visual adaptable (todos los formatos y escalas)",
@@ -157,7 +157,7 @@ window.ProposalConfig = {
   "shakefront-full": {
     "eyebrow": "web",
     "title": "Shakefront Full",
-    "price": "€7,750",
+    "price": "€7750",
     "desc": "Sitio web completo en Webflow con CMS integrado. Incluye Milky Branding y Silky Edits. Mas de 15 paginas unicas, diseno pixel-perfect, animaciones, SEO avanzado y soporte post-lanzamiento.",
     "includes": [
       "Milky Branding incluido (identidad de marca completa)",
@@ -193,7 +193,7 @@ window.ProposalConfig = {
   "shakefront-lite": {
     "eyebrow": "web",
     "title": "Shakefront Lite",
-    "price": "€3,750",
+    "price": "€3750",
     "desc": "One-pager elegante y funcional en Webflow. No incluye branding ni CMS. Ideal para una presencia web directa, rapida y con impacto visual.",
     "includes": [
       "Diseno UI/UX responsive (desktop, tablet, movil, horizontal)",
@@ -215,7 +215,7 @@ window.ProposalConfig = {
   "flashy-socials": {
     "eyebrow": "social",
     "title": "Flashy Socials",
-    "price": "€1,200",
+    "price": "€1200",
     "desc": "Pack completo de contenido para redes sociales. Configuracion de perfiles, plantillas editables, y las primeras publicaciones con la nueva estetica de marca.",
     "includes": [
       "Firmas digitales para correo electronico",
@@ -235,7 +235,7 @@ window.ProposalConfig = {
   "cold-brew": {
     "eyebrow": "video",
     "title": "Cold Brew",
-    "price": "€1,200",
+    "price": "€1200",
     "desc": "Brand video aspiracional creado con AI, motion graphics y stock footage. Disenado para definir visualmente la marca y presentarla a inversores, patrocinadores y audiencia.",
     "includes": [
       "Brand video con AI generativa + motion graphics + stock footage",
@@ -257,7 +257,7 @@ window.ProposalConfig = {
   "buttery-1day": {
     "eyebrow": "production",
     "title": "Buttery Frames (1 dia)",
-    "price": "€1,200",
+    "price": "€1200",
     "desc": "Registro fotografico y produccion profesional para personal y productos. Una sesion completa con planificacion previa y material de video incluido.",
     "includes": [
       "Sesion de 4 a 6 horas",

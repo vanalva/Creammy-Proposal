@@ -146,7 +146,7 @@ window.ProposalConfig = {
   "milky-branding": {
     "eyebrow": "branding",
     "title": "Milky Branding",
-    "price": "€3,500",
+    "price": "€3500",
     "desc": "Identidad de marca completa. Sistema visual solido, capaz de crecer junto al negocio y adaptarse a distintos formatos, contextos y etapas. Cada decision de diseno respondera a una estrategia clara de posicionamiento y diferenciacion.",
     "includes": [
       "Logotipo y sistema de identidad visual adaptable (todos los formatos y escalas)",
@@ -178,7 +178,7 @@ window.ProposalConfig = {
   "shakefront-full": {
     "eyebrow": "web",
     "title": "Shakefront Full",
-    "price": "€13,500",
+    "price": "€13.500",
     "desc": "Sitio web completo en Webflow con CMS integrado. Incluye Milky Branding y Silky Edits. Mas de 15 paginas unicas, diseno pixel-perfect, animaciones, SEO avanzado y soporte post-lanzamiento.",
     "includes": [
       "Milky Branding incluido (identidad de marca completa)",
@@ -214,7 +214,7 @@ window.ProposalConfig = {
   "the-brewery": {
     "eyebrow": "tech",
     "title": "The Brewery",
-    "price": "€8,500",
+    "price": "€8500",
     "desc": "Desarrollo de software a medida. Aplicaciones web, plataformas SaaS, dashboards y herramientas internas construidas con Next.js, Vercel y tecnologias modernas.",
     "includes": [
       "Analisis de requerimientos y arquitectura",
@@ -237,7 +237,7 @@ window.ProposalConfig = {
   "the-percolator": {
     "eyebrow": "tech",
     "title": "The Percolator",
-    "price": "€2,200",
+    "price": "€2200",
     "desc": "Flujos de trabajo automatizados para tu negocio. Desde integraciones simples con Zapier hasta orquestacion compleja con n8n, OpenClaw y bots de Telegram. Elimina tareas repetitivas y conecta tus herramientas.",
     "includes": [
       "Auditoria de procesos actuales y oportunidades de automatizacion",
@@ -260,7 +260,7 @@ window.ProposalConfig = {
   "robo-barista": {
     "eyebrow": "tech",
     "title": "Robo Barista",
-    "price": "€3,000",
+    "price": "€3000",
     "desc": "Agentes de inteligencia artificial personalizados. Chatbots, asistentes de ventas, automatizadores de contenido, agentes de soporte y mas. Disenados para trabajar para tu negocio 24/7.",
     "includes": [
       "Analisis de necesidades y casos de uso",
@@ -281,7 +281,7 @@ window.ProposalConfig = {
   "flashy-socials": {
     "eyebrow": "social",
     "title": "Flashy Socials",
-    "price": "€1,200",
+    "price": "€1200",
     "desc": "Pack completo de contenido para redes sociales. Configuracion de perfiles, plantillas editables, y las primeras publicaciones con la nueva estetica de marca.",
     "includes": [
       "Firmas digitales para correo electronico",
@@ -301,7 +301,7 @@ window.ProposalConfig = {
   "cold-brew": {
     "eyebrow": "video",
     "title": "Cold Brew",
-    "price": "€1,200",
+    "price": "€1200",
     "desc": "Brand video aspiracional creado con AI, motion graphics y stock footage. Disenado para definir visualmente la marca y presentarla a inversores, patrocinadores y audiencia.",
     "includes": [
       "Brand video con AI generativa + motion graphics + stock footage",

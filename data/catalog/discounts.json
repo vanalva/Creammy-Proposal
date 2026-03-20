@@ -1,6 +1,6 @@
 {
-  "version": "2.0",
-  "lastUpdated": "2026-03-19",
+  "version": "3.0",
+  "lastUpdated": "2026-03-20",
   "bundleDiscounts": [
     {
       "id": "full-includes-branding",
@@ -15,6 +15,20 @@
       "target": "silky-edits",
       "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
       "description": "Shakefront Full incluye Silky Edits"
+    },
+    {
+      "id": "full-includes-grinder",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "the-grinder",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Shakefront Full incluye hosting, dominio y correos (The Grinder)"
+    },
+    {
+      "id": "full-includes-rosetta",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "rosetta",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Shakefront Full incluye funcionalidad multilingue (Rosetta)"
     },
     {
       "id": "full-free-glass-cup",
@@ -35,7 +49,14 @@
       "trigger": { "selected": "shakefront-full" },
       "target": "hot-press",
       "effect": { "type": "discount", "price": 1600, "original": 3200 },
-      "description": "Hot Press (broadcast) a mitad de precio con Shakefront Full (ya incluye branding)"
+      "description": "Hot Press a mitad de precio con Shakefront Full"
+    },
+    {
+      "id": "full-discount-counter",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "the-counter",
+      "effect": { "type": "discount", "percentage": 15 },
+      "description": "The Counter 15% dto con Shakefront Full"
     },
     {
       "id": "silky-free-with-flashy",
@@ -63,7 +84,151 @@
       "trigger": { "selected": "milky-branding" },
       "target": "latte-art",
       "effect": { "type": "free", "price": 0, "label": "GRATIS" },
-      "description": "Latte Art (ilustraciones) gratis con Milky Branding"
+      "description": "Latte Art gratis con Milky Branding"
+    },
+    {
+      "id": "latte-art-free-with-punch-card",
+      "trigger": { "selected": "punch-card" },
+      "target": "latte-art",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Latte Art incluida en Punch Card"
+    },
+    {
+      "id": "cold-brew-discount-with-buttery-1day",
+      "trigger": { "selected": "buttery-1day" },
+      "target": "cold-brew",
+      "effect": { "type": "discount", "price": 900, "original": 1200 },
+      "description": "Cold Brew de 1200 a 900 con Buttery Frames (produccion compartida)"
+    },
+    {
+      "id": "cold-brew-discount-with-buttery-3days",
+      "trigger": { "selected": "buttery-3days" },
+      "target": "cold-brew",
+      "effect": { "type": "discount", "price": 900, "original": 1200 },
+      "description": "Cold Brew de 1200 a 900 con Buttery Frames 3 dias"
+    },
+    {
+      "id": "cold-brew-includes-silky",
+      "trigger": { "selected": "cold-brew" },
+      "target": "silky-edits",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Cold Brew incluye Silky Edits (retoque fotografico)"
+    },
+    {
+      "id": "sprinkles-discount-with-flashy",
+      "trigger": { "selected": "flashy-socials" },
+      "target": "sprinkles",
+      "effect": { "type": "discount", "price": 350, "original": 500 },
+      "description": "Sprinkles (AR filter) de 500 a 350 con Flashy Socials"
+    },
+    {
+      "id": "foam-art-discount-with-branding",
+      "trigger": { "selected": "milky-branding" },
+      "target": "foam-art",
+      "effect": { "type": "discount", "price": 1400, "original": 1800 },
+      "description": "Foam Art (3D) de 1800 a 1400 con Milky Branding"
+    },
+    {
+      "id": "punch-card-discount-with-branding",
+      "trigger": { "selected": "milky-branding" },
+      "target": "punch-card",
+      "effect": { "type": "discount", "price": 1500, "original": 1800 },
+      "description": "Punch Card de 1800 a 1500 con Milky Branding"
+    },
+    {
+      "id": "pour-over-discount-with-hot-press",
+      "trigger": { "selected": "hot-press" },
+      "target": "pour-over",
+      "effect": { "type": "discount", "percentage": 15 },
+      "description": "Pour Over 15% dto con Hot Press (pipeline de animacion compartida)"
+    },
+    {
+      "id": "pour-over-discount-with-cold-brew",
+      "trigger": { "selected": "cold-brew" },
+      "target": "pour-over",
+      "effect": { "type": "discount", "percentage": 15 },
+      "description": "Pour Over 15% dto con Cold Brew (elementos motion para video)"
+    },
+    {
+      "id": "espresso-includes-grinder",
+      "trigger": { "selected": "espresso-shot" },
+      "target": "the-grinder",
+      "effect": { "type": "free", "price": 0, "label": "GRATIS" },
+      "description": "Espresso Shot incluye hosting (The Grinder)"
+    },
+    {
+      "id": "brewery-includes-grinder",
+      "trigger": { "selected": "the-brewery" },
+      "target": "the-grinder",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "The Brewery incluye hosting (The Grinder)"
+    },
+    {
+      "id": "coffee-lab-includes-grinder",
+      "trigger": { "selected": "coffee-lab" },
+      "target": "the-grinder",
+      "effect": { "type": "included", "price": 0, "label": "INCLUIDO" },
+      "description": "Coffee Lab incluye hosting (The Grinder)"
+    },
+    {
+      "id": "percolator-discount-with-brewery",
+      "trigger": { "selected": "the-brewery" },
+      "target": "the-percolator",
+      "effect": { "type": "discount", "percentage": 20 },
+      "description": "The Percolator 20% dto con The Brewery (mismo scope de desarrollo)"
+    },
+    {
+      "id": "percolator-discount-with-robo",
+      "trigger": { "selected": "robo-barista" },
+      "target": "the-percolator",
+      "effect": { "type": "discount", "percentage": 20 },
+      "description": "The Percolator 20% dto con Robo Barista (agentes necesitan automatizacion)"
+    },
+    {
+      "id": "robo-discount-with-brewery",
+      "trigger": { "selected": "the-brewery" },
+      "target": "robo-barista",
+      "effect": { "type": "discount", "percentage": 15 },
+      "description": "Robo Barista 15% dto con The Brewery (codebase compartido)"
+    },
+    {
+      "id": "robo-discount-with-percolator",
+      "trigger": { "selected": "the-percolator" },
+      "target": "robo-barista",
+      "effect": { "type": "discount", "percentage": 20 },
+      "description": "Robo Barista 20% dto con The Percolator"
+    },
+    {
+      "id": "barista-promo-with-full",
+      "trigger": { "selected": "shakefront-full" },
+      "target": "barista",
+      "effect": { "type": "promo", "freeMonths": 2, "label": "2 meses gratis" },
+      "description": "Barista: 2 primeros meses gratis con Shakefront Full"
+    },
+    {
+      "id": "barista-promo-with-lite",
+      "trigger": { "selected": "shakefront-lite" },
+      "target": "barista",
+      "effect": { "type": "promo", "freeMonths": 1, "label": "Primer mes gratis" },
+      "description": "Barista: primer mes gratis con Shakefront Lite"
+    }
+  ],
+  "mutualExclusions": [
+    {
+      "services": ["shakefront-full", "shakefront-lite"],
+      "description": "No se pueden seleccionar ambos Shakefront Full y Lite"
+    },
+    {
+      "services": ["shakefront-full", "espresso-shot"],
+      "description": "Espresso Shot es alternativa a Shakefront Full, no complemento"
+    },
+    {
+      "services": ["shakefront-lite", "espresso-shot"],
+      "description": "Espresso Shot es alternativa a Shakefront Lite, no complemento"
+    },
+    {
+      "services": ["the-brewery", "coffee-lab"],
+      "description": "Coffee Lab es version ligera de The Brewery, no se combinan"
     }
   ],
   "retainerDiscount": {
@@ -107,19 +272,13 @@
     }
   },
   "packageDiscounts": {
-    "description": "Descuento exclusivo por seleccionar un paquete completo. Se pierde si se modifica la selección manualmente.",
+    "description": "Descuento exclusivo por seleccionar un paquete completo. Se pierde si se modifica la seleccion manualmente.",
     "tiers": [
       { "minServices": 3, "discount": 5, "label": "5% descuento de paquete" },
       { "minServices": 5, "discount": 8, "label": "8% descuento de paquete" },
       { "minServices": 8, "discount": 10, "label": "10% descuento de paquete" }
     ],
     "appliesTo": "non-discounted-services",
-    "note": "Only applies to services at full price (not already INCLUDED/FREE/discounted). Incentivizes committing to a package rather than cherry-picking. The skill can also set a fixed packageDiscount per package in the manifest to override tiers."
-  },
-  "mutualExclusions": [
-    {
-      "services": ["shakefront-full", "shakefront-lite"],
-      "description": "No se pueden seleccionar ambos Shakefront Full y Lite"
-    }
-  ]
+    "note": "Only applies to services at full price (not already INCLUDED/FREE/discounted). Incentivizes committing to a package rather than cherry-picking."
+  }
 }

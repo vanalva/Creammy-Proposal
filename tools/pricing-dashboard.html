@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Van Alva — Pricing Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #080808;
+    --surface: #121212;
+    --surface2: #1f1f1f;
+    --border: rgba(255,255,255,0.1);
+    --border-hover: rgba(255,255,255,0.2);
+    --text: #e8e0d0;
+    --text-dim: #8a8272;
+    --yellow: #f0ff3d;
+    --green: #4ade80;
+    --red: #f87171;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --orange: #fb923c;
+    --cyan: #22d3ee;
+    --font-heading: 'Cascadia Code', monospace;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── Layout ── */
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .header h1 { font-size: 1.1rem; font-weight: 600; font-family: var(--font-heading); }
+  .header h1 span { color: var(--yellow); }
+
+  .tabs {
+    display: flex; gap: 0.25rem;
+    background: var(--surface);
+    border-radius: 8px; padding: 3px;
+  }
+  .tab {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    transition: all 0.2s;
+    border: none; background: none;
+  }
+  .tab.active { background: var(--yellow); color: #000; }
+  .tab:hover:not(.active) { color: var(--text); }
+
+  .stats {
+    display: flex; gap: 1.5rem; font-size: 0.75rem; color: var(--text-dim);
+  }
+  .stats strong { color: var(--yellow); font-variant-numeric: tabular-nums; font-family: var(--font-heading); }
+
+  .view { display: none; padding: 2rem; }
+  .view.active { display: block; }
+
+  /* ── Cards View ── */
+  .category-group { margin-bottom: 3rem; }
+  .category-header {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .category-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .category-name { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-heading); }
+  .category-count { font-size: 0.7rem; color: var(--text-dim); }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .svc-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+  .svc-card:hover { border-color: var(--yellow); transform: translateY(-2px); }
+  .svc-card.expanded { border-color: var(--yellow); }
+
+  .svc-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+  .svc-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 0.25rem; }
+  .svc-name { font-size: 1.1rem; font-weight: 700; font-family: var(--font-heading); }
+  .svc-subtitle { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; }
+
+  .svc-price-block { text-align: right; }
+  .svc-base-price { font-size: 1.3rem; font-weight: 700; color: var(--yellow); font-family: var(--font-heading); }
+  .svc-price-range { font-size: 0.65rem; color: var(--text-dim); }
+  .svc-monthly-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    background: rgba(240,255,61,0.15);
+    color: var(--yellow);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+
+  .svc-timeline {
+    font-size: 0.7rem; color: var(--text-dim);
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .svc-timeline-bar {
+    flex: 1; height: 3px; background: var(--border); border-radius: 2px;
+    position: relative;
+  }
+  .svc-timeline-fill {
+    height: 100%; background: var(--yellow); border-radius: 2px;
+    opacity: 0.4;
+  }
+
+  .svc-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 0.75rem; }
+  .svc-tag {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  .svc-relations { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+  .svc-relation {
+    font-size: 0.7rem;
+    display: flex; align-items: center; gap: 0.4rem;
+    margin-bottom: 0.35rem;
+  }
+  .svc-relation .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .rel-included .dot { background: var(--green); }
+  .rel-free .dot { background: var(--cyan); }
+  .rel-discount .dot { background: var(--orange); }
+  .rel-excludes .dot { background: var(--red); }
+
+  /* ── Variants panel ── */
+  .variants-panel {
+    display: none;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .svc-card.expanded .variants-panel { display: block; }
+  .variant-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.75rem;
+  }
+  .variant-name { color: var(--text-dim); }
+  .variant-price { font-weight: 600; color: var(--yellow); font-variant-numeric: tabular-nums; font-family: var(--font-heading); }
+
+  .includes-list { margin-top: 0.5rem; }
+  .includes-list summary { font-size: 0.75rem; font-weight: 600; cursor: pointer; color: var(--text-dim); }
+  .includes-list li { font-size: 0.7rem; color: var(--text-dim); margin: 0.2rem 0 0.2rem 1rem; }
+
+  /* ── Graph Filters ── */
+  .graph-filters {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .filter-group {
+    display: flex; align-items: center; gap: 0.25rem;
+    background: var(--surface);
+    border-radius: 6px;
+    padding: 3px;
+  }
+  .filter-group-label {
+    font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-dim); padding: 0 0.5rem;
+  }
+  .filter-btn {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    border: none; background: none;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .filter-btn.active { background: var(--surface2); color: var(--text); }
+  .filter-btn:hover:not(.active) { color: var(--text); }
+  .filter-btn .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 4px; }
+  .filter-btn-line { display: inline-block; width: 10px; height: 2px; margin-right: 4px; vertical-align: middle; }
+  .filter-toggle {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: all 0.15s;
+  }
+  .filter-toggle.active { border-color: var(--yellow); color: var(--yellow); background: rgba(240,255,61,0.08); }
+
+  /* ── Graph View ── */
+  #graph-container {
+    width: 100%; height: calc(100vh - 170px);
+    position: relative; overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #111 0%, #080808 100%);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  #graph-canvas { width: 100%; height: 100%; }
+
+  .graph-legend {
+    position: absolute; bottom: 1rem; left: 1rem;
+    background: rgba(18,18,18,0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.7rem;
+  }
+  .legend-item { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; }
+  .legend-line { width: 20px; height: 2px; }
+
+  .graph-tooltip {
+    display: none;
+    position: absolute;
+    background: var(--surface);
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 280px;
+    pointer-events: none;
+    z-index: 50;
+  }
+  .graph-tooltip.visible { display: block; }
+
+  /* ── Matrix View ── */
+  .matrix-container { overflow-x: auto; }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+  }
+  .matrix-table th, .matrix-table td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .matrix-table th {
+    background: var(--surface);
+    font-weight: 600;
+    position: sticky; top: 0; z-index: 10;
+  }
+  .matrix-table th:first-child { text-align: left; position: sticky; left: 0; z-index: 20; background: var(--surface); }
+  .matrix-table td:first-child { text-align: left; font-weight: 500; position: sticky; left: 0; background: var(--bg); z-index: 5; }
+  .matrix-table tr:hover td { background: var(--surface2); }
+  .cell-included { color: var(--green); font-weight: 600; }
+  .cell-free { color: var(--cyan); font-weight: 600; }
+  .cell-discount { color: var(--orange); font-weight: 600; }
+  .cell-normal { color: var(--text-dim); }
+  .cell-none { color: rgba(255,255,255,0.12); }
+
+  /* ── Retainer View ── */
+  .retainer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .retainer-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .retainer-tier { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+  .retainer-name { font-size: 1.2rem; font-weight: 700; margin: 0.25rem 0; font-family: var(--font-heading); }
+  .retainer-price { font-size: 1.5rem; font-weight: 700; color: var(--yellow); font-family: var(--font-heading); }
+  .retainer-price span { font-size: 0.8rem; font-weight: 400; color: var(--text-dim); }
+  .retainer-includes { margin-top: 1rem; }
+  .retainer-includes li { font-size: 0.75rem; color: var(--text-dim); margin: 0.3rem 0; list-style: none; }
+  .retainer-includes li::before { content: ""; display: inline-block; width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; margin-right: 0.5rem; }
+
+  /* ── Package Builder ── */
+  .builder-layout { display: grid; grid-template-columns: 1fr 380px; gap: 1.5rem; min-height: calc(100vh - 120px); }
+  .builder-services { min-width: 0; }
+  .builder-sidebar { position: sticky; top: 80px; align-self: start; }
+
+  .builder-svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; }
+  .builder-svc-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .builder-svc-item:hover { border-color: var(--border-hover); }
+  .builder-svc-item.selected { border-color: var(--yellow); background: rgba(240,255,61,0.05); }
+  .builder-svc-item.disabled { opacity: 0.3; pointer-events: none; }
+  .builder-svc-item .svc-info { flex: 1; }
+  .builder-svc-item .svc-info .name { font-size: 0.85rem; font-weight: 600; }
+  .builder-svc-item .svc-info .cat { font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+  .builder-svc-item .svc-price-tag { font-size: 0.85rem; font-weight: 700; color: var(--yellow); white-space: nowrap; font-family: var(--font-heading); }
+  .builder-svc-item .svc-status { font-size: 0.7rem; font-weight: 600; margin-left: 0.5rem; }
+  .builder-svc-item .status-included { color: var(--green); }
+  .builder-svc-item .status-free { color: var(--cyan); }
+  .builder-svc-item .status-discount { color: var(--orange); }
+
+  .builder-variant-select {
+    margin-top: 0.4rem;
+    display: flex; gap: 0.25rem; flex-wrap: wrap;
+  }
+  .variant-btn {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text-dim);
+    cursor: pointer;
+  }
+  .variant-btn.active { border-color: var(--yellow); color: var(--yellow); background: rgba(240,255,61,0.1); }
+
+  .pkg-summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .pkg-meta-input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .pkg-meta-input:focus { outline: none; border-color: var(--yellow); }
+
+  .pkg-line-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.8rem;
+  }
+  .pkg-line-item .effective { color: var(--yellow); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .pkg-line-item .original { color: var(--text-dim); text-decoration: line-through; font-size: 0.7rem; margin-right: 0.5rem; }
+  .pkg-line-item .status-label { font-size: 0.65rem; font-weight: 600; }
+
+  .pkg-total-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 0 0.5rem;
+    border-top: 2px solid var(--yellow);
+    margin-top: 0.75rem;
+  }
+  .pkg-total-row .label { font-weight: 600; }
+  .pkg-total-row .amount { font-size: 1.4rem; font-weight: 700; color: var(--yellow); font-family: var(--font-heading); }
+  .pkg-savings { font-size: 0.7rem; color: var(--green); text-align: right; }
+
+  .pkg-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
+  .pkg-btn {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-body);
+  }
+  .pkg-btn-primary { background: var(--yellow); color: #000; }
+  .pkg-btn-primary:hover { filter: brightness(0.9); }
+  .pkg-btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .pkg-btn-secondary:hover { border-color: var(--border-hover); }
+
+  .saved-templates { margin-top: 1.5rem; }
+  .saved-tpl {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+  }
+  .saved-tpl:hover { border-color: var(--border-hover); }
+  .saved-tpl .tpl-name { font-size: 0.8rem; font-weight: 600; }
+  .saved-tpl .tpl-price { font-size: 0.8rem; color: var(--yellow); font-weight: 600; }
+  .saved-tpl .tpl-count { font-size: 0.65rem; color: var(--text-dim); }
+  .saved-tpl-actions { display: flex; gap: 0.25rem; }
+  .saved-tpl-actions button {
+    font-size: 0.65rem; padding: 2px 8px; border-radius: 4px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-dim); cursor: pointer;
+  }
+  .saved-tpl-actions button:hover { color: var(--text); border-color: var(--border-hover); }
+  .saved-tpl .tpl-price { font-family: var(--font-heading); }
+
+  /* ── Inline Price Editing ── */
+  .inline-price-input {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--yellow);
+    background: rgba(240,255,61,0.08);
+    border: 1px solid var(--yellow);
+    border-radius: 4px;
+    padding: 2px 6px;
+    outline: none;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    transition: box-shadow 0.15s;
+    box-shadow: 0 0 0 2px rgba(240,255,61,0.15);
+  }
+  .inline-price-input.base-price-input {
+    font-size: 1.3rem;
+    width: 120px;
+  }
+  .inline-price-input.variant-price-input {
+    font-size: 0.75rem;
+    width: 90px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span>Van Alva</span> Pricing Dashboard</h1>
+  <div class="tabs">
+    <button class="tab active" onclick="switchView('cards')">Cards</button>
+    <button class="tab" onclick="switchView('graph')">Node Graph</button>
+    <button class="tab" onclick="switchView('matrix')">Matrix</button>
+    <button class="tab" onclick="switchView('retainers')">Retainers</button>
+    <button class="tab" onclick="switchView('builder')">Package Builder</button>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div style="display:flex;gap:0.5rem;">
+    <button onclick="rebuildAll()" style="padding:0.4rem 0.8rem;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:0.7rem;cursor:pointer;font-family:var(--font-body);">Rebuild All Proposals</button>
+    <span id="server-status" style="font-size:0.6rem;color:var(--text-dim);align-self:center;"></span>
+  </div>
+</div>
+
+<!-- ── CARDS VIEW ── -->
+<div class="view active" id="view-cards"></div>
+
+<!-- ── GRAPH VIEW ── -->
+<div class="view" id="view-graph">
+  <div class="graph-filters" id="graph-filters"></div>
+  <div id="graph-container">
+    <canvas id="graph-canvas"></canvas>
+    <div class="graph-legend">
+      <div class="legend-item"><div class="legend-line" style="background:var(--green)"></div> Includes</div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--cyan)"></div> Free with</div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--orange);border-top:2px dashed var(--orange);height:0;"></div> Discounted</div>
+      <div class="legend-item"><div class="legend-line" style="background:var(--red);border-top:2px dashed var(--red);height:0;"></div> Mutually exclusive</div>
+      <div style="margin-top:0.5rem;font-size:0.6rem;color:var(--text-dim);">Click node to isolate. Click background to reset.</div>
+    </div>
+    <div class="graph-tooltip" id="graph-tooltip"></div>
+  </div>
+</div>
+
+<!-- ── MATRIX VIEW ── -->
+<div class="view" id="view-matrix"></div>
+
+<!-- ── RETAINERS VIEW ── -->
+<div class="view" id="view-retainers"></div>
+
+<!-- ── PACKAGE BUILDER VIEW ── -->
+<div class="view" id="view-builder"></div>
+
+<script src="pricing-data.js"></script>
+<script>
+// ── Data Loading ──
+let SERVICES = {};
+let RETAINERS = {};
+let DISCOUNTS = {};
+
+const CATEGORY_META = {
+  branding:    { label: 'Branding',          color: '#f0ff3d' },
+  web:         { label: 'Web',               color: '#60a5fa' },
+  social:      { label: 'Social',            color: '#a78bfa' },
+  print:       { label: 'Print & Packaging', color: '#fb923c' },
+  production:  { label: 'Produccion',        color: '#f87171' },
+  video:       { label: 'Video',             color: '#ec4899' },
+  broadcast:   { label: 'Broadcast / TV',    color: '#ef4444' },
+  design:      { label: 'Diseno',            color: '#8b5cf6' },
+  animation:   { label: 'Animacion',         color: '#e879f9' },
+  tech:        { label: 'Tecnologia',        color: '#22d3ee' },
+  specialized: { label: 'Especializado',     color: '#fbbf24' },
+};
+
+const IS_SERVER = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+let SERVICES_FULL = {}; // keep full data object for saving back
+
+async function loadData() {
+  if (IS_SERVER) {
+    try {
+      const [svcRes, retRes, discRes] = await Promise.all([
+        fetch('/api/services'), fetch('/api/retainers'), fetch('/api/discounts')
+      ]);
+      SERVICES_FULL = await svcRes.json();
+      SERVICES = SERVICES_FULL.services || {};
+      RETAINERS = await retRes.json();
+      DISCOUNTS = await discRes.json();
+    } catch(e) {
+      console.warn('API failed, falling back to embedded data:', e);
+      SERVICES_FULL = typeof EMBEDDED_SERVICES !== 'undefined' ? EMBEDDED_SERVICES : {};
+      SERVICES = SERVICES_FULL.services || {};
+      RETAINERS = typeof EMBEDDED_RETAINERS !== 'undefined' ? EMBEDDED_RETAINERS : {};
+      DISCOUNTS = typeof EMBEDDED_DISCOUNTS !== 'undefined' ? EMBEDDED_DISCOUNTS : {};
+    }
+  } else {
+    SERVICES_FULL = typeof EMBEDDED_SERVICES !== 'undefined' ? EMBEDDED_SERVICES : {};
+    SERVICES = SERVICES_FULL.services || {};
+    RETAINERS = typeof EMBEDDED_RETAINERS !== 'undefined' ? EMBEDDED_RETAINERS : {};
+    DISCOUNTS = typeof EMBEDDED_DISCOUNTS !== 'undefined' ? EMBEDDED_DISCOUNTS : {};
+  }
+
+  renderStats();
+  renderCards();
+  renderMatrix();
+  renderRetainers();
+}
+
+// ── Save helpers ──
+async function saveService(svcId, patch) {
+  if (!IS_SERVER) { alert('Editing requires the server. Run: node tools/server.js'); return false; }
+  try {
+    const res = await fetch('/api/services/' + svcId, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(patch)
+    });
+    const result = await res.json();
+    if (result.ok) {
+      // Reload data
+      await loadData();
+      return true;
+    } else {
+      alert('Save failed: ' + result.error);
+      return false;
+    }
+  } catch(e) { alert('Save failed: ' + e.message); return false; }
+}
+
+async function saveFullCatalog() {
+  if (!IS_SERVER) { alert('Editing requires the server. Run: node tools/server.js'); return false; }
+  SERVICES_FULL.services = SERVICES;
+  try {
+    const res = await fetch('/api/services', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(SERVICES_FULL)
+    });
+    const result = await res.json();
+    if (!result.ok) alert('Save failed: ' + result.error);
+    return result.ok;
+  } catch(e) { alert('Save failed: ' + e.message); return false; }
+}
+
+async function rebuildAll() {
+  if (!IS_SERVER) { alert('Rebuild requires the server. Run: node tools/server.js'); return; }
+  try {
+    const res = await fetch('/api/rebuild-all', { method: 'POST', headers: { 'Content-Type': 'application/json' } });
+    const result = await res.json();
+    if (result.ok) {
+      const summary = result.results.map(r => (r.ok ? '\u2713' : '\u2717') + ' ' + r.manifest).join('\n');
+      alert('Rebuild complete:\n' + summary);
+    } else {
+      alert('Rebuild failed: ' + result.error);
+    }
+  } catch(e) { alert('Rebuild failed: ' + e.message); }
+}
+
+function renderStats() {
+  const svcs = Object.values(SERVICES);
+  const fixed = svcs.filter(s => s.pricing.basePrice).reduce((a,s) => a + s.pricing.basePrice, 0);
+  const monthly = svcs.filter(s => s.pricing.monthly);
+  document.getElementById('stats').innerHTML = `
+    <div><strong>${svcs.length}</strong> services</div>
+    <div><strong>${monthly.length}</strong> monthly</div>
+    <div>Fixed total: <strong>€${fixed.toLocaleString()}</strong></div>
+  `;
+}
+
+// ── CARDS VIEW ──
+function renderCards() {
+  const container = document.getElementById('view-cards');
+  const groups = {};
+
+  for (const [id, svc] of Object.entries(SERVICES)) {
+    const cat = svc.category || 'other';
+    if (!groups[cat]) groups[cat] = [];
+    groups[cat].push({ id, ...svc });
+  }
+
+  let html = '';
+  for (const [cat, svcs] of Object.entries(groups)) {
+    const meta = CATEGORY_META[cat] || { label: cat, color: '#888' };
+    html += `<div class="category-group">
+      <div class="category-header">
+        <div class="category-dot" style="background:${meta.color}"></div>
+        <div class="category-name">${meta.label}</div>
+        <div class="category-count">${svcs.length} service${svcs.length > 1 ? 's' : ''}</div>
+      </div>
+      <div class="cards-grid">${svcs.map(s => renderCard(s, meta.color)).join('')}</div>
+    </div>`;
+  }
+  container.innerHTML = html;
+
+  container.querySelectorAll('.svc-card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('expanded'));
+  });
+}
+
+function renderCard(svc, catColor) {
+  const p = svc.pricing;
+  const price = p.basePrice ? `€${p.basePrice.toLocaleString()}` : 'Custom';
+  const range = p.priceRange ? `€${p.priceRange.min.toLocaleString()} – €${p.priceRange.max.toLocaleString()}` : '';
+  const monthlyTag = p.monthly ? '<div class="svc-monthly-tag">/mes</div>' : '';
+
+  // Timeline bar (max 16 weeks scale)
+  const tl = svc.timeline || {};
+  const maxWeeks = 16;
+  const tlMax = tl.unit === 'days' ? (tl.max || 1) / 7 : (tl.max || 0);
+  const tlPct = Math.min(100, (tlMax / maxWeeks) * 100);
+  const tlLabel = tl.unit === 'ongoing' ? 'Ongoing' : tl.unit === 'days' ? `${tl.min}-${tl.max} days` : `${tl.min}-${tl.max} wks`;
+
+  // Relations
+  const br = svc.bundleRules || {};
+  let relations = '';
+  if (br.includedWith?.length) relations += br.includedWith.map(s => `<div class="svc-relation rel-included"><div class="dot"></div>Included with ${getName(s)}</div>`).join('');
+  if (br.freeWith?.length) relations += br.freeWith.map(s => `<div class="svc-relation rel-free"><div class="dot"></div>Free with ${getName(s)}</div>`).join('');
+  if (br.includes?.length) relations += br.includes.map(s => `<div class="svc-relation rel-included"><div class="dot"></div>Includes ${getName(s)}</div>`).join('');
+  if (br.discountedWith) {
+    for (const [sid, dp] of Object.entries(br.discountedWith)) {
+      relations += `<div class="svc-relation rel-discount"><div class="dot"></div>€${dp} with ${getName(sid)}</div>`;
+    }
+  }
+  if (svc.mutuallyExclusiveWith?.length) relations += svc.mutuallyExclusiveWith.map(s => `<div class="svc-relation rel-excludes"><div class="dot"></div>Excludes ${getName(s)}</div>`).join('');
+
+  // Variants — support both old format (number) and new format (object with price/description)
+  let variants = '';
+  if (p.priceVariants) {
+    variants = Object.entries(p.priceVariants).map(([k,v]) => {
+      const vPrice = typeof v === 'object' ? v.price : v;
+      const vDesc = typeof v === 'object' ? (v.description || '') : '';
+      const vCriteria = typeof v === 'object' ? (v.criteria || '') : '';
+      const isDefault = p.defaultVariant === k;
+      return `<div class="variant-row" style="flex-wrap:wrap;">
+        <div style="flex:1;min-width:120px;">
+          <span class="variant-name">${k}${isDefault ? ' <span style="color:var(--yellow);font-size:0.55rem;">DEFAULT</span>' : ''}</span>
+          ${vDesc ? `<div style="font-size:0.6rem;color:var(--text-dim);margin-top:1px;">${vDesc}</div>` : ''}
+          ${vCriteria ? `<div style="font-size:0.55rem;color:#555;margin-top:1px;">${vCriteria}</div>` : ''}
+        </div>
+        <span class="variant-price" style="cursor:${IS_SERVER ? 'pointer' : 'default'};" onclick="event.stopPropagation();${IS_SERVER ? `editVariantPrice('${svc.id}','${k}',${vPrice})` : ''}" title="${IS_SERVER ? 'Click to edit' : ''}">€${vPrice.toLocaleString()}</span>
+      </div>`;
+    }).join('');
+  }
+
+  // Includes
+  let includesList = '';
+  if (svc.includes?.length) {
+    includesList = `<details class="includes-list"><summary>${svc.includes.length} includes</summary><ul>${svc.includes.map(i => `<li>${i}</li>`).join('')}</ul></details>`;
+  }
+
+  return `<div class="svc-card" data-id="${svc.id}">
+    <div class="svc-card-top">
+      <div>
+        <div class="svc-eyebrow">${svc.eyebrow || ''}</div>
+        <div class="svc-name" style="color:${catColor}">${svc.name}</div>
+        <div class="svc-subtitle">${svc.subtitle || ''}</div>
+      </div>
+      <div class="svc-price-block">
+        <div class="svc-base-price" style="cursor:${IS_SERVER ? 'pointer' : 'default'};" onclick="event.stopPropagation();${IS_SERVER ? `editBasePrice('${svc.id}',${p.basePrice || 0})` : ''}" title="${IS_SERVER ? 'Click to edit base price' : ''}">${price}</div>
+        <div class="svc-price-range">${range}</div>
+        ${monthlyTag}
+      </div>
+    </div>
+    <div class="svc-timeline">
+      <span>${tlLabel}</span>
+      <div class="svc-timeline-bar"><div class="svc-timeline-fill" style="width:${tlPct}%"></div></div>
+    </div>
+    <div class="svc-tags">${(svc.tags || []).map(t => `<span class="svc-tag">${t}</span>`).join('')}</div>
+    ${relations ? `<div class="svc-relations">${relations}</div>` : ''}
+    <div class="variants-panel">
+      ${variants ? `<div style="font-size:0.75rem;font-weight:600;margin-bottom:0.5rem;">Price Variants</div>${variants}` : ''}
+      ${includesList}
+    </div>
+  </div>`;
+}
+
+function getName(id) {
+  return SERVICES[id]?.name || id;
+}
+
+// ── MATRIX VIEW ──
+function renderMatrix() {
+  const container = document.getElementById('view-matrix');
+  const svcs = Object.entries(SERVICES);
+
+  // Build inclusion/discount matrix
+  let html = '<div class="matrix-container"><table class="matrix-table"><thead><tr><th>Service</th>';
+  html += svcs.map(([id, s]) => `<th style="writing-mode:vertical-lr;transform:rotate(180deg);max-width:40px;">${s.name}</th>`).join('');
+  html += '</tr></thead><tbody>';
+
+  for (const [rowId, rowSvc] of svcs) {
+    html += `<tr><td>${rowSvc.name}</td>`;
+    for (const [colId, colSvc] of svcs) {
+      if (rowId === colId) {
+        html += '<td style="background:var(--surface2);">—</td>';
+        continue;
+      }
+      const rel = getRelation(rowId, colId);
+      html += `<td class="${rel.cls}">${rel.label}</td>`;
+    }
+    html += '</tr>';
+  }
+
+  html += '</tbody></table></div>';
+  container.innerHTML = html;
+}
+
+function getRelation(fromId, toId) {
+  const from = SERVICES[fromId];
+  const to = SERVICES[toId];
+  if (!from || !to) return { cls: 'cell-none', label: '' };
+
+  const br = from.bundleRules || {};
+  if (br.includes?.includes(toId)) return { cls: 'cell-included', label: 'INC' };
+  if (br.includedWith?.includes(toId)) return { cls: 'cell-included', label: 'INC' };
+  if (br.freeWith?.includes(toId)) return { cls: 'cell-free', label: 'FREE' };
+  if (br.discountedWith?.[toId]) return { cls: 'cell-discount', label: `€${br.discountedWith[toId]}` };
+  if (from.mutuallyExclusiveWith?.includes(toId)) return { cls: '', label: '<span style="color:var(--red)">X</span>' };
+
+  return { cls: 'cell-none', label: '' };
+}
+
+// ── RETAINERS VIEW ──
+function renderRetainers() {
+  const container = document.getElementById('view-retainers');
+
+  // Walk all templates and collect tiers
+  const templates = RETAINERS.templates || {};
+  let allTiers = [];
+  for (const [tplId, tpl] of Object.entries(templates)) {
+    const tiersObj = tpl.tiers || {};
+    for (const [tierId, tier] of Object.entries(tiersObj)) {
+      allTiers.push({ ...tier, id: tierId, templateName: tpl.name || tplId });
+    }
+  }
+  // Sort by price
+  allTiers.sort((a, b) => (a.price || 0) - (b.price || 0));
+
+  if (!allTiers.length) {
+    container.innerHTML = '<p style="color:var(--text-dim);text-align:center;padding:4rem;">No retainer data found in retainers.json</p>';
+    return;
+  }
+
+  let html = '<h2 style="font-size:1.2rem;margin-bottom:0.5rem;">Retainer Tiers — Monthly Creative Subscription</h2>';
+  html += `<p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:1.5rem;">Min. ${RETAINERS.defaultMinimumCommitment?.months || 3} months · 15% discount on projects · ${allTiers.length} tiers</p>`;
+  html += '<div class="retainer-grid">';
+
+  for (const tier of allTiers) {
+    const inc = tier.includes || {};
+    // Build readable includes list from the object
+    const includeItems = [];
+    if (inc.designPieces) includeItems.push(`${inc.designPieces} piezas de diseño`);
+    if (inc.vectorDesigns) includeItems.push(`${inc.vectorDesigns} diseños vectoriales`);
+    if (inc.vectorAlterations) includeItems.push(`${inc.vectorAlterations} alteraciones vectoriales`);
+    if (inc.posts) includeItems.push(`${inc.posts} posts`);
+    if (inc.carousels) includeItems.push(`${inc.carousels} carruseles`);
+    if (inc.reels) includeItems.push(`${inc.reels} reels`);
+    if (inc.tcc) includeItems.push(`${inc.tcc} TCC`);
+    if (inc.tca) includeItems.push(`${inc.tca} TCA`);
+    if (inc.corporatePresentations) includeItems.push(`${inc.corporatePresentations} presentaciones`);
+    if (inc.basicPhotoRetouch) includeItems.push('Retoque fotográfico');
+    if (inc.unlimitedPhotoRetouch) includeItems.push('Retoque ilimitado');
+    if (inc.webMaintenance) includeItems.push('Mantenimiento web');
+    if (inc.webDev) includeItems.push('Desarrollo web');
+    if (inc.adobeExpressScheduling) includeItems.push('Programación Adobe Express');
+    if (inc.stockLibrary) includeItems.push('Stock library');
+    if (inc.codeCustom) includeItems.push('Código custom');
+
+    html += `<div class="retainer-card" style="border-top:3px solid var(--yellow);">
+      <div class="retainer-tier">LEVEL ${tier.level !== undefined ? tier.level : '?'}</div>
+      <div class="retainer-name">${tier.name}</div>
+      <div class="retainer-price">€${(tier.price || 0).toLocaleString()}<span>/mes</span></div>
+      <p style="font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem;">${tier.subtitle || ''}</p>
+      ${includeItems.length ? `<ul class="retainer-includes">${includeItems.map(i => `<li>${i}</li>`).join('')}</ul>` : ''}
+    </div>`;
+  }
+
+  html += '</div>';
+
+  // ── TCC Section ──
+  const tccData = RETAINERS.tccServices;
+  if (tccData?.items) {
+    html += `<div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.5rem;">
+        <h2 style="font-size:1.2rem;">TCC — Tareas Creativas Complejas</h2>
+        <span style="font-size:0.7rem;color:var(--text-dim);">Complex Creative Tasks</span>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:1.25rem;">${tccData.description || ''}</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:0.75rem;">`;
+
+    for (const [id, item] of Object.entries(tccData.items)) {
+      const priceStr = item.price ? `€${item.price.toLocaleString()}` : '<span style="color:var(--text-dim);font-style:italic;">' + (item.note || 'Custom') + '</span>';
+      html += `<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div style="font-size:0.8rem;font-weight:600;">${item.name}</div>
+          ${item.examples ? `<div style="font-size:0.65rem;color:var(--text-dim);margin-top:0.15rem;">${item.examples}</div>` : ''}
+        </div>
+        <div style="font-size:0.9rem;font-weight:700;color:var(--yellow);white-space:nowrap;margin-left:1rem;">${priceStr}</div>
+      </div>`;
+    }
+    html += '</div></div>';
+  }
+
+  // ── TCA Section ──
+  const tcaData = RETAINERS.tcaServices;
+  if (tcaData?.items) {
+    html += `<div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.5rem;">
+        <h2 style="font-size:1.2rem;">TCA — Tareas Creativas Adicionales</h2>
+        <span style="font-size:0.7rem;color:var(--text-dim);">Additional Creative Tasks</span>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:1.25rem;">${tcaData.description || ''}</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:0.75rem;">`;
+
+    for (const [id, item] of Object.entries(tcaData.items)) {
+      const priceStr = item.price ? `€${item.price.toLocaleString()}` : '<span style="color:var(--text-dim);font-style:italic;">' + (item.note || 'Custom') + '</span>';
+      html += `<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div style="font-size:0.8rem;font-weight:600;">${item.name}</div>
+        </div>
+        <div style="font-size:0.9rem;font-weight:700;color:var(--yellow);white-space:nowrap;margin-left:1rem;">${priceStr}</div>
+      </div>`;
+    }
+    html += '</div></div>';
+  }
+
+  // ── TCC/TCA per Tier Matrix ──
+  if (allTiers.length) {
+    html += `<div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);">
+      <h2 style="font-size:1.2rem;margin-bottom:1rem;">TCA / TCC por Tier</h2>
+      <div style="overflow-x:auto;">
+        <table class="matrix-table" style="font-size:0.8rem;">
+          <thead><tr><th style="text-align:left;">Tier</th><th>Precio</th><th>TCA</th><th>TCC</th><th>Posts</th><th>Carruseles</th><th>Reels</th><th>Presentaciones</th><th>Web Maint.</th><th>Stock</th></tr></thead>
+          <tbody>`;
+
+    for (const tier of allTiers) {
+      const inc = tier.includes || {};
+      const tca = inc.tca === 'unlimited' ? '∞' : (inc.tca || 0);
+      const tcc = inc.tcc === 'unlimited' ? '∞' : (inc.tcc || 0);
+      const tcaColor = tca === '∞' ? 'var(--yellow)' : tca > 0 ? 'var(--green)' : 'var(--text-dim)';
+      const tccColor = tcc === '∞' ? 'var(--yellow)' : tcc > 0 ? 'var(--green)' : 'var(--text-dim)';
+
+      html += `<tr>
+        <td style="text-align:left;font-weight:600;">${tier.name}</td>
+        <td style="color:var(--yellow);font-weight:600;">€${(tier.price||0).toLocaleString()}</td>
+        <td style="color:${tcaColor};font-weight:600;">${tca}</td>
+        <td style="color:${tccColor};font-weight:600;">${tcc}</td>
+        <td>${inc.posts || '—'}</td>
+        <td>${inc.carousels || '—'}</td>
+        <td>${inc.reels || '—'}</td>
+        <td>${inc.corporatePresentations || '—'}</td>
+        <td>${inc.webMaintenance ? '✓' : '—'}</td>
+        <td>${inc.stockLibrary ? '✓' : '—'}</td>
+      </tr>`;
+    }
+    html += '</tbody></table></div></div>';
+  }
+
+  // ── General Terms ──
+  const terms = RETAINERS.generalTerms;
+  if (terms) {
+    html += `<div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);">
+      <h2 style="font-size:1.2rem;margin-bottom:1rem;">General Terms</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:0.75rem;">`;
+
+    const termItems = [
+      { label: 'Compromiso mínimo', value: terms.minimumCommitment },
+      { label: 'Rollover', value: terms.noRollover },
+      { label: 'Ejecución', value: terms.taskExecution },
+      { label: 'Planificación', value: terms.contentPlanning },
+      { label: 'Grillas', value: terms.gridApproval },
+      { label: 'Recargo urgente', value: terms.urgentSurcharge ? `€${terms.urgentSurcharge.amount} (${terms.urgentSurcharge.threshold})` : null },
+      { label: 'Video', value: terms.videoRequirements },
+      { label: 'A por todo', value: terms.aPorTodoNote },
+    ];
+
+    for (const t of termItems) {
+      if (!t.value) continue;
+      html += `<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-dim);margin-bottom:0.25rem;">${t.label}</div>
+        <div style="font-size:0.8rem;">${t.value}</div>
+      </div>`;
+    }
+    html += '</div></div>';
+  }
+
+  // ── Launch Promo ──
+  const promo = RETAINERS.launchPromotion;
+  if (promo) {
+    html += `<div style="margin-top:2.5rem;padding:1.5rem;background:rgba(240,255,61,0.08);border:1px solid var(--yellow);border-radius:12px;">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+        <span style="background:var(--yellow);color:#000;padding:0.25rem 0.75rem;border-radius:4px;font-size:0.75rem;font-weight:700;">${promo.discount}% DTO.</span>
+        <span style="font-size:1rem;font-weight:700;">Launch Promotion</span>
+        <span style="font-size:0.7rem;color:var(--text-dim);">${promo.appliesTo} · ${promo.oneTime ? 'one-time' : 'recurring'}</span>
+      </div>
+      <div style="font-size:0.75rem;color:var(--text-dim);">Bonus services included:</div>
+      <ul style="margin-top:0.5rem;padding-left:1rem;">
+        ${promo.bonusServices.map(s => `<li style="font-size:0.75rem;margin:0.2rem 0;">${s}</li>`).join('')}
+      </ul>
+    </div>`;
+  }
+
+  container.innerHTML = html;
+}
+
+// ── Inline Editing ──
+function editBasePrice(svcId, currentPrice) {
+  if (!IS_SERVER) return;
+  // Find the price element that was clicked
+  const card = document.querySelector(`.svc-card[data-id="${svcId}"]`);
+  if (!card) return;
+  const priceEl = card.querySelector('.svc-base-price');
+  if (!priceEl || priceEl.querySelector('.inline-price-input')) return; // already editing
+
+  const originalText = priceEl.textContent;
+  const input = document.createElement('input');
+  input.type = 'number';
+  input.className = 'inline-price-input base-price-input';
+  input.value = currentPrice;
+  input.min = '0';
+  input.step = 'any';
+
+  priceEl.textContent = '';
+  priceEl.appendChild(input);
+  input.focus();
+  input.select();
+
+  let saved = false;
+  async function commit() {
+    if (saved) return;
+    saved = true;
+    const newPrice = parseFloat(input.value);
+    if (isNaN(newPrice) || newPrice < 0) {
+      priceEl.textContent = originalText;
+      return;
+    }
+    if (newPrice === currentPrice) {
+      priceEl.textContent = originalText;
+      return;
+    }
+    priceEl.textContent = `€${newPrice.toLocaleString()}`;
+    await saveService(svcId, { pricing: { basePrice: newPrice } });
+  }
+  function cancel() {
+    if (saved) return;
+    saved = true;
+    priceEl.textContent = originalText;
+  }
+
+  input.addEventListener('blur', commit);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
+    if (e.key === 'Escape') { e.preventDefault(); cancel(); input.remove(); }
+  });
+}
+
+function editVariantPrice(svcId, variantKey, currentPrice) {
+  if (!IS_SERVER) return;
+  const svc = SERVICES[svcId];
+  const variant = svc?.pricing?.priceVariants?.[variantKey];
+
+  // Find the specific variant price span inside this card
+  const card = document.querySelector(`.svc-card[data-id="${svcId}"]`);
+  if (!card) return;
+  // Find the variant-price span that contains the matching price and is for this variant
+  const priceSpans = card.querySelectorAll('.variant-price');
+  let priceEl = null;
+  for (const span of priceSpans) {
+    if (span.getAttribute('onclick')?.includes(`'${variantKey}'`) && !span.querySelector('.inline-price-input')) {
+      priceEl = span;
+      break;
+    }
+  }
+  if (!priceEl) return;
+
+  const originalText = priceEl.textContent;
+  const input = document.createElement('input');
+  input.type = 'number';
+  input.className = 'inline-price-input variant-price-input';
+  input.value = currentPrice;
+  input.min = '0';
+  input.step = 'any';
+
+  priceEl.textContent = '';
+  priceEl.appendChild(input);
+  input.focus();
+  input.select();
+
+  let saved = false;
+  async function commit() {
+    if (saved) return;
+    saved = true;
+    const newPrice = parseFloat(input.value);
+    if (isNaN(newPrice) || newPrice < 0) {
+      priceEl.textContent = originalText;
+      return;
+    }
+    if (newPrice === currentPrice) {
+      priceEl.textContent = originalText;
+      return;
+    }
+    priceEl.textContent = `€${newPrice.toLocaleString()}`;
+    // Build patch — handle both old (number) and new (object) format
+    const patch = { pricing: { priceVariants: {} } };
+    if (typeof variant === 'object') {
+      patch.pricing.priceVariants[variantKey] = { ...variant, price: newPrice };
+    } else {
+      patch.pricing.priceVariants[variantKey] = newPrice;
+    }
+    await saveService(svcId, patch);
+  }
+  function cancel() {
+    if (saved) return;
+    saved = true;
+    priceEl.textContent = originalText;
+  }
+
+  input.addEventListener('blur', commit);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); input.blur(); }
+    if (e.key === 'Escape') { e.preventDefault(); cancel(); input.remove(); }
+  });
+}
+
+// ── Fallback copy (replaces prompt-based copy) ──
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:60vw;height:40vh;z-index:9999;font-family:var(--font-heading);font-size:0.75rem;background:var(--surface);color:var(--text);border:1px solid var(--yellow);border-radius:8px;padding:1rem;resize:none;';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  ta.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { ta.remove(); }
+  });
+  ta.addEventListener('blur', () => { setTimeout(() => ta.remove(), 200); });
+}
+
+// Check server status on load
+if (IS_SERVER) {
+  fetch('/api/services').then(r => {
+    if (r.ok) document.getElementById('server-status').textContent = 'Server connected — edits save to disk';
+    else document.getElementById('server-status').textContent = 'Server error';
+  }).catch(() => {
+    document.getElementById('server-status').textContent = 'Offline — read only';
+  });
+} else {
+  document.getElementById('server-status').textContent = 'File mode — read only';
+}
+
+// ── GRAPH VIEW ──
+let graphInitialized = false;
+let nodes = [];
+let edges = [];
+let dragging = null;
+let hoveredNode = null;
+let selectedNode = null; // isolate mode
+let graphFilters = {
+  categories: new Set(), // active categories (empty = all)
+  edgeTypes: new Set(['includes','included','free','discount','excludes','promo']),
+  hideHubs: false,
+  hubIds: ['the-full-pot', 'shakefront-full'],
+};
+
+function buildGraphFilters() {
+  const bar = document.getElementById('graph-filters');
+  const categories = [...new Set(Object.values(SERVICES).map(s => s.category))];
+
+  let html = '';
+
+  // Category filters
+  html += '<span class="filter-group-label">Categories</span><div class="filter-group">';
+  for (const cat of categories) {
+    const meta = CATEGORY_META[cat] || { label: cat, color: '#888' };
+    const active = graphFilters.categories.size === 0 || graphFilters.categories.has(cat);
+    html += `<button class="filter-btn ${active ? 'active' : ''}" data-filter="cat" data-value="${cat}">
+      <span class="dot" style="background:${meta.color}"></span>${meta.label}
+    </button>`;
+  }
+  html += '</div>';
+
+  // Edge type filters
+  html += '<span class="filter-group-label">Lines</span><div class="filter-group">';
+  const edgeTypes = [
+    { id: 'includes', label: 'Includes', color: 'var(--green)' },
+    { id: 'free', label: 'Free', color: 'var(--cyan)' },
+    { id: 'discount', label: 'Discount', color: 'var(--orange)' },
+    { id: 'excludes', label: 'Excludes', color: 'var(--red)' },
+    { id: 'promo', label: 'Promo', color: 'var(--purple)' },
+  ];
+  for (const et of edgeTypes) {
+    const active = graphFilters.edgeTypes.has(et.id);
+    html += `<button class="filter-btn ${active ? 'active' : ''}" data-filter="edge" data-value="${et.id}">
+      <span class="filter-btn-line" style="background:${et.color}"></span>${et.label}
+    </button>`;
+  }
+  html += '</div>';
+
+  // Toggle options
+  html += `<button class="filter-toggle ${graphFilters.hideHubs ? 'active' : ''}" data-filter="hubs">Hide mega-hubs</button>`;
+  html += `<button class="filter-toggle" data-filter="reset">Reset all</button>`;
+
+  bar.innerHTML = html;
+
+  // Event listeners
+  bar.querySelectorAll('[data-filter="cat"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.value;
+      if (graphFilters.categories.size === 0) {
+        // First click: activate only this category
+        graphFilters.categories = new Set([cat]);
+      } else if (graphFilters.categories.has(cat)) {
+        graphFilters.categories.delete(cat);
+        if (graphFilters.categories.size === 0) graphFilters.categories = new Set(); // all
+      } else {
+        graphFilters.categories.add(cat);
+      }
+      buildGraphFilters();
+    });
+  });
+
+  bar.querySelectorAll('[data-filter="edge"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.dataset.value;
+      if (graphFilters.edgeTypes.has(type)) graphFilters.edgeTypes.delete(type);
+      else graphFilters.edgeTypes.add(type);
+      buildGraphFilters();
+    });
+  });
+
+  bar.querySelector('[data-filter="hubs"]').addEventListener('click', () => {
+    graphFilters.hideHubs = !graphFilters.hideHubs;
+    buildGraphFilters();
+  });
+
+  bar.querySelector('[data-filter="reset"]').addEventListener('click', () => {
+    graphFilters.categories = new Set();
+    graphFilters.edgeTypes = new Set(['includes','included','free','discount','excludes','promo']);
+    graphFilters.hideHubs = false;
+    selectedNode = null;
+    buildGraphFilters();
+  });
+}
+
+function isNodeVisible(n) {
+  if (graphFilters.hideHubs && graphFilters.hubIds.includes(n.id)) return false;
+  if (graphFilters.categories.size > 0 && !graphFilters.categories.has(n.category)) return false;
+  if (selectedNode && selectedNode !== n) {
+    // In isolate mode, only show direct connections
+    const isConnected = edges.some(e =>
+      (e.from === selectedNode.id && e.to === n.id) ||
+      (e.to === selectedNode.id && e.from === n.id)
+    );
+    if (!isConnected) return false;
+  }
+  return true;
+}
+
+function isEdgeVisible(e) {
+  const typeMap = { 'includes': 'includes', 'included': 'includes', 'free': 'free', 'discount': 'discount', 'excludes': 'excludes', 'promo': 'promo' };
+  const mapped = typeMap[e.type] || e.type;
+  if (!graphFilters.edgeTypes.has(mapped)) return false;
+  const fromNode = nodes.find(n => n.id === e.from);
+  const toNode = nodes.find(n => n.id === e.to);
+  if (!fromNode || !toNode) return false;
+  if (!isNodeVisible(fromNode) || !isNodeVisible(toNode)) return false;
+  return true;
+}
+
+function initGraph() {
+  if (graphInitialized) return;
+  graphInitialized = true;
+
+  buildGraphFilters();
+
+  const canvas = document.getElementById('graph-canvas');
+  const ctx = canvas.getContext('2d');
+  const container = document.getElementById('graph-container');
+
+  let zoom = 1;
+  let panOffX = 0, panOffY = 0;
+  let isPanning = false, panStartX = 0, panStartY = 0;
+
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = container.clientWidth * dpr;
+    canvas.height = container.clientHeight * dpr;
+    canvas.style.width = container.clientWidth + 'px';
+    canvas.style.height = container.clientHeight + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+
+  const W = container.clientWidth;
+  const H = container.clientHeight;
+  const centerX = W / 2;
+  const centerY = H / 2;
+
+  // Convert screen coords to world coords
+  function screenToWorld(sx, sy) {
+    return { x: (sx - panOffX) / zoom, y: (sy - panOffY) / zoom };
+  }
+  function worldToScreen(wx, wy) {
+    return { x: wx * zoom + panOffX, y: wy * zoom + panOffY };
+  }
+
+  // Create nodes
+  const svcs = Object.values(SERVICES);
+  const catPositions = {};
+  const categories = [...new Set(svcs.map(s => s.category))];
+  const angleStep = (Math.PI * 2) / categories.length;
+
+  categories.forEach((cat, i) => {
+    catPositions[cat] = {
+      x: centerX + Math.cos(angleStep * i - Math.PI/2) * Math.min(W, H) * 0.3,
+      y: centerY + Math.sin(angleStep * i - Math.PI/2) * Math.min(W, H) * 0.3,
+    };
+  });
+
+  nodes = svcs.map((svc, i) => {
+    const catPos = catPositions[svc.category] || { x: centerX, y: centerY };
+    const jitter = 60;
+    return {
+      id: svc.id,
+      name: svc.name,
+      category: svc.category,
+      price: svc.pricing.basePrice,
+      color: (CATEGORY_META[svc.category] || {}).color || '#888',
+      x: catPos.x + (Math.random() - 0.5) * jitter,
+      y: catPos.y + (Math.random() - 0.5) * jitter,
+      vx: 0, vy: 0,
+      radius: Math.max(8, Math.min(25, Math.sqrt((svc.pricing.basePrice || 500) / 50))),
+      svc,
+    };
+  });
+
+  // Create edges
+  edges = [];
+  for (const svc of svcs) {
+    const br = svc.bundleRules || {};
+    if (br.includes) br.includes.forEach(t => edges.push({ from: svc.id, to: t, type: 'includes', color: '#4ade80' }));
+    if (br.includedWith) br.includedWith.forEach(t => edges.push({ from: t, to: svc.id, type: 'included', color: '#4ade80' }));
+    if (br.freeWith) br.freeWith.forEach(t => edges.push({ from: t, to: svc.id, type: 'free', color: '#22d3ee' }));
+    if (br.discountedWith) Object.keys(br.discountedWith).forEach(t => edges.push({ from: t, to: svc.id, type: 'discount', color: '#fb923c' }));
+    if (br.promoWith) Object.keys(br.promoWith).forEach(t => edges.push({ from: t, to: svc.id, type: 'promo', color: '#a78bfa' }));
+    if (svc.mutuallyExclusiveWith) svc.mutuallyExclusiveWith.forEach(t => {
+      if (svc.id < t) edges.push({ from: svc.id, to: t, type: 'excludes', color: '#f87171' });
+    });
+  }
+  // Deduplicate edges
+  const edgeKey = e => [e.from, e.to, e.type].sort().join('|');
+  const seen = new Set();
+  edges = edges.filter(e => { const k = edgeKey(e); if (seen.has(k)) return false; seen.add(k); return true; });
+
+  // Physics simulation
+  function simulate() {
+    const k = 0.001; // attraction to category center
+    const repulsion = 2000;
+    const edgeForce = 0.01;
+    const damping = 0.85;
+
+    for (const n of nodes) {
+      // Attract to category center
+      const cp = catPositions[n.category];
+      if (cp) {
+        n.vx += (cp.x - n.x) * k;
+        n.vy += (cp.y - n.y) * k;
+      }
+
+      // Repel from other nodes
+      for (const m of nodes) {
+        if (n === m) continue;
+        const dx = n.x - m.x;
+        const dy = n.y - m.y;
+        const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+        if (dist < 200) {
+          const f = repulsion / (dist * dist);
+          n.vx += (dx / dist) * f;
+          n.vy += (dy / dist) * f;
+        }
+      }
+    }
+
+    // Edge attraction
+    for (const e of edges) {
+      const a = nodes.find(n => n.id === e.from);
+      const b = nodes.find(n => n.id === e.to);
+      if (!a || !b) continue;
+      const dx = b.x - a.x;
+      const dy = b.y - a.y;
+      a.vx += dx * edgeForce;
+      a.vy += dy * edgeForce;
+      b.vx -= dx * edgeForce;
+      b.vy -= dy * edgeForce;
+    }
+
+    for (const n of nodes) {
+      if (n === dragging) continue;
+      n.vx *= damping;
+      n.vy *= damping;
+      n.x += n.vx;
+      n.y += n.vy;
+      // Bounds
+      n.x = Math.max(40, Math.min(W - 40, n.x));
+      n.y = Math.max(40, Math.min(H - 40, n.y));
+    }
+  }
+
+  function draw() {
+    ctx.save();
+    ctx.clearRect(0, 0, W, H);
+    ctx.translate(panOffX, panOffY);
+    ctx.scale(zoom, zoom);
+
+    const activeNode = selectedNode || hoveredNode;
+
+    // Edges — invisible by default, show on hover/select
+    for (const e of edges) {
+      if (!isEdgeVisible(e)) continue;
+      const a = nodes.find(n => n.id === e.from);
+      const b = nodes.find(n => n.id === e.to);
+      if (!a || !b) continue;
+
+      const isActive = activeNode && (activeNode.id === a.id || activeNode.id === b.id);
+
+      // Lines only visible when hovering/selecting a node
+      if (!activeNode) continue;
+      if (!isActive) continue;
+
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = e.color;
+      ctx.globalAlpha = 0.7;
+      ctx.lineWidth = e.type === 'excludes' || e.type === 'discount' || e.type === 'promo' ? 1.5 : 2.5;
+      if (e.type === 'excludes') ctx.setLineDash([6, 4]);
+      else if (e.type === 'discount' || e.type === 'promo') ctx.setLineDash([3, 3]);
+      else ctx.setLineDash([]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Draw edge label at midpoint
+      const mx = (a.x + b.x) / 2;
+      const my = (a.y + b.y) / 2;
+      const label = e.type === 'includes' || e.type === 'included' ? 'INC'
+        : e.type === 'free' ? 'FREE'
+        : e.type === 'discount' ? 'DTO'
+        : e.type === 'excludes' ? 'X'
+        : e.type === 'promo' ? 'PROMO' : '';
+      ctx.globalAlpha = 0.9;
+      ctx.font = '600 7px Inter, sans-serif';
+      ctx.fillStyle = e.color;
+      ctx.textAlign = 'center';
+      ctx.fillText(label, mx, my - 4);
+
+      ctx.globalAlpha = 1;
+    }
+
+    // Nodes
+    for (const n of nodes) {
+      const visible = isNodeVisible(n);
+      if (!visible) {
+        // Draw ghost
+        ctx.globalAlpha = 0.06;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.radius * 0.7, 0, Math.PI * 2);
+        ctx.fillStyle = '#555';
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        continue;
+      }
+
+      const isHovered = hoveredNode === n;
+      const isSelected = selectedNode === n;
+      const isConnected = activeNode && edges.some(e =>
+        ((e.from === activeNode.id && e.to === n.id) || (e.to === activeNode.id && e.from === n.id)) && isEdgeVisible(e)
+      );
+      const dimmed = activeNode && !isHovered && !isSelected && !isConnected;
+      const alpha = dimmed ? 0.15 : 1;
+
+      ctx.globalAlpha = alpha;
+
+      // Glow for selected
+      if (isSelected) {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.radius + 6, 0, Math.PI * 2);
+        ctx.fillStyle = n.color;
+        ctx.globalAlpha = 0.15;
+        ctx.fill();
+        ctx.globalAlpha = alpha;
+      }
+
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+      ctx.fillStyle = n.color;
+      ctx.fill();
+
+      if (isHovered || isSelected) {
+        ctx.strokeStyle = isSelected ? '#f0ff3d' : '#fff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      // Label
+      ctx.fillStyle = dimmed ? '#444' : '#fff';
+      ctx.font = (isHovered || isSelected) ? '600 11px Inter, sans-serif' : '400 9px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(n.name, n.x, n.y + n.radius + 14);
+
+      if (n.price && !dimmed) {
+        ctx.fillStyle = n.color;
+        ctx.font = '600 8px Inter, sans-serif';
+        ctx.fillText('\u20AC' + n.price.toLocaleString(), n.x, n.y + n.radius + 24);
+      }
+
+      ctx.globalAlpha = 1;
+    }
+
+    // Category labels (when no node is active)
+    if (!activeNode) {
+      ctx.globalAlpha = 0.3;
+      ctx.font = '700 11px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      for (const [cat, pos] of Object.entries(catPositions)) {
+        const meta = CATEGORY_META[cat] || { label: cat, color: '#888' };
+        if (graphFilters.categories.size > 0 && !graphFilters.categories.has(cat)) continue;
+        ctx.fillStyle = meta.color;
+        ctx.fillText(meta.label.toUpperCase(), pos.x, pos.y - Math.min(W,H)*0.12);
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    ctx.restore();
+
+    // Zoom indicator (outside transform)
+    ctx.globalAlpha = 0.4;
+    ctx.font = '500 10px Inter, sans-serif';
+    ctx.fillStyle = '#888';
+    ctx.textAlign = 'right';
+    ctx.fillText(Math.round(zoom * 100) + '%', W - 12, H - 12);
+    ctx.globalAlpha = 1;
+  }
+
+  function loop() {
+    simulate();
+    draw();
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  // Mouse interaction
+  let dragStartX = 0, dragStartY = 0, didDrag = false;
+
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const sx = e.clientX - rect.left;
+    const sy = e.clientY - rect.top;
+    const world = screenToWorld(sx, sy);
+    const mx = world.x, my = world.y;
+
+    // Panning with middle mouse or right-click drag
+    if (isPanning) {
+      panOffX += e.movementX;
+      panOffY += e.movementY;
+      canvas.style.cursor = 'move';
+      return;
+    }
+
+    if (dragging) {
+      dragging.x = mx;
+      dragging.y = my;
+      dragging.vx = 0;
+      dragging.vy = 0;
+      if (Math.abs(sx - dragStartX) > 3 || Math.abs(sy - dragStartY) > 3) didDrag = true;
+      return;
+    }
+
+    hoveredNode = null;
+    for (const n of nodes) {
+      if (!isNodeVisible(n)) continue;
+      const dx = mx - n.x;
+      const dy = my - n.y;
+      if (Math.sqrt(dx*dx + dy*dy) < (n.radius + 5) / zoom) {
+        hoveredNode = n;
+        break;
+      }
+    }
+
+    const tooltip = document.getElementById('graph-tooltip');
+    if (hoveredNode) {
+      canvas.style.cursor = 'pointer';
+      const s = hoveredNode.svc;
+      const p = s.pricing;
+      const br = s.bundleRules || {};
+
+      // Count connections
+      const connections = edges.filter(e => e.from === s.id || e.to === s.id);
+      let connHtml = '';
+      if (connections.length) {
+        connHtml = '<div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.65rem;">';
+        for (const c of connections.slice(0, 5)) {
+          const otherId = c.from === s.id ? c.to : c.from;
+          const other = SERVICES[otherId];
+          const typeLabel = c.type === 'includes' || c.type === 'included' ? 'INC' : c.type === 'free' ? 'FREE' : c.type === 'discount' ? 'DTO' : c.type === 'excludes' ? 'EXCL' : 'PROMO';
+          connHtml += '<div style="color:' + c.color + ';">' + typeLabel + ' ' + (other?.name || otherId) + '</div>';
+        }
+        if (connections.length > 5) connHtml += '<div style="color:var(--text-dim);">+' + (connections.length - 5) + ' more</div>';
+        connHtml += '</div>';
+      }
+
+      // Variants info
+      let varHtml = '';
+      if (p.priceVariants) {
+        const count = Object.keys(p.priceVariants).length;
+        varHtml = '<div style="font-size:0.6rem;color:var(--text-dim);margin-top:0.25rem;">' + count + ' price variants</div>';
+      }
+
+      tooltip.innerHTML =
+        '<div style="font-weight:700;margin-bottom:0.25rem;color:' + hoveredNode.color + '">' + s.name + '</div>' +
+        '<div style="font-size:0.7rem;color:#8a8272;margin-bottom:0.5rem;">' + (s.subtitle || '') + '</div>' +
+        '<div style="font-size:0.9rem;font-weight:700;color:#f0ff3d;">' + (p.basePrice ? '\u20AC' + p.basePrice.toLocaleString() : 'Custom') + (p.monthly ? '/mes' : '') + '</div>' +
+        (p.priceRange ? '<div style="font-size:0.65rem;color:#8a8272;">Range: \u20AC' + p.priceRange.min.toLocaleString() + ' \u2013 \u20AC' + p.priceRange.max.toLocaleString() + '</div>' : '') +
+        varHtml + connHtml +
+        '<div style="font-size:0.55rem;color:#555;margin-top:0.5rem;">Click to isolate</div>';
+
+      tooltip.classList.add('visible');
+      tooltip.style.left = (e.clientX - container.getBoundingClientRect().left + 15) + 'px';
+      tooltip.style.top = (e.clientY - container.getBoundingClientRect().top - 10) + 'px';
+    } else {
+      canvas.style.cursor = selectedNode ? 'pointer' : 'default';
+      tooltip.classList.remove('visible');
+    }
+  });
+
+  canvas.addEventListener('mousedown', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    dragStartX = e.clientX - rect.left;
+    dragStartY = e.clientY - rect.top;
+    didDrag = false;
+
+    // Middle click or right click → pan
+    if (e.button === 1 || e.button === 2) {
+      isPanning = true;
+      e.preventDefault();
+      return;
+    }
+
+    if (hoveredNode) {
+      dragging = hoveredNode;
+      canvas.style.cursor = 'grabbing';
+    } else {
+      // Left click on empty space → start panning
+      isPanning = true;
+    }
+  });
+
+  canvas.addEventListener('mouseup', (e) => {
+    if (isPanning) {
+      isPanning = false;
+      canvas.style.cursor = 'default';
+      // If we barely moved, treat as click to deselect
+      const rect = canvas.getBoundingClientRect();
+      const dx = Math.abs((e.clientX - rect.left) - dragStartX);
+      const dy = Math.abs((e.clientY - rect.top) - dragStartY);
+      if (dx < 3 && dy < 3 && !hoveredNode) {
+        selectedNode = null;
+      }
+      return;
+    }
+
+    if (!didDrag) {
+      // Click — toggle isolate
+      if (hoveredNode) {
+        selectedNode = (selectedNode === hoveredNode) ? null : hoveredNode;
+      } else {
+        selectedNode = null;
+      }
+    }
+    dragging = null;
+    canvas.style.cursor = hoveredNode ? 'pointer' : 'default';
+  });
+
+  // Prevent context menu on right click
+  canvas.addEventListener('contextmenu', (e) => e.preventDefault());
+
+  // Scroll wheel zoom — zoom toward cursor
+  canvas.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const sx = e.clientX - rect.left;
+    const sy = e.clientY - rect.top;
+
+    const oldZoom = zoom;
+    const zoomFactor = e.deltaY < 0 ? 1.12 : 0.89;
+    zoom = Math.max(0.2, Math.min(5, zoom * zoomFactor));
+
+    // Zoom toward cursor position
+    panOffX = sx - (sx - panOffX) * (zoom / oldZoom);
+    panOffY = sy - (sy - panOffY) * (zoom / oldZoom);
+  }, { passive: false });
+
+  // Double-click to reset zoom
+  canvas.addEventListener('dblclick', () => {
+    zoom = 1;
+    panOffX = 0;
+    panOffY = 0;
+    selectedNode = null;
+  });
+
+  window.addEventListener('resize', resize);
+}
+
+// ── View Switching ──
+function switchView(view) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(`view-${view}`).classList.add('active');
+  event.target.classList.add('active');
+
+  if (view === 'graph') initGraph();
+  if (view === 'builder' && !builderInitialized) initBuilder();
+}
+
+// ── PACKAGE BUILDER ──
+let builderInitialized = false;
+let builderSelected = {}; // { svcId: { variant: 'standard', overridePrice: null } }
+let savedTemplates = JSON.parse(localStorage.getItem('va-pkg-templates') || '[]');
+
+function initBuilder() {
+  builderInitialized = true;
+  renderBuilder();
+}
+
+function renderBuilder() {
+  const container = document.getElementById('view-builder');
+  const svcs = Object.entries(SERVICES);
+  const groups = {};
+  for (const [id, svc] of svcs) {
+    const cat = svc.category || 'other';
+    if (!groups[cat]) groups[cat] = [];
+    groups[cat].push({ id, ...svc });
+  }
+
+  let servicesHtml = '';
+  for (const [cat, items] of Object.entries(groups)) {
+    const meta = CATEGORY_META[cat] || { label: cat, color: '#888' };
+    servicesHtml += `<div style="margin-bottom:1.5rem;">
+      <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+        <div style="width:8px;height:8px;border-radius:50%;background:${meta.color}"></div>
+        <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">${meta.label}</span>
+      </div>
+      <div class="builder-svc-grid">
+        ${items.map(s => renderBuilderItem(s)).join('')}
+      </div>
+    </div>`;
+  }
+
+  container.innerHTML = `
+    <div class="builder-layout">
+      <div class="builder-services">
+        <h2 style="font-size:1rem;margin-bottom:0.25rem;">Select Services</h2>
+        <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:1.5rem;">Click to add/remove. Bundle discounts apply automatically.</p>
+        ${servicesHtml}
+      </div>
+      <div class="builder-sidebar">
+        <div class="pkg-summary-card">
+          <input class="pkg-meta-input" id="pkg-name" placeholder="Package name (e.g. Azorica Voyager)" value="">
+          <input class="pkg-meta-input" id="pkg-subtitle" placeholder="Subtitle (e.g. Marca + Web + Booking)" value="">
+          <input class="pkg-meta-input" id="pkg-eyebrow" placeholder="Eyebrow (e.g. BRAND + WEB + CMS)" value="">
+          <div style="display:flex;gap:0.5rem;margin-bottom:1rem;">
+            <label style="font-size:0.7rem;color:var(--text-dim);display:flex;align-items:center;gap:0.25rem;">
+              <input type="checkbox" id="pkg-recommended"> Recommended
+            </label>
+            <input class="pkg-meta-input" id="pkg-promo" placeholder="Promo text (optional)" style="margin-bottom:0;flex:1;">
+          </div>
+          <div id="pkg-lines"></div>
+          <div id="pkg-totals"></div>
+          <div class="pkg-actions">
+            <button class="pkg-btn pkg-btn-primary" onclick="saveTemplate()">Save Template</button>
+            <button class="pkg-btn pkg-btn-secondary" onclick="exportJSON()">Copy JSON</button>
+            <button class="pkg-btn pkg-btn-secondary" onclick="clearBuilder()">Clear</button>
+          </div>
+        </div>
+        <div class="saved-templates" id="saved-templates"></div>
+      </div>
+    </div>`;
+
+  renderSavedTemplates();
+}
+
+function renderBuilderItem(svc) {
+  const sel = builderSelected[svc.id];
+  const isSelected = !!sel;
+  const p = svc.pricing;
+  const price = p.basePrice ? `€${p.basePrice.toLocaleString()}` : 'Custom';
+  const monthly = p.monthly ? '/mes' : '';
+
+  // Check if auto-included/free
+  const autoStatus = getAutoStatus(svc.id);
+  const statusHtml = autoStatus.type === 'included'
+    ? '<span class="svc-status status-included">INCLUIDO</span>'
+    : autoStatus.type === 'free'
+    ? '<span class="svc-status status-free">GRATIS</span>'
+    : autoStatus.type === 'discount'
+    ? `<span class="svc-status status-discount">€${autoStatus.price}</span>`
+    : '';
+
+  // Mutual exclusion check
+  const excluded = svc.mutuallyExclusiveWith?.some(ex => builderSelected[ex]);
+  const cls = excluded ? 'disabled' : isSelected ? 'selected' : '';
+
+  // Variant buttons
+  let variantHtml = '';
+  if (isSelected && p.priceVariants) {
+    const currentVariant = sel.variant || 'default';
+    variantHtml = '<div class="builder-variant-select">';
+    variantHtml += `<button class="variant-btn ${currentVariant === 'default' ? 'active' : ''}" onclick="event.stopPropagation();setVariant('${svc.id}','default')">Base €${p.basePrice?.toLocaleString() || '?'}</button>`;
+    for (const [vName, vPrice] of Object.entries(p.priceVariants)) {
+      variantHtml += `<button class="variant-btn ${currentVariant === vName ? 'active' : ''}" onclick="event.stopPropagation();setVariant('${svc.id}','${vName}')">
+        ${vName} €${vPrice.toLocaleString()}
+      </button>`;
+    }
+    variantHtml += '</div>';
+  }
+
+  return `<div class="builder-svc-item ${cls}" onclick="toggleService('${svc.id}')" data-svc-id="${svc.id}">
+    <div class="svc-info">
+      <div class="cat">${svc.eyebrow || svc.category}</div>
+      <div class="name">${svc.name}</div>
+      ${variantHtml}
+    </div>
+    <div style="text-align:right;">
+      <div class="svc-price-tag">${price}${monthly}</div>
+      ${statusHtml}
+    </div>
+  </div>`;
+}
+
+function getAutoStatus(svcId) {
+  const svc = SERVICES[svcId];
+  if (!svc) return { type: null };
+  const br = svc.bundleRules || {};
+  const selectedIds = Object.keys(builderSelected);
+
+  // Check if included with any selected service
+  if (br.includedWith?.some(s => selectedIds.includes(s))) return { type: 'included' };
+
+  // Check if another selected service includes this one
+  for (const selId of selectedIds) {
+    const selSvc = SERVICES[selId];
+    if (selSvc?.bundleRules?.includes?.includes(svcId)) return { type: 'included' };
+  }
+
+  // Check if free with
+  if (br.freeWith?.some(s => selectedIds.includes(s))) return { type: 'free' };
+
+  // Check if discounted
+  if (br.discountedWith) {
+    for (const [trigger, price] of Object.entries(br.discountedWith)) {
+      if (selectedIds.includes(trigger)) return { type: 'discount', price };
+    }
+  }
+
+  // Check bundleDiscounts from discounts.json
+  const discRules = DISCOUNTS.bundleDiscounts || [];
+  for (const rule of discRules) {
+    if (rule.target !== svcId) continue;
+    const trigger = rule.trigger;
+    const triggerMet = (trigger.selected && selectedIds.includes(trigger.selected)) ||
+      (trigger.anySelected && trigger.anySelected.some(s => selectedIds.includes(s)));
+    if (triggerMet) {
+      if (rule.effect.type === 'included') return { type: 'included' };
+      if (rule.effect.type === 'free') return { type: 'free' };
+      if (rule.effect.type === 'discount') return { type: 'discount', price: rule.effect.price };
+    }
+  }
+
+  return { type: null };
+}
+
+function toggleService(svcId) {
+  if (builderSelected[svcId]) {
+    delete builderSelected[svcId];
+  } else {
+    builderSelected[svcId] = { variant: 'default', overridePrice: null };
+  }
+  refreshBuilder();
+}
+
+function setVariant(svcId, variant) {
+  if (builderSelected[svcId]) {
+    builderSelected[svcId].variant = variant;
+  }
+  refreshBuilder();
+}
+
+function refreshBuilder() {
+  // Re-render service items
+  document.querySelectorAll('.builder-svc-item').forEach(el => {
+    const id = el.dataset.svcId;
+    if (!id) return;
+    const svc = SERVICES[id];
+    if (!svc) return;
+
+    const isSelected = !!builderSelected[id];
+    const excluded = svc.mutuallyExclusiveWith?.some(ex => builderSelected[ex]);
+
+    el.className = 'builder-svc-item' + (excluded ? ' disabled' : isSelected ? ' selected' : '');
+
+    const autoStatus = getAutoStatus(id);
+    const statusEl = el.querySelector('.svc-status');
+    if (statusEl) statusEl.remove();
+
+    if (autoStatus.type && !isSelected) {
+      const priceDiv = el.querySelector('[style*="text-align:right"]') || el.querySelector('.svc-price-tag')?.parentElement;
+      if (priceDiv) {
+        const span = document.createElement('span');
+        span.className = 'svc-status status-' + (autoStatus.type === 'discount' ? 'discount' : autoStatus.type);
+        span.textContent = autoStatus.type === 'included' ? 'INCLUIDO' : autoStatus.type === 'free' ? 'GRATIS' : `€${autoStatus.price}`;
+        priceDiv.appendChild(span);
+      }
+    }
+  });
+
+  // Render summary
+  renderPkgSummary();
+}
+
+function getEffectivePrice(svcId) {
+  const svc = SERVICES[svcId];
+  if (!svc) return 0;
+  const sel = builderSelected[svcId];
+  const p = svc.pricing;
+
+  // Check variant
+  let basePrice = p.basePrice || 0;
+  if (sel?.variant && sel.variant !== 'default' && p.priceVariants?.[sel.variant]) {
+    basePrice = p.priceVariants[sel.variant];
+  }
+
+  // Check auto status
+  const status = getAutoStatus(svcId);
+  if (status.type === 'included') return { effective: 0, base: basePrice, label: 'INCLUIDO', monthly: false };
+  if (status.type === 'free') return { effective: 0, base: basePrice, label: 'GRATIS', monthly: false };
+  if (status.type === 'discount') return { effective: status.price, base: basePrice, label: null, monthly: p.monthly };
+
+  return { effective: basePrice, base: basePrice, label: null, monthly: p.monthly };
+}
+
+function renderPkgSummary() {
+  const linesEl = document.getElementById('pkg-lines');
+  const totalsEl = document.getElementById('pkg-totals');
+  const selectedIds = Object.keys(builderSelected);
+
+  if (!selectedIds.length) {
+    linesEl.innerHTML = '<p style="font-size:0.75rem;color:var(--text-dim);padding:1rem 0;text-align:center;">No services selected</p>';
+    totalsEl.innerHTML = '';
+    return;
+  }
+
+  // Also include auto-included services
+  const allIds = [...selectedIds];
+  for (const [id, svc] of Object.entries(SERVICES)) {
+    if (allIds.includes(id)) continue;
+    const status = getAutoStatus(id);
+    if (status.type === 'included' || status.type === 'free') {
+      allIds.push(id);
+    }
+  }
+
+  let linesHtml = '';
+  let totalOneTime = 0;
+  let totalMonthly = 0;
+  let totalBase = 0;
+
+  for (const id of allIds) {
+    const svc = SERVICES[id];
+    if (!svc) continue;
+    const ep = getEffectivePrice(id);
+    totalBase += ep.base;
+
+    if (ep.monthly) {
+      totalMonthly += ep.effective;
+    } else {
+      totalOneTime += ep.effective;
+    }
+
+    const originalHtml = ep.base !== ep.effective ? `<span class="original">€${ep.base.toLocaleString()}</span>` : '';
+    const labelHtml = ep.label ? `<span class="status-label" style="color:${ep.label === 'INCLUIDO' ? 'var(--green)' : ep.label === 'GRATIS' ? 'var(--cyan)' : 'var(--yellow)'}">${ep.label}</span>` : '';
+    const effectiveHtml = ep.label ? labelHtml : `<span class="effective">€${ep.effective.toLocaleString()}${ep.monthly ? '/mes' : ''}</span>`;
+
+    linesHtml += `<div class="pkg-line-item">
+      <span>${svc.name}</span>
+      <span>${originalHtml}${effectiveHtml}</span>
+    </div>`;
+  }
+
+  linesEl.innerHTML = linesHtml;
+
+  const savings = totalBase - totalOneTime - totalMonthly;
+  const monthlyHtml = totalMonthly > 0 ? `<div style="font-size:0.8rem;color:var(--text-dim);text-align:right;">+ €${totalMonthly.toLocaleString()}/mes</div>` : '';
+  const savingsHtml = savings > 0 ? `<div class="pkg-savings">Ahorro: €${savings.toLocaleString()} vs. individual</div>` : '';
+
+  totalsEl.innerHTML = `
+    <div class="pkg-total-row">
+      <span class="label">Total inversión</span>
+      <span class="amount">€${totalOneTime.toLocaleString()}</span>
+    </div>
+    ${monthlyHtml}
+    ${savingsHtml}
+  `;
+}
+
+function saveTemplate() {
+  const name = document.getElementById('pkg-name').value.trim();
+  if (!name) { alert('Enter a package name'); return; }
+
+  const selectedIds = Object.keys(builderSelected);
+  if (!selectedIds.length) { alert('Select at least one service'); return; }
+
+  // Calculate totals
+  let totalOneTime = 0, totalMonthly = 0, totalBase = 0;
+  const overrides = {};
+  for (const id of selectedIds) {
+    const ep = getEffectivePrice(id);
+    totalBase += ep.base;
+    if (ep.monthly) totalMonthly += ep.effective;
+    else totalOneTime += ep.effective;
+
+    if (ep.effective !== ep.base && !ep.label) {
+      overrides[id] = ep.effective;
+    }
+    if (builderSelected[id].variant !== 'default') {
+      overrides[id] = ep.effective;
+    }
+  }
+
+  const tpl = {
+    id: name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    name,
+    subtitle: document.getElementById('pkg-subtitle').value.trim(),
+    eyebrow: document.getElementById('pkg-eyebrow').value.trim(),
+    badge: document.getElementById('pkg-recommended').checked ? 'Recomendado' : null,
+    promo: document.getElementById('pkg-promo').value.trim() || null,
+    services: selectedIds,
+    variants: { ...builderSelected },
+    overrides,
+    totalOneTime,
+    totalMonthly,
+    savings: totalBase - totalOneTime,
+    createdAt: new Date().toISOString(),
+  };
+
+  // Check for existing with same name
+  const idx = savedTemplates.findIndex(t => t.id === tpl.id);
+  if (idx >= 0) savedTemplates[idx] = tpl;
+  else savedTemplates.push(tpl);
+
+  localStorage.setItem('va-pkg-templates', JSON.stringify(savedTemplates));
+  renderSavedTemplates();
+}
+
+function renderSavedTemplates() {
+  const container = document.getElementById('saved-templates');
+  if (!savedTemplates.length) {
+    container.innerHTML = '<p style="font-size:0.7rem;color:var(--text-dim);margin-top:1rem;text-align:center;">No saved templates yet</p>';
+    return;
+  }
+
+  let html = '<div style="font-size:0.75rem;font-weight:600;margin-bottom:0.5rem;margin-top:1rem;">Saved Templates</div>';
+  for (let i = 0; i < savedTemplates.length; i++) {
+    const t = savedTemplates[i];
+    const monthly = t.totalMonthly ? ` + €${t.totalMonthly}/mes` : '';
+    html += `<div class="saved-tpl" onclick="loadTemplate(${i})">
+      <div>
+        <div class="tpl-name">${t.name}</div>
+        <div class="tpl-count">${t.services.length} services${t.badge ? ' · ⭐' : ''}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <div class="tpl-price">€${t.totalOneTime.toLocaleString()}${monthly}</div>
+        <div class="saved-tpl-actions">
+          <button onclick="event.stopPropagation();copyTemplateJSON(${i})">JSON</button>
+          <button onclick="event.stopPropagation();deleteTemplate(${i})" style="color:var(--red);">×</button>
+        </div>
+      </div>
+    </div>`;
+  }
+  container.innerHTML = html;
+}
+
+function loadTemplate(idx) {
+  const t = savedTemplates[idx];
+  if (!t) return;
+  builderSelected = {};
+  for (const svcId of t.services) {
+    builderSelected[svcId] = t.variants?.[svcId] || { variant: 'default', overridePrice: null };
+  }
+  // Need to re-render service grid to show variants
+  renderBuilder();
+  document.getElementById('pkg-name').value = t.name || '';
+  document.getElementById('pkg-subtitle').value = t.subtitle || '';
+  document.getElementById('pkg-eyebrow').value = t.eyebrow || '';
+  document.getElementById('pkg-recommended').checked = !!t.badge;
+  document.getElementById('pkg-promo').value = t.promo || '';
+  refreshBuilder();
+}
+
+function deleteTemplate(idx) {
+  savedTemplates.splice(idx, 1);
+  localStorage.setItem('va-pkg-templates', JSON.stringify(savedTemplates));
+  renderSavedTemplates();
+}
+
+function clearBuilder() {
+  builderSelected = {};
+  renderBuilder();
+  document.getElementById('pkg-name').value = '';
+  document.getElementById('pkg-subtitle').value = '';
+  document.getElementById('pkg-eyebrow').value = '';
+  document.getElementById('pkg-recommended').checked = false;
+  document.getElementById('pkg-promo').value = '';
+}
+
+function exportJSON() {
+  const selectedIds = Object.keys(builderSelected);
+  if (!selectedIds.length) { alert('Select services first'); return; }
+
+  let totalOneTime = 0, totalMonthly = 0;
+  const overrides = {};
+  for (const id of selectedIds) {
+    const ep = getEffectivePrice(id);
+    if (ep.monthly) totalMonthly += ep.effective;
+    else totalOneTime += ep.effective;
+    if (builderSelected[id].variant !== 'default') {
+      const svc = SERVICES[id];
+      const variantPrice = svc?.pricing?.priceVariants?.[builderSelected[id].variant];
+      if (variantPrice) overrides[id] = variantPrice;
+    }
+  }
+
+  const pkg = {
+    id: (document.getElementById('pkg-name').value || 'package').toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    name: document.getElementById('pkg-name').value || 'Package',
+    subtitle: document.getElementById('pkg-subtitle').value || '',
+    eyebrow: document.getElementById('pkg-eyebrow').value || '',
+    badge: document.getElementById('pkg-recommended').checked ? 'Recomendado' : null,
+    promo: document.getElementById('pkg-promo').value || null,
+    services: selectedIds,
+    totalOneTime,
+    totalMonthly: totalMonthly || undefined,
+    savings: undefined,
+    paymentStructure: 'standard-35-25-25-15',
+  };
+
+  const json = JSON.stringify(pkg, null, 2);
+  navigator.clipboard.writeText(json).then(() => {
+    alert('Package JSON copied to clipboard!');
+  }).catch(() => {
+    fallbackCopy(json);
+  });
+}
+
+function copyTemplateJSON(idx) {
+  const t = savedTemplates[idx];
+  const pkg = {
+    id: t.id,
+    name: t.name,
+    subtitle: t.subtitle,
+    eyebrow: t.eyebrow,
+    badge: t.badge,
+    promo: t.promo,
+    services: t.services,
+    totalOneTime: t.totalOneTime,
+    totalMonthly: t.totalMonthly || undefined,
+    savings: t.savings || undefined,
+    paymentStructure: 'standard-35-25-25-15',
+  };
+  const json = JSON.stringify(pkg, null, 2);
+  navigator.clipboard.writeText(json).then(() => {
+    alert('Copied!');
+  }).catch(() => {
+    fallbackCopy(json);
+  });
+}
+
+// ── Init ──
+loadData();
+</script>
+
+</body>
+</html>
