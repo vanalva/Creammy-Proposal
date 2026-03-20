@@ -38,7 +38,7 @@
   <script>
     function checkPw(){
       var input = document.getElementById('pw-input').value.trim().toLowerCase();
-      var key = '{{clientName}}'.toLowerCase();
+      var key = '{{clientFirstName}}'.toLowerCase();
       if(input === key){
         document.getElementById('password-gate').style.display='none';
         sessionStorage.setItem('pw-ok-{{proposalId}}','1');
