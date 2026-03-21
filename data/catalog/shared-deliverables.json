@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-03-20",
+  "items": {
+    "brandbook": {
+      "id": "brandbook",
+      "name": "Brandbook completo y detallado",
+      "description": "Manual de marca con logica, reglas, criterios, lineamientos de uso, paleta cromatica, tipografia y sistema grafico",
+      "format": "PDF + Figma",
+      "usedBy": ["milky-branding", "flashy-socials", "foam-art"],
+      "roles": {
+        "milky-branding": "primary",
+        "flashy-socials": "references",
+        "foam-art": "extends"
+      }
+    },
+    "google-drive": {
+      "id": "google-drive",
+      "name": "Repositorio digital organizado (Google Drive)",
+      "description": "Carpeta compartida con todos los archivos del proyecto, organizada por tipo y fase",
+      "format": "Google Drive",
+      "usedBy": ["milky-branding", "silky-edits", "buttery-1day", "buttery-3days", "latte-art", "pour-over", "punch-card", "cold-brew"]
+    },
+    "source-files": {
+      "id": "source-files",
+      "name": "Archivos fuente editables",
+      "description": "Archivos maestros en formato nativo tras pago final completo",
+      "format": "AI/PSD/FIGMA/AE segun servicio",
+      "condition": "payment-complete",
+      "usedBy": ["milky-branding", "hot-press", "cold-brew", "foam-art", "glass-cup"]
+    },
+    "print-ready": {
+      "id": "print-ready",
+      "name": "Assets listos para imprenta",
+      "description": "Archivos con lineas de corte, doblez, registros y formatos de color CMYK",
+      "format": "PDF/AI (CMYK)",
+      "usedBy": ["milky-branding", "glass-cup"]
+    },
+    "photo-raw": {
+      "id": "photo-raw",
+      "name": "Fotos en bruto (RAW)",
+      "description": "Archivos fotograficos sin editar para futura utilizacion",
+      "format": "RAW (CR2/ARW/DNG)",
+      "usedBy": ["silky-edits", "buttery-1day", "buttery-3days"]
+    },
+    "photo-jpg": {
+      "id": "photo-jpg",
+      "name": "Fotos exportadas en JPG",
+      "description": "Fotografias editadas y optimizadas listas para uso",
+      "format": "JPG (sRGB)",
+      "usedBy": ["silky-edits", "buttery-1day", "buttery-3days"]
+    },
+    "video-4k": {
+      "id": "video-4k",
+      "name": "Material de video en 4K",
+      "description": "Entrega en formato digital de alta resolucion 4K Horizontal 16:9 Log 4/2/2 10 Bit",
+      "format": "4K H264/ProRes",
+      "usedBy": ["buttery-1day", "buttery-3days", "cold-brew", "pour-over"]
+    },
+    "social-templates": {
+      "id": "social-templates",
+      "name": "Plantillas editables en Adobe Express",
+      "description": "Templates reutilizables con acceso a recursos de marca",
+      "format": "Adobe Express",
+      "usedBy": ["flashy-socials"]
+    },
+    "wireframe": {
+      "id": "wireframe",
+      "name": "Wireframe funcional",
+      "description": "Prototipo interactivo de navegacion con estructura de paginas",
+      "format": "Figma",
+      "usedBy": ["shakefront-full", "shakefront-lite"]
+    },
+    "documentation": {
+      "id": "documentation",
+      "name": "Documentacion tecnica",
+      "description": "Documentacion del proyecto con accesos, credenciales y guias de uso",
+      "format": "Notion/PDF",
+      "usedBy": ["the-brewery", "coffee-lab", "the-percolator", "robo-barista", "the-full-pot"]
+    },
+    "training-session": {
+      "id": "training-session",
+      "name": "Sesion de entrenamiento",
+      "description": "Sesion de formacion para el equipo del cliente sobre la plataforma/herramienta entregada",
+      "format": "Video call + grabacion",
+      "usedBy": ["shakefront-full", "the-brewery", "coffee-lab", "the-percolator", "robo-barista", "the-full-pot"]
+    }
+  }
+}

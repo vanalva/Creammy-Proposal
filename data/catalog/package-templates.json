@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-03-20",
+  "templates": [
+    {
+      "id": "test",
+      "name": "Test",
+      "subtitle": "Test",
+      "eyebrow": "Test",
+      "badge": null,
+      "promo": null,
+      "services": [
+        "rosetta",
+        "the-grinder",
+        "barista"
+      ],
+      "variants": {
+        "rosetta": {
+          "variant": "default",
+          "overridePrice": null
+        },
+        "the-grinder": {
+          "variant": "default",
+          "overridePrice": null
+        },
+        "barista": {
+          "variant": "default",
+          "overridePrice": null
+        }
+      },
+      "overrides": {},
+      "totalOneTime": 770,
+      "totalMonthly": 450,
+      "savings": 450,
+      "source": "manual",
+      "createdAt": "2026-03-20T22:03:35.604Z"
+    }
+  ]
+}

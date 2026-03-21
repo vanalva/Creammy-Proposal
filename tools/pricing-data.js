@@ -1,6 +1,6 @@
 const EMBEDDED_SERVICES = {
   "version": "3.0",
-  "lastUpdated": "2026-03-20",
+  "lastUpdated": "2026-03-21",
   "currency": "EUR",
   "taxNote": "+ IVA where applicable",
   "services": {
@@ -12,7 +12,7 @@ const EMBEDDED_SERVICES = {
       "subtitle": "Identidad de marca completa",
       "pricing": {
         "type": "fixed",
-        "basePrice": 4500,
+        "basePrice": 3500,
         "monthly": false,
         "priceRange": {
           "min": 750,
@@ -53,29 +53,155 @@ const EMBEDDED_SERVICES = {
         "long": "whyMilkyBranding"
       },
       "includes": [
-        "Logotipo y sistema de identidad visual adaptable (todos los formatos y escalas)",
-        "Naming Creativo para concepto principal o subdivisiones",
+        {
+          "id": "logo-system",
+          "text": "Logotipo y sistema de identidad visual adaptable (todos los formatos y escalas)",
+          "shared": "brandbook"
+        },
+        {
+          "id": "naming",
+          "text": "Naming Creativo para concepto principal o subdivisiones",
+          "condition": {
+            "variant": [
+              "standard",
+              "full"
+            ]
+          }
+        },
         "Eslogan corto y concreto que transmita la voz de la marca",
         "Paleta cromatica funcional y expresiva",
         "Seleccion tipografica principal y secundaria optimizada",
         "Copywriting creativo",
-        "Sistema grafico complementario: patrones, tramas e ilustraciones",
+        {
+          "id": "graphic-system",
+          "text": "Sistema grafico complementario: patrones, tramas e ilustraciones",
+          "condition": {
+            "variant": [
+              "standard",
+              "full"
+            ]
+          }
+        },
         "Acompanamiento, asesoria y estrategia de desarrollo de la marca",
-        "Aplicacion del sistema de marca sobre el producto (packaging)",
-        "Mockups realistas de producto (consumo, delivery, RRSS)",
+        {
+          "id": "packaging-application",
+          "text": "Aplicacion del sistema de marca sobre el producto (packaging)",
+          "condition": {
+            "variant": [
+              "full"
+            ]
+          }
+        },
+        {
+          "id": "mockups",
+          "text": "Mockups realistas de producto (consumo, delivery, RRSS)",
+          "condition": {
+            "variant": [
+              "standard",
+              "full"
+            ]
+          }
+        },
         "Lineamientos de uso del sistema visual",
-        "Brandbook detallado con logica, reglas y criterios",
-        "Hasta 2 variantes graficas de packaging o etiqueta",
-        "Hasta 2 variantes graficas de carta (Menu)",
-        "Papeleria basica: tarjetas de presentacion y firma electronica"
+        {
+          "id": "brandbook-creation",
+          "text": "Brandbook detallado con logica, reglas y criterios",
+          "shared": "brandbook",
+          "condition": {
+            "variant": [
+              "standard",
+              "full"
+            ]
+          }
+        },
+        {
+          "id": "packaging-variants",
+          "text": "Variantes graficas de packaging o etiqueta",
+          "quantity": 2,
+          "quantityLabel": "Hasta {{quantity}} variantes graficas de packaging o etiqueta",
+          "condition": {
+            "variant": [
+              "full"
+            ]
+          }
+        },
+        {
+          "id": "menu-variants",
+          "text": "Variantes graficas de carta (Menu)",
+          "quantity": 2,
+          "quantityLabel": "Hasta {{quantity}} variantes graficas de carta (Menu)",
+          "condition": {
+            "variant": [
+              "full"
+            ]
+          }
+        },
+        "Papeleria basica: tarjetas de presentacion y firma electronica",
+        {
+          "id": "web-brand-assets",
+          "text": "Assets optimizados para web: favicon, OG image, header backgrounds",
+          "condition": {
+            "service": "shakefront-full"
+          }
+        },
+        {
+          "id": "social-brandbook-section",
+          "text": "Seccion de RRSS incluida en el brandbook (lineamientos de uso social)",
+          "condition": {
+            "service": "flashy-socials"
+          }
+        }
       ],
       "deliverables": [
-        "Brandbook completo y detallado",
-        "Repositorio digital organizado (Google Drive)",
-        "Archivos maestros del logotipo y sistema visual",
-        "Mockups y visuales de producto para presentaciones",
-        "Assets listos para imprenta",
-        "Hasta 3 rondas de revision durante el proceso creativo"
+        {
+          "id": "brandbook-doc",
+          "text": "Brandbook completo y detallado",
+          "format": "PDF + Figma",
+          "shared": "brandbook",
+          "condition": {
+            "variant": [
+              "standard",
+              "full"
+            ]
+          }
+        },
+        {
+          "id": "drive-repo",
+          "text": "Repositorio digital organizado (Google Drive)",
+          "shared": "google-drive"
+        },
+        {
+          "id": "logo-masters",
+          "text": "Archivos maestros del logotipo y sistema visual",
+          "format": "AI/SVG/PNG/PDF"
+        },
+        {
+          "id": "mockup-visuals",
+          "text": "Mockups y visuales de producto para presentaciones",
+          "condition": {
+            "variant": [
+              "standard",
+              "full"
+            ]
+          }
+        },
+        {
+          "id": "print-ready-assets",
+          "text": "Assets listos para imprenta",
+          "shared": "print-ready",
+          "condition": {
+            "variant": [
+              "standard",
+              "full"
+            ]
+          }
+        },
+        {
+          "id": "revision-rounds",
+          "text": "Hasta 3 rondas de revision durante el proceso creativo",
+          "quantity": 3,
+          "quantityLabel": "Hasta {{quantity}} rondas de revision durante el proceso creativo"
+        }
       ],
       "tags": [
         "branding",
@@ -89,6 +215,15 @@ const EMBEDDED_SERVICES = {
           "shakefront-full"
         ],
         "freeWith": []
+      },
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de color, tipografia, composicion y layout dentro del concepto aprobado",
+        "outOfScope": "Cambio de direccion creativa, concepto o estructura del sistema de marca",
+        "overagePrice": 150,
+        "overageUnit": "per-round",
+        "goodFaithAdjustments": true,
+        "goodFaithExamples": "color, tipografia, alineacion, tamano"
       }
     },
     "shakefront-full": {
@@ -160,12 +295,64 @@ const EMBEDDED_SERVICES = {
         "long": "whyShakefront"
       },
       "includes": [
-        "Milky Branding incluido (identidad de marca completa)",
-        "Silky Edits incluido (retoque fotografico profesional)",
+        {
+          "id": "milky-branding-included",
+          "text": "Milky Branding incluido (identidad de marca completa)",
+          "shared": "brandbook"
+        },
+        {
+          "id": "silky-edits-included",
+          "text": "Silky Edits incluido (retoque fotografico profesional)"
+        },
         "Diseno UI/UX responsive (desktop, tablet, movil, horizontal)",
         "Prototipo interactivo de navegacion",
-        "Desarrollo en Webflow: 15+ paginas con diseno pixel-perfect",
-        "CMS personalizado para gestion de contenidos",
+        {
+          "id": "pages-development",
+          "text": "Desarrollo en Webflow con diseno pixel-perfect",
+          "quantity": 15,
+          "quantityLabel": "Desarrollo en Webflow: {{quantity}}+ paginas con diseno pixel-perfect",
+          "variantScaling": {
+            "standard-10pages": {
+              "quantity": 10
+            },
+            "with-booking": {
+              "quantity": 10
+            },
+            "full-cms-15pages": {
+              "quantity": 15
+            },
+            "webflow-ecommerce": {
+              "quantity": 15
+            },
+            "webflow-shopify": {
+              "quantity": 15
+            },
+            "shopify-basic": {
+              "quantity": 0,
+              "hidden": true
+            },
+            "shopify-branded": {
+              "quantity": 0,
+              "hidden": true
+            },
+            "custom-headless": {
+              "quantity": 0,
+              "hidden": true
+            }
+          }
+        },
+        {
+          "id": "cms",
+          "text": "CMS personalizado para gestion de contenidos",
+          "condition": {
+            "variant": [
+              "standard-10pages",
+              "full-cms-15pages",
+              "webflow-ecommerce",
+              "webflow-shopify"
+            ]
+          }
+        },
         "Sitemap jerarquico + Styleguide digital",
         "Sistema de componentes reutilizables",
         "CTAs claros, pop-ups, modals y pestanas dinamicas",
@@ -173,7 +360,11 @@ const EMBEDDED_SERVICES = {
         "SEO avanzado: estructura semantica, metaetiquetas, URLs limpias",
         "Diseno 100% adaptativo (responsive total)",
         "Formularios de contacto con envio a correos corporativos",
-        "Hosting, dominio, SSL y correos corporativos",
+        {
+          "id": "hosting-included",
+          "text": "Hosting, dominio, SSL y correos corporativos",
+          "shared": "google-drive"
+        },
         "Cumplimiento legal: RGPD, CCPA, cookies",
         "Accesibilidad (WCAG)",
         "Mapa interactivo",
@@ -181,13 +372,78 @@ const EMBEDDED_SERVICES = {
         "Herramientas de marketing (email, remarketing, blog)",
         "Funcionalidad multilinguee dinamica",
         "Pruebas de compatibilidad y optimizacion",
-        "Soporte post-lanzamiento"
+        "Soporte post-lanzamiento",
+        {
+          "id": "shopify-bridge",
+          "text": "Integracion Shopify via Smooftify bridge (carrito + inventario + checkout)",
+          "condition": {
+            "variant": [
+              "webflow-shopify"
+            ]
+          }
+        },
+        {
+          "id": "ecommerce-native",
+          "text": "E-commerce nativo de Webflow (catalogo, carrito, checkout)",
+          "condition": {
+            "variant": [
+              "webflow-ecommerce"
+            ]
+          }
+        },
+        {
+          "id": "shopify-theme",
+          "text": "Tema Shopify personalizado desde cero",
+          "condition": {
+            "variant": [
+              "shopify-branded"
+            ]
+          }
+        },
+        {
+          "id": "shopify-config",
+          "text": "Configuracion y personalizacion de tema Shopify",
+          "condition": {
+            "variant": [
+              "shopify-basic"
+            ]
+          }
+        },
+        {
+          "id": "headless-dev",
+          "text": "Desarrollo Next.js con API headless (Shopify/Saleor)",
+          "condition": {
+            "variant": [
+              "custom-headless"
+            ]
+          }
+        },
+        {
+          "id": "booking-system",
+          "text": "Sistema de reservas y agenda integrado",
+          "condition": {
+            "variant": [
+              "with-booking"
+            ]
+          }
+        }
       ],
       "deliverables": [
-        "Wireframe 99% funcional",
-        "Activos de marca optimizados y exportados",
+        {
+          "id": "wireframe-doc",
+          "text": "Wireframe 99% funcional",
+          "shared": "wireframe"
+        },
+        {
+          "id": "brand-assets-export",
+          "text": "Activos de marca optimizados y exportados"
+        },
         "Sitio web funcional y listo para lanzamiento",
-        "Introduccion al portal de usuarios y modificacion del contenido"
+        {
+          "id": "cms-training",
+          "text": "Introduccion al portal de usuarios y modificacion del contenido",
+          "shared": "training-session"
+        }
       ],
       "tags": [
         "web",
@@ -210,7 +466,28 @@ const EMBEDDED_SERVICES = {
       "mutuallyExclusiveWith": [
         "shakefront-lite",
         "espresso-shot"
-      ]
+      ],
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de diseno, layout, contenido e interacciones dentro del wireframe aprobado",
+        "outOfScope": "Rediseno de la arquitectura web, cambio de plataforma, paginas fuera del sitemap original",
+        "overagePrice": 250,
+        "overageUnit": "per-round",
+        "milestoneRevisions": {
+          "wireframe": {
+            "rounds": 2,
+            "scope": "Estructura, navegacion y jerarquia de contenido"
+          },
+          "design": {
+            "rounds": 3,
+            "scope": "Diseno visual, UI, colores, tipografia, imagenes"
+          },
+          "development": {
+            "rounds": 2,
+            "scope": "Funcionalidad, responsive, animaciones, interacciones"
+          }
+        }
+      }
     },
     "shakefront-lite": {
       "id": "shakefront-lite",
@@ -257,7 +534,21 @@ const EMBEDDED_SERVICES = {
       },
       "includes": [
         "Diseno UI/UX responsive (desktop, tablet, movil, horizontal)",
-        "Desarrollo en Webflow: one-pager multi-seccion",
+        {
+          "id": "onepager-development",
+          "text": "Desarrollo en Webflow: one-pager multi-seccion",
+          "variantScaling": {
+            "basic-onepager": {
+              "text": "Desarrollo en Webflow: one-pager basico"
+            },
+            "standard-10sections": {
+              "text": "Desarrollo en Webflow: one-pager con 10+ secciones"
+            },
+            "full-lite": {
+              "text": "Desarrollo en Webflow: multi-seccion premium con animaciones"
+            }
+          }
+        },
         "SEO avanzado",
         "Hosting, dominio, SSL y correos corporativos",
         "Formularios de contacto",
@@ -285,7 +576,14 @@ const EMBEDDED_SERVICES = {
       "mutuallyExclusiveWith": [
         "shakefront-full",
         "espresso-shot"
-      ]
+      ],
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de diseno, layout y contenido dentro del wireframe aprobado",
+        "outOfScope": "Cambio de plataforma, paginas adicionales fuera del sitemap",
+        "overagePrice": 200,
+        "overageUnit": "per-round"
+      }
     },
     "flashy-socials": {
       "id": "flashy-socials",
@@ -335,15 +633,100 @@ const EMBEDDED_SERVICES = {
         "Configuracion de Google Workspace para correos empresariales",
         "Tono, voz y valores de la marca y su comportamiento digital",
         "Copywriting y asesoramiento creativo para biografias en distintas plataformas",
-        "Diseno de las primeras 12 publicaciones de la grilla de Instagram",
-        "Creacion de 1 TikTok con sound original para campana de lanzamiento",
+        {
+          "id": "instagram-grid",
+          "text": "Diseno de las primeras publicaciones de la grilla de Instagram",
+          "quantity": 12,
+          "quantityLabel": "Diseno de las primeras {{quantity}} publicaciones de la grilla de Instagram",
+          "variantScaling": {
+            "lite": {
+              "quantity": 6
+            },
+            "standard": {
+              "quantity": 12
+            },
+            "discounted-with-full": {
+              "quantity": 12
+            }
+          }
+        },
+        {
+          "id": "tiktok-launch",
+          "text": "Creacion de 1 TikTok con sound original para campana de lanzamiento",
+          "condition": {
+            "variant": [
+              "standard",
+              "discounted-with-full"
+            ]
+          }
+        },
         "Creacion de plantillas en Adobe Express",
         "Gestor de Marca en Adobe Express: acceso a recursos vectoriales, tipografias, paletas",
-        "Programacion semanal del contenido en Adobe Express",
+        {
+          "id": "scheduling",
+          "text": "Programacion semanal del contenido en Adobe Express",
+          "condition": {
+            "variant": [
+              "standard",
+              "discounted-with-full"
+            ]
+          }
+        },
         "Fotos de perfil y banners para distintas plataformas de social media",
-        "Social BrandBook: manual de tonalidad e implementacion grafica para RRSS"
+        {
+          "id": "social-brandbook",
+          "text": "Social BrandBook: manual de tonalidad e implementacion grafica para RRSS",
+          "shared": "brandbook",
+          "condition": {
+            "variant": [
+              "standard",
+              "discounted-with-full"
+            ]
+          }
+        }
       ],
-      "deliverables": null,
+      "deliverables": [
+        {
+          "id": "social-templates-delivery",
+          "text": "Plantillas editables en Adobe Express",
+          "format": "Adobe Express",
+          "shared": "social-templates"
+        },
+        {
+          "id": "social-grid-delivery",
+          "text": "Primeras publicaciones disenadas y programadas",
+          "quantity": 12,
+          "quantityLabel": "{{quantity}} publicaciones disenadas y programadas",
+          "variantScaling": {
+            "lite": {
+              "quantity": 6
+            },
+            "standard": {
+              "quantity": 12
+            },
+            "discounted-with-full": {
+              "quantity": 12
+            }
+          }
+        },
+        {
+          "id": "social-brandbook-doc",
+          "text": "Social BrandBook completo",
+          "format": "PDF",
+          "shared": "brandbook",
+          "condition": {
+            "variant": [
+              "standard",
+              "discounted-with-full"
+            ]
+          }
+        },
+        {
+          "id": "drive-social",
+          "text": "Google Drive con todos los recursos sociales",
+          "shared": "google-drive"
+        }
+      ],
       "tags": [
         "social",
         "instagram",
@@ -357,6 +740,13 @@ const EMBEDDED_SERVICES = {
         "discountedWith": {
           "shakefront-full": 870
         }
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de diseno, copy y composicion de las publicaciones",
+        "outOfScope": "Cambio total de concepto visual, adicion de plataformas no incluidas",
+        "overagePrice": 80,
+        "overageUnit": "per-round"
       }
     },
     "buttery-1day": {
@@ -405,7 +795,25 @@ const EMBEDDED_SERVICES = {
       "includes": [
         "Sesion de 4 a 6 horas",
         "Sin limite de capturas",
-        "Entrega de al menos 50+ fotos",
+        {
+          "id": "photo-delivery",
+          "text": "Entrega de fotos seleccionadas",
+          "quantity": 50,
+          "quantityLabel": "Entrega de al menos {{quantity}}+ fotos",
+          "variantScaling": {
+            "staff-only": {
+              "quantity": 20,
+              "quantityLabel": "Entrega de {{quantity}}+ fotos de equipo"
+            },
+            "standard": {
+              "quantity": 50
+            },
+            "premium": {
+              "quantity": 80,
+              "quantityLabel": "Entrega de {{quantity}}+ fotos premium"
+            }
+          }
+        },
         "Planificacion previa y asesoria",
         "Transporte y equipamiento",
         "Estilo y enfoque personalizables segun necesidades de marca",
@@ -413,9 +821,21 @@ const EMBEDDED_SERVICES = {
         "Material de video suficiente para realizar 4 capsulas de 1 minuto"
       ],
       "deliverables": [
-        "Fotos exportadas en JPG",
-        "Fotos en bruto (RAW) para futura utilizacion",
-        "Google Drive personal con todos los recursos"
+        {
+          "id": "photo-jpg",
+          "text": "Fotos exportadas en JPG",
+          "shared": "photo-jpg"
+        },
+        {
+          "id": "photo-raw",
+          "text": "Fotos en bruto (RAW) para futura utilizacion",
+          "shared": "photo-raw"
+        },
+        {
+          "id": "drive",
+          "text": "Google Drive personal con todos los recursos",
+          "shared": "google-drive"
+        }
       ],
       "tags": [
         "foto",
@@ -427,6 +847,11 @@ const EMBEDDED_SERVICES = {
       "bundleRules": {
         "includedWith": [],
         "freeWith": []
+      },
+      "revisions": {
+        "rounds": 0,
+        "scope": "Sesion fotografica — sin revisiones (produccion en vivo)",
+        "outOfScope": "Sesiones adicionales"
       }
     },
     "buttery-3days": {
@@ -477,6 +902,11 @@ const EMBEDDED_SERVICES = {
       "bundleRules": {
         "includedWith": [],
         "freeWith": []
+      },
+      "revisions": {
+        "rounds": 0,
+        "scope": "Sesion fotografica extendida — sin revisiones (produccion en vivo)",
+        "outOfScope": "Sesiones o dias adicionales"
       }
     },
     "cold-brew": {
@@ -517,8 +947,16 @@ const EMBEDDED_SERVICES = {
         "1 brand video principal (60-90 seg)",
         "Version corta para redes (15-30 seg)",
         "Version header web (loop optimizado)",
-        "HD/4K en formatos horizontal, vertical (9:16) y cuadrado (1:1)",
-        "Archivos fuente tras pago final"
+        {
+          "id": "video-main",
+          "text": "HD/4K en formatos horizontal, vertical (9:16) y cuadrado (1:1)",
+          "shared": "video-4k"
+        },
+        {
+          "id": "source",
+          "text": "Archivos fuente tras pago final",
+          "shared": "source-files"
+        }
       ],
       "tags": [
         "video",
@@ -537,6 +975,13 @@ const EMBEDDED_SERVICES = {
           "buttery-1day": 900,
           "buttery-3days": 900
         }
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de edicion, color, ritmo y musica del brand video",
+        "outOfScope": "Re-filmacion o cambio de concepto",
+        "overagePrice": 150,
+        "overageUnit": "per-round"
       }
     },
     "glass-cup": {
@@ -575,8 +1020,16 @@ const EMBEDDED_SERVICES = {
         "Otros elementos que puedan reemplazar productos listados"
       ],
       "deliverables": [
-        "Archivos listos para imprimir",
-        "Archivos editables con lineas de corte, doblez, registros y todos los formatos de color"
+        {
+          "id": "print",
+          "text": "Archivos listos para imprimir",
+          "shared": "print-ready"
+        },
+        {
+          "id": "source",
+          "text": "Archivos editables con lineas de corte, doblez, registros y todos los formatos de color",
+          "shared": "source-files"
+        }
       ],
       "tags": [
         "print",
@@ -590,6 +1043,13 @@ const EMBEDDED_SERVICES = {
         "freeWith": [
           "shakefront-full"
         ]
+      },
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de diseno, composicion y contenido de materiales impresos",
+        "outOfScope": "Nuevos productos no incluidos en el alcance original",
+        "overagePrice": 100,
+        "overageUnit": "per-round"
       }
     },
     "silky-edits": {
@@ -650,6 +1110,13 @@ const EMBEDDED_SERVICES = {
           "buttery-1day",
           "buttery-3days"
         ]
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de retoque, color, recorte y composicion",
+        "outOfScope": "Fotos adicionales no incluidas en la seleccion original",
+        "overagePrice": 60,
+        "overageUnit": "per-round"
       }
     },
     "barista": {
@@ -706,6 +1173,11 @@ const EMBEDDED_SERVICES = {
             "description": "Primer mes gratis"
           }
         }
+      },
+      "revisions": {
+        "rounds": null,
+        "scope": "Servicio continuo mensual — modificaciones incluidas en el plan",
+        "outOfScope": "N/A — cambios se gestionan dentro del retainer"
       }
     },
     "the-grinder": {
@@ -759,6 +1231,13 @@ const EMBEDDED_SERVICES = {
           "espresso-shot"
         ],
         "includes": []
+      },
+      "revisions": {
+        "rounds": 1,
+        "scope": "Verificacion de configuracion de hosting, dominio y correos",
+        "outOfScope": "Migracion de plataforma",
+        "overagePrice": 50,
+        "overageUnit": "per-round"
       }
     },
     "rosetta": {
@@ -807,6 +1286,13 @@ const EMBEDDED_SERVICES = {
         ],
         "freeWith": [],
         "includes": []
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de traduccion y configuracion multilinguee",
+        "outOfScope": "Idiomas adicionales no incluidos",
+        "overagePrice": 100,
+        "overageUnit": "per-round"
       }
     },
     "hot-press": {
@@ -864,6 +1350,13 @@ const EMBEDDED_SERVICES = {
         "discountedWith": {
           "shakefront-full": 1600
         }
+      },
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de animacion, timing, colores y composicion de graficos",
+        "outOfScope": "Nuevos elementos graficos fuera del paquete original",
+        "overagePrice": 200,
+        "overageUnit": "per-round"
       }
     },
     "foam-art": {
@@ -915,6 +1408,13 @@ const EMBEDDED_SERVICES = {
         "discountedWith": {
           "milky-branding": 1400
         }
+      },
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de diseno 3D, texturas, iluminacion y composicion",
+        "outOfScope": "Cambio de concepto o direccion creativa",
+        "overagePrice": 200,
+        "overageUnit": "per-round"
       }
     },
     "latte-art": {
@@ -977,6 +1477,13 @@ const EMBEDDED_SERVICES = {
           "milky-branding",
           "punch-card"
         ]
+      },
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de estilo, color y composicion de ilustraciones",
+        "outOfScope": "Ilustraciones adicionales no incluidas",
+        "overagePrice": 120,
+        "overageUnit": "per-round"
       }
     },
     "punch-card": {
@@ -1046,6 +1553,13 @@ const EMBEDDED_SERVICES = {
         "discountedWith": {
           "milky-branding": 1500
         }
+      },
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de diseno, mecanicas y contenido del programa de fidelizacion",
+        "outOfScope": "Cambio de estructura de tiers o plataforma",
+        "overagePrice": 150,
+        "overageUnit": "per-round"
       }
     },
     "pour-over": {
@@ -1120,6 +1634,13 @@ const EMBEDDED_SERVICES = {
           "hot-press": "15%",
           "cold-brew": "15%"
         }
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de animacion, timing y transiciones",
+        "outOfScope": "Animaciones adicionales o cambio de concepto",
+        "overagePrice": 150,
+        "overageUnit": "per-round"
       }
     },
     "sprinkles": {
@@ -1167,6 +1688,13 @@ const EMBEDDED_SERVICES = {
         "discountedWith": {
           "flashy-socials": 350
         }
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de diseno y efectos del filtro AR",
+        "outOfScope": "Filtros adicionales no incluidos",
+        "overagePrice": 80,
+        "overageUnit": "per-round"
       }
     },
     "espresso-shot": {
@@ -1233,7 +1761,14 @@ const EMBEDDED_SERVICES = {
       "mutuallyExclusiveWith": [
         "shakefront-full",
         "shakefront-lite"
-      ]
+      ],
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de diseno y contenido de la landing",
+        "outOfScope": "Cambio de plataforma o alcance",
+        "overagePrice": 100,
+        "overageUnit": "per-round"
+      }
     },
     "the-counter": {
       "id": "the-counter",
@@ -1287,6 +1822,13 @@ const EMBEDDED_SERVICES = {
           "shakefront-lite",
           "espresso-shot"
         ]
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de funcionalidad y configuracion del sistema de reservas",
+        "outOfScope": "Integraciones adicionales no previstas",
+        "overagePrice": 150,
+        "overageUnit": "per-round"
       }
     },
     "the-percolator": {
@@ -1328,9 +1870,17 @@ const EMBEDDED_SERVICES = {
       ],
       "deliverables": [
         "Flujos de trabajo configurados y activos",
-        "Documentacion tecnica de cada automatizacion",
+        {
+          "id": "docs",
+          "text": "Documentacion tecnica de cada automatizacion",
+          "shared": "documentation"
+        },
         "Acceso y credenciales al cliente",
-        "Sesion de entrenamiento"
+        {
+          "id": "training",
+          "text": "Sesion de entrenamiento",
+          "shared": "training-session"
+        }
       ],
       "tags": [
         "automatizacion",
@@ -1349,6 +1899,13 @@ const EMBEDDED_SERVICES = {
           "the-brewery": "20%",
           "robo-barista": "20%"
         }
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de flujos de automatizacion y configuracion",
+        "outOfScope": "Integraciones no previstas o cambio de plataforma",
+        "overagePrice": 200,
+        "overageUnit": "per-round"
       }
     },
     "robo-barista": {
@@ -1388,9 +1945,17 @@ const EMBEDDED_SERVICES = {
       ],
       "deliverables": [
         "Agente AI funcional y desplegado",
-        "Documentacion tecnica",
+        {
+          "id": "docs",
+          "text": "Documentacion tecnica",
+          "shared": "documentation"
+        },
         "Acceso y credenciales",
-        "Sesion de entrenamiento"
+        {
+          "id": "training",
+          "text": "Sesion de entrenamiento",
+          "shared": "training-session"
+        }
       ],
       "tags": [
         "ai",
@@ -1407,6 +1972,13 @@ const EMBEDDED_SERVICES = {
           "the-brewery": "15%",
           "the-percolator": "20%"
         }
+      },
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de comportamiento, integraciones y entrenamiento del agente",
+        "outOfScope": "Cambio de arquitectura o plataforma base",
+        "overagePrice": 300,
+        "overageUnit": "per-round"
       }
     },
     "the-brewery": {
@@ -1449,8 +2021,16 @@ const EMBEDDED_SERVICES = {
       "deliverables": [
         "Aplicacion funcional desplegada",
         "Codigo fuente en repositorio",
-        "Documentacion tecnica",
-        "Sesion de entrenamiento"
+        {
+          "id": "docs",
+          "text": "Documentacion tecnica",
+          "shared": "documentation"
+        },
+        {
+          "id": "training",
+          "text": "Sesion de entrenamiento",
+          "shared": "training-session"
+        }
       ],
       "tags": [
         "software",
@@ -1466,6 +2046,27 @@ const EMBEDDED_SERVICES = {
         "includes": [
           "the-grinder"
         ]
+      },
+      "revisions": {
+        "rounds": 3,
+        "scope": "Ajustes de funcionalidad, UI y flujo de la aplicacion",
+        "outOfScope": "Funcionalidades fuera del scope original",
+        "overagePrice": 400,
+        "overageUnit": "per-round",
+        "milestoneRevisions": {
+          "design": {
+            "rounds": 2,
+            "scope": "UI/UX y arquitectura"
+          },
+          "development": {
+            "rounds": 3,
+            "scope": "Funcionalidad y bugs"
+          },
+          "testing": {
+            "rounds": 2,
+            "scope": "QA y ajustes finales"
+          }
+        }
       }
     },
     "coffee-lab": {
@@ -1505,7 +2106,11 @@ const EMBEDDED_SERVICES = {
       "deliverables": [
         "Herramienta funcional y desplegada",
         "Codigo fuente",
-        "Documentacion de uso"
+        {
+          "id": "docs",
+          "text": "Documentacion de uso",
+          "shared": "documentation"
+        }
       ],
       "tags": [
         "tools",
@@ -1523,7 +2128,14 @@ const EMBEDDED_SERVICES = {
       },
       "mutuallyExclusiveWith": [
         "the-brewery"
-      ]
+      ],
+      "revisions": {
+        "rounds": 2,
+        "scope": "Ajustes de funcionalidad y UI de la herramienta",
+        "outOfScope": "Funcionalidades fuera del scope original",
+        "overagePrice": 250,
+        "overageUnit": "per-round"
+      }
     },
     "the-full-pot": {
       "id": "the-full-pot",
@@ -1565,7 +2177,11 @@ const EMBEDDED_SERVICES = {
       "deliverables": [
         "Todo lo incluido en los servicios individuales seleccionados",
         "Roadmap estrategico personalizado",
-        "Documentacion integral del proyecto"
+        {
+          "id": "docs",
+          "text": "Documentacion integral del proyecto",
+          "shared": "documentation"
+        }
       ],
       "tags": [
         "integral",
@@ -1587,6 +2203,13 @@ const EMBEDDED_SERVICES = {
           "percentage": 20,
           "description": "20% off all other services when added to The Full Pot"
         }
+      },
+      "revisions": {
+        "rounds": 3,
+        "scope": "Revisiones por fase del proyecto segun servicios individuales",
+        "outOfScope": "Cambio de alcance general",
+        "overagePrice": 500,
+        "overageUnit": "per-round"
       }
     }
   }
@@ -2268,4 +2891,43 @@ const EMBEDDED_DISCOUNTS = {
     "appliesTo": "non-discounted-services",
     "note": "Only applies to services at full price (not already INCLUDED/FREE/discounted). Incentivizes committing to a package rather than cherry-picking."
   }
+};
+const EMBEDDED_PACKAGES = {
+  "version": "1.0",
+  "lastUpdated": "2026-03-20",
+  "templates": [
+    {
+      "id": "test",
+      "name": "Test",
+      "subtitle": "Test",
+      "eyebrow": "Test",
+      "badge": null,
+      "promo": null,
+      "services": [
+        "rosetta",
+        "the-grinder",
+        "barista"
+      ],
+      "variants": {
+        "rosetta": {
+          "variant": "default",
+          "overridePrice": null
+        },
+        "the-grinder": {
+          "variant": "default",
+          "overridePrice": null
+        },
+        "barista": {
+          "variant": "default",
+          "overridePrice": null
+        }
+      },
+      "overrides": {},
+      "totalOneTime": 770,
+      "totalMonthly": 450,
+      "savings": 450,
+      "source": "manual",
+      "createdAt": "2026-03-20T22:03:35.604Z"
+    }
+  ]
 };

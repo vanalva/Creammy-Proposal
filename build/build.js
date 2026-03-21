@@ -103,31 +103,159 @@ function getServicePrice(svcId, overrides, allServices) {
   return resolved !== null ? resolved : (svc.pricing.basePrice || 0);
 }
 
-// ── Service content merge (3D) ───────────────────────────────────────────────
-// Merges base includes/deliverables from catalog with per-proposal overrides
+// ── Structured item helpers (Phase 4) ────────────────────────────────────────
+// Detects whether an include/deliverable item is a flat string or structured object.
+// All functions handle both formats transparently for backwards compatibility.
 
-function mergeServiceContent(base, overrides) {
-  if (!overrides) return base || [];
-  let result = [...(base || [])];
-  if (overrides.removeIncludes) {
-    result = result.filter(item => !overrides.removeIncludes.some(r => item.includes(r)));
-  }
-  if (overrides.addIncludes) {
-    result = result.concat(overrides.addIncludes);
-  }
-  return result;
+function isStructuredItem(item) {
+  return item !== null && typeof item === 'object' && typeof item.text === 'string';
 }
 
-function mergeDeliverables(base, overrides) {
-  if (!overrides) return base || [];
-  let result = [...(base || [])];
+// Get display text from an item (string or structured)
+function itemText(item) {
+  if (typeof item === 'string') return item;
+  if (!isStructuredItem(item)) return String(item || '');
+  // Apply quantity template if present
+  if (item.quantityLabel && item.quantity != null) {
+    return item.quantityLabel.replace('{{quantity}}', item.quantity);
+  }
+  return item.text;
+}
+
+// Evaluate a deliverable-level condition object
+// Returns true if the item should be shown
+function evaluateItemCondition(condition, activeVariant, selectedServices, context) {
+  if (!condition) return true;
+
+  // Variant condition: { "variant": ["full", "standard"] }
+  if (condition.variant) {
+    if (!activeVariant || !condition.variant.includes(activeVariant)) return false;
+  }
+
+  // Service dependency: { "service": "shakefront-full" }
+  if (condition.service) {
+    if (!selectedServices || !selectedServices.includes(condition.service)) return false;
+  }
+
+  // Negative service: { "notService": "shakefront-full" }
+  if (condition.notService) {
+    if (selectedServices && selectedServices.includes(condition.notService)) return false;
+  }
+
+  // Context: { "context": "retainer" }
+  if (condition.context) {
+    if (context?.type !== condition.context) return false;
+  }
+
+  // Tier level: { "tierLevel": { "min": 2 } }
+  if (condition.tierLevel) {
+    const lvl = context?.tierLevel ?? -1;
+    if (condition.tierLevel.min != null && lvl < condition.tierLevel.min) return false;
+    if (condition.tierLevel.max != null && lvl > condition.tierLevel.max) return false;
+  }
+
+  return true;
+}
+
+// Resolve an array of items (mixed flat strings + structured objects)
+// Applies variant scaling, evaluates conditions, returns normalized items
+function resolveItems(items, activeVariant, selectedServices, context) {
+  if (!items) return [];
+  return items.map(item => {
+    // Flat string — pass through as-is
+    if (typeof item === 'string') return { text: item, _legacy: true };
+
+    // Structured object
+    if (!isStructuredItem(item)) return null;
+
+    let resolved = { ...item };
+
+    // Apply variant scaling if present
+    if (resolved.variantScaling && activeVariant && resolved.variantScaling[activeVariant]) {
+      const scaled = resolved.variantScaling[activeVariant];
+      if (scaled.hidden) return null; // hidden for this variant
+      resolved = { ...resolved, ...scaled };
+    }
+
+    // Evaluate condition
+    if (!evaluateItemCondition(resolved.condition, activeVariant, selectedServices, context)) {
+      return null;
+    }
+
+    // Resolve quantity in text
+    if (resolved.quantityLabel && resolved.quantity != null) {
+      resolved.displayText = resolved.quantityLabel.replace('{{quantity}}', resolved.quantity);
+    } else {
+      resolved.displayText = resolved.text;
+    }
+
+    return resolved;
+  }).filter(Boolean);
+}
+
+// ── Service content merge (3D) ───────────────────────────────────────────────
+// Merges base includes/deliverables from catalog with per-proposal overrides.
+// Handles both flat strings and structured objects (Phase 4 dual-format).
+
+function mergeServiceContent(base, overrides, activeVariant, selectedServices, context) {
+  // First resolve structured items
+  let items = resolveItems(base, activeVariant, selectedServices, context);
+
+  if (!overrides) return items;
+
+  // Remove items matching removeIncludes (matches against display text)
+  if (overrides.removeIncludes) {
+    items = items.filter(item => {
+      const text = item.displayText || item.text || '';
+      return !overrides.removeIncludes.some(r => text.includes(r));
+    });
+  }
+
+  // Add new items
+  if (overrides.addIncludes) {
+    const additions = overrides.addIncludes.map(i =>
+      typeof i === 'string' ? { text: i, _legacy: true, displayText: i } : { ...i, displayText: i.text }
+    );
+    items = items.concat(additions);
+  }
+
+  return items;
+}
+
+function mergeDeliverables(base, overrides, activeVariant, selectedServices, context) {
+  let items = resolveItems(base, activeVariant, selectedServices, context);
+
+  if (!overrides) return items;
+
   if (overrides.removeDeliverables) {
-    result = result.filter(item => !overrides.removeDeliverables.some(r => item.includes(r)));
+    items = items.filter(item => {
+      const text = item.displayText || item.text || '';
+      return !overrides.removeDeliverables.some(r => text.includes(r));
+    });
   }
+
   if (overrides.addDeliverables) {
-    result = result.concat(overrides.addDeliverables);
+    const additions = overrides.addDeliverables.map(i =>
+      typeof i === 'string' ? { text: i, _legacy: true, displayText: i } : { ...i, displayText: i.text }
+    );
+    items = items.concat(additions);
   }
-  return result;
+
+  return items;
+}
+
+// Get the active variant name for a service from the manifest overrides
+function activeVariantFor(svcId, manifest) {
+  const override = manifest?.pricing?.overrides?.[svcId];
+  if (!override) return null;
+  if (typeof override === 'object' && override.variant) return override.variant;
+  return null; // numeric override = no variant name
+}
+
+// Get display-ready text from a resolved item (for HTML rendering)
+function renderItemText(item) {
+  if (typeof item === 'string') return item;
+  return item.displayText || item.text || '';
 }
 
 // ── Clause condition evaluator (3A) ──────────────────────────────────────────
@@ -251,6 +379,35 @@ function generateContractTerms(manifest, data) {
       const hasBroadcast = selected.includes('hot-press');
       const variant = hasBroadcast ? 'broadcast' : 'standard';
       html += `<p>${clause.variants[variant] || clause.variants.standard}</p>`;
+    } else if (clause.perServiceDisplay) {
+      // Dynamic revisions clause — show per-service table if services have revision data
+      const allSvcCatalog = data.services?.services || {};
+      const svcWithRevisions = selected.filter(id => allSvcCatalog[id]?.revisions);
+
+      if (svcWithRevisions.length > 0) {
+        html += `<p>${clause.templateIntro || ''}</p>`;
+        html += '<table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.85rem;">';
+        html += '<thead><tr style="border-bottom:1px solid rgba(255,255,255,0.15);"><th style="text-align:left;padding:0.5rem;">Servicio</th><th style="text-align:center;padding:0.5rem;">Rondas</th><th style="text-align:left;padding:0.5rem;">Alcance</th><th style="text-align:right;padding:0.5rem;">Extra</th></tr></thead><tbody>';
+
+        for (const id of selected) {
+          const svc = allSvcCatalog[id];
+          if (!svc) continue;
+          const rev = svc.revisions || { rounds: clause.defaultRounds || 3 };
+          const overageText = rev.overagePrice ? `\u20AC${rev.overagePrice}/ronda` : '\u2014';
+          html += `<tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+            <td style="padding:0.4rem 0.5rem;font-weight:500;">${esc(svc.name)}</td>
+            <td style="padding:0.4rem 0.5rem;text-align:center;color:#f0ff3d;font-weight:600;">${rev.rounds}</td>
+            <td style="padding:0.4rem 0.5rem;opacity:0.7;font-size:0.8rem;">${esc(rev.scope || 'Ajustes dentro del alcance original')}</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;">${overageText}</td>
+          </tr>`;
+        }
+
+        html += '</tbody></table>';
+        html += `<p>${clause.templateOutro || ''}</p>`;
+      } else {
+        // No services have revision data — use fallback
+        html += `<p>${clause.fallbackText || clause.text || ''}</p>`;
+      }
     } else if (clause.text) {
       html += `<p>${clause.text}</p>`;
     } else if (clause.sections) {
@@ -263,20 +420,27 @@ function generateContractTerms(manifest, data) {
     html += '<hr class="terms-section-divider">';
   }
 
-  // Payment section
-  const paymentStructure = data.payments?.structures?.[m.pricing?.paymentStructure];
+  // Payment section — supports paymentSplits, paymentOverride, milestonePayments, and paymentStructure
+  const paymentOverrideId = m.pricing?.paymentOverride || m.pricing?.paymentStructure;
+  const paymentStructure = data.payments?.structures?.[paymentOverrideId];
   html += '<h3>Forma de Pago</h3>';
   html += '<div class="terms-highlight">';
-  if (m.pricing?.paymentSplits?.length) {
+  if (m.pricing?.milestonePayments?.length) {
+    // Milestone-based payments linked to project phases
+    for (const mp of m.pricing.milestonePayments) {
+      const amount = mp.amount || (pricing.totalOneTime ? Math.round(pricing.totalOneTime * mp.percentage / 100) : null);
+      html += `<p><strong>${mp.percentage}%</strong> — ${esc(mp.label)}${amount ? ` (\u20AC${amount.toLocaleString()})` : ''}</p>`;
+    }
+  } else if (m.pricing?.paymentSplits?.length) {
     for (const split of m.pricing.paymentSplits) {
-      html += `<p><strong>${split.percentage}%</strong> — ${esc(split.trigger)}${split.amount ? ` (€${split.amount.toLocaleString()})` : ''}</p>`;
+      html += `<p><strong>${split.percentage}%</strong> — ${esc(split.trigger)}${split.amount ? ` (\u20AC${split.amount.toLocaleString()})` : ''}</p>`;
     }
   } else if (paymentStructure?.splits) {
     for (const split of paymentStructure.splits) {
       html += `<p><strong>${split.percentage}%</strong> — ${esc(split.label)}</p>`;
     }
   } else {
-    html += '<p><strong>70%</strong> — Al comenzar el trabajo</p><p><strong>30%</strong> — Al finalizar y entregar el proyecto</p>';
+    html += '<p><strong>70%</strong> \u2014 Al comenzar el trabajo</p><p><strong>30%</strong> \u2014 Al finalizar y entregar el proyecto</p>';
   }
   html += '</div>';
   html += `<p>${projectClauses.payment?.template || ''}</p>`;
@@ -1053,8 +1217,8 @@ ${packages.map(pkg => {
     const eyebrowNum = coreIdx >= 0 ? `${String(coreIdx + 1).padStart(2, '0')}// ` : '';
     const eyebrowText = `${eyebrowNum}${esc(svc.eyebrow || svc.category || '')}`.toUpperCase();
 
-    const svcIncludes = mergeServiceContent(svc.includes, m.serviceOverrides?.[id]);
-    const includesHtml = (svcIncludes || []).slice(0, 8).map(item => `<li>✓ ${esc(item)}</li>`).join('\n                  ');
+    const svcIncludes = mergeServiceContent(svc.includes, m.serviceOverrides?.[id], activeVariantFor(id, m), selected);
+    const includesHtml = (svcIncludes || []).slice(0, 8).map(item => `<li>✓ ${esc(renderItemText(item))}</li>`).join('\n                  ');
 
     return `
             <div class="card pricing-card" data-service="${id}" data-price="${price}" data-type="${type}"${monthlyAttr} onclick="PricingCart.toggle('${id}')">
@@ -1739,9 +1903,11 @@ function generatePricingConfig(manifest, data, pricing) {
       title: svc.name,
       price: monthly ? `€${Number(price).toLocaleString()}/mes` : `€${Number(price).toLocaleString()}`,
       desc: svc.description?.medium || svc.description?.short || '',
-      // 3D: Apply service overrides
-      includes: mergeServiceContent(svc.includes, m.serviceOverrides?.[id]),
-      deliverables: mergeDeliverables(svc.deliverables, m.serviceOverrides?.[id]),
+      // 3D+4A: Apply service overrides, resolve structured items to text for modal
+      // Pass the active variant so conditional items resolve correctly
+      includes: mergeServiceContent(svc.includes, m.serviceOverrides?.[id], activeVariantFor(id, m), selected).map(i => renderItemText(i)),
+      deliverables: mergeDeliverables(svc.deliverables, m.serviceOverrides?.[id], activeVariantFor(id, m), selected).map(i => renderItemText(i)),
+      revisions: svc.revisions || null,
     };
   }
 

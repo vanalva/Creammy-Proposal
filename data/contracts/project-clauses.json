@@ -32,7 +32,11 @@
     "revisions": {
       "required": true,
       "condition": "always",
-      "text": "El proceso incluye hasta tres (3) rondas de revision. Cada ronda permite ajustes dentro del alcance original del proyecto. Cambios que alteren la direccion creativa, el concepto, la estructura o el alcance acordado se consideran fuera de revision y podran generar costes adicionales. El Disenador notificara al Cliente antes de incurrir en costes extra. Ajustes menores de buena fe (color, tipografia, alineacion) se realizan sin coste adicional. Es responsabilidad del Cliente proporcionar feedback claro, consolidado y por escrito."
+      "defaultRounds": 3,
+      "perServiceDisplay": true,
+      "fallbackText": "El proceso incluye hasta tres (3) rondas de revision. Cada ronda permite ajustes dentro del alcance original del proyecto. Cambios que alteren la direccion creativa, el concepto, la estructura o el alcance acordado se consideran fuera de revision y podran generar costes adicionales. El Disenador notificara al Cliente antes de incurrir en costes extra. Ajustes menores de buena fe (color, tipografia, alineacion) se realizan sin coste adicional. Es responsabilidad del Cliente proporcionar feedback claro, consolidado y por escrito.",
+      "templateIntro": "El proceso incluye rondas de revision por cada servicio contratado. Cada ronda permite ajustes dentro del alcance original. Cambios que alteren la direccion creativa, el concepto o el alcance se consideran fuera de revision y podran generar costes adicionales.",
+      "templateOutro": "Es responsabilidad del Cliente proporcionar feedback claro, consolidado y por escrito. Ajustes menores de buena fe (color, tipografia, alineacion) se realizan sin coste adicional."
     },
     "terminationBranding": {
       "required": false,

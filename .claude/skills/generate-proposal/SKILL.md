@@ -35,12 +35,13 @@ Build.js generates these from data files — do NOT include them in the manifest
 
 Read these data files:
 
-1. `data/catalog/services.json` — 25 services with pricing, includes, deliverables
+1. `data/catalog/services.json` — 25 services with pricing, includes, deliverables, **price variants with criteria**
 2. `data/catalog/retainers.json` — retainer tier templates
 3. `data/catalog/discounts.json` — bundle discounts, volume discounts, special discounts
 4. `data/catalog/payments.json` — payment structures and bank info
-5. `templates/manifest.json` — **reference manifest** (Pakei — use as structural example)
-6. `templates/components.md` — **component library** (CSS classes for custom sections)
+5. `data/catalog/package-templates.json` — **saved package templates** (reuse before inventing new ones!)
+6. `templates/manifest.json` — **reference manifest** (use as structural example)
+7. `templates/components.md` — **component library** (CSS classes for custom sections)
 
 Also check for source material in `source/{client-name}/`.
 
@@ -98,6 +99,55 @@ Match needs to service IDs from the catalog:
 - `silky-edits` FREE with `shakefront-full`, `flashy-socials`, or `buttery`
 - `glass-cup` FREE with `shakefront-full`
 - For tech services, set custom prices in `pricing.overrides`
+- Check `data/catalog/discounts.json` for ALL bundle rules (30 rules)
+- Check mutual exclusions: Full↔Lite, Full↔Espresso, Lite↔Espresso, Brewery↔CoffeeLab
+
+### Step 2b: Price variants
+
+When a service has `priceVariants` in the catalog, choose based on the `criteria` field — **do not guess**. Each variant has a `description` and `criteria` explaining when to use it. Use the `defaultVariant` unless the client situation clearly matches a different criteria.
+
+In `pricing.overrides`, use variant references instead of hardcoded prices:
+```json
+"overrides": {
+  "milky-branding": { "variant": "standard" },
+  "shakefront-full": { "variant": "with-booking" }
+}
+```
+This way, if the price changes in the catalog, proposals automatically update on rebuild.
+
+Only use a hardcoded number for custom-priced services (The Brewery, Robo Barista, etc.) that don't have predefined variants.
+
+### Step 2c: Package templates
+
+**ALWAYS check `data/catalog/package-templates.json` first before creating packages.** If an existing template matches the client's needs (same or very similar services), reuse it with modifications rather than inventing from scratch.
+
+When you create NEW packages, save them to the templates file:
+
+```javascript
+// After writing the manifest, save each new package to package-templates.json
+const fs = require('fs');
+const tplPath = 'data/catalog/package-templates.json';
+const tplData = JSON.parse(fs.readFileSync(tplPath, 'utf8'));
+
+for (const pkg of manifest.pricing.packages) {
+  tplData.templates.push({
+    ...pkg,
+    source: 'ai',
+    createdBy: 'generate-proposal skill',
+    proposalId: manifest.proposal.id,
+    clientName: manifest.client.name,
+    createdAt: new Date().toISOString()
+  });
+}
+fs.writeFileSync(tplPath, JSON.stringify(tplData, null, 2));
+```
+
+**Source tags:**
+- `"source": "manual"` — created by Juan Carlos in the dashboard
+- `"source": "ai"` — created by this skill (pending review)
+- `"source": "ai-approved"` — AI-created, then approved by Juan Carlos
+
+**Package naming:** Use the client name + a descriptive suffix (e.g., "Azorica Esencial", "Pakei Full Ecosystem"). Do NOT use generic names like "Package 1".
 
 ### Step 3: Service overrides
 
@@ -113,6 +163,44 @@ If the client discussion added or removed specific deliverables, use `serviceOve
 ```
 
 This modifies the base includes from `services.json` without rewriting them. Only use when the standard package needs adjustment for this specific client.
+
+### Step 3b: Variant-aware deliverables (Phase 4)
+
+Services now have **structured includes** that automatically adjust based on the selected variant. When you set `"milky-branding": { "variant": "standard" }`, the includes list automatically:
+- **Shows** items for that variant (standard + full conditions match standard)
+- **Hides** items that only apply to other variants (e.g., packaging variants only show for "full")
+- **Adjusts quantities** (e.g., Flashy Socials lite = 6 posts, standard = 12 posts)
+- **Adds cross-service items** (e.g., "Assets para web" only appear when Shakefront is also selected)
+
+**You do NOT need to manually manage this.** The build system handles it. Only use `serviceOverrides` for project-specific additions/removals discussed in the meeting.
+
+### Step 3c: Revisions
+
+Every service now has a `revisions` field with per-service revision counts, scope, and overage pricing. The contract "Revisiones" section auto-generates a per-service table. **Do not write revision terms manually.**
+
+If the client discussed custom revision terms, use `revisionOverride` in serviceOverrides:
+```json
+"serviceOverrides": {
+  "milky-branding": {
+    "revisionOverride": { "rounds": 5, "note": "Extra rounds for international packaging" }
+  }
+}
+```
+
+### Step 3d: Milestone payments
+
+For complex projects, use milestone-based payments linked to project phases:
+```json
+"pricing": {
+  "milestonePayments": [
+    { "percentage": 35, "label": "Inicio del proyecto (discovery + branding)" },
+    { "percentage": 25, "label": "Entrega de branding" },
+    { "percentage": 25, "label": "Lanzamiento del sitio web" },
+    { "percentage": 15, "label": "Entrega final + automatizacion" }
+  ]
+}
+```
+Amounts are auto-calculated from the total. Use this instead of `paymentStructure` when the project has distinct deliverable phases.
 
 ### Step 4: Select sections
 

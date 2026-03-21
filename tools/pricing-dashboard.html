@@ -179,6 +179,13 @@
   .includes-list { margin-top: 0.5rem; }
   .includes-list summary { font-size: 0.75rem; font-weight: 600; cursor: pointer; color: var(--text-dim); }
   .includes-list li { font-size: 0.7rem; color: var(--text-dim); margin: 0.2rem 0 0.2rem 1rem; }
+  .item-badge { font-size: 0.5rem; padding: 1px 4px; border-radius: 2px; margin-left: 4px; vertical-align: middle; }
+  .item-qty { background: rgba(240,255,61,0.15); color: var(--yellow); }
+  .item-shared { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .item-cond { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .svc-revisions { font-size: 0.65rem; color: var(--text-dim); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+  .rev-count { color: var(--text); font-weight: 500; }
+  .rev-overage { color: var(--orange); }
 
   /* ── Graph Filters ── */
   .graph-filters {
@@ -447,6 +454,119 @@
     font-size: 0.75rem;
     width: 90px;
   }
+
+  /* ── Service Catalog View ── */
+  .catalog-search {
+    width: 100%; max-width: 480px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .catalog-search:focus { border-color: var(--yellow); }
+  .catalog-search::placeholder { color: var(--text-dim); }
+
+  .catalog-group { margin-bottom: 2.5rem; }
+  .catalog-group-header {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .catalog-group-header .cat-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .catalog-group-header .cat-label { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-heading); }
+  .catalog-group-header .cat-count { font-size: 0.7rem; color: var(--text-dim); }
+
+  .catalog-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; transition: border-color 0.2s; }
+  .catalog-item:hover { border-color: var(--border-hover); }
+  .catalog-item.open { border-color: var(--yellow); }
+
+  .catalog-item-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 1.25rem; cursor: pointer; gap: 1rem;
+    transition: background 0.15s;
+  }
+  .catalog-item-header:hover { background: var(--surface2); }
+  .catalog-item-header .ci-name { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; }
+  .catalog-item-header .ci-cat-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-dim);
+  }
+  .catalog-item-header .ci-cat-badge .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .catalog-item-header .ci-price { font-family: var(--font-heading); font-weight: 700; color: var(--yellow); font-size: 1rem; white-space: nowrap; }
+  .catalog-item-header .ci-monthly-tag {
+    font-size: 0.55rem; background: rgba(240,255,61,0.15); color: var(--yellow);
+    padding: 1px 5px; border-radius: 3px; margin-left: 4px;
+  }
+  .catalog-item-header .ci-default-badge {
+    font-size: 0.55rem; background: rgba(74,222,128,0.15); color: var(--green);
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px;
+  }
+  .catalog-item-header .ci-chevron {
+    font-size: 0.7rem; color: var(--text-dim); transition: transform 0.2s;
+  }
+  .catalog-item.open .ci-chevron { transform: rotate(90deg); }
+
+  .catalog-detail { display: none; padding: 0 1.25rem 1.25rem; }
+  .catalog-item.open .catalog-detail { display: block; }
+
+  .catalog-detail .cd-section { margin-bottom: 1rem; }
+  .catalog-detail .cd-section-title {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-dim); margin-bottom: 0.4rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border);
+  }
+
+  .cd-variants-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+  .cd-variants-table th { text-align: left; padding: 0.3rem 0.5rem; font-weight: 600; color: var(--text-dim); border-bottom: 1px solid var(--border); font-size: 0.65rem; text-transform: uppercase; }
+  .cd-variants-table td { padding: 0.35rem 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .cd-variants-table .vt-price { color: var(--yellow); font-weight: 600; font-family: var(--font-heading); white-space: nowrap; }
+  .cd-variants-table .vt-default { background: rgba(240,255,61,0.1); color: var(--yellow); font-size: 0.5rem; padding: 1px 5px; border-radius: 3px; font-weight: 700; margin-left: 4px; }
+
+  .cd-include-item { font-size: 0.75rem; padding: 0.2rem 0; color: var(--text); }
+  .cd-deliverable-item { font-size: 0.75rem; padding: 0.2rem 0; color: var(--text); }
+  .cd-deliverable-item .fmt-badge { font-size: 0.5rem; padding: 1px 5px; border-radius: 3px; background: var(--surface2); color: var(--text-dim); margin-left: 4px; }
+
+  .cd-bundle-row { font-size: 0.75rem; display: flex; align-items: center; gap: 0.4rem; padding: 0.2rem 0; }
+  .cd-bundle-row .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  .cd-tag { display: inline-block; font-size: 0.6rem; padding: 2px 8px; border-radius: 4px; background: var(--surface2); color: var(--text-dim); border: 1px solid var(--border); margin: 2px 2px 2px 0; }
+
+  /* ── Terms & Payments View ── */
+  .terms-section { margin-bottom: 3rem; }
+  .terms-section-title {
+    font-size: 1.1rem; font-weight: 700; font-family: var(--font-heading);
+    margin-bottom: 0.25rem;
+  }
+  .terms-section-sub { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1.25rem; }
+
+  .terms-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+  .terms-table th {
+    text-align: left; padding: 0.5rem 0.75rem; font-weight: 600; color: var(--text-dim);
+    border-bottom: 1px solid var(--border); font-size: 0.65rem; text-transform: uppercase;
+    background: var(--surface); position: sticky; top: 0;
+  }
+  .terms-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .terms-table tr:hover td { background: var(--surface2); }
+
+  .terms-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.25rem; margin-bottom: 0.75rem;
+  }
+  .terms-card-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .terms-card-sub { font-size: 0.7rem; color: var(--text-dim); }
+  .terms-card-value { font-size: 1.1rem; font-weight: 700; color: var(--yellow); font-family: var(--font-heading); margin-top: 0.5rem; }
+
+  .terms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; }
+
+  .terms-badge-always { display: inline-block; font-size: 0.55rem; padding: 1px 6px; border-radius: 3px; background: rgba(74,222,128,0.15); color: var(--green); }
+  .terms-badge-cond { display: inline-block; font-size: 0.55rem; padding: 1px 6px; border-radius: 3px; background: rgba(240,255,61,0.15); color: var(--yellow); }
+
+  .rev-rounds-cell { font-weight: 700; color: var(--yellow); font-family: var(--font-heading); }
 </style>
 </head>
 <body>
@@ -459,6 +579,8 @@
     <button class="tab" onclick="switchView('matrix')">Matrix</button>
     <button class="tab" onclick="switchView('retainers')">Retainers</button>
     <button class="tab" onclick="switchView('builder')">Package Builder</button>
+    <button class="tab" onclick="switchView('catalog')">Service Catalog</button>
+    <button class="tab" onclick="switchView('terms')">Terms</button>
   </div>
   <div class="stats" id="stats"></div>
   <div style="display:flex;gap:0.5rem;">
@@ -494,6 +616,12 @@
 
 <!-- ── PACKAGE BUILDER VIEW ── -->
 <div class="view" id="view-builder"></div>
+
+<!-- ── SERVICE CATALOG VIEW ── -->
+<div class="view" id="view-catalog"></div>
+
+<!-- ── TERMS & PAYMENTS VIEW ── -->
+<div class="view" id="view-terms"></div>
 
 <script src="pricing-data.js"></script>
 <script>
@@ -547,6 +675,8 @@ async function loadData() {
   renderCards();
   renderMatrix();
   renderRetainers();
+  renderCatalog();
+  renderTerms();
 }
 
 // ── Save helpers ──
@@ -613,6 +743,55 @@ function renderStats() {
 // ── CARDS VIEW ──
 function renderCards() {
   const container = document.getElementById('view-cards');
+
+  // ── Package templates section ──
+  const pkgs = savedTemplates.length ? savedTemplates : (typeof EMBEDDED_PACKAGES !== 'undefined' ? (EMBEDDED_PACKAGES.templates || []) : []);
+  let html = '';
+
+  if (pkgs.length) {
+    const sourceBadge = (src) => {
+      if (src === 'ai') return '<span style="font-size:0.55rem;padding:1px 6px;border-radius:3px;background:rgba(167,139,250,0.2);color:#a78bfa;">AI</span>';
+      if (src === 'ai-approved') return '<span style="font-size:0.55rem;padding:1px 6px;border-radius:3px;background:rgba(74,222,128,0.2);color:#4ade80;">APPROVED</span>';
+      return '<span style="font-size:0.55rem;padding:1px 6px;border-radius:3px;background:rgba(240,255,61,0.15);color:var(--yellow);">MANUAL</span>';
+    };
+
+    html += `<div class="category-group">
+      <div class="category-header">
+        <div class="category-dot" style="background:var(--yellow)"></div>
+        <div class="category-name">Packages</div>
+        <div class="category-count">${pkgs.length} template${pkgs.length > 1 ? 's' : ''}</div>
+      </div>
+      <div class="cards-grid">`;
+
+    for (const pkg of pkgs) {
+      const monthly = pkg.totalMonthly ? `<div style="font-size:0.75rem;color:var(--text-dim);">+ \u20AC${(pkg.totalMonthly||0).toLocaleString()}/mes</div>` : '';
+      const svcNames = (pkg.services || []).map(id => SERVICES[id]?.name || id).join(', ');
+      const savings = pkg.savings > 0 ? `<div style="font-size:0.65rem;color:var(--green);margin-top:0.5rem;">Ahorras \u20AC${pkg.savings.toLocaleString()}</div>` : '';
+      const proposal = pkg.proposalId ? `<div style="font-size:0.6rem;color:var(--text-dim);margin-top:0.25rem;">${pkg.proposalId} \u2022 ${pkg.clientName || ''}</div>` : '';
+      const badge = pkg.badge ? `<div style="position:absolute;top:0.75rem;right:0.75rem;background:var(--yellow);color:#000;font-size:0.6rem;font-weight:700;padding:2px 8px;border-radius:3px;">${pkg.badge}</div>` : '';
+
+      html += `<div class="svc-card" style="position:relative;border-color:rgba(240,255,61,0.2);">
+        ${badge}
+        <div class="svc-card-top">
+          <div>
+            <div class="svc-eyebrow">${pkg.eyebrow || ''} ${sourceBadge(pkg.source)}</div>
+            <div class="svc-name" style="color:var(--yellow);font-family:var(--font-heading);">${pkg.name}</div>
+            <div class="svc-subtitle">${pkg.subtitle || ''}</div>
+          </div>
+          <div class="svc-price-block">
+            <div class="svc-base-price">\u20AC${(pkg.totalOneTime||0).toLocaleString()}</div>
+            ${monthly}
+          </div>
+        </div>
+        <div style="font-size:0.7rem;color:var(--text-dim);margin-top:0.5rem;">${svcNames}</div>
+        ${savings}
+        ${proposal}
+      </div>`;
+    }
+    html += '</div></div>';
+  }
+
+  // ── Service cards by category ──
   const groups = {};
 
   for (const [id, svc] of Object.entries(SERVICES)) {
@@ -621,7 +800,6 @@ function renderCards() {
     groups[cat].push({ id, ...svc });
   }
 
-  let html = '';
   for (const [cat, svcs] of Object.entries(groups)) {
     const meta = CATEGORY_META[cat] || { label: cat, color: '#888' };
     html += `<div class="category-group">
@@ -686,9 +864,39 @@ function renderCard(svc, catColor) {
   }
 
   // Includes
+  // Includes — handle both flat strings and structured objects
   let includesList = '';
   if (svc.includes?.length) {
-    includesList = `<details class="includes-list"><summary>${svc.includes.length} includes</summary><ul>${svc.includes.map(i => `<li>${i}</li>`).join('')}</ul></details>`;
+    const itemsHtml = svc.includes.map(item => {
+      if (typeof item === 'string') return `<li>${item}</li>`;
+      const text = item.quantityLabel && item.quantity != null
+        ? item.quantityLabel.replace('{{quantity}}', item.quantity)
+        : item.text;
+      let badges = '';
+      if (item.quantity != null) badges += `<span class="item-badge item-qty">${item.quantity}x</span>`;
+      if (item.shared) badges += `<span class="item-badge item-shared">${item.shared}</span>`;
+      if (item.condition) {
+        const condLabel = item.condition.variant ? item.condition.variant.join('/') :
+          item.condition.service ? 'with:' + item.condition.service :
+          item.condition.notService ? 'without:' + item.condition.notService : 'cond';
+        badges += `<span class="item-badge item-cond">${condLabel}</span>`;
+      }
+      return `<li>${text}${badges}</li>`;
+    }).join('');
+    const structured = svc.includes.filter(i => typeof i === 'object').length;
+    const label = structured > 0 ? `${svc.includes.length} includes (${structured} structured)` : `${svc.includes.length} includes`;
+    includesList = `<details class="includes-list"><summary>${label}</summary><ul>${itemsHtml}</ul></details>`;
+  }
+
+  // Revisions
+  let revisionsHtml = '';
+  if (svc.revisions) {
+    const r = svc.revisions;
+    revisionsHtml = `<div class="svc-revisions">
+      <span class="rev-count">${r.rounds} revisiones</span>
+      ${r.overagePrice ? `<span class="rev-overage">+\u20AC${r.overagePrice}/extra</span>` : ''}
+      ${r.milestoneRevisions ? `<span style="color:var(--blue);">${Object.keys(r.milestoneRevisions).length} fases</span>` : ''}
+    </div>`;
   }
 
   return `<div class="svc-card" data-id="${svc.id}">
@@ -708,6 +916,7 @@ function renderCard(svc, catColor) {
       <span>${tlLabel}</span>
       <div class="svc-timeline-bar"><div class="svc-timeline-fill" style="width:${tlPct}%"></div></div>
     </div>
+    ${revisionsHtml}
     <div class="svc-tags">${(svc.tags || []).map(t => `<span class="svc-tag">${t}</span>`).join('')}</div>
     ${relations ? `<div class="svc-relations">${relations}</div>` : ''}
     <div class="variants-panel">
@@ -1089,6 +1298,428 @@ if (IS_SERVER) {
   });
 } else {
   document.getElementById('server-status').textContent = 'File mode — read only';
+}
+
+// ── SERVICE CATALOG VIEW ──
+function renderCatalog() {
+  const container = document.getElementById('view-catalog');
+  const groups = {};
+  for (const [id, svc] of Object.entries(SERVICES)) {
+    const cat = svc.category || 'other';
+    if (!groups[cat]) groups[cat] = [];
+    groups[cat].push({ id, ...svc });
+  }
+
+  let html = '<input type="text" class="catalog-search" id="catalog-search" placeholder="Search services by name, category, or tags..." oninput="filterCatalog()">';
+
+  const catOrder = Object.keys(CATEGORY_META);
+  const sortedCats = Object.keys(groups).sort((a, b) => {
+    const ai = catOrder.indexOf(a), bi = catOrder.indexOf(b);
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+  });
+
+  for (const cat of sortedCats) {
+    const svcs = groups[cat];
+    const meta = CATEGORY_META[cat] || { label: cat, color: '#888' };
+    html += `<div class="catalog-group" data-cat="${cat}">
+      <div class="catalog-group-header" style="border-bottom-color:${meta.color}40;">
+        <div class="cat-dot" style="background:${meta.color}"></div>
+        <div class="cat-label" style="color:${meta.color}">${meta.label}</div>
+        <div class="cat-count">${svcs.length} service${svcs.length > 1 ? 's' : ''}</div>
+      </div>`;
+
+    for (const svc of svcs) {
+      const p = svc.pricing;
+      const price = p.basePrice ? `\u20AC${p.basePrice.toLocaleString()}` : 'Custom';
+      const monthlyTag = p.monthly ? '<span class="ci-monthly-tag">/mes</span>' : '';
+      const defaultBadge = p.defaultVariant ? `<span class="ci-default-badge">${p.defaultVariant}</span>` : '';
+      const tagsData = (svc.tags || []).join(',').toLowerCase();
+
+      html += `<div class="catalog-item" data-name="${svc.name.toLowerCase()}" data-cat="${cat}" data-tags="${tagsData}">
+        <div class="catalog-item-header" onclick="this.parentElement.classList.toggle('open')">
+          <div style="display:flex;align-items:center;gap:0.75rem;flex:1;min-width:0;">
+            <span class="ci-name">${svc.name}</span>
+            <span class="ci-cat-badge"><span class="dot" style="background:${meta.color}"></span>${meta.label}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span class="ci-price">${price}${monthlyTag}</span>
+            ${defaultBadge}
+            <span class="ci-chevron">\u25B6</span>
+          </div>
+        </div>
+        <div class="catalog-detail">
+          ${renderCatalogVariants(svc)}
+          ${renderCatalogIncludes(svc)}
+          ${renderCatalogDeliverables(svc)}
+          ${renderCatalogRevisions(svc)}
+          ${renderCatalogTimeline(svc)}
+          ${renderCatalogBundleRules(svc)}
+          ${renderCatalogExclusions(svc)}
+          ${renderCatalogTags(svc)}
+        </div>
+      </div>`;
+    }
+    html += '</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+function filterCatalog() {
+  const q = document.getElementById('catalog-search').value.toLowerCase().trim();
+  const items = document.querySelectorAll('#view-catalog .catalog-item');
+  const groups = document.querySelectorAll('#view-catalog .catalog-group');
+
+  items.forEach(item => {
+    if (!q) { item.style.display = ''; return; }
+    const name = item.dataset.name || '';
+    const cat = item.dataset.cat || '';
+    const tags = item.dataset.tags || '';
+    const catMeta = CATEGORY_META[cat];
+    const catLabel = catMeta ? catMeta.label.toLowerCase() : cat;
+    const match = name.includes(q) || cat.includes(q) || catLabel.includes(q) || tags.includes(q);
+    item.style.display = match ? '' : 'none';
+  });
+
+  // Hide empty groups
+  groups.forEach(group => {
+    const visible = group.querySelectorAll('.catalog-item:not([style*="display: none"])');
+    group.style.display = visible.length ? '' : 'none';
+  });
+}
+
+function renderCatalogVariants(svc) {
+  const p = svc.pricing;
+  if (!p.priceVariants || !Object.keys(p.priceVariants).length) return '';
+  let rows = '';
+  for (const [k, v] of Object.entries(p.priceVariants)) {
+    const vPrice = typeof v === 'object' ? v.price : v;
+    const vDesc = typeof v === 'object' ? (v.description || '') : '';
+    const vCriteria = typeof v === 'object' ? (v.criteria || '') : '';
+    const isDefault = p.defaultVariant === k;
+    const defaultMark = isDefault ? '<span class="vt-default">DEFAULT</span>' : '';
+    rows += `<tr>
+      <td>${k}${defaultMark}</td>
+      <td class="vt-price">\u20AC${vPrice.toLocaleString()}</td>
+      <td style="color:var(--text-dim);">${vDesc}</td>
+      <td style="color:var(--text-dim);font-size:0.65rem;">${vCriteria}</td>
+    </tr>`;
+  }
+  return `<div class="cd-section">
+    <div class="cd-section-title">Price Variants</div>
+    <table class="cd-variants-table">
+      <thead><tr><th>Variant</th><th>Price</th><th>Description</th><th>Criteria</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
+function renderCatalogIncludes(svc) {
+  if (!svc.includes?.length) return '';
+  const itemsHtml = svc.includes.map(item => {
+    if (typeof item === 'string') return `<div class="cd-include-item">\u2022 ${item}</div>`;
+    const text = item.quantityLabel && item.quantity != null
+      ? item.quantityLabel.replace('{{quantity}}', item.quantity)
+      : (item.text || item.id || '');
+    let badges = '';
+    if (item.quantity != null) badges += `<span class="item-badge item-qty">${item.quantity}x</span>`;
+    if (item.shared) badges += `<span class="item-badge item-shared">${item.shared}</span>`;
+    if (item.condition) {
+      const condLabel = item.condition.variant ? item.condition.variant.join('/') :
+        item.condition.service ? 'with:' + item.condition.service :
+        item.condition.notService ? 'without:' + item.condition.notService : 'cond';
+      badges += `<span class="item-badge item-cond">${condLabel}</span>`;
+    }
+    return `<div class="cd-include-item">\u2022 ${text}${badges}</div>`;
+  }).join('');
+  return `<div class="cd-section">
+    <div class="cd-section-title">Includes (${svc.includes.length})</div>
+    ${itemsHtml}
+  </div>`;
+}
+
+function renderCatalogDeliverables(svc) {
+  if (!svc.deliverables?.length) return '';
+  const itemsHtml = svc.deliverables.map(d => {
+    const text = typeof d === 'string' ? d : (d.text || d.name || d.id || '');
+    let badges = '';
+    if (typeof d === 'object') {
+      if (d.format) badges += `<span class="cd-deliverable-item fmt-badge">${d.format}</span>`;
+      if (d.shared) badges += `<span class="item-badge item-shared">${d.shared}</span>`;
+    }
+    return `<div class="cd-deliverable-item">\u2022 ${text}${badges}</div>`;
+  }).join('');
+  return `<div class="cd-section">
+    <div class="cd-section-title">Deliverables (${svc.deliverables.length})</div>
+    ${itemsHtml}
+  </div>`;
+}
+
+function renderCatalogRevisions(svc) {
+  if (!svc.revisions) return '';
+  const r = svc.revisions;
+  let html = `<div style="font-size:0.75rem;"><strong>Rounds:</strong> ${r.rounds}`;
+  if (r.scope) html += ` &mdash; <span style="color:var(--text-dim);">Scope: ${r.scope}</span>`;
+  html += '</div>';
+  if (r.outOfScope) html += `<div style="font-size:0.7rem;color:var(--text-dim);">Out of scope: ${r.outOfScope}</div>`;
+  if (r.overagePrice) html += `<div style="font-size:0.7rem;color:var(--orange);">Overage: +\u20AC${r.overagePrice}/extra</div>`;
+  if (r.milestoneRevisions) {
+    html += '<div style="font-size:0.7rem;margin-top:0.3rem;color:var(--blue);">Milestone revisions:</div>';
+    for (const [phase, count] of Object.entries(r.milestoneRevisions)) {
+      html += `<div style="font-size:0.65rem;color:var(--text-dim);margin-left:0.75rem;">${phase}: ${count} rounds</div>`;
+    }
+  }
+  return `<div class="cd-section"><div class="cd-section-title">Revisions</div>${html}</div>`;
+}
+
+function renderCatalogTimeline(svc) {
+  const tl = svc.timeline;
+  if (!tl) return '';
+  let html = `<div style="font-size:0.75rem;">${tl.min}\u2013${tl.max} ${tl.unit || 'weeks'}</div>`;
+  if (tl.milestones) {
+    html += '<div style="margin-top:0.3rem;">';
+    for (const ms of tl.milestones) {
+      const name = typeof ms === 'string' ? ms : (ms.name || ms.phase || '');
+      const deps = (typeof ms === 'object' && ms.dependsOn) ? ` <span style="font-size:0.6rem;color:var(--text-dim);">depends on: ${ms.dependsOn.join(', ')}</span>` : '';
+      const dur = (typeof ms === 'object' && ms.duration) ? ` <span style="font-size:0.6rem;color:var(--yellow);">${ms.duration}</span>` : '';
+      html += `<div style="font-size:0.7rem;color:var(--text-dim);margin-left:0.75rem;">\u2022 ${name}${dur}${deps}</div>`;
+    }
+    html += '</div>';
+  }
+  return `<div class="cd-section"><div class="cd-section-title">Timeline</div>${html}</div>`;
+}
+
+function renderCatalogBundleRules(svc) {
+  const br = svc.bundleRules || {};
+  const parts = [];
+  if (br.includes?.length) parts.push(...br.includes.map(s => `<div class="cd-bundle-row"><div class="dot" style="background:var(--green)"></div><span style="color:var(--green);font-size:0.6rem;font-weight:600;">INCLUDES</span> ${getName(s)}</div>`));
+  if (br.includedWith?.length) parts.push(...br.includedWith.map(s => `<div class="cd-bundle-row"><div class="dot" style="background:var(--green)"></div><span style="color:var(--green);font-size:0.6rem;font-weight:600;">INCLUDED WITH</span> ${getName(s)}</div>`));
+  if (br.freeWith?.length) parts.push(...br.freeWith.map(s => `<div class="cd-bundle-row"><div class="dot" style="background:var(--cyan)"></div><span style="color:var(--cyan);font-size:0.6rem;font-weight:600;">FREE WITH</span> ${getName(s)}</div>`));
+  if (br.discountedWith) {
+    for (const [sid, dp] of Object.entries(br.discountedWith)) {
+      parts.push(`<div class="cd-bundle-row"><div class="dot" style="background:var(--orange)"></div><span style="color:var(--orange);font-size:0.6rem;font-weight:600;">DISCOUNTED</span> \u20AC${dp} with ${getName(sid)}</div>`);
+    }
+  }
+  if (br.promoWith) {
+    for (const [sid, promo] of Object.entries(br.promoWith)) {
+      const label = typeof promo === 'object' ? (promo.label || JSON.stringify(promo)) : promo;
+      parts.push(`<div class="cd-bundle-row"><div class="dot" style="background:var(--purple)"></div><span style="color:var(--purple);font-size:0.6rem;font-weight:600;">PROMO</span> ${label} with ${getName(sid)}</div>`);
+    }
+  }
+  if (br.requiresOneOf?.length) parts.push(`<div class="cd-bundle-row"><div class="dot" style="background:var(--text-dim)"></div><span style="color:var(--text-dim);font-size:0.6rem;font-weight:600;">REQUIRES ONE OF</span> ${br.requiresOneOf.map(s => getName(s)).join(', ')}</div>`);
+  if (!parts.length) return '';
+  return `<div class="cd-section"><div class="cd-section-title">Bundle Rules</div>${parts.join('')}</div>`;
+}
+
+function renderCatalogExclusions(svc) {
+  if (!svc.mutuallyExclusiveWith?.length) return '';
+  const items = svc.mutuallyExclusiveWith.map(s => `<div class="cd-bundle-row"><div class="dot" style="background:var(--red)"></div><span style="color:var(--red);">${getName(s)}</span></div>`).join('');
+  return `<div class="cd-section"><div class="cd-section-title">Mutual Exclusions</div>${items}</div>`;
+}
+
+function renderCatalogTags(svc) {
+  if (!svc.tags?.length) return '';
+  return `<div class="cd-section"><div class="cd-section-title">Tags</div><div>${svc.tags.map(t => `<span class="cd-tag">${t}</span>`).join('')}</div></div>`;
+}
+
+// ── TERMS & PAYMENTS VIEW ──
+function renderTerms() {
+  const container = document.getElementById('view-terms');
+  let html = '';
+
+  // ── Section 1: Contract Clauses ──
+  html += `<div class="terms-section">
+    <div class="terms-section-title">Contract Clauses</div>
+    <div class="terms-section-sub">Contract clauses are rendered at build time from data/contracts/*.json. This section will show clause details once embedded in pricing-data.js.</div>
+    <div class="terms-card" style="border-left:3px solid var(--text-dim);">
+      <div style="font-size:0.8rem;color:var(--text-dim);">Contract clause data is not yet embedded in pricing-data.js. Clauses are generated at proposal build time from the contracts JSON files. To view them here, add contract data to the EMBEDDED_DISCOUNTS or create a new EMBEDDED_CONTRACTS constant in pricing-data.js.</div>
+    </div>
+  </div>`;
+
+  // ── Section 2: Payment Structures / Discounts ──
+  html += `<div class="terms-section">
+    <div class="terms-section-title">Payment Structures &amp; Discounts</div>
+    <div class="terms-section-sub">Discount rules and structures from the embedded pricing data.</div>
+    <div class="terms-grid">`;
+
+  // Retainer discount
+  const rd = DISCOUNTS.retainerDiscount;
+  if (rd) {
+    html += `<div class="terms-card" style="border-left:3px solid var(--green);">
+      <div class="terms-card-title">Retainer Discount</div>
+      <div class="terms-card-sub">${rd.description || ''}</div>
+      <div class="terms-card-value">${rd.percentage}%</div>
+      <div style="font-size:0.65rem;color:var(--text-dim);margin-top:0.25rem;">Applies to: ${(rd.appliesTo || []).map(s => getName(s)).join(', ')}</div>
+      <div style="font-size:0.65rem;color:var(--text-dim);">Condition: ${rd.condition || ''}</div>
+    </div>`;
+  }
+
+  // Volume discounts
+  const vd = DISCOUNTS.volumeDiscounts;
+  if (vd) {
+    html += `<div class="terms-card" style="border-left:3px solid var(--blue);">
+      <div class="terms-card-title">TCC Volume Discounts</div>
+      <div class="terms-card-sub">${vd.description || ''} &mdash; ${vd.window || ''}</div>
+      <div style="margin-top:0.5rem;">
+        ${(vd.tiers || []).map(t => `<div style="font-size:0.75rem;padding:0.2rem 0;"><span style="color:var(--yellow);font-weight:600;font-family:var(--font-heading);">${t.discount}%</span> <span style="color:var(--text-dim);">${t.label}</span></div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Special discounts
+  const sd = DISCOUNTS.specialDiscounts;
+  if (sd) {
+    for (const [key, disc] of Object.entries(sd)) {
+      const pctStr = disc.percentage ? `${disc.percentage}%` : (disc.range ? `\u20AC${disc.range.min}\u2013\u20AC${disc.range.max}` : '');
+      html += `<div class="terms-card" style="border-left:3px solid var(--purple);">
+        <div class="terms-card-title">${disc.description || key}</div>
+        <div class="terms-card-sub">${disc.note || ''}</div>
+        <div class="terms-card-value">${pctStr}</div>
+        <div style="font-size:0.65rem;color:var(--text-dim);margin-top:0.25rem;">Applies to: ${disc.appliesTo || 'varies'}</div>
+      </div>`;
+    }
+  }
+
+  // Package discounts
+  const pd = DISCOUNTS.packageDiscounts;
+  if (pd) {
+    html += `<div class="terms-card" style="border-left:3px solid var(--orange);">
+      <div class="terms-card-title">Package Discounts</div>
+      <div class="terms-card-sub">${pd.description || ''}</div>
+      <div style="margin-top:0.5rem;">
+        ${(pd.tiers || []).map(t => `<div style="font-size:0.75rem;padding:0.2rem 0;"><span style="color:var(--yellow);font-weight:600;font-family:var(--font-heading);">${t.discount}%</span> <span style="color:var(--text-dim);">${t.label} (${t.minServices}+ services)</span></div>`).join('')}
+      </div>
+      <div style="font-size:0.6rem;color:var(--text-dim);margin-top:0.4rem;">${pd.note || ''}</div>
+    </div>`;
+  }
+
+  html += '</div></div>';
+
+  // ── Section 3: Revisions Matrix ──
+  html += `<div class="terms-section">
+    <div class="terms-section-title">Revisions Matrix</div>
+    <div class="terms-section-sub">Revision policies for all services, sorted by category.</div>
+    <div style="overflow-x:auto;">
+    <table class="terms-table">
+      <thead><tr><th>Service</th><th>Rounds</th><th>Scope</th><th>Out of Scope</th><th>Overage</th><th>Milestone Phases</th></tr></thead>
+      <tbody>`;
+
+  const catOrder = Object.keys(CATEGORY_META);
+  const sortedSvcs = Object.entries(SERVICES).sort((a, b) => {
+    const ai = catOrder.indexOf(a[1].category), bi = catOrder.indexOf(b[1].category);
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+  });
+
+  for (const [id, svc] of sortedSvcs) {
+    const r = svc.revisions || {};
+    const meta = CATEGORY_META[svc.category] || { color: '#888' };
+    const rounds = r.rounds != null ? r.rounds : '\u2014';
+    const scope = r.scope || '\u2014';
+    const oos = r.outOfScope || '\u2014';
+    const overage = r.overagePrice ? `+\u20AC${r.overagePrice}` : '\u2014';
+    const milestones = r.milestoneRevisions ? Object.entries(r.milestoneRevisions).map(([ph, c]) => `${ph}: ${c}`).join(', ') : '\u2014';
+
+    html += `<tr>
+      <td style="white-space:nowrap;"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${meta.color};margin-right:6px;"></span>${svc.name}</td>
+      <td class="rev-rounds-cell">${rounds}</td>
+      <td style="color:var(--text-dim);max-width:200px;white-space:normal;font-size:0.7rem;">${scope}</td>
+      <td style="color:var(--text-dim);max-width:180px;white-space:normal;font-size:0.7rem;">${oos}</td>
+      <td style="color:var(--orange);font-weight:600;white-space:nowrap;">${overage}</td>
+      <td style="color:var(--blue);font-size:0.7rem;">${milestones}</td>
+    </tr>`;
+  }
+  html += '</tbody></table></div></div>';
+
+  // ── Section 4: Shared Deliverables ──
+  html += `<div class="terms-section">
+    <div class="terms-section-title">Shared Deliverables</div>
+    <div class="terms-section-sub">Items shared across services, extracted from service includes.</div>`;
+
+  const sharedMap = {};
+  for (const [id, svc] of Object.entries(SERVICES)) {
+    if (!svc.includes) continue;
+    for (const item of svc.includes) {
+      if (typeof item === 'object' && item.shared) {
+        const sid = item.shared;
+        if (!sharedMap[sid]) sharedMap[sid] = [];
+        sharedMap[sid].push({ service: svc.name, serviceId: id, text: item.text || item.id || '', itemId: item.id || '' });
+      }
+    }
+  }
+
+  if (Object.keys(sharedMap).length) {
+    html += '<div style="overflow-x:auto;"><table class="terms-table"><thead><tr><th>Shared ID</th><th>Used By</th><th>Item Description</th></tr></thead><tbody>';
+    for (const [sid, usages] of Object.entries(sharedMap)) {
+      for (let i = 0; i < usages.length; i++) {
+        const u = usages[i];
+        const rowspan = i === 0 ? ` rowspan="${usages.length}" style="vertical-align:top;font-weight:600;color:var(--blue);"` : '';
+        const sharedCell = i === 0 ? `<td${rowspan}>${sid}</td>` : '';
+        html += `<tr>${sharedCell}<td><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${(CATEGORY_META[SERVICES[u.serviceId]?.category] || {}).color || '#888'};margin-right:6px;"></span>${u.service}</td><td style="color:var(--text-dim);">${u.text}</td></tr>`;
+      }
+    }
+    html += '</tbody></table></div>';
+  } else {
+    html += '<div class="terms-card" style="border-left:3px solid var(--text-dim);"><div style="font-size:0.8rem;color:var(--text-dim);">No shared deliverables found in current service data. Shared deliverables data from shared-deliverables.json is not yet embedded.</div></div>';
+  }
+  html += '</div>';
+
+  // ── Section 5: Bundle Rules Summary ──
+  const bundleRules = DISCOUNTS.bundleDiscounts || [];
+  html += `<div class="terms-section">
+    <div class="terms-section-title">Bundle Rules Summary</div>
+    <div class="terms-section-sub">${bundleRules.length} bundle discount rules from the pricing engine.</div>
+    <div style="overflow-x:auto;">
+    <table class="terms-table">
+      <thead><tr><th>#</th><th>Trigger</th><th>Target</th><th>Effect</th><th>Price / %</th><th>Description</th></tr></thead>
+      <tbody>`;
+
+  bundleRules.forEach((rule, idx) => {
+    const trigger = rule.trigger.selected ? getName(rule.trigger.selected) :
+      rule.trigger.anySelected ? rule.trigger.anySelected.map(s => getName(s)).join(' | ') : '\u2014';
+    const target = getName(rule.target);
+    const effectType = rule.effect.type || '\u2014';
+    const effectColor = effectType === 'included' ? 'var(--green)' :
+      effectType === 'free' ? 'var(--cyan)' :
+      effectType === 'discount' ? 'var(--orange)' :
+      effectType === 'promo' ? 'var(--purple)' : 'var(--text-dim)';
+    let priceCol = '';
+    if (rule.effect.price != null && rule.effect.price > 0) priceCol = `\u20AC${rule.effect.price.toLocaleString()}`;
+    else if (rule.effect.percentage) priceCol = `${rule.effect.percentage}%`;
+    else if (rule.effect.freeMonths) priceCol = `${rule.effect.freeMonths} mo free`;
+    else priceCol = '\u20AC0';
+
+    html += `<tr>
+      <td style="color:var(--text-dim);">${idx + 1}</td>
+      <td style="white-space:nowrap;">${trigger}</td>
+      <td style="white-space:nowrap;">${target}</td>
+      <td style="white-space:nowrap;"><span style="color:${effectColor};font-weight:600;font-size:0.65rem;text-transform:uppercase;">${effectType}</span></td>
+      <td style="color:var(--yellow);font-weight:600;font-family:var(--font-heading);white-space:nowrap;">${priceCol}</td>
+      <td style="color:var(--text-dim);font-size:0.7rem;">${rule.description || ''}</td>
+    </tr>`;
+  });
+  html += '</tbody></table></div></div>';
+
+  // ── Mutual Exclusions from DISCOUNTS ──
+  const mex = DISCOUNTS.mutualExclusions || [];
+  if (mex.length) {
+    html += `<div class="terms-section">
+      <div class="terms-section-title">Mutual Exclusions</div>
+      <div class="terms-section-sub">${mex.length} exclusion rules &mdash; these service pairs cannot be selected together.</div>
+      <div class="terms-grid">`;
+    for (const rule of mex) {
+      const names = (rule.services || []).map(s => getName(s));
+      html += `<div class="terms-card" style="border-left:3px solid var(--red);">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.35rem;">
+          <span style="color:var(--red);font-weight:700;font-size:0.8rem;">\u2718</span>
+          <span style="font-size:0.85rem;font-weight:600;">${names.join(' &harr; ')}</span>
+        </div>
+        <div style="font-size:0.7rem;color:var(--text-dim);">${rule.description || ''}</div>
+      </div>`;
+    }
+    html += '</div></div>';
+  }
+
+  container.innerHTML = html;
 }
 
 // ── GRAPH VIEW ──
@@ -1667,10 +2298,21 @@ function switchView(view) {
 // ── PACKAGE BUILDER ──
 let builderInitialized = false;
 let builderSelected = {}; // { svcId: { variant: 'standard', overridePrice: null } }
-let savedTemplates = JSON.parse(localStorage.getItem('va-pkg-templates') || '[]');
+let savedTemplates = []; // loaded from file via API or embedded data
 
-function initBuilder() {
+async function initBuilder() {
   builderInitialized = true;
+  // Load templates from API or embedded data
+  if (IS_SERVER) {
+    try {
+      const res = await fetch('/api/packages');
+      const data = await res.json();
+      savedTemplates = data.templates || [];
+    } catch(e) { console.warn('Failed to load packages:', e); }
+  } else {
+    const embedded = typeof EMBEDDED_PACKAGES !== 'undefined' ? EMBEDDED_PACKAGES : {};
+    savedTemplates = embedded.templates || [];
+  }
   renderBuilder();
 }
 
@@ -1991,16 +2633,29 @@ function saveTemplate() {
     totalOneTime,
     totalMonthly,
     savings: totalBase - totalOneTime,
+    source: 'manual',
     createdAt: new Date().toISOString(),
   };
 
-  // Check for existing with same name
-  const idx = savedTemplates.findIndex(t => t.id === tpl.id);
-  if (idx >= 0) savedTemplates[idx] = tpl;
-  else savedTemplates.push(tpl);
-
-  localStorage.setItem('va-pkg-templates', JSON.stringify(savedTemplates));
-  renderSavedTemplates();
+  if (IS_SERVER) {
+    fetch('/api/packages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(tpl)
+    }).then(r => r.json()).then(result => {
+      if (result.ok) {
+        const idx = savedTemplates.findIndex(t => t.id === tpl.id);
+        if (idx >= 0) savedTemplates[idx] = tpl;
+        else savedTemplates.push(tpl);
+        renderSavedTemplates();
+      } else alert('Save failed: ' + result.error);
+    }).catch(e => alert('Save failed: ' + e.message));
+  } else {
+    const idx = savedTemplates.findIndex(t => t.id === tpl.id);
+    if (idx >= 0) savedTemplates[idx] = tpl;
+    else savedTemplates.push(tpl);
+    renderSavedTemplates();
+  }
 }
 
 function renderSavedTemplates() {
@@ -2010,25 +2665,71 @@ function renderSavedTemplates() {
     return;
   }
 
-  let html = '<div style="font-size:0.75rem;font-weight:600;margin-bottom:0.5rem;margin-top:1rem;">Saved Templates</div>';
-  for (let i = 0; i < savedTemplates.length; i++) {
-    const t = savedTemplates[i];
-    const monthly = t.totalMonthly ? ` + €${t.totalMonthly}/mes` : '';
-    html += `<div class="saved-tpl" onclick="loadTemplate(${i})">
+  const sourceBadge = (src) => {
+    if (src === 'ai') return '<span style="font-size:0.55rem;padding:1px 6px;border-radius:3px;background:rgba(167,139,250,0.2);color:#a78bfa;margin-left:0.4rem;">AI</span>';
+    if (src === 'ai-approved') return '<span style="font-size:0.55rem;padding:1px 6px;border-radius:3px;background:rgba(74,222,128,0.2);color:#4ade80;margin-left:0.4rem;">APPROVED</span>';
+    return '<span style="font-size:0.55rem;padding:1px 6px;border-radius:3px;background:rgba(240,255,61,0.15);color:var(--yellow);margin-left:0.4rem;">MANUAL</span>';
+  };
+
+  // Group by source
+  const manual = savedTemplates.filter(t => t.source === 'manual' || !t.source);
+  const ai = savedTemplates.filter(t => t.source === 'ai');
+  const approved = savedTemplates.filter(t => t.source === 'ai-approved');
+
+  let html = '';
+
+  if (manual.length) {
+    html += '<div style="font-size:0.7rem;font-weight:600;margin:1rem 0 0.5rem;color:var(--yellow);">Your Packages</div>';
+    html += manual.map(t => templateCard(t)).join('');
+  }
+  if (approved.length) {
+    html += '<div style="font-size:0.7rem;font-weight:600;margin:1rem 0 0.5rem;color:#4ade80;">Approved AI Packages</div>';
+    html += approved.map(t => templateCard(t)).join('');
+  }
+  if (ai.length) {
+    html += '<div style="font-size:0.7rem;font-weight:600;margin:1rem 0 0.5rem;color:#a78bfa;">AI-Generated (pending review)</div>';
+    html += ai.map(t => templateCard(t)).join('');
+  }
+
+  function templateCard(t) {
+    const i = savedTemplates.indexOf(t);
+    const monthly = t.totalMonthly ? ` + \u20AC${t.totalMonthly}/mes` : '';
+    const proposal = t.proposalId ? `<span style="font-size:0.55rem;color:var(--text-dim);"> \u2022 ${t.proposalId}</span>` : '';
+    const approveBtn = t.source === 'ai'
+      ? `<button onclick="event.stopPropagation();approveTemplate(${i})" style="color:#4ade80;" title="Approve">✓</button>`
+      : '';
+    return `<div class="saved-tpl" onclick="loadTemplate(${i})">
       <div>
-        <div class="tpl-name">${t.name}</div>
-        <div class="tpl-count">${t.services.length} services${t.badge ? ' · ⭐' : ''}</div>
+        <div class="tpl-name">${t.name}${sourceBadge(t.source)}${proposal}</div>
+        <div class="tpl-count">${(t.services||[]).length} services${t.badge ? ' \u2022 \u2b50' : ''}</div>
       </div>
       <div style="display:flex;align-items:center;gap:0.75rem;">
-        <div class="tpl-price">€${t.totalOneTime.toLocaleString()}${monthly}</div>
+        <div class="tpl-price">\u20AC${(t.totalOneTime||0).toLocaleString()}${monthly}</div>
         <div class="saved-tpl-actions">
+          ${approveBtn}
           <button onclick="event.stopPropagation();copyTemplateJSON(${i})">JSON</button>
-          <button onclick="event.stopPropagation();deleteTemplate(${i})" style="color:var(--red);">×</button>
+          <button onclick="event.stopPropagation();deleteTemplate(${i})" style="color:var(--red);">\u00d7</button>
         </div>
       </div>
     </div>`;
   }
+
   container.innerHTML = html;
+}
+
+async function approveTemplate(idx) {
+  const t = savedTemplates[idx];
+  if (!t) return;
+  t.source = 'ai-approved';
+  t.approvedAt = new Date().toISOString();
+  if (IS_SERVER) {
+    await fetch('/api/packages/' + t.id, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'ai-approved', approvedAt: t.approvedAt })
+    });
+  }
+  renderSavedTemplates();
 }
 
 function loadTemplate(idx) {
@@ -2048,9 +2749,13 @@ function loadTemplate(idx) {
   refreshBuilder();
 }
 
-function deleteTemplate(idx) {
+async function deleteTemplate(idx) {
+  const t = savedTemplates[idx];
+  if (!t) return;
+  if (IS_SERVER) {
+    await fetch('/api/packages/' + t.id, { method: 'DELETE' });
+  }
   savedTemplates.splice(idx, 1);
-  localStorage.setItem('va-pkg-templates', JSON.stringify(savedTemplates));
   renderSavedTemplates();
 }
 

@@ -150,30 +150,31 @@ window.ProposalConfig = {
     "desc": "Identidad de marca completa. Sistema visual solido, capaz de crecer junto al negocio y adaptarse a distintos formatos, contextos y etapas. Cada decision de diseno respondera a una estrategia clara de posicionamiento y diferenciacion.",
     "includes": [
       "Logotipo y sistema de identidad visual adaptable (todos los formatos y escalas)",
-      "Naming Creativo para concepto principal o subdivisiones",
       "Eslogan corto y concreto que transmita la voz de la marca",
       "Paleta cromatica funcional y expresiva",
       "Seleccion tipografica principal y secundaria optimizada",
       "Copywriting creativo",
-      "Sistema grafico complementario: patrones, tramas e ilustraciones",
       "Acompanamiento, asesoria y estrategia de desarrollo de la marca",
-      "Aplicacion del sistema de marca sobre el producto (packaging)",
-      "Mockups realistas de producto (consumo, delivery, RRSS)",
       "Lineamientos de uso del sistema visual",
-      "Brandbook detallado con logica, reglas y criterios",
-      "Hasta 2 variantes graficas de packaging o etiqueta",
-      "Hasta 2 variantes graficas de carta (Menu)",
       "Papeleria basica: tarjetas de presentacion y firma electronica",
+      "Assets optimizados para web: favicon, OG image, header backgrounds",
+      "Seccion de RRSS incluida en el brandbook (lineamientos de uso social)",
       "Sistema de sub-marcas: PakeiHome, PakeiElectrics, PakeiIndustrial"
     ],
     "deliverables": [
-      "Brandbook completo y detallado",
       "Repositorio digital organizado (Google Drive)",
       "Archivos maestros del logotipo y sistema visual",
-      "Mockups y visuales de producto para presentaciones",
-      "Assets listos para imprenta",
       "Hasta 3 rondas de revision durante el proceso creativo"
-    ]
+    ],
+    "revisions": {
+      "rounds": 3,
+      "scope": "Ajustes de color, tipografia, composicion y layout dentro del concepto aprobado",
+      "outOfScope": "Cambio de direccion creativa, concepto o estructura del sistema de marca",
+      "overagePrice": 150,
+      "overageUnit": "per-round",
+      "goodFaithAdjustments": true,
+      "goodFaithExamples": "color, tipografia, alineacion, tamano"
+    }
   },
   "shakefront-full": {
     "eyebrow": "web",
@@ -186,7 +187,6 @@ window.ProposalConfig = {
       "Diseno UI/UX responsive (desktop, tablet, movil, horizontal)",
       "Prototipo interactivo de navegacion",
       "Desarrollo en Webflow: 15+ paginas con diseno pixel-perfect",
-      "CMS personalizado para gestion de contenidos",
       "Sitemap jerarquico + Styleguide digital",
       "Sistema de componentes reutilizables",
       "CTAs claros, pop-ups, modals y pestanas dinamicas",
@@ -209,7 +209,28 @@ window.ProposalConfig = {
       "Activos de marca optimizados y exportados",
       "Sitio web funcional y listo para lanzamiento",
       "Introduccion al portal de usuarios y modificacion del contenido"
-    ]
+    ],
+    "revisions": {
+      "rounds": 3,
+      "scope": "Ajustes de diseno, layout, contenido e interacciones dentro del wireframe aprobado",
+      "outOfScope": "Rediseno de la arquitectura web, cambio de plataforma, paginas fuera del sitemap original",
+      "overagePrice": 250,
+      "overageUnit": "per-round",
+      "milestoneRevisions": {
+        "wireframe": {
+          "rounds": 2,
+          "scope": "Estructura, navegacion y jerarquia de contenido"
+        },
+        "design": {
+          "rounds": 3,
+          "scope": "Diseno visual, UI, colores, tipografia, imagenes"
+        },
+        "development": {
+          "rounds": 2,
+          "scope": "Funcionalidad, responsive, animaciones, interacciones"
+        }
+      }
+    }
   },
   "the-brewery": {
     "eyebrow": "tech",
@@ -232,7 +253,28 @@ window.ProposalConfig = {
       "Codigo fuente en repositorio",
       "Documentacion tecnica",
       "Sesion de entrenamiento"
-    ]
+    ],
+    "revisions": {
+      "rounds": 3,
+      "scope": "Ajustes de funcionalidad, UI y flujo de la aplicacion",
+      "outOfScope": "Funcionalidades fuera del scope original",
+      "overagePrice": 400,
+      "overageUnit": "per-round",
+      "milestoneRevisions": {
+        "design": {
+          "rounds": 2,
+          "scope": "UI/UX y arquitectura"
+        },
+        "development": {
+          "rounds": 3,
+          "scope": "Funcionalidad y bugs"
+        },
+        "testing": {
+          "rounds": 2,
+          "scope": "QA y ajustes finales"
+        }
+      }
+    }
   },
   "the-percolator": {
     "eyebrow": "tech",
@@ -255,7 +297,14 @@ window.ProposalConfig = {
       "Documentacion tecnica de cada automatizacion",
       "Acceso y credenciales al cliente",
       "Sesion de entrenamiento"
-    ]
+    ],
+    "revisions": {
+      "rounds": 2,
+      "scope": "Ajustes de flujos de automatizacion y configuracion",
+      "outOfScope": "Integraciones no previstas o cambio de plataforma",
+      "overagePrice": 200,
+      "overageUnit": "per-round"
+    }
   },
   "robo-barista": {
     "eyebrow": "tech",
@@ -276,7 +325,14 @@ window.ProposalConfig = {
       "Documentacion tecnica",
       "Acceso y credenciales",
       "Sesion de entrenamiento"
-    ]
+    ],
+    "revisions": {
+      "rounds": 2,
+      "scope": "Ajustes de comportamiento, integraciones y entrenamiento del agente",
+      "outOfScope": "Cambio de arquitectura o plataforma base",
+      "overagePrice": 300,
+      "overageUnit": "per-round"
+    }
   },
   "flashy-socials": {
     "eyebrow": "social",
@@ -289,14 +345,22 @@ window.ProposalConfig = {
       "Tono, voz y valores de la marca y su comportamiento digital",
       "Copywriting y asesoramiento creativo para biografias en distintas plataformas",
       "Diseno de las primeras 12 publicaciones de la grilla de Instagram",
-      "Creacion de 1 TikTok con sound original para campana de lanzamiento",
       "Creacion de plantillas en Adobe Express",
       "Gestor de Marca en Adobe Express: acceso a recursos vectoriales, tipografias, paletas",
-      "Programacion semanal del contenido en Adobe Express",
-      "Fotos de perfil y banners para distintas plataformas de social media",
-      "Social BrandBook: manual de tonalidad e implementacion grafica para RRSS"
+      "Fotos de perfil y banners para distintas plataformas de social media"
     ],
-    "deliverables": []
+    "deliverables": [
+      "Plantillas editables en Adobe Express",
+      "12 publicaciones disenadas y programadas",
+      "Google Drive con todos los recursos sociales"
+    ],
+    "revisions": {
+      "rounds": 2,
+      "scope": "Ajustes de diseno, copy y composicion de las publicaciones",
+      "outOfScope": "Cambio total de concepto visual, adicion de plataformas no incluidas",
+      "overagePrice": 80,
+      "overageUnit": "per-round"
+    }
   },
   "cold-brew": {
     "eyebrow": "video",
@@ -318,7 +382,14 @@ window.ProposalConfig = {
       "Version header web (loop optimizado)",
       "HD/4K en formatos horizontal, vertical (9:16) y cuadrado (1:1)",
       "Archivos fuente tras pago final"
-    ]
+    ],
+    "revisions": {
+      "rounds": 2,
+      "scope": "Ajustes de edicion, color, ritmo y musica del brand video",
+      "outOfScope": "Re-filmacion o cambio de concepto",
+      "overagePrice": 150,
+      "overageUnit": "per-round"
+    }
   },
   "glass-cup": {
     "eyebrow": "print",
@@ -338,7 +409,14 @@ window.ProposalConfig = {
     "deliverables": [
       "Archivos listos para imprimir",
       "Archivos editables con lineas de corte, doblez, registros y todos los formatos de color"
-    ]
+    ],
+    "revisions": {
+      "rounds": 3,
+      "scope": "Ajustes de diseno, composicion y contenido de materiales impresos",
+      "outOfScope": "Nuevos productos no incluidos en el alcance original",
+      "overagePrice": 100,
+      "overageUnit": "per-round"
+    }
   },
   "silky-edits": {
     "eyebrow": "production",
@@ -361,7 +439,14 @@ window.ProposalConfig = {
       "Fotos exportadas en JPG",
       "Fotos en bruto (RAW) para futura utilizacion",
       "Google Drive personal con todos los recursos"
-    ]
+    ],
+    "revisions": {
+      "rounds": 2,
+      "scope": "Ajustes de retoque, color, recorte y composicion",
+      "outOfScope": "Fotos adicionales no incluidas en la seleccion original",
+      "overagePrice": 60,
+      "overageUnit": "per-round"
+    }
   },
   "barista": {
     "eyebrow": "web",
@@ -376,7 +461,12 @@ window.ProposalConfig = {
       "Soporte tecnico continuo",
       "Monitoreo de uptime y funcionamiento"
     ],
-    "deliverables": []
+    "deliverables": [],
+    "revisions": {
+      "rounds": null,
+      "scope": "Servicio continuo mensual — modificaciones incluidas en el plan",
+      "outOfScope": "N/A — cambios se gestionan dentro del retainer"
+    }
   },
   "the-grinder": {
     "eyebrow": "web",
@@ -391,7 +481,14 @@ window.ProposalConfig = {
       "DNS y configuracion tecnica",
       "Respaldo y seguridad integrada"
     ],
-    "deliverables": []
+    "deliverables": [],
+    "revisions": {
+      "rounds": 1,
+      "scope": "Verificacion de configuracion de hosting, dominio y correos",
+      "outOfScope": "Migracion de plataforma",
+      "overagePrice": 50,
+      "overageUnit": "per-round"
+    }
   }
 },
   client: {

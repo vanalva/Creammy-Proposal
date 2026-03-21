@@ -105,6 +105,61 @@ app.post('/api/rebuild', (req, res) => {
   }
 });
 
+// ── API: Package Templates ──
+const PKG_TEMPLATES_PATH = path.join(ROOT, 'data/catalog/package-templates.json');
+
+function readTemplates() {
+  try { return JSON.parse(fs.readFileSync(PKG_TEMPLATES_PATH, 'utf8')); }
+  catch(e) { return { version: '1.0', lastUpdated: new Date().toISOString().split('T')[0], templates: [] }; }
+}
+
+function writeTemplates(data) {
+  data.lastUpdated = new Date().toISOString().split('T')[0];
+  fs.writeFileSync(PKG_TEMPLATES_PATH, JSON.stringify(data, null, 2));
+  regenerateDashboardData();
+}
+
+app.get('/api/packages', (req, res) => {
+  res.json(readTemplates());
+});
+
+app.post('/api/packages', (req, res) => {
+  try {
+    const data = readTemplates();
+    const pkg = req.body;
+    pkg.createdAt = pkg.createdAt || new Date().toISOString();
+    pkg.source = pkg.source || 'manual';
+
+    // Replace if same id exists
+    const idx = data.templates.findIndex(t => t.id === pkg.id);
+    if (idx >= 0) data.templates[idx] = pkg;
+    else data.templates.push(pkg);
+
+    writeTemplates(data);
+    res.json({ ok: true, message: `Package ${pkg.id} saved`, total: data.templates.length });
+  } catch(e) { res.status(500).json({ ok: false, error: e.message }); }
+});
+
+app.patch('/api/packages/:id', (req, res) => {
+  try {
+    const data = readTemplates();
+    const idx = data.templates.findIndex(t => t.id === req.params.id);
+    if (idx < 0) return res.status(404).json({ ok: false, error: 'Package not found' });
+    Object.assign(data.templates[idx], req.body);
+    writeTemplates(data);
+    res.json({ ok: true, message: `Package ${req.params.id} updated` });
+  } catch(e) { res.status(500).json({ ok: false, error: e.message }); }
+});
+
+app.delete('/api/packages/:id', (req, res) => {
+  try {
+    const data = readTemplates();
+    data.templates = data.templates.filter(t => t.id !== req.params.id);
+    writeTemplates(data);
+    res.json({ ok: true, message: `Package ${req.params.id} deleted` });
+  } catch(e) { res.status(500).json({ ok: false, error: e.message }); }
+});
+
 app.post('/api/rebuild-all', (req, res) => {
   try {
     const results = [];
@@ -186,7 +241,9 @@ function regenerateDashboardData() {
   const svc = fs.readFileSync(path.join(ROOT, 'data/catalog/services.json'), 'utf8').trim();
   const ret = fs.readFileSync(path.join(ROOT, 'data/catalog/retainers.json'), 'utf8').trim();
   const disc = fs.readFileSync(path.join(ROOT, 'data/catalog/discounts.json'), 'utf8').trim();
-  const block = `const EMBEDDED_SERVICES = ${svc};\nconst EMBEDDED_RETAINERS = ${ret};\nconst EMBEDDED_DISCOUNTS = ${disc};`;
+  let pkg = '{"version":"1.0","templates":[]}';
+  try { pkg = fs.readFileSync(PKG_TEMPLATES_PATH, 'utf8').trim(); } catch(e) {}
+  const block = `const EMBEDDED_SERVICES = ${svc};\nconst EMBEDDED_RETAINERS = ${ret};\nconst EMBEDDED_DISCOUNTS = ${disc};\nconst EMBEDDED_PACKAGES = ${pkg};`;
   fs.writeFileSync(path.join(ROOT, 'tools/pricing-data.js'), block);
 }
 
@@ -204,5 +261,9 @@ app.listen(PORT, () => {
   console.log(`    PATCH /api/services/:id     — update single service`);
   console.log(`    POST /api/rebuild           — rebuild one proposal`);
   console.log(`    POST /api/rebuild-all       — rebuild all proposals`);
-  console.log(`    GET  /api/proposals          — list proposals\n`);
+  console.log(`    GET  /api/proposals          — list proposals`);
+  console.log(`    GET  /api/packages           — list package templates`);
+  console.log(`    POST /api/packages           — save package template`);
+  console.log(`    PATCH /api/packages/:id      — update (approve/edit)`);
+  console.log(`    DELETE /api/packages/:id     — delete template\n`);
 });
